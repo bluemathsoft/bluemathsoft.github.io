@@ -13,7 +13,7 @@ You want to port a legacy native library written in C to run in browser. What's 
 
 Let's define a simple C function
 
-```c
+```C
 int simpleadd(int x, int y) {
   return x+y;
 }
@@ -22,14 +22,18 @@ int simpleadd(int x, int y) {
 Assuming you have installed Emscripten SDK already and you have **emcc** in your path, execute following
 
     emcc simple.c -o simple.bc
-    emcc simple.bc -o simple.js -s EXPORTED_FUNCTIONS='["_simpleadd"]'
+    emcc simple.bc -o simple.js \
+      -s EXPORTED_FUNCTIONS='["_simpleadd"]'
 
 Now let's write Javascript code that calls this function
 
-```javascript
+```Javascript
 let em = require('./simple')
 
-let simpleadd = em.cwrap('simpleadd','number',['number','number']);
+let simpleadd = em.cwrap('simpleadd',
+  'number', // return value
+  ['number','number'] // arguments
+);
 
 let result = simpleadd(5,20);
 console.log(result);

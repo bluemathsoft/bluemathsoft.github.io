@@ -13,11 +13,11 @@ You want to port a legacy native library written in C to run in browser. What's 
 
 Let's define a simple C function
 
-{% highlight C %}
+```c
 int simpleadd(int x, int y) {
   return x+y;
 }
-{% endhighlight %}
+```
 
 Assuming you have installed Emscripten SDK already and you have **emcc** in your path, execute following
 
@@ -26,14 +26,14 @@ Assuming you have installed Emscripten SDK already and you have **emcc** in your
 
 Now let's write Javascript code that calls this function
 
-{%highlight javascript %}
+```javascript
 let em = require('./simple')
 
 let simpleadd = em.cwrap('simpleadd','number',['number','number']);
 
 let result = simpleadd(5,20);
 console.log(result);
-{% endhighlight %}
+```
 
 That's it. Run it!
 

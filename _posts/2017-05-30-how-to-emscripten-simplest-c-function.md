@@ -44,3 +44,23 @@ That's it. Run it!
     node test.js
     25
 
+
+Want to run it in browser?
+
+```HTML
+<html>
+  <head>
+    <script src="simple.js"></script>
+  </head>
+  <body>
+    <script>
+      let simpleadd = Module.cwrap('simpleadd',
+        'number', // return value
+        ['number','number'] // arguments
+      );
+      let result = simpleadd(5,20);
+      document.body.textContent = result+'';
+    </script>
+  </body>
+</html>
+```

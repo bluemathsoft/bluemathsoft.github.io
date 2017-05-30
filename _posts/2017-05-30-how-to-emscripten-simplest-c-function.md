@@ -28,6 +28,7 @@ Assuming you have installed Emscripten SDK already and you have **emcc** in your
 Now let's write Javascript code that calls this function
 
 ```Javascript
+// test.js
 let em = require('./simple')
 
 let simpleadd = em.cwrap('simpleadd',

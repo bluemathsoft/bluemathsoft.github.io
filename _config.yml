@@ -27,6 +27,9 @@ google_analytics_trackid: "UA-99857402-1"
 markdown: kramdown
 highlighter: rouge
 theme: minima
+kramdown:
+  input: GFM
+  hard_wrap: false
 gems:
   - jekyll-feed
   - jekyll-seo-tag

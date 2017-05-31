@@ -21,9 +21,11 @@ int simpleadd(int x, int y) {
 
 Assuming you have installed Emscripten SDK already and you have **emcc** in your path, execute following
 
-    emcc simple.c -o simple.bc
-    emcc simple.bc -o simple.js \
-      -s EXPORTED_FUNCTIONS='["_simpleadd"]'
+``` bash
+$ emcc simple.c -o simple.bc
+$ emcc simple.bc -o simple.js \
+  -s EXPORTED_FUNCTIONS='["_simpleadd"]'
+```
 
 Now let's write Javascript code that calls this function
 

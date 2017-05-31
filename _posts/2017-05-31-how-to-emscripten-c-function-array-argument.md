@@ -28,7 +28,12 @@ Here's the javascript code that will invoke the C routine
 ``` javascript
 let em = require('./arraymul')
 
-let arraymul = em.cwrap('arraymul',null,['number','number','number']);
+let arraymul = em.cwrap('arraymul',
+    null, // Function return void
+    // Integers, Floating point numbers and pointers all
+    // are considered 'number'
+    ['number','number','number']
+  );
 
 let length = 5;
 let multiplier = 12;

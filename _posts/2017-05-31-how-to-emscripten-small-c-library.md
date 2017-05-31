@@ -83,3 +83,5 @@ On running
 $ node test-saxpy.js
 Float32Array [ 43, 87, 121 ]
 ```
+
+You can also load the blas.js in browser and run it like [this](https://github.com/bluemathsoft/lapackjs/blob/master/test-saxpy.html).

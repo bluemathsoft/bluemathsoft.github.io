@@ -1,6 +1,7 @@
 ---
 layout: post
 title: How to Emscripten C function with array argument
+keywords: emscripten,webassembly,howto
 ---
 
 You have successfully emscriptened the simplest C function. Now you want to do something serious by passing an array of numbers to the C function. This post will describe how to go about it.

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How to Emscripten simplest C function
-keywords: emscripten,webassembly
+keywords: emscripten,webassembly,howto
 ---
 
 Compiling native code to Javascript/WebAssembly is the next advanced technology in Web programming. But if you are just getting started with it, you might find yourself lost in the myriads of details. Here's a simple recipe to get you on track.

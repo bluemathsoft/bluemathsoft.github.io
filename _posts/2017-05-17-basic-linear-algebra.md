@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Basic Linear Algebra
+keywords: linear algebra,math,lapack,emscripten,javascript
 ---
 
 I've been working for couple of weeks now on BlueMath library. The first module I decided to build was basic linear algebra, because that's typically most frequently used module in a math kernel library and other libraries also depend on it. It's fairly well understood and has multiple implementations available in open source. I spent some time reviewing different libraries that offer linear algebra and tried couple of different approaches before implementing a pure Javascript version of it.

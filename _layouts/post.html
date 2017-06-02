@@ -36,11 +36,18 @@
           </h5>
           <br/>
           {{content}}
+
+          <br/>
+          <a href="https://twitter.com/intent/tweet?text=%40jyro%20http://{{site.host}}{{page.url}}">Comment via Twitter</a>
+          <br/>
+          <br/>
+
         </div>
         <div class="col-lg-2">
         </div>
       </div>
     </div>
 
+    {% include twitter-widget.html %}
   </body>
 </html>

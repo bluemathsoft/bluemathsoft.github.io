@@ -3,9 +3,6 @@ layout: post
 title: How to port a small C library to Javascript with Emscripten
 ---
 
-How to port a small C library to Javascript with Emscripten
-===
-
 Now that you already know how to compile individual C functions to Javascript, let's take a look at more practical example. Let's emscripten a small off-the-shelf C library.
 
 We choose Linear Algebra library CLAPACK for this task. It's a very mature library that's at base of many math products. The library is self contained, i.e. it doesn't have any external dependencies, making our job less complicated. For this post we are going to compile a subset of CLAPACK, called BLAS (Basic Linear Algebra Subprograms). The original LAPACK library is written in Fortran. CLAPACK is a transpiled version of LAPACK created using F2C compiler. Therefore the BLAS library depends on another sub-library called F2CLib. We are going to compile the C source of these two libraries into bytecode and then link it to generate blas.js.

@@ -3,9 +3,6 @@ layout: post
 title: How to Emscripten C function with array argument
 ---
 
-How to Emscripten C function with array argument
-===
-
 You have successfully emscriptened the simplest C function. Now you want to do something serious by passing an array of numbers to the C function. This post will describe how to go about it.
 
 Here's the C function that accepts an array of `double`s and multiplies it by a multiplier. The content of array are overwritten by the result, thus the array argument acts as input as well as output.

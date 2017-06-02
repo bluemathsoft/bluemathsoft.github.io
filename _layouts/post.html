@@ -31,6 +31,10 @@
           <h1>
             {{page.title}}
           </h1>
+          <h5>
+            posted on <a href="{{page.url}}"><i>{{ page.date | date_to_long_string }}</i></a> by <a href="http://twitter.com/jyro">Jayesh</a>
+          </h5>
+          <br/>
           {{content}}
         </div>
         <div class="col-lg-2">

@@ -908,6 +908,9 @@ img { max-width: 100%; }
 				<li class=" tsd-kind-property tsd-parent-kind-class">
 					<a href="ndarray.html#size" class="tsd-kind-icon">size</a>
 				</li>
+				<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+					<a href="ndarray.html#data" class="tsd-kind-icon">data</a>
+				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
 					<a href="ndarray.html#_alloc" class="tsd-kind-icon">_alloc</a>
 				</li>
@@ -921,10 +924,16 @@ img { max-width: 100%; }
 					<a href="ndarray.html#clone" class="tsd-kind-icon">clone</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="ndarray.html#dataindextoindex" class="tsd-kind-icon">data<wbr>Index<wbr>ToIndex</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
 					<a href="ndarray.html#fill" class="tsd-kind-icon">fill</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class">
 					<a href="ndarray.html#get" class="tsd-kind-icon">get</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="ndarray.html#isequal" class="tsd-kind-icon">is<wbr>Equal</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class">
 					<a href="ndarray.html#reshape" class="tsd-kind-icon">reshape</a>
@@ -932,46 +941,49 @@ img { max-width: 100%; }
 				<li class=" tsd-kind-method tsd-parent-kind-class">
 					<a href="ndarray.html#set" class="tsd-kind-icon">set</a>
 				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="ndarray.html#swaporder" class="tsd-kind-icon">swap<wbr>Order</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="ndarray.html#swaprows" class="tsd-kind-icon">swaprows</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="ndarray.html#toarray" class="tsd-kind-icon">to<wbr>Array</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="ndarray.html#tostring" class="tsd-kind-icon">to<wbr>String</a>
+				</li>
 			</ul>
 		</li>
 		<li class=" tsd-kind-interface">
 			<a href="../interfaces/ndarrayoptions.html" class="tsd-kind-icon">NDArray<wbr>Options</a>
 		</li>
-		<li class=" tsd-kind-type-alias tsd-is-not-exported">
-			<a href="../globals.html#datatype" class="tsd-kind-icon">Data<wbr>Type</a>
-		</li>
-		<li class=" tsd-kind-type-alias tsd-is-not-exported">
-			<a href="../globals.html#numbertype" class="tsd-kind-icon">Number<wbr>Type</a>
-		</li>
-		<li class=" tsd-kind-type-alias tsd-is-not-exported">
-			<a href="../globals.html#typedarray" class="tsd-kind-icon">Typed<wbr>Array</a>
-		</li>
-		<li class=" tsd-kind-variable tsd-is-not-exported">
-			<a href="../globals.html#epsilon" class="tsd-kind-icon">EPSILON</a>
-		</li>
 		<li class=" tsd-kind-function">
-			<a href="../globals.html#cuberoot" class="tsd-kind-icon">cube<wbr>Root</a>
+			<a href="../globals.html#cholesky" class="tsd-kind-icon">cholesky</a>
 		</li>
 		<li class=" tsd-kind-function">
 			<a href="../globals.html#eye" class="tsd-kind-icon">eye</a>
 		</li>
 		<li class=" tsd-kind-function">
-			<a href="../globals.html#isequalfloat" class="tsd-kind-icon">is<wbr>Equal<wbr>Float</a>
+			<a href="../globals.html#inner" class="tsd-kind-icon">inner</a>
 		</li>
 		<li class=" tsd-kind-function">
-			<a href="../globals.html#iszero" class="tsd-kind-icon">is<wbr>Zero</a>
+			<a href="../globals.html#isequal" class="tsd-kind-icon">isequal</a>
 		</li>
 		<li class=" tsd-kind-function">
-			<a href="../globals.html#mmultiply" class="tsd-kind-icon">mmultiply</a>
+			<a href="../globals.html#iszero" class="tsd-kind-icon">iszero</a>
+		</li>
+		<li class=" tsd-kind-function">
+			<a href="../globals.html#matmul" class="tsd-kind-icon">matmul</a>
 		</li>
 		<li class=" tsd-kind-function">
 			<a href="../globals.html#norm" class="tsd-kind-icon">norm</a>
 		</li>
 		<li class=" tsd-kind-function">
-			<a href="../globals.html#todeg" class="tsd-kind-icon">to<wbr>Deg</a>
+			<a href="../globals.html#outer" class="tsd-kind-icon">outer</a>
 		</li>
 		<li class=" tsd-kind-function">
-			<a href="../globals.html#torad" class="tsd-kind-icon">to<wbr>Rad</a>
+			<a href="../globals.html#solve" class="tsd-kind-icon">solve</a>
 		</li>
 		<li class=" tsd-kind-function">
 			<a href="../globals.html#zeros" class="tsd-kind-icon">zeros</a>
@@ -1008,16 +1020,28 @@ img { max-width: 100%; }
 						</ul>
 					</section>
 					<section class="tsd-index-section ">
+						<h3>Accessors</h3>
+						<ul class="tsd-index-list">
+							<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="ndarray.html#data" class="tsd-kind-icon">data</a></li>
+						</ul>
+					</section>
+					<section class="tsd-index-section ">
 						<h3>Methods</h3>
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="ndarray.html#_alloc" class="tsd-kind-icon">_alloc</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="ndarray.html#_calcsize" class="tsd-kind-icon">_calc<wbr>Size</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="ndarray.html#_getaddress" class="tsd-kind-icon">_get<wbr>Address</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="ndarray.html#clone" class="tsd-kind-icon">clone</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="ndarray.html#dataindextoindex" class="tsd-kind-icon">data<wbr>Index<wbr>ToIndex</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="ndarray.html#fill" class="tsd-kind-icon">fill</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="ndarray.html#get" class="tsd-kind-icon">get</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="ndarray.html#isequal" class="tsd-kind-icon">is<wbr>Equal</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="ndarray.html#reshape" class="tsd-kind-icon">reshape</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="ndarray.html#set" class="tsd-kind-icon">set</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="ndarray.html#swaporder" class="tsd-kind-icon">swap<wbr>Order</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="ndarray.html#swaprows" class="tsd-kind-icon">swaprows</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="ndarray.html#toarray" class="tsd-kind-icon">to<wbr>Array</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="ndarray.html#tostring" class="tsd-kind-icon">to<wbr>String</a></li>
 						</ul>
 					</section>
 				</div>
@@ -1029,19 +1053,19 @@ img { max-width: 100%; }
 				<a name="constructor" class="tsd-anchor"></a>
 				<h3>constructor</h3>
 				<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-					<li class="tsd-signature tsd-kind-icon">new NDArray<span class="tsd-signature-symbol">(</span>arg0<span class="tsd-signature-symbol">: </span><a href="../globals.html#typedarray" class="tsd-signature-type">TypedArray</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/ndarrayoptions.html" class="tsd-signature-type">NDArrayOptions</a>, arg1<span class="tsd-signature-symbol">?: </span><a href="../interfaces/ndarrayoptions.html" class="tsd-signature-type">NDArrayOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="ndarray.html" class="tsd-signature-type">NDArray</a></li>
+					<li class="tsd-signature tsd-kind-icon">new NDArray<span class="tsd-signature-symbol">(</span>arg0<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TypedArray</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/ndarrayoptions.html" class="tsd-signature-type">NDArrayOptions</a>, arg1<span class="tsd-signature-symbol">?: </span><a href="../interfaces/ndarrayoptions.html" class="tsd-signature-type">NDArrayOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="ndarray.html" class="tsd-signature-type">NDArray</a></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/11964b6/src/basic/ndarray.ts#L96">basic/ndarray.ts:96</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/5cdc860/src/basic/ndarray.ts#L97">basic/ndarray.ts:97</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5>arg0: <a href="../globals.html#typedarray" class="tsd-signature-type">TypedArray</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/ndarrayoptions.html" class="tsd-signature-type">NDArrayOptions</a></h5>
+								<h5>arg0: <span class="tsd-signature-type">TypedArray</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/ndarrayoptions.html" class="tsd-signature-type">NDArrayOptions</a></h5>
 							</li>
 							<li>
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> arg1: <a href="../interfaces/ndarrayoptions.html" class="tsd-signature-type">NDArrayOptions</a></h5>
@@ -1057,20 +1081,20 @@ img { max-width: 100%; }
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
 				<a name="_data" class="tsd-anchor"></a>
 				<h3><span class="tsd-flag ts-flagPrivate">Private</span> _data</h3>
-				<div class="tsd-signature tsd-kind-icon">_data<span class="tsd-signature-symbol">:</span> <a href="../globals.html#typedarray" class="tsd-signature-type">TypedArray</a></div>
+				<div class="tsd-signature tsd-kind-icon">_data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">TypedArray</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/11964b6/src/basic/ndarray.ts#L96">basic/ndarray.ts:96</a></li>
+						<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/5cdc860/src/basic/ndarray.ts#L97">basic/ndarray.ts:97</a></li>
 					</ul>
 				</aside>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 				<a name="datatype" class="tsd-anchor"></a>
 				<h3>datatype</h3>
-				<div class="tsd-signature tsd-kind-icon">datatype<span class="tsd-signature-symbol">:</span> <a href="../globals.html#numbertype" class="tsd-signature-type">NumberType</a></div>
+				<div class="tsd-signature tsd-kind-icon">datatype<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">NumberType</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/11964b6/src/basic/ndarray.ts#L95">basic/ndarray.ts:95</a></li>
+						<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/5cdc860/src/basic/ndarray.ts#L96">basic/ndarray.ts:96</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1080,7 +1104,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">shape<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/11964b6/src/basic/ndarray.ts#L93">basic/ndarray.ts:93</a></li>
+						<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/5cdc860/src/basic/ndarray.ts#L94">basic/ndarray.ts:94</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1090,7 +1114,20 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/11964b6/src/basic/ndarray.ts#L94">basic/ndarray.ts:94</a></li>
+						<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/5cdc860/src/basic/ndarray.ts#L95">basic/ndarray.ts:95</a></li>
+					</ul>
+				</aside>
+			</section>
+		</section>
+		<section class="tsd-panel-group tsd-member-group ">
+			<h2>Accessors</h2>
+			<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+				<a name="data" class="tsd-anchor"></a>
+				<h3>data</h3>
+				<div class="tsd-signature tsd-kind-icon">data<span class="tsd-signature-symbol">:</span> </div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/5cdc860/src/basic/ndarray.ts#L138">basic/ndarray.ts:138</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1101,13 +1138,13 @@ img { max-width: 100%; }
 				<a name="_alloc" class="tsd-anchor"></a>
 				<h3><span class="tsd-flag ts-flagPrivate">Private</span> _alloc</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
-					<li class="tsd-signature tsd-kind-icon">_alloc<span class="tsd-signature-symbol">(</span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, data<span class="tsd-signature-symbol">?: </span><a href="../globals.html#typedarray" class="tsd-signature-type">TypedArray</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span>, datatype<span class="tsd-signature-symbol">?: </span><a href="../globals.html#numbertype" class="tsd-signature-type">NumberType</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					<li class="tsd-signature tsd-kind-icon">_alloc<span class="tsd-signature-symbol">(</span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, data<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">TypedArray</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span>, datatype<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">NumberType</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/11964b6/src/basic/ndarray.ts#L186">basic/ndarray.ts:186</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/5cdc860/src/basic/ndarray.ts#L191">basic/ndarray.ts:191</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1116,10 +1153,10 @@ img { max-width: 100%; }
 								<h5>size: <span class="tsd-signature-type">number</span></h5>
 							</li>
 							<li>
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> data: <a href="../globals.html#typedarray" class="tsd-signature-type">TypedArray</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> data: <span class="tsd-signature-type">TypedArray</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h5>
 							</li>
 							<li>
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> datatype: <a href="../globals.html#numbertype" class="tsd-signature-type">NumberType</a></h5>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> datatype: <span class="tsd-signature-type">NumberType</span></h5>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -1136,7 +1173,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/11964b6/src/basic/ndarray.ts#L182">basic/ndarray.ts:182</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/5cdc860/src/basic/ndarray.ts#L187">basic/ndarray.ts:187</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -1153,7 +1190,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/11964b6/src/basic/ndarray.ts#L222">basic/ndarray.ts:222</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/5cdc860/src/basic/ndarray.ts#L227">basic/ndarray.ts:227</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1176,10 +1213,33 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/11964b6/src/basic/ndarray.ts#L149">basic/ndarray.ts:149</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/5cdc860/src/basic/ndarray.ts#L154">basic/ndarray.ts:154</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-returns-title">Returns <a href="ndarray.html" class="tsd-signature-type">NDArray</a></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="dataindextoindex" class="tsd-anchor"></a>
+				<h3>data<wbr>Index<wbr>ToIndex</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">data<wbr>Index<wbr>ToIndex<span class="tsd-signature-symbol">(</span>di<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/5cdc860/src/basic/ndarray.ts#L248">basic/ndarray.ts:248</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>di: <span class="tsd-signature-type">number</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h4>
 					</li>
 				</ul>
 			</section>
@@ -1193,7 +1253,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/11964b6/src/basic/ndarray.ts#L243">basic/ndarray.ts:243</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/5cdc860/src/basic/ndarray.ts#L293">basic/ndarray.ts:293</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1216,7 +1276,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/11964b6/src/basic/ndarray.ts#L247">basic/ndarray.ts:247</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/5cdc860/src/basic/ndarray.ts#L297">basic/ndarray.ts:297</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1230,6 +1290,32 @@ img { max-width: 100%; }
 				</ul>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="isequal" class="tsd-anchor"></a>
+				<h3>is<wbr>Equal</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">is<wbr>Equal<span class="tsd-signature-symbol">(</span>other<span class="tsd-signature-symbol">: </span><a href="ndarray.html" class="tsd-signature-type">NDArray</a>, tolerance<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/5cdc860/src/basic/ndarray.ts#L339">basic/ndarray.ts:339</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>other: <a href="ndarray.html" class="tsd-signature-type">NDArray</a></h5>
+							</li>
+							<li>
+								<h5><span class="tsd-flag ts-flagDefault value">Default value</span> tolerance: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;EPSILON</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 				<a name="reshape" class="tsd-anchor"></a>
 				<h3>reshape</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -1239,7 +1325,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/11964b6/src/basic/ndarray.ts#L137">basic/ndarray.ts:137</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/5cdc860/src/basic/ndarray.ts#L142">basic/ndarray.ts:142</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1262,7 +1348,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/11964b6/src/basic/ndarray.ts#L252">basic/ndarray.ts:252</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/5cdc860/src/basic/ndarray.ts#L302">basic/ndarray.ts:302</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1272,6 +1358,83 @@ img { max-width: 100%; }
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="swaporder" class="tsd-anchor"></a>
+				<h3>swap<wbr>Order</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">swap<wbr>Order<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/5cdc860/src/basic/ndarray.ts#L351">basic/ndarray.ts:351</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="swaprows" class="tsd-anchor"></a>
+				<h3>swaprows</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">swaprows<span class="tsd-signature-symbol">(</span>i<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, j<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/5cdc860/src/basic/ndarray.ts#L308">basic/ndarray.ts:308</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>i: <span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li>
+								<h5>j: <span class="tsd-signature-type">number</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="toarray" class="tsd-anchor"></a>
+				<h3>to<wbr>Array</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">to<wbr>Array<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/5cdc860/src/basic/ndarray.ts#L261">basic/ndarray.ts:261</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="tostring" class="tsd-anchor"></a>
+				<h3>to<wbr>String</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">to<wbr>String<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/5cdc860/src/basic/ndarray.ts#L368">basic/ndarray.ts:368</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 					</li>
 				</ul>
 			</section>

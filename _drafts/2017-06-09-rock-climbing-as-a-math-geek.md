@@ -1,41 +1,37 @@
 ---
+layout: post
+title: Rock climbing as a Math geek
 ---
 
 I've been rock climbing for four years now and I'm a math geek. I've tried to analyse what it's that I like in rock climbing and the best way I've found to describe it is my modelling it as a mathematical equation (or inequality to be more correct). I see rock climbing as a way to find an **empirical solution to a mathematical inequality**. Here I'll try to elaborate on the idea.
 
 Let's start with a simple equation.
 
-```
-a=b
-```
+$$ a=b $$
 
 Here, `a` stands for the gravitational pull that's exerted on a standing person. `b` is roughly the force that the muscles of legs provide in standing position in order to balance the force of gravity. So the end result is person remains standing.
 
-IMAGE
+<div style="text-align:center"><img src="/img/posts/climbing-math-standing.svg"/></div>
 
 So far... *BORING*!
 
 When we start walking on a flat surface we change the force exerted by our leg muscles, so that we push ourselves forward and simultaneously balance the changing force of gravity as we move. So far only the leg muscles are involved. When we start climbing a tree or a rock, we are not only using our leg muscles, but our arms too. So if you are hanging from a ledge while stepping on a tentative foothold the equation looks like
 
-```
-a=b+c
-```
+$$ a=b+c $$
 
 Here, `c` stands for all the forces your arms are providing which get added to the forces that your leg muscles are providing, so that both of them together balance out the pull of gravity.
 
+<div style="text-align:center"><img src="/img/posts/climbing-math-climbing-simple.svg"/></div>
+
 If we represent the forces provided by two legs separately then we can call them bleft and bright. Similarly cleft and cright will represent the forces provided by two arms separately. So the equation looks like
 
-```
-a = bleft + bright + cleft + cright
-```
+$$ a = b_{left} + b_{right} + c_{left} + c_{right} $$
 
 Now a geometry geek can't just stop here, when trignometry is winking at you just around the corner. The forces that you feel in your arms are felt along their length, but how much of the force is used to balance the force of gravity depends on the angle your arm is making to the vertical direction. A real interesting climb is when all your arms and legs are spread in this and that direction so that the amount of force our muscles can offer and the angles these forces make to the vertical fit just so perfectly that they equal the gravity's pull. So the equation now becomes
 
-```
-a = bleft*cos(phi1) + bright*cos(phi2) + cleft*cos(theta1) + cright*cos(theta2)
-```
+$$ a = b_{left}cos\phi_1 + b_{right}cos\phi_2 + c_{left}cos\theta_1 + c_{right}cos\theta_2 $$
 
-The `theta`s and `phi`s are just the angles that our limbs make to the vertical. (I've avoided adding `sin` terms, because any `sin` term can be converted to `cos` term with a simple sin(theta)=cos(90-theta) transformation)
+The $$\theta$$s and $$\phi$$s are just the angles that our limbs make to the vertical. (I've avoided adding $$sin$$ terms, because any $$sin$$ term can be converted to $$cos$$ term with a simple $$sin\theta=cos(90^{\circ}-\theta)$$ transformation)
 
 In practice, we do not have a stick for an arm. Our arms is broken into several sticks that hang together by means of joints - what we call as 'elbows','wrists','knucles'. Ditto with legs, when the joints are 'knees','ankles'. So we can images the `b` and `c` terms broken into several `bi` and `ci` terms for both left and right limbs.
 

@@ -3,7 +3,7 @@ layout: post
 title: Rock climbing as a Math geek
 ---
 
-I've been rock climbing for four years now and I'm a math geek. I've tried to analyse what it's that I like in rock climbing and the best way I've found to describe it is my modelling it as a mathematical equation (or inequality to be more correct). I see rock climbing as a way to find an **empirical solution to a mathematical inequality**. Here I'll try to elaborate on the idea.
+I've been rock climbing for four years now and I'm a math geek. I've tried to analyse what it's that I like in rock climbing and the best way I've found to describe it is my modelling it as a mathematical equation (or inequality to be more correct). I see rock climbing as a way to find an **empirical solution to a mathematical inequality**. Here I'll try to elaborate on the idea. Once we have modelled the climbing activity as a mathematical equation we can use it to understand many aspects of climbing - e.g. risk of free solo, injury management, improving techniques to climb better, etc.
 
 
 Boring
@@ -52,19 +52,61 @@ As you are scaling a rock, with pulling with one arm, pushing on one leg, balanc
 Friction
 ---
 
-Core
+It's not just the $$b_i$$s and $$c_j$$s that we use in practice when climbing. Remember that jug you were hanging from for dear life? Or when you wedged your body inside a chimney, so that you looked like an extinct animal suspended in a fossil? Or when you were trying to climb with your hiking shoes instead of the rubber soled climbing shoes? Or when you have almost made the move except for a small imbalance, which you are trying to regain by trying to brush the skin of whichever body part you can brush against the wall - cheek, forehead, shoulder, beard, tongue(!)? Or when you keep dipping your fingers in that chalk bag?
+
+It's the Friction! In all these scenarios, you are using the force of friction in addition to the usual forces of arms and legs. We will represent this new force with the letter $$d$$ in our equation above. And as we have seen there are several different forces of friction that we employ during a climb, we will identify them with a subscript $$k$$.
+
+$$ a = \sum_{i=1}^m b_i cos\phi_i + \sum_{j=1}^n c_j cos\theta_j + \sum_{k=1}^n d_k$$
+
+<div style="text-align:center"><img src="/img/posts/climbing-math-friction.svg"/></div>
+
+Core and more
 ---
 
+It seems obvious how our feet give us support against gravity, while our arms help us hang from the wall to prevent falling. But it's not so obvious how our stomach can help us push against the gravity.
+
+* Why is it helpful to build the core muscles in order to nail those steep overhangs?
+* Why do the pro's advise to stay as close to the wall as you can while crawling along the underside of the roof?
+* Do you use flagging to position your body in a way that allows you to rest in a position even when there's no good hold to put your foot on.
+
+In all these cases you are using the tension in the muscles of your body to provide you with extra force. On steep overhangs this force from your core plays a very important role. When the wall is vertical and you have footholds, you can balance a lot of your weight on them. But when you are in an overhang, even good footholds are of no use, because the angle your feet are making to the foothold is not helping. Your feet are making much larger angle with the vertical (close to $$90^{\circ}$$), thus making the $$cos$$ terms almost zero. It's only your arms that can help you in this situation and if the holds are crimpy then it's only your fingers that you are hanging from. This is when you need to find force from other parts of your body. You generate that by holding your body closer to the wall. In doing that you make the muscles in your core carry some of your weight. This technique is of great importance to avoid finger injuries. By using your core to balance your weight, you are giving some breathing room to your fingers.
+
+<div style="text-align:center"><img src="/img/posts/climbing-math-core.svg"/></div>
+
+This force is difficult to picture, but easier to feel. By looking at the net effect of it, we are going to represent it with a single term $$E$$ in our equation. This will point upwards (oppsite the direction of gravity).
+
+$$ a = \sum_{i=1}^m b_i cos\phi_i + \sum_{j=1}^n c_j cos\theta_j + \sum_{k=1}^n d_k + E $$
+
+
+Locus
+---
+
+When we are climbing a route, our goal is to balance this equation for the entire duration of the climb. It's inevitable for the terms in equation to vary as we move from one position to another. A quality climb is characterized by how smoothly can we carry out these changes. For small durations the forces on right side of this equation suddenly fall short to balance the left side. But soon our body tries to adapt. It repositions itself so the limbs could get into a position to eventually find the necessary force. If it fails to do that the equation becomse out of balance and the result is a fall.
+
+With this view in mind, a clean climb of the route can be seen as traversing the solution of this equation.
+
+If a difficult climb forces you to take multiple falls, then you are traversing the solution of this equation in discontinuous spans.
 
 
 
+How to use this?
+===
+
+Better technique
+---
+* Flagging
+* Close to the wall
+
+Finger injuries
+---
+* Taping
+
+Risk of Free Solo
+---
+Unknown variables
+
+Estimating risks in trad/sport climbing
+---
+TBD
 
 
-
-Do you do core excercises so that you could nail those overhangs with no sweat? Have you listened to the advice of pro's to stay as close to the wall as you can while crawling along the underside of the roof? Do you use flagging to position your body in a way that allows you to rest in a position even when there's no good hold to put your foot on. In all these cases you are using the tension in the muscles of your body to provide you with extra force. On steep overhangs this force from your core plays a very important role. When the wall is vertical and you have footholds, you can balance a lot of your weight on them (note: weight is the pull of gravity). But when you are in an overhang, even good footholds are of no use, because the angle your feet are making to the foothold is not helping. Your feet are making much larger angle with the vertical (close to 90deg), thus making the cos terms almost zero. It's only your arms that can help you in this situation and if the holds are crimpy then it's only your fingers that you are hanging from. This is the time you need to generate that extra force. You generate that by holding your body closer to the wall. In doing that you make the muscles in your core to carry some of your weight. This technique is of great importance to avoid finger injuries. By using your core to balance your weight, you are giving some breathing room to your fingers. We now introduce this term in our equation with the letter `d`.
-
-But's it's not just the `b`s and `c`s that we use in practice when climbing. Remember that jug you were hanging from for dear life? Or when you wedged your body inside a chimney, so that you looked like an animal suspended in a fossil? Or when you were trying to climb with your hiking shoes instead of the rubber soled climbing shoes? Or when you have almost made the move except for a small imbalance, which you are trying to remove by trying to brush the skin of whichever body part you can brush against the wall - cheek, forehead, shoulder, beard, tongue(!)? Or when you keep dipping your fingers in that chalk bag? In all these scenarios, you are using the force of friction in addition to the usual forces of arms and legs. We will represent this new force with the letter `e` in our equation above. And as we have seen there are several different forces of friction that we employ during a climb, we will identify them with a subscript.
-
-```
-a = bleft*cos(phi1) + bright*cos(phi2) + cleft*cos(theta1) + cright*cos(theta2) + d + ei
-```

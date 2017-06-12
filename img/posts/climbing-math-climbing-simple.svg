@@ -9,9 +9,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   height="200"
-   width="200"
-   viewBox="0 0 200 200"
+   height="400"
+   width="400"
+   viewBox="0 0 400 400"
    id="svg3564"
    version="1.1"
    inkscape:version="0.91 r13725"
@@ -32,9 +32,9 @@
      id="namedview3568"
      showgrid="false"
      units="px"
-     inkscape:zoom="3.0633333"
-     inkscape:cx="138.35781"
-     inkscape:cy="109.66221"
+     inkscape:zoom="1.0830519"
+     inkscape:cx="-109.68556"
+     inkscape:cy="115.45964"
      inkscape:current-layer="svg3564"
      inkscape:snap-global="true">
     <inkscape:grid
@@ -55,7 +55,7 @@
   </metadata>
   <g
      id="g4095"
-     transform="translate(-7.8894906,0.32643502)">
+     transform="matrix(2.0978012,0,0,2.0978012,-26.330703,-9.0953242)">
     <path
        inkscape:connector-curvature="0"
        id="path4075"

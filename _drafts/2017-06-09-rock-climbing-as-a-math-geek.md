@@ -3,10 +3,10 @@ layout: post
 title: Rock climbing as a Math geek
 ---
 
-I've been rock climbing for four years now and I'm a math geek. I've tried to analyse what it's that I like in rock climbing and the best way I've found to describe it is my modelling it as a mathematical equation (or inequality to be more correct). I see rock climbing as a way to find an **empirical solution to a mathematical inequality**. Here I'll try to elaborate on the idea. Once we have modelled the climbing activity as a mathematical equation we can use it to understand many aspects of climbing - e.g. risk of free solo, injury management, improving techniques to climb better, etc.
+I've been rock climbing for four years now and I'm a math geek. I see rock climbing as a way to find an **empirical solution to a mathematical inequality**. Here I'll try to elaborate on the idea. Once we have modelled the climbing activity as a mathematical equation we can use it to understand many aspects of climbing - e.g. risk of free solo, injury management, improving techniques to climb better, etc. Some of the concepts might be trivial for some, but I'll go step-by-step to build a model that we could use later.
 
 
-Boring
+Standing on your feet
 ---
 
 Let's start with a simple equation.
@@ -19,7 +19,7 @@ Here, $$a$$ stands for the gravitational pull that's exerted on a standing perso
 
 So far... *BORING*!
 
-Arms and feet
+With arms and feet
 ---
 
 When we start walking on a flat surface we change the force exerted by our leg muscles, so that we push ourselves forward and simultaneously balance the changing force of gravity as we move. So far only the leg muscles are involved. When we start climbing a tree or a rock, we are not only using our leg muscles, but our arms too. So if you are hanging from a ledge while stepping on a tentative foothold the equation looks like
@@ -30,7 +30,7 @@ Here, $$c$$ stands for all the forces your arms are providing which get added to
 
 <div style="text-align:center"><img src="/img/posts/climbing-math-climbing-simple.svg"/></div>
 
-Joints
+Joints and angles
 ---
 
 In practice, our arms are not just straight sticks. An arm is broken into several limbs that hang together end on by means of joints - *elbows*,*wrists*,*knucles*. Ditto with legs - *knees*,*ankles*. So we can imagine the $$b$$ and $$c$$ terms broken into several $$b_i$$ and $$c_j$$ terms. The legs have $$m$$ limbs (thighs, ankles, calves, etc.) and hands have $$n$$ limbs (wrists, triceps, fingers, palms, etc.) All of them share the total weight of our body, thus equaling to $$a$$
@@ -49,7 +49,7 @@ The $$\theta$$s and $$\phi$$s are just the angles that our limbs make to the ver
 
 As you are scaling a rock, with pulling with one arm, pushing on one leg, balancing on left toe; you are changing values of theses $$b_i$$s and $$c_i$$s and the angles that make with the vertical so that their sum total balances out the pull of gravity.
 
-Friction
+Friction is good
 ---
 
 It's not just the $$b_i$$s and $$c_j$$s that we use in practice when climbing. Remember that jug you were hanging from for dear life? Or when you wedged your body inside a chimney, so that you looked like an extinct animal suspended in a fossil? Or when you were trying to climb with your hiking shoes instead of the rubber soled climbing shoes? Or when you have almost made the move except for a small imbalance, which you are trying to regain by trying to brush the skin of whichever body part you can brush against the wall - cheek, forehead, shoulder, beard, tongue(!)? Or when you keep dipping your fingers in that chalk bag?
@@ -75,18 +75,17 @@ In all these cases you are using the tension in the muscles of your body to prov
 
 This force is difficult to picture, but easier to feel. By looking at the net effect of it, we are going to represent it with a single term $$E$$ in our equation. This will point upwards (oppsite the direction of gravity).
 
-$$ a = \sum_{i=1}^m b_i cos\phi_i + \sum_{j=1}^n c_j cos\theta_j + \sum_{k=1}^n d_k + E $$
+$$ a = \sum_{i=1}^m b_i cos\phi_i + \sum_{j=1}^n c_j cos\theta_j + \sum_{k=1}^p d_k + E $$
 
 
 Locus
 ---
 
-When we are climbing a route, our goal is to balance this equation for the entire duration of the climb. It's inevitable for the terms in equation to vary as we move from one position to another. A quality climb is characterized by how smoothly can we carry out these changes. For small durations the forces on right side of this equation suddenly fall short to balance the left side. But soon our body tries to adapt. It repositions itself so the limbs could get into a position to eventually find the necessary force. If it fails to do that the equation becomse out of balance and the result is a fall.
+When we are climbing a route, our goal is to balance this equation for the entire duration of the climb. As we move from one position from another the variables in the equation inevitably vary. A quality of the climb is decided by how smoothly can we carry out these changes. For small durations the forces on right side of this equation suddenly fall short to balance the left side. But soon our body tries to adapt. It repositions itself so the limbs could get into a position to eventually find the necessary force. If it fails to do that the equation goes out of balance and we fall.
 
-With this view in mind, a clean climb of the route can be seen as traversing the solution of this equation.
+With this view in mind, a clean climb of the route can be seen as traversing the solution of this equation without any discontinuities.
 
-If a difficult climb forces you to take multiple falls, then you are traversing the solution of this equation in discontinuous spans.
-
+If a difficult climb forces you to take multiple falls, then you are traversing the solution of this equation in discontinuous spans. Unless you resume a little before where you took fall, your climbing solution is not uninterrupted.
 
 
 How to use this?
@@ -95,6 +94,9 @@ How to use this?
 Better technique
 ---
 * Flagging
+
+Flagging can be very useful when you have only one good hand-hold and one good foot-hold on the same side of the body. If you have them on opposite side, then your center of gravity automatically rests between two fixed points. When they are both on the same side, your center of gravity is off balance. This is when you extend your unbalanced leg out on the wall, so that the tension in your body ($$E$$) allows you to hold the unbalanced part of your body, even though your center of gravity is not in line with good holds.
+
 * Close to the wall
 
 Finger injuries

@@ -897,9 +897,6 @@ img { max-width: 100%; }
 			<a href="interfaces/ndarrayoptions.html" class="tsd-kind-icon">NDArray<wbr>Options</a>
 		</li>
 		<li class=" tsd-kind-function">
-			<a href="globals.html#cholesky" class="tsd-kind-icon">cholesky</a>
-		</li>
-		<li class=" tsd-kind-function">
 			<a href="globals.html#eye" class="tsd-kind-icon">eye</a>
 		</li>
 		<li class=" tsd-kind-function">
@@ -924,6 +921,9 @@ img { max-width: 100%; }
 			<a href="globals.html#solve" class="tsd-kind-icon">solve</a>
 		</li>
 		<li class=" tsd-kind-function">
+			<a href="globals.html#svd" class="tsd-kind-icon">svd</a>
+		</li>
+		<li class=" tsd-kind-function">
 			<a href="globals.html#zeros" class="tsd-kind-icon">zeros</a>
 		</li>
 	</ul>
@@ -931,24 +931,48 @@ img { max-width: 100%; }
 <div class="container container-main">
 	<div class="content-wrap">
 		<div class="tsd-panel tsd-typography">
-			<h2 id="linalg">linalg</h2>
-			<p><strong>Classes</strong></p>
-			<p><a href="classes/ndarray.html">NDArray</a></p>
-			<p><strong>Methods</strong></p>
-			<ul>
-				<li><p><em>Construction</em></p>
-					<ul>
-						<li><a href="globals.html#eye">eye</a></li>
-						<li><a href="globals.html#zeros">zeros</a></li>
-					</ul>
-				</li>
-				<li><p><em>Operations</em></p>
-					<ul>
-						<li><a href="globals.html#norm">norm</a></li>
-						<li>[[mmultiply]]</li>
-					</ul>
-				</li>
-			</ul>
+			<h1 id="linalg">linalg</h1>
+			<p>This module supports linear algebra operations on vectors (1d) and matrices (2d) that are represented by n-dimensional array class <a href="classes/ndarray.html">NDArray</a></p>
+			<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {linalg} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'bluemath'</span>);
+<span class="hljs-built_in">console</span>.log(linalg.zeros(<span class="hljs-number">3</span>).toString());
+</code></pre>
+			<h2 id="basic-operations">Basic operations</h2>
+			<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {basic,linalg} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'bluemath'</span>);
+<span class="hljs-keyword">let</span> {NDArray} = basic;
+
+<span class="hljs-keyword">let</span> A = <span class="hljs-keyword">new</span> NDArray([<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>]);
+<span class="hljs-keyword">let</span> B = <span class="hljs-keyword">new</span> NDArray([[<span class="hljs-number">1</span>],[<span class="hljs-number">1</span>],[<span class="hljs-number">1</span>]]);
+
+<span class="hljs-built_in">console</span>.log(linalg.outer(A,B).toArray());
+<span class="hljs-comment">// [</span>
+<span class="hljs-comment">//  [1,1,1],</span>
+<span class="hljs-comment">//  [1,1,1],</span>
+<span class="hljs-comment">//  [1,1,1]</span>
+<span class="hljs-comment">// ]</span>
+</code></pre>
+			<p>Ref: <a href="globals.html#outer">outer</a></p>
+			<h2 id="solving-equations">Solving Equations</h2>
+			<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> {linalg, basic} <span class="hljs-keyword">from</span> <span class="hljs-string">'bluemath'</span>
+<span class="hljs-keyword">let</span> A = <span class="hljs-keyword">new</span> basic.NDArray([
+    [<span class="hljs-number">11</span>,<span class="hljs-number">-3</span>,<span class="hljs-number">0</span>],
+    [<span class="hljs-number">-3</span>,<span class="hljs-number">6</span>,<span class="hljs-number">-1</span>],
+    [<span class="hljs-number">0</span>,<span class="hljs-number">-1</span>,<span class="hljs-number">3</span>]
+]);
+<span class="hljs-keyword">let</span> B = <span class="hljs-keyword">new</span> basic.NDArray([<span class="hljs-number">30</span>,<span class="hljs-number">5</span>,<span class="hljs-number">-25</span>]);
+linalg.solve(A,B);
+<span class="hljs-built_in">console</span>.log(B.toArray()); <span class="hljs-comment">// [3,1,-8]</span>
+</code></pre>
+			<p>Ref: <a href="globals.html#solve">solve</a></p>
+			<h2 id="svd">SVD</h2>
+			<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> A = <span class="hljs-keyword">new</span> NDArray([
+  [<span class="hljs-number">-3</span>,<span class="hljs-number">6</span>,<span class="hljs-number">-1</span>],
+  [<span class="hljs-number">11</span>,<span class="hljs-number">-3</span>,<span class="hljs-number">0</span>],
+  [<span class="hljs-number">0</span>,<span class="hljs-number">-1</span>,<span class="hljs-number">3</span>]
+]);
+<span class="hljs-keyword">let</span> [U,S,VT] = linalg.svd(A,<span class="hljs-literal">true</span>,<span class="hljs-literal">true</span>);
+<span class="hljs-built_in">console</span>.log(U,S,VT);
+</code></pre>
+			<p>Ref: <a href="globals.html#svd">svd</a></p>
 		</div>
 		<!--
 <footer class="with-border-bottom">

@@ -897,9 +897,6 @@ img { max-width: 100%; }
 			<a href="interfaces/ndarrayoptions.html" class="tsd-kind-icon">NDArray<wbr>Options</a>
 		</li>
 		<li class=" tsd-kind-function">
-			<a href="globals.html#cholesky" class="tsd-kind-icon">cholesky</a>
-		</li>
-		<li class=" tsd-kind-function">
 			<a href="globals.html#eye" class="tsd-kind-icon">eye</a>
 		</li>
 		<li class=" tsd-kind-function">
@@ -924,6 +921,9 @@ img { max-width: 100%; }
 			<a href="globals.html#solve" class="tsd-kind-icon">solve</a>
 		</li>
 		<li class=" tsd-kind-function">
+			<a href="globals.html#svd" class="tsd-kind-icon">svd</a>
+		</li>
+		<li class=" tsd-kind-function">
 			<a href="globals.html#zeros" class="tsd-kind-icon">zeros</a>
 		</li>
 	</ul>
@@ -931,24 +931,48 @@ img { max-width: 100%; }
 <div class="container container-main">
 	<div class="content-wrap">
 		<div class="tsd-panel tsd-typography">
-			<h2 id="linalg">linalg</h2>
-			<p><strong>Classes</strong></p>
-			<p><a href="classes/ndarray.html">NDArray</a></p>
-			<p><strong>Methods</strong></p>
-			<ul>
-				<li><p><em>Construction</em></p>
-					<ul>
-						<li><a href="globals.html#eye">eye</a></li>
-						<li><a href="globals.html#zeros">zeros</a></li>
-					</ul>
-				</li>
-				<li><p><em>Operations</em></p>
-					<ul>
-						<li><a href="globals.html#norm">norm</a></li>
-						<li>[[mmultiply]]</li>
-					</ul>
-				</li>
-			</ul>
+			<h1 id="linalg">linalg</h1>
+			<p>This module supports linear algebra operations on vectors (1d) and matrices (2d) that are represented by n-dimensional array class <a href="classes/ndarray.html">NDArray</a></p>
+			<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {linalg} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'bluemath'</span>);
+<span class="hljs-built_in">console</span>.log(linalg.zeros(<span class="hljs-number">3</span>).toString());
+</code></pre>
+			<h2 id="basic-operations">Basic operations</h2>
+			<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {basic,linalg} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'bluemath'</span>);
+<span class="hljs-keyword">let</span> {NDArray} = basic;
+
+<span class="hljs-keyword">let</span> A = <span class="hljs-keyword">new</span> NDArray([<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>]);
+<span class="hljs-keyword">let</span> B = <span class="hljs-keyword">new</span> NDArray([[<span class="hljs-number">1</span>],[<span class="hljs-number">1</span>],[<span class="hljs-number">1</span>]]);
+
+<span class="hljs-built_in">console</span>.log(linalg.outer(A,B).toArray());
+<span class="hljs-comment">// [</span>
+<span class="hljs-comment">//  [1,1,1],</span>
+<span class="hljs-comment">//  [1,1,1],</span>
+<span class="hljs-comment">//  [1,1,1]</span>
+<span class="hljs-comment">// ]</span>
+</code></pre>
+			<p>Ref: <a href="globals.html#outer">outer</a></p>
+			<h2 id="solving-equations">Solving Equations</h2>
+			<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> {linalg, basic} <span class="hljs-keyword">from</span> <span class="hljs-string">'bluemath'</span>
+<span class="hljs-keyword">let</span> A = <span class="hljs-keyword">new</span> basic.NDArray([
+    [<span class="hljs-number">11</span>,<span class="hljs-number">-3</span>,<span class="hljs-number">0</span>],
+    [<span class="hljs-number">-3</span>,<span class="hljs-number">6</span>,<span class="hljs-number">-1</span>],
+    [<span class="hljs-number">0</span>,<span class="hljs-number">-1</span>,<span class="hljs-number">3</span>]
+]);
+<span class="hljs-keyword">let</span> B = <span class="hljs-keyword">new</span> basic.NDArray([<span class="hljs-number">30</span>,<span class="hljs-number">5</span>,<span class="hljs-number">-25</span>]);
+linalg.solve(A,B);
+<span class="hljs-built_in">console</span>.log(B.toArray()); <span class="hljs-comment">// [3,1,-8]</span>
+</code></pre>
+			<p>Ref: <a href="globals.html#solve">solve</a></p>
+			<h2 id="svd">SVD</h2>
+			<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> A = <span class="hljs-keyword">new</span> NDArray([
+  [<span class="hljs-number">-3</span>,<span class="hljs-number">6</span>,<span class="hljs-number">-1</span>],
+  [<span class="hljs-number">11</span>,<span class="hljs-number">-3</span>,<span class="hljs-number">0</span>],
+  [<span class="hljs-number">0</span>,<span class="hljs-number">-1</span>,<span class="hljs-number">3</span>]
+]);
+<span class="hljs-keyword">let</span> [U,S,VT] = linalg.svd(A,<span class="hljs-literal">true</span>,<span class="hljs-literal">true</span>);
+<span class="hljs-built_in">console</span>.log(U,S,VT);
+</code></pre>
+			<p>Ref: <a href="globals.html#svd">svd</a></p>
 		</div>
 		<section class="tsd-panel-group tsd-index-group">
 			<h2>Index</h2>
@@ -969,7 +993,6 @@ img { max-width: 100%; }
 					<section class="tsd-index-section ">
 						<h3>Functions</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-function"><a href="globals.html#cholesky" class="tsd-kind-icon">cholesky</a></li>
 							<li class="tsd-kind-function"><a href="globals.html#eye" class="tsd-kind-icon">eye</a></li>
 							<li class="tsd-kind-function"><a href="globals.html#inner" class="tsd-kind-icon">inner</a></li>
 							<li class="tsd-kind-function"><a href="globals.html#isequal" class="tsd-kind-icon">isequal</a></li>
@@ -978,6 +1001,7 @@ img { max-width: 100%; }
 							<li class="tsd-kind-function"><a href="globals.html#norm" class="tsd-kind-icon">norm</a></li>
 							<li class="tsd-kind-function"><a href="globals.html#outer" class="tsd-kind-icon">outer</a></li>
 							<li class="tsd-kind-function"><a href="globals.html#solve" class="tsd-kind-icon">solve</a></li>
+							<li class="tsd-kind-function"><a href="globals.html#svd" class="tsd-kind-icon">svd</a></li>
 							<li class="tsd-kind-function"><a href="globals.html#zeros" class="tsd-kind-icon">zeros</a></li>
 						</ul>
 					</section>
@@ -986,29 +1010,6 @@ img { max-width: 100%; }
 		</section>
 		<section class="tsd-panel-group tsd-member-group ">
 			<h2>Functions</h2>
-			<section class="tsd-panel tsd-member tsd-kind-function">
-				<a name="cholesky" class="tsd-anchor"></a>
-				<h3>cholesky</h3>
-				<ul class="tsd-signatures tsd-kind-function">
-					<li class="tsd-signature tsd-kind-icon">cholesky<span class="tsd-signature-symbol">(</span>A<span class="tsd-signature-symbol">: </span><a href="classes/ndarray.html" class="tsd-signature-type">NDArray</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/5cdc860/src/linalg/operations.ts#L384">linalg/operations.ts:384</a></li>
-							</ul>
-						</aside>
-						<h4 class="tsd-parameters-title">Parameters</h4>
-						<ul class="tsd-parameters">
-							<li>
-								<h5>A: <a href="classes/ndarray.html" class="tsd-signature-type">NDArray</a></h5>
-							</li>
-						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-					</li>
-				</ul>
-			</section>
 			<section class="tsd-panel tsd-member tsd-kind-function">
 				<a name="eye" class="tsd-anchor"></a>
 				<h3>eye</h3>
@@ -1019,7 +1020,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/5cdc860/src/linalg/construction.ts#L34">linalg/construction.ts:34</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/0d0c8ce/src/linalg/construction.ts#L34">linalg/construction.ts:34</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1055,7 +1056,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/5cdc860/src/linalg/operations.ts#L344">linalg/operations.ts:344</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/0d0c8ce/src/linalg/operations.ts#L351">linalg/operations.ts:351</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1096,7 +1097,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/5cdc860/src/utils.ts#L50">utils.ts:50</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/0d0c8ce/src/utils.ts#L50">utils.ts:50</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1130,7 +1131,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/5cdc860/src/utils.ts#L43">utils.ts:43</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/0d0c8ce/src/utils.ts#L43">utils.ts:43</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1161,7 +1162,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/5cdc860/src/linalg/operations.ts#L33">linalg/operations.ts:33</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/0d0c8ce/src/linalg/operations.ts#L32">linalg/operations.ts:32</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1195,7 +1196,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/5cdc860/src/linalg/operations.ts#L105">linalg/operations.ts:105</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/0d0c8ce/src/linalg/operations.ts#L104">linalg/operations.ts:104</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1235,19 +1236,31 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/5cdc860/src/linalg/operations.ts#L355">linalg/operations.ts:355</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/0d0c8ce/src/linalg/operations.ts#L368">linalg/operations.ts:368</a></li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Compute outer product of two vectors</p>
+							</div>
+						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
 								<h5>A: <a href="classes/ndarray.html" class="tsd-signature-type">NDArray</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>Vector of shape [m] or [m,1]</p>
+								</div>
 							</li>
 							<li>
 								<h5>B: <a href="classes/ndarray.html" class="tsd-signature-type">NDArray</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>Vector of shape [n] or [1,n]</p>
+								</div>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <a href="classes/ndarray.html" class="tsd-signature-type">NDArray</a></h4>
+						<p>NDArray Matrix of dimension [m,n]</p>
 					</li>
 				</ul>
 			</section>
@@ -1261,7 +1274,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/5cdc860/src/linalg/operations.ts#L307">linalg/operations.ts:307</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/0d0c8ce/src/linalg/operations.ts#L314">linalg/operations.ts:314</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1293,6 +1306,54 @@ img { max-width: 100%; }
 				</ul>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-function">
+				<a name="svd" class="tsd-anchor"></a>
+				<h3>svd</h3>
+				<ul class="tsd-signatures tsd-kind-function">
+					<li class="tsd-signature tsd-kind-icon">svd<span class="tsd-signature-symbol">(</span>A<span class="tsd-signature-symbol">: </span><a href="classes/ndarray.html" class="tsd-signature-type">NDArray</a>, full_matrices<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span>, compute_uv<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="classes/ndarray.html" class="tsd-signature-type">NDArray</a><span class="tsd-signature-symbol">[]</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/0d0c8ce/src/linalg/operations.ts#L416">linalg/operations.ts:416</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Singular Value Decomposition
+									Factors the given matrix A, into U,S,VT such that
+									A = U <em> diag(S) </em> VT
+								U and VT are Unitary matrices, S is 1D array of singular values of A</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>A: <a href="classes/ndarray.html" class="tsd-signature-type">NDArray</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>Matrix to decompose Shape (m,n)</p>
+								</div>
+							</li>
+							<li>
+								<h5><span class="tsd-flag ts-flagDefault value">Default value</span> full_matrices: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>If true, U and VT have shapes (m,m) and (n,n) resp.
+									Otherwise the shapes are (m,k) and (k,n), resp. where k = min(m,n)</p>
+								</div>
+							</li>
+							<li>
+								<h5><span class="tsd-flag ts-flagDefault value">Default value</span> compute_uv: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>Whether or not to compute U,VT in addition to S</p>
+								</div>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <a href="classes/ndarray.html" class="tsd-signature-type">NDArray</a><span class="tsd-signature-symbol">[]</span></h4>
+						<p>[U,S,VT] if compute_uv = true, [S] otherwise</p>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function">
 				<a name="zeros" class="tsd-anchor"></a>
 				<h3>zeros</h3>
 				<ul class="tsd-signatures tsd-kind-function">
@@ -1302,7 +1363,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/5cdc860/src/linalg/construction.ts#L63">linalg/construction.ts:63</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/0d0c8ce/src/linalg/construction.ts#L63">linalg/construction.ts:63</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">

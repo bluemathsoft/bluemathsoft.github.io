@@ -19,3 +19,10 @@ In past few days as I’ve gained more familiarity with the LAPACK API, it was e
 With this success under belt, I soon made another unexpected discovery which made Emscripten solution really sweet. I found that numpy uses a light weight version of LAPACK. They have written some custom scripts and generated a stripped down set of LAPACK library that they compile and call from Python for numpy. It didn’t take me more than few minutes to roll up a [CMake build solution](https://github.com/bluemathsoft/numpy/commit/32a35403b7845679bc11f00cf196a3cadc9ebbd3) to compile this lapacklite into Javascript using emscripten. The lapacklite.js is lesser than half in size (1.7M) compared to emlapack.js (3.7M). It also loads as much faster.
 
 With this much progress, I have started building a linalg API that is similar to numpy/matlab.
+
+Update (Jun 15,2017)
+---
+
+The `linalg` API is now ready for some basic functionality. It is largely inspired from `numpy` conventions.
+
+[Check it out](/docs/index.html).

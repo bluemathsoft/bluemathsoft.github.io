@@ -896,8 +896,17 @@ img { max-width: 100%; }
 		<li class=" tsd-kind-interface">
 			<a href="interfaces/ndarrayoptions.html" class="tsd-kind-icon">NDArray<wbr>Options</a>
 		</li>
+		<li class=" tsd-kind-interface">
+			<a href="interfaces/lstsq_return.html" class="tsd-kind-icon">lstsq_<wbr>return</a>
+		</li>
 		<li class=" tsd-kind-function">
 			<a href="globals.html#eye" class="tsd-kind-icon">eye</a>
+		</li>
+		<li class=" tsd-kind-function">
+			<a href="globals.html#gelsd" class="tsd-kind-icon">gelsd</a>
+		</li>
+		<li class=" tsd-kind-function">
+			<a href="globals.html#getrf" class="tsd-kind-icon">getrf</a>
 		</li>
 		<li class=" tsd-kind-function">
 			<a href="globals.html#inner" class="tsd-kind-icon">inner</a>
@@ -909,6 +918,9 @@ img { max-width: 100%; }
 			<a href="globals.html#iszero" class="tsd-kind-icon">iszero</a>
 		</li>
 		<li class=" tsd-kind-function">
+			<a href="globals.html#lstsq" class="tsd-kind-icon">lstsq</a>
+		</li>
+		<li class=" tsd-kind-function">
 			<a href="globals.html#matmul" class="tsd-kind-icon">matmul</a>
 		</li>
 		<li class=" tsd-kind-function">
@@ -916,6 +928,9 @@ img { max-width: 100%; }
 		</li>
 		<li class=" tsd-kind-function">
 			<a href="globals.html#outer" class="tsd-kind-icon">outer</a>
+		</li>
+		<li class=" tsd-kind-function">
+			<a href="globals.html#rank" class="tsd-kind-icon">rank</a>
 		</li>
 		<li class=" tsd-kind-function">
 			<a href="globals.html#solve" class="tsd-kind-icon">solve</a>
@@ -988,18 +1003,23 @@ linalg.solve(A,B);
 						<h3>Interfaces</h3>
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-interface"><a href="interfaces/ndarrayoptions.html" class="tsd-kind-icon">NDArray<wbr>Options</a></li>
+							<li class="tsd-kind-interface"><a href="interfaces/lstsq_return.html" class="tsd-kind-icon">lstsq_<wbr>return</a></li>
 						</ul>
 					</section>
 					<section class="tsd-index-section ">
 						<h3>Functions</h3>
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-function"><a href="globals.html#eye" class="tsd-kind-icon">eye</a></li>
+							<li class="tsd-kind-function"><a href="globals.html#gelsd" class="tsd-kind-icon">gelsd</a></li>
+							<li class="tsd-kind-function"><a href="globals.html#getrf" class="tsd-kind-icon">getrf</a></li>
 							<li class="tsd-kind-function"><a href="globals.html#inner" class="tsd-kind-icon">inner</a></li>
 							<li class="tsd-kind-function"><a href="globals.html#isequal" class="tsd-kind-icon">isequal</a></li>
 							<li class="tsd-kind-function"><a href="globals.html#iszero" class="tsd-kind-icon">iszero</a></li>
+							<li class="tsd-kind-function"><a href="globals.html#lstsq" class="tsd-kind-icon">lstsq</a></li>
 							<li class="tsd-kind-function"><a href="globals.html#matmul" class="tsd-kind-icon">matmul</a></li>
 							<li class="tsd-kind-function"><a href="globals.html#norm" class="tsd-kind-icon">norm</a></li>
 							<li class="tsd-kind-function"><a href="globals.html#outer" class="tsd-kind-icon">outer</a></li>
+							<li class="tsd-kind-function"><a href="globals.html#rank" class="tsd-kind-icon">rank</a></li>
 							<li class="tsd-kind-function"><a href="globals.html#solve" class="tsd-kind-icon">solve</a></li>
 							<li class="tsd-kind-function"><a href="globals.html#svd" class="tsd-kind-icon">svd</a></li>
 							<li class="tsd-kind-function"><a href="globals.html#zeros" class="tsd-kind-icon">zeros</a></li>
@@ -1020,7 +1040,7 @@ linalg.solve(A,B);
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/0d0c8ce/src/linalg/construction.ts#L34">linalg/construction.ts:34</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/f291cbe/src/linalg/construction.ts#L34">linalg/construction.ts:34</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1047,6 +1067,79 @@ linalg.solve(A,B);
 				</ul>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-function">
+				<a name="gelsd" class="tsd-anchor"></a>
+				<h3>gelsd</h3>
+				<ul class="tsd-signatures tsd-kind-function">
+					<li class="tsd-signature tsd-kind-icon">gelsd<span class="tsd-signature-symbol">(</span>mA<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TypedArray</span>, m<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, n<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, nrhs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, rcond<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, mB<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TypedArray</span>, mS<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TypedArray</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/f291cbe/src/linalg/lapack/gelsd.ts#L92">linalg/lapack/gelsd.ts:92</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>mA: <span class="tsd-signature-type">TypedArray</span></h5>
+							</li>
+							<li>
+								<h5>m: <span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li>
+								<h5>n: <span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li>
+								<h5>nrhs: <span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li>
+								<h5>rcond: <span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li>
+								<h5>mB: <span class="tsd-signature-type">TypedArray</span></h5>
+							</li>
+							<li>
+								<h5>mS: <span class="tsd-signature-type">TypedArray</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function">
+				<a name="getrf" class="tsd-anchor"></a>
+				<h3>getrf</h3>
+				<ul class="tsd-signatures tsd-kind-function">
+					<li class="tsd-signature tsd-kind-icon">getrf<span class="tsd-signature-symbol">(</span>mA<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TypedArray</span>, m<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, n<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, mipiv<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TypedArray</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/f291cbe/src/linalg/lapack/getrf.ts#L65">linalg/lapack/getrf.ts:65</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>mA: <span class="tsd-signature-type">TypedArray</span></h5>
+							</li>
+							<li>
+								<h5>m: <span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li>
+								<h5>n: <span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li>
+								<h5>mipiv: <span class="tsd-signature-type">TypedArray</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function">
 				<a name="inner" class="tsd-anchor"></a>
 				<h3>inner</h3>
 				<ul class="tsd-signatures tsd-kind-function">
@@ -1056,7 +1149,7 @@ linalg.solve(A,B);
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/0d0c8ce/src/linalg/operations.ts#L351">linalg/operations.ts:351</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/f291cbe/src/linalg/operations.ts#L352">linalg/operations.ts:352</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1097,7 +1190,7 @@ linalg.solve(A,B);
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/0d0c8ce/src/utils.ts#L50">utils.ts:50</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/f291cbe/src/utils.ts#L50">utils.ts:50</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1131,7 +1224,7 @@ linalg.solve(A,B);
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/0d0c8ce/src/utils.ts#L43">utils.ts:43</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/f291cbe/src/utils.ts#L43">utils.ts:43</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1153,6 +1246,57 @@ linalg.solve(A,B);
 				</ul>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-function">
+				<a name="lstsq" class="tsd-anchor"></a>
+				<h3>lstsq</h3>
+				<ul class="tsd-signatures tsd-kind-function">
+					<li class="tsd-signature tsd-kind-icon">lstsq<span class="tsd-signature-symbol">(</span>A<span class="tsd-signature-symbol">: </span><a href="classes/ndarray.html" class="tsd-signature-type">NDArray</a>, B<span class="tsd-signature-symbol">: </span><a href="classes/ndarray.html" class="tsd-signature-type">NDArray</a>, rcond<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="interfaces/lstsq_return.html" class="tsd-signature-type">lstsq_return</a></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/f291cbe/src/linalg/operations.ts#L532">linalg/operations.ts:532</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Return the least-squares solution to a linear matrix equation.</p>
+							</div>
+							<p>Solves the equation <code>a x = b</code> by computing a vector <code>x</code> that
+								minimizes the Euclidean 2-norm <code>|| b - a x ||^2</code>.  The equation may
+								be under-, well-, or over- determined (i.e., the number of
+								linearly independent rows of <code>a</code> can be less than, equal to, or
+								greater than its number of linearly independent columns).  If <code>a</code>
+								is square and of full rank, then <code>x</code> (but for round-off error) is
+							the &quot;exact&quot; solution of the equation.</p>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>A: <a href="classes/ndarray.html" class="tsd-signature-type">NDArray</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>Coefficient matrix (m-by-n)</p>
+								</div>
+							</li>
+							<li>
+								<h5>B: <a href="classes/ndarray.html" class="tsd-signature-type">NDArray</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>Values on RHS of equation system. Could be array of length
+									m or it could be 2D with dimensions m-by-k</p>
+								</div>
+							</li>
+							<li>
+								<h5><span class="tsd-flag ts-flagDefault value">Default value</span> rcond: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;-1</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>Cut-off ratio for small singular values of <code>a</code></p>
+								</div>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <a href="interfaces/lstsq_return.html" class="tsd-signature-type">lstsq_return</a></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function">
 				<a name="matmul" class="tsd-anchor"></a>
 				<h3>matmul</h3>
 				<ul class="tsd-signatures tsd-kind-function">
@@ -1162,7 +1306,7 @@ linalg.solve(A,B);
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/0d0c8ce/src/linalg/operations.ts#L32">linalg/operations.ts:32</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/f291cbe/src/linalg/operations.ts#L33">linalg/operations.ts:33</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1196,7 +1340,7 @@ linalg.solve(A,B);
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/0d0c8ce/src/linalg/operations.ts#L104">linalg/operations.ts:104</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/f291cbe/src/linalg/operations.ts#L105">linalg/operations.ts:105</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1236,7 +1380,7 @@ linalg.solve(A,B);
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/0d0c8ce/src/linalg/operations.ts#L368">linalg/operations.ts:368</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/f291cbe/src/linalg/operations.ts#L369">linalg/operations.ts:369</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1265,6 +1409,44 @@ linalg.solve(A,B);
 				</ul>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-function">
+				<a name="rank" class="tsd-anchor"></a>
+				<h3>rank</h3>
+				<ul class="tsd-signatures tsd-kind-function">
+					<li class="tsd-signature tsd-kind-icon">rank<span class="tsd-signature-symbol">(</span>A<span class="tsd-signature-symbol">: </span><a href="classes/ndarray.html" class="tsd-signature-type">NDArray</a>, tol<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/f291cbe/src/linalg/operations.ts#L477">linalg/operations.ts:477</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Rank of a matrix is defined by number of singular values of the matrix that
+								are non-zero (within given tolerance)</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>A: <a href="classes/ndarray.html" class="tsd-signature-type">NDArray</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>Matrix to determine rank of</p>
+								</div>
+							</li>
+							<li>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> tol: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>Tolerance for zero-check of singular values</p>
+								</div>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function">
 				<a name="solve" class="tsd-anchor"></a>
 				<h3>solve</h3>
 				<ul class="tsd-signatures tsd-kind-function">
@@ -1274,7 +1456,7 @@ linalg.solve(A,B);
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/0d0c8ce/src/linalg/operations.ts#L314">linalg/operations.ts:314</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/f291cbe/src/linalg/operations.ts#L315">linalg/operations.ts:315</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1315,7 +1497,7 @@ linalg.solve(A,B);
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/0d0c8ce/src/linalg/operations.ts#L416">linalg/operations.ts:416</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/f291cbe/src/linalg/operations.ts#L417">linalg/operations.ts:417</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1363,7 +1545,7 @@ linalg.solve(A,B);
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/0d0c8ce/src/linalg/construction.ts#L63">linalg/construction.ts:63</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/f291cbe/src/linalg/construction.ts#L63">linalg/construction.ts:63</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">

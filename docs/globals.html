@@ -900,6 +900,9 @@ img { max-width: 100%; }
 			<a href="interfaces/lstsq_return.html" class="tsd-kind-icon">lstsq_<wbr>return</a>
 		</li>
 		<li class=" tsd-kind-function">
+			<a href="globals.html#det" class="tsd-kind-icon">det</a>
+		</li>
+		<li class=" tsd-kind-function">
 			<a href="globals.html#eye" class="tsd-kind-icon">eye</a>
 		</li>
 		<li class=" tsd-kind-function">
@@ -931,6 +934,9 @@ img { max-width: 100%; }
 		</li>
 		<li class=" tsd-kind-function">
 			<a href="globals.html#rank" class="tsd-kind-icon">rank</a>
+		</li>
+		<li class=" tsd-kind-function">
+			<a href="globals.html#slogdet" class="tsd-kind-icon">slogdet</a>
 		</li>
 		<li class=" tsd-kind-function">
 			<a href="globals.html#solve" class="tsd-kind-icon">solve</a>
@@ -1009,6 +1015,7 @@ linalg.solve(A,B);
 					<section class="tsd-index-section ">
 						<h3>Functions</h3>
 						<ul class="tsd-index-list">
+							<li class="tsd-kind-function"><a href="globals.html#det" class="tsd-kind-icon">det</a></li>
 							<li class="tsd-kind-function"><a href="globals.html#eye" class="tsd-kind-icon">eye</a></li>
 							<li class="tsd-kind-function"><a href="globals.html#gelsd" class="tsd-kind-icon">gelsd</a></li>
 							<li class="tsd-kind-function"><a href="globals.html#getrf" class="tsd-kind-icon">getrf</a></li>
@@ -1020,6 +1027,7 @@ linalg.solve(A,B);
 							<li class="tsd-kind-function"><a href="globals.html#norm" class="tsd-kind-icon">norm</a></li>
 							<li class="tsd-kind-function"><a href="globals.html#outer" class="tsd-kind-icon">outer</a></li>
 							<li class="tsd-kind-function"><a href="globals.html#rank" class="tsd-kind-icon">rank</a></li>
+							<li class="tsd-kind-function"><a href="globals.html#slogdet" class="tsd-kind-icon">slogdet</a></li>
 							<li class="tsd-kind-function"><a href="globals.html#solve" class="tsd-kind-icon">solve</a></li>
 							<li class="tsd-kind-function"><a href="globals.html#svd" class="tsd-kind-icon">svd</a></li>
 							<li class="tsd-kind-function"><a href="globals.html#zeros" class="tsd-kind-icon">zeros</a></li>
@@ -1031,6 +1039,37 @@ linalg.solve(A,B);
 		<section class="tsd-panel-group tsd-member-group ">
 			<h2>Functions</h2>
 			<section class="tsd-panel tsd-member tsd-kind-function">
+				<a name="det" class="tsd-anchor"></a>
+				<h3>det</h3>
+				<ul class="tsd-signatures tsd-kind-function">
+					<li class="tsd-signature tsd-kind-icon">det<span class="tsd-signature-symbol">(</span>A<span class="tsd-signature-symbol">: </span><a href="classes/ndarray.html" class="tsd-signature-type">NDArray</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/97e054d/src/linalg/operations.ts#L636">linalg/operations.ts:636</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Compute determinant of a matrix</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>A: <a href="classes/ndarray.html" class="tsd-signature-type">NDArray</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>Square matrix to compute determinant</p>
+								</div>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function">
 				<a name="eye" class="tsd-anchor"></a>
 				<h3>eye</h3>
 				<ul class="tsd-signatures tsd-kind-function">
@@ -1040,7 +1079,7 @@ linalg.solve(A,B);
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/f291cbe/src/linalg/construction.ts#L34">linalg/construction.ts:34</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/97e054d/src/linalg/construction.ts#L34">linalg/construction.ts:34</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1076,7 +1115,7 @@ linalg.solve(A,B);
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/f291cbe/src/linalg/lapack/gelsd.ts#L92">linalg/lapack/gelsd.ts:92</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/97e054d/src/linalg/lapack/gelsd.ts#L92">linalg/lapack/gelsd.ts:92</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1117,7 +1156,7 @@ linalg.solve(A,B);
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/f291cbe/src/linalg/lapack/getrf.ts#L65">linalg/lapack/getrf.ts:65</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/97e054d/src/linalg/lapack/getrf.ts#L65">linalg/lapack/getrf.ts:65</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1149,7 +1188,7 @@ linalg.solve(A,B);
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/f291cbe/src/linalg/operations.ts#L352">linalg/operations.ts:352</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/97e054d/src/linalg/operations.ts#L351">linalg/operations.ts:351</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1190,7 +1229,7 @@ linalg.solve(A,B);
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/f291cbe/src/utils.ts#L50">utils.ts:50</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/97e054d/src/utils.ts#L50">utils.ts:50</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1224,7 +1263,7 @@ linalg.solve(A,B);
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/f291cbe/src/utils.ts#L43">utils.ts:43</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/97e054d/src/utils.ts#L43">utils.ts:43</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1255,7 +1294,7 @@ linalg.solve(A,B);
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/f291cbe/src/linalg/operations.ts#L532">linalg/operations.ts:532</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/97e054d/src/linalg/operations.ts#L531">linalg/operations.ts:531</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1306,7 +1345,7 @@ linalg.solve(A,B);
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/f291cbe/src/linalg/operations.ts#L33">linalg/operations.ts:33</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/97e054d/src/linalg/operations.ts#L34">linalg/operations.ts:34</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1340,7 +1379,7 @@ linalg.solve(A,B);
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/f291cbe/src/linalg/operations.ts#L105">linalg/operations.ts:105</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/97e054d/src/linalg/operations.ts#L106">linalg/operations.ts:106</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1380,7 +1419,7 @@ linalg.solve(A,B);
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/f291cbe/src/linalg/operations.ts#L369">linalg/operations.ts:369</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/97e054d/src/linalg/operations.ts#L368">linalg/operations.ts:368</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1418,7 +1457,7 @@ linalg.solve(A,B);
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/f291cbe/src/linalg/operations.ts#L477">linalg/operations.ts:477</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/97e054d/src/linalg/operations.ts#L476">linalg/operations.ts:476</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1447,6 +1486,41 @@ linalg.solve(A,B);
 				</ul>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-function">
+				<a name="slogdet" class="tsd-anchor"></a>
+				<h3>slogdet</h3>
+				<ul class="tsd-signatures tsd-kind-function">
+					<li class="tsd-signature tsd-kind-icon">slogdet<span class="tsd-signature-symbol">(</span>A<span class="tsd-signature-symbol">: </span><a href="classes/ndarray.html" class="tsd-signature-type">NDArray</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/97e054d/src/linalg/operations.ts#L592">linalg/operations.ts:592</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Compute sign and natural logarithm of the determinant of given Matrix
+									If an array has a very small or very large determinant, then a call to
+									<code>det</code> may overflow or underflow. This routine is more robust against such
+									issues, because it computes the logarithm of the determinant rather than
+								the determinant itself.</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>A: <a href="classes/ndarray.html" class="tsd-signature-type">NDArray</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>Square matrix to compute sign and log-determinant of</p>
+								</div>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function">
 				<a name="solve" class="tsd-anchor"></a>
 				<h3>solve</h3>
 				<ul class="tsd-signatures tsd-kind-function">
@@ -1456,7 +1530,7 @@ linalg.solve(A,B);
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/f291cbe/src/linalg/operations.ts#L315">linalg/operations.ts:315</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/97e054d/src/linalg/operations.ts#L314">linalg/operations.ts:314</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1497,7 +1571,7 @@ linalg.solve(A,B);
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/f291cbe/src/linalg/operations.ts#L417">linalg/operations.ts:417</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/97e054d/src/linalg/operations.ts#L416">linalg/operations.ts:416</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1545,7 +1619,7 @@ linalg.solve(A,B);
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/f291cbe/src/linalg/construction.ts#L63">linalg/construction.ts:63</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/97e054d/src/linalg/construction.ts#L63">linalg/construction.ts:63</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">

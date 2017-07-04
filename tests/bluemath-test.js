@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 36);
+/******/ 	return __webpack_require__(__webpack_require__.s = 31);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -93,7 +93,7 @@ along with bluemath. If not, see <http://www.gnu.org/licenses/>.
 
 */
 Object.defineProperty(exports, "__esModule", { value: true });
-var lapacklite = __webpack_require__(1);
+var lapacklite = __webpack_require__(2);
 var em = lapacklite.Module;
 /**
  * @hidden
@@ -332,6 +332,59 @@ exports.defineEmArrayVariable = defineEmArrayVariable;
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
+"use strict";
+
+/*
+
+Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
+
+This file is part of bluemath.
+
+bluemath is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+bluemath is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with bluemath. If not, see <http://www.gnu.org/licenses/>.
+
+*/
+Object.defineProperty(exports, "__esModule", { value: true });
+var ops_1 = __webpack_require__(29);
+exports.eye = ops_1.eye;
+exports.zeros = ops_1.zeros;
+exports.iszero = ops_1.iszero;
+exports.isequal = ops_1.isequal;
+exports.torad = ops_1.torad;
+exports.todeg = ops_1.todeg;
+exports.add = ops_1.add;
+exports.mul = ops_1.mul;
+exports.sub = ops_1.sub;
+exports.div = ops_1.div;
+var linalg = __webpack_require__(16);
+exports.linalg = linalg;
+var constants_1 = __webpack_require__(3);
+exports.EPSILON = constants_1.EPSILON;
+var basic_1 = __webpack_require__(11);
+exports.NDArray = basic_1.NDArray;
+exports.Matrix = basic_1.Matrix;
+exports.Vector = basic_1.Vector;
+exports.Vector2 = basic_1.Vector2;
+exports.Vector3 = basic_1.Vector3;
+exports.Complex = basic_1.Complex;
+exports.PermutationVector = basic_1.PermutationVector;
+exports.BandMatrix = basic_1.BandMatrix;
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
 /* WEBPACK VAR INJECTION */(function(process) {var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
 ;(function (root, factory) {
     if (true) {  
@@ -382,10 +435,10 @@ return {Module:Module};
 
 }));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(40)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(35)))
 
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -416,45 +469,6 @@ exports.EPSILON = EPSILON;
 
 
 /***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-/*
-
-Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
-
-This file is part of bluemath.
-
-bluemath is free software: you can redistribute it and/or modify
-it under the terms of the GNU Affero General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-bluemath is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU Affero General Public License for more details.
-
-You should have received a copy of the GNU Affero General Public License
-along with bluemath. If not, see <http://www.gnu.org/licenses/>.
-
-*/
-Object.defineProperty(exports, "__esModule", { value: true });
-var utils = __webpack_require__(5);
-exports.utils = utils;
-var basic = __webpack_require__(6);
-exports.basic = basic;
-var geom = __webpack_require__(18);
-exports.geom = geom;
-var linalg = __webpack_require__(22);
-exports.linalg = linalg;
-var constants_1 = __webpack_require__(2);
-exports.EPSILON = constants_1.EPSILON;
-
-
-/***/ }),
 /* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -481,8 +495,8 @@ along with bluemath. If not, see <http://www.gnu.org/licenses/>.
 
 */
 Object.defineProperty(exports, "__esModule", { value: true });
-var __1 = __webpack_require__(3);
-var constants_1 = __webpack_require__(2);
+var __1 = __webpack_require__(1);
+var constants_1 = __webpack_require__(3);
 /**
  * @hidden
  */
@@ -597,7 +611,7 @@ var Vector = (function () {
      */
     Vector.prototype.unit = function () {
         var len = this.len();
-        if (__1.utils.iszero(len)) {
+        if (__1.iszero(len)) {
             var arr = new Array(this.size());
             for (var i = 0, l = this.size(); i < l; i++) {
                 arr[i] = 0.0;
@@ -670,7 +684,7 @@ var Vector = (function () {
     Vector.prototype.isEqual = function (other, tolerance) {
         if (tolerance === void 0) { tolerance = constants_1.EPSILON; }
         for (var i = 0; i < this._data.length; i++) {
-            if (!__1.utils.isequal(this._data[i], other._data[i], tolerance)) {
+            if (!__1.isequal(this._data[i], other._data[i], tolerance)) {
                 return false;
             }
         }
@@ -773,79 +787,6 @@ exports.default = Vector;
 
 "use strict";
 
-Object.defineProperty(exports, "__esModule", { value: true });
-/*
-
-Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
-
-This file is part of bluemath.
-
-bluemath is free software: you can redistribute it and/or modify
-it under the terms of the GNU Affero General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-bluemath is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU Affero General Public License for more details.
-
-You should have received a copy of the GNU Affero General Public License
-along with bluemath. If not, see <http://www.gnu.org/licenses/>.
-
-*/
-var constants_1 = __webpack_require__(2);
-/**
- * @hidden
- * Convert angle to degrees
- */
-function toDeg(angleInRadians) {
-    return 180 * angleInRadians / Math.PI;
-}
-exports.toDeg = toDeg;
-/**
- * @hidden
- * Convert angle to radians
- */
-function toRad(angleInDegrees) {
-    return Math.PI * angleInDegrees / 180;
-}
-exports.toRad = toRad;
-/**
- * Check if input equals zero within given tolerance
- */
-function iszero(x, tolerance) {
-    if (tolerance === void 0) { tolerance = constants_1.EPSILON; }
-    return Math.abs(x) < tolerance;
-}
-exports.iszero = iszero;
-/**
- * Check if two input numbers are equal within given tolerance
- */
-function isequal(a, b, tolerance) {
-    if (tolerance === void 0) { tolerance = constants_1.EPSILON; }
-    return iszero(a - b, tolerance);
-}
-exports.isequal = isequal;
-/**
- * @hidden
- * Find cube root of given number. Math.pow return NaN while taking
- * cube root of negative number, because some of the results might
- * be complex numbers. This function only return the real cubeRoot
- * of given number
- */
-function cuberoot(x) {
-    return x < 0 ? -Math.pow(-x, 1 / 3) : Math.pow(x, 1 / 3);
-}
-exports.cuberoot = cuberoot;
-
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
 /*
 
 Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
@@ -867,54 +808,9 @@ along with bluemath. If not, see <http://www.gnu.org/licenses/>.
 
 */
 Object.defineProperty(exports, "__esModule", { value: true });
-var matrix_1 = __webpack_require__(7);
-exports.Matrix = matrix_1.default;
-var bmatrix_1 = __webpack_require__(14);
-exports.BandMatrix = bmatrix_1.default;
+var __1 = __webpack_require__(1);
 var vector_1 = __webpack_require__(4);
-exports.Vector = vector_1.default;
-var vector2_1 = __webpack_require__(16);
-exports.Vector2 = vector2_1.default;
-var vector3_1 = __webpack_require__(17);
-exports.Vector3 = vector3_1.default;
-var pvector_1 = __webpack_require__(15);
-exports.PermutationVector = pvector_1.default;
-var ndarray_1 = __webpack_require__(9);
-exports.NDArray = ndarray_1.default;
-var complex_1 = __webpack_require__(8);
-exports.Complex = complex_1.default;
-
-
-/***/ }),
-/* 7 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-/*
-
-Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
-
-This file is part of bluemath.
-
-bluemath is free software: you can redistribute it and/or modify
-it under the terms of the GNU Affero General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-bluemath is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU Affero General Public License for more details.
-
-You should have received a copy of the GNU Affero General Public License
-along with bluemath. If not, see <http://www.gnu.org/licenses/>.
-
-*/
-Object.defineProperty(exports, "__esModule", { value: true });
-var vector_1 = __webpack_require__(4);
-var __1 = __webpack_require__(3);
-var constants_1 = __webpack_require__(2);
+var constants_1 = __webpack_require__(3);
 /**
  * @hidden
  */
@@ -1162,7 +1058,7 @@ var Matrix = (function () {
         }
         for (var i = 0; i < this.rows; i++) {
             for (var j = 0; j < this.cols; j++) {
-                if (!__1.utils.isequal(this.get(i, j), other.get(i, j), tolerance)) {
+                if (!__1.isequal(this.get(i, j), other.get(i, j), tolerance)) {
                     return false;
                 }
             }
@@ -1251,6 +1147,109 @@ exports.default = Matrix;
 
 
 /***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+/*
+
+Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
+
+This file is part of bluemath.
+
+bluemath is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+bluemath is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with bluemath. If not, see <http://www.gnu.org/licenses/>.
+
+*/
+Object.defineProperty(exports, "__esModule", { value: true });
+var constants_1 = __webpack_require__(3);
+var __1 = __webpack_require__(1);
+var Complex = (function () {
+    function Complex(real, imag) {
+        this.real = real || 0;
+        this.imag = imag || 0;
+    }
+    Complex.prototype.clone = function () {
+        return new Complex(this.real, this.imag);
+    };
+    Complex.prototype.isEqual = function (other, tolerance) {
+        if (tolerance === void 0) { tolerance = constants_1.EPSILON; }
+        return __1.isequal(this.real, other.real, tolerance) &&
+            __1.isequal(this.imag, other.imag, tolerance);
+    };
+    Complex.prototype.toString = function (precision) {
+        if (precision === void 0) { precision = 4; }
+        var sign = (this.imag >= 0) ? '+' : '-';
+        return "(" + this.real.toFixed(precision) +
+            ("" + sign + Math.abs(this.imag).toFixed(precision) + "i)");
+    };
+    return Complex;
+}());
+exports.default = Complex;
+
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+/*
+Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
+
+This file is part of bluemath.
+
+bluemath is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+bluemath is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with bluemath. If not, see <http://www.gnu.org/licenses/>.
+
+*/
+var dot_1 = __webpack_require__(17);
+exports.dot = dot_1.dot;
+var gemv_1 = __webpack_require__(18);
+exports.gemv = gemv_1.gemv;
+var gemm_1 = __webpack_require__(19);
+exports.gemm = gemm_1.gemm;
+var gesv_1 = __webpack_require__(24);
+exports.gesv = gesv_1.gesv;
+var gesdd_1 = __webpack_require__(23);
+exports.gesdd = gesdd_1.gesdd;
+var gelsd_1 = __webpack_require__(21);
+exports.gelsd = gelsd_1.gelsd;
+var getrf_1 = __webpack_require__(25);
+exports.getrf = getrf_1.getrf;
+var geev_1 = __webpack_require__(20);
+exports.geev = geev_1.geev;
+var geqrf_1 = __webpack_require__(22);
+exports.geqrf = geqrf_1.geqrf;
+var orgqr_1 = __webpack_require__(26);
+exports.orgqr = orgqr_1.orgqr;
+var potrf_1 = __webpack_require__(27);
+exports.potrf = potrf_1.potrf;
+
+
+/***/ }),
 /* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1277,31 +1276,143 @@ along with bluemath. If not, see <http://www.gnu.org/licenses/>.
 
 */
 Object.defineProperty(exports, "__esModule", { value: true });
-var constants_1 = __webpack_require__(2);
-var utils_1 = __webpack_require__(5);
-var Complex = (function () {
-    function Complex(real, imag) {
-        this.real = real || 0;
-        this.imag = imag || 0;
-    }
-    Complex.prototype.isEqual = function (other, tolerance) {
-        if (tolerance === void 0) { tolerance = constants_1.EPSILON; }
-        return utils_1.isequal(this.real, other.real, tolerance) &&
-            utils_1.isequal(this.imag, other.imag, tolerance);
-    };
-    Complex.prototype.toString = function (precision) {
-        if (precision === void 0) { precision = 4; }
-        var sign = (this.imag >= 0) ? '+' : '-';
-        return "(" + this.real.toFixed(precision) +
-            ("" + sign + Math.abs(this.imag).toFixed(precision) + "i)");
-    };
-    return Complex;
-}());
-exports.default = Complex;
+var ndarray_1 = __webpack_require__(30);
+//import testVector from './vector'
+//import testMatrix from './matrix'
+function testBasic() {
+    ndarray_1.default();
+    //testVector();
+    //testMatrix();
+}
+exports.default = testBasic;
 
 
 /***/ }),
 /* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+/*
+
+Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
+
+This file is part of bluemath.
+
+bluemath is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+bluemath is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with bluemath. If not, see <http://www.gnu.org/licenses/>.
+
+*/
+//import testBLAS from './blas'
+var construction_1 = __webpack_require__(32);
+var operations_1 = __webpack_require__(34);
+var lapack_1 = __webpack_require__(33);
+function testLinalg() {
+    QUnit.module('linalg', function () {
+        //testBLAS();
+        construction_1.default();
+        operations_1.default();
+        lapack_1.default();
+    });
+}
+exports.default = testLinalg;
+
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var matrix_1 = __webpack_require__(5);
+;
+/**
+ * @hidden
+ */
+var BandMatrix = (function (_super) {
+    __extends(BandMatrix, _super);
+    function BandMatrix(def) {
+        var _this = this;
+        var nrows = def.lowerbandwidth + def.upperbandwidth + 1;
+        var ncols = Math.min(def.rows, def.cols);
+        console.assert(def.data.length === nrows * ncols);
+        _this = _super.call(this, { rows: nrows, cols: ncols, data: def.data }) || this;
+        _this._def = def;
+        return _this;
+    }
+    /**
+     *
+     * @example
+     * For the rectangular matrix
+     *    -                         -
+     *    | a11 a12 a13   0   0   0 |
+     *    | a21 a22 a23 a24   0   0 |
+     *    |   0 a32 a33 a34 a35   0 |
+     *    |   0   0 a43 a44 a45   0 |
+     *    |   0   0   0 a54 a55 a56 |
+     *    |   0   0   0   0 a65 a66 |
+     *    -                         -
+     *
+     * Band matrix is given by
+     *    lower bandwidth p = 1
+     *    upper bandwidth q = 2
+     *    -                         -
+     *    |   *   * a13 a24 a35 a46 |
+     *    |   * a12 a23 a34 a45 a56 |
+     *    | a11 a22 a33 a44 a55 a66 |
+     *    | a21 a32 a43 a54 a65   * |
+     *    -                         -
+     */
+    BandMatrix.prototype.toRectangularMatrix = function () {
+        var m = new matrix_1.default({
+            rows: this._def.rows,
+            cols: this._def.cols
+        }, 'f32');
+        var q = this._def.upperbandwidth;
+        for (var i = 0; i < m.rows; i++) {
+            for (var j = 0; j < m.cols; j++) {
+                var brow = i - j + q;
+                var bcol = j;
+                if (brow < 0 || brow >= this.rows ||
+                    bcol < 0 || bcol >= this.cols) {
+                    m.set(i, j, 0);
+                }
+                else {
+                    m.set(i, j, this.get(brow, bcol));
+                }
+            }
+        }
+        return m;
+    };
+    return BandMatrix;
+}(matrix_1.default));
+exports.default = BandMatrix;
+
+
+/***/ }),
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1327,9 +1438,54 @@ along with bluemath. If not, see <http://www.gnu.org/licenses/>.
 
 */
 Object.defineProperty(exports, "__esModule", { value: true });
-var utils_1 = __webpack_require__(5);
-var constants_1 = __webpack_require__(2);
-var complex_1 = __webpack_require__(8);
+var matrix_1 = __webpack_require__(5);
+exports.Matrix = matrix_1.default;
+var bmatrix_1 = __webpack_require__(10);
+exports.BandMatrix = bmatrix_1.default;
+var vector_1 = __webpack_require__(4);
+exports.Vector = vector_1.default;
+var vector2_1 = __webpack_require__(14);
+exports.Vector2 = vector2_1.default;
+var vector3_1 = __webpack_require__(15);
+exports.Vector3 = vector3_1.default;
+var pvector_1 = __webpack_require__(13);
+exports.PermutationVector = pvector_1.default;
+var ndarray_1 = __webpack_require__(12);
+exports.NDArray = ndarray_1.default;
+var complex_1 = __webpack_require__(6);
+exports.Complex = complex_1.default;
+
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+/*
+
+Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
+
+This file is part of bluemath.
+
+bluemath is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+bluemath is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with bluemath. If not, see <http://www.gnu.org/licenses/>.
+
+*/
+Object.defineProperty(exports, "__esModule", { value: true });
+var __1 = __webpack_require__(1);
+var constants_1 = __webpack_require__(3);
+var complex_1 = __webpack_require__(6);
 /**
  * @hidden
  */
@@ -1418,10 +1574,52 @@ function getDataArrayType(typestr) {
     }
 }
 /**
- * N-Dimensional array class
+ * N-Dimensional Array
+ * ===
+ *
  * It can store real as well as complex numbers in n-dimensions
  * It can be used to store Vectors (1D) or Matrices (2D).
  * This class stores the data internally in flat typed arrays
+ *
+ * NDArray is the central class of Bluemath library.
+ * It's used to input and output data to/from most of the APIs of this library.
+ *
+ * Construction
+ * ---
+ *
+ * You can create an NDArray
+ *
+ * * With shape and/or data type
+ * ```javascript
+ * // 3-dimensional array with 32-bit integer storage
+ * new NDArray({shape:[3,4,3],datatype:'i32'});
+ * ```
+ *
+ * * Initializing it with array data
+ * ```javascript
+ * // 2x3 Matrix with 64-bit floating point (double) storage
+ * new NDArray([[1,1,1],[4,4,4]],{datatype:'f64'});
+ * ```
+ *
+ * * Using standard functions
+ * ```javascript
+ * zeros([2,2,2]); // Returns 2x2x2 NDArray of zeros
+ * eye([4,4]); // Creates 4x4 Identity matrix
+ * ```
+ *
+ * Basic math operations
+ * ---
+ *
+ * Bluemath provides functions that allow basic math operations
+ * on NDArrays
+ *
+ * [[add]]
+ *
+ * [[sub]]
+ *
+ * [[mul]]
+ *
+ * [[div]]
  */
 var NDArray = (function () {
     function NDArray(arg0, arg1) {
@@ -1435,6 +1633,9 @@ var NDArray = (function () {
                 this.datatype = arg1.datatype;
             }
             this._alloc(this.size, arg0, this.datatype);
+            if (arg1 && arg1.idata) {
+                this._idata = arg1.idata;
+            }
         }
         else if (ArrayBuffer.isView(arg0)) {
             this._data = arg0;
@@ -1447,6 +1648,9 @@ var NDArray = (function () {
             // in this case options.datatype is ignored if supplied
             this.datatype = deduceNumberType(arg0);
             this._calcSize();
+            if (arg1 && arg1.idata) {
+                this._idata = arg1.idata;
+            }
         }
         else {
             var options = arg0;
@@ -1460,6 +1664,9 @@ var NDArray = (function () {
                 if (options.fill) {
                     this._data.fill(options.fill);
                 }
+            }
+            if (options.idata) {
+                this._idata = options.idata;
             }
         }
     }
@@ -1494,7 +1701,7 @@ var NDArray = (function () {
     NDArray.prototype.clone = function () {
         var dataArrayType = getDataArrayType(this.datatype);
         var data = new dataArrayType(this._data);
-        return new NDArray(data, { shape: this.shape.slice() });
+        return new NDArray(data, { shape: this.shape.slice(), idata: this._idata.slice() });
     };
     NDArray.prototype._calcSize = function () {
         this.size = this.shape.reduce(function (prev, cur) { return prev * cur; }, 1);
@@ -1607,7 +1814,12 @@ var NDArray = (function () {
             index[_i] = arguments[_i];
         }
         var addr = this._indexToAddress.apply(this, index);
-        return this._data[addr];
+        if (this._idata[addr] === undefined) {
+            return this._data[addr];
+        }
+        else {
+            return new complex_1.default(this._data[addr], this._idata[addr]);
+        }
     };
     /**
      * Set member at given index
@@ -1659,7 +1871,7 @@ var NDArray = (function () {
         if (tolerance === void 0) { tolerance = constants_1.EPSILON; }
         for (var i = 0; i < this._data.length; i++) {
             if (this._idata[i] === undefined) {
-                if (!utils_1.isequal(this._data[i], otherdata[i], tolerance)) {
+                if (!__1.isequal(this._data[i], otherdata[i], tolerance)) {
                     return false;
                 }
             }
@@ -1676,13 +1888,23 @@ var NDArray = (function () {
         return true;
     };
     /**
-     * Does equality test for each element of the array as well as the
-     * shape of the arrays
-     * @param other Other NDArray to compare with
-     * @param tolerance
+     * Iterate over each element, invoke a callback with each index and value
      */
-    NDArray.prototype.isEqual = function (other, tolerance) {
-        if (tolerance === void 0) { tolerance = constants_1.EPSILON; }
+    NDArray.prototype.forEach = function (callback) {
+        for (var i = 0; i < this.size; i++) {
+            var index = this._addressToIndex(i);
+            if (this._idata[i] === undefined) {
+                callback.apply(void 0, [this._data[i]].concat(index));
+            }
+            else {
+                callback.apply(void 0, [new complex_1.default(this._data[i], this._idata[i])].concat(index));
+            }
+        }
+    };
+    /**
+     * Checks if the shape of this ndarray matches the shape of other
+     */
+    NDArray.prototype.isShapeEqual = function (other) {
         if (this.shape.length !== other.shape.length) {
             return false;
         }
@@ -1691,7 +1913,18 @@ var NDArray = (function () {
                 return false;
             }
         }
-        return other.datacompare(this._data, this._idata, tolerance);
+        return true;
+    };
+    /**
+     * Does equality test for each element of the array as well as the
+     * shape of the arrays
+     * @param other Other NDArray to compare with
+     * @param tolerance
+     */
+    NDArray.prototype.isEqual = function (other, tolerance) {
+        if (tolerance === void 0) { tolerance = constants_1.EPSILON; }
+        var shapeequal = this.isShapeEqual(other);
+        return shapeequal && other.datacompare(this._data, this._idata, tolerance);
     };
     /**
      * Change between Row-major and Column-major layout
@@ -1711,13 +1944,58 @@ var NDArray = (function () {
         }
     };
     /**
-     * TBD
-     * @param slices
+     * Bluemath supports extracting of NDArray slices using a syntax similar
+     * to numpy. Slicing is supported by NDArray.slice function.
+     *
+     * The function accepts number of arguments not greater than the dimensions
+     * of the NDArray.
+     * Each argument could be a `number`, a `string` in format `<start>:<stop>`
+     * or `undefined` or `null`.
+     *
+     * If the argument is a number then it represents a single slice,
+     * i.e. all the elements in the lower dimension
+     * are returned for this index in given dimension.
+     * ```javascript
+     * let A = new NDArray([
+     *   [2,4,6],
+     *   [1,0,9],
+     *   [0,2,3]
+     * ]);
+     * A.slice(0); // [[2,4,6]]
+     * ```
+     *
+     * If the argument is `undefined` or `null`, then that's interpreted as
+     * all items in the given dimension.
+     * ```javascript
+     * A.slice(null); // [[2,4,6],[1,0,9],[0,2,3]]
+     * A.slice(1,null); // [[1,0,9]]
+     * ```
+     *
+     * A string argument of format `<start>:<stop>` is used to specify range of
+     * slices in the given dimension.
+     * Both `<start>` and `<stop>` are optional.
+     * ```javascript
+     * A.slice('1:2'); // [[1,0,9]]
+     * A.slice(':1'); // [[2,4,6]]
+     * A.slice(':'); // [[2,4,6],[1,0,9],[0,2,3]]
+     * A.slice(':',2); // [[6],[9],[3]]
+     * ```
+     *
+     * The argument order is interpreted as going from outermost dimension to
+     * innermost.
+     *
+     * Caveats
+     * ---
+     * * Negative indices not supported yet
+     * * No support for `<start>:<stop>:<step>` format yet
      */
     NDArray.prototype.slice = function () {
         var slices = [];
         for (var _i = 0; _i < arguments.length; _i++) {
             slices[_i] = arguments[_i];
+        }
+        if (slices.length > this.shape.length) {
+            throw new Error('Excess number of dimensions specified');
         }
         var slice_recipe = [];
         // Each slice specifies the index-range in that dimension to return
@@ -1821,282 +2099,7 @@ exports.default = NDArray;
 
 
 /***/ }),
-/* 10 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var ndarray_1 = __webpack_require__(9);
-/**
- * Creates m-by-n Identity matrix
- *
- * ```
- * eye(2) // Creates 2x2 Identity matrix
- * eye([2,2]) // Creates 2x2 Identity matrix
- * eye([2,3]) // Create 2x3 Identity matrix with main diagonal set to 1
- * eye(2,'i32') // Creates 2x2 Identity matrix of 32-bit integers
- * ```
- */
-function eye(arg0, datatype) {
-    var n, m;
-    if (Array.isArray(arg0)) {
-        n = arg0[0];
-        if (arg0.length > 1) {
-            m = arg0[1];
-        }
-        else {
-            m = n;
-        }
-    }
-    else {
-        n = m = arg0;
-    }
-    var A = new ndarray_1.default({ shape: [n, m], datatype: datatype, fill: 0 });
-    var ndiag = Math.min(n, m);
-    for (var i = 0; i < ndiag; i++) {
-        A.set(i, i, 1);
-    }
-    return A;
-}
-exports.eye = eye;
-/**
- * Creates NDArray filled with zeros
- *
- * ```
- * zeros(2) // Creates 2x2 matrix of zeros
- * zeros([2,2,2]) // Create 2x2x2 matrix of zeros
- * zeros(2,'i16') // Creates 2x2 matrix of 16-bit integers filled with zeros
- * ```
- */
-function zeros(arg0, datatype) {
-    var A;
-    if (Array.isArray(arg0)) {
-        A = new ndarray_1.default({ shape: arg0, datatype: datatype });
-    }
-    else {
-        A = new ndarray_1.default({ shape: [arg0, arg0], datatype: datatype });
-    }
-    A.fill(0);
-    return A;
-}
-exports.zeros = zeros;
-
-
-/***/ }),
-/* 11 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-/*
-Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
-
-This file is part of bluemath.
-
-bluemath is free software: you can redistribute it and/or modify
-it under the terms of the GNU Affero General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-bluemath is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU Affero General Public License for more details.
-
-You should have received a copy of the GNU Affero General Public License
-along with bluemath. If not, see <http://www.gnu.org/licenses/>.
-
-*/
-var dot_1 = __webpack_require__(23);
-exports.dot = dot_1.dot;
-var gemv_1 = __webpack_require__(24);
-exports.gemv = gemv_1.gemv;
-var gemm_1 = __webpack_require__(25);
-exports.gemm = gemm_1.gemm;
-var gesv_1 = __webpack_require__(30);
-exports.gesv = gesv_1.gesv;
-var gesdd_1 = __webpack_require__(29);
-exports.gesdd = gesdd_1.gesdd;
-var gelsd_1 = __webpack_require__(27);
-exports.gelsd = gelsd_1.gelsd;
-var getrf_1 = __webpack_require__(31);
-exports.getrf = getrf_1.getrf;
-var geev_1 = __webpack_require__(26);
-exports.geev = geev_1.geev;
-var geqrf_1 = __webpack_require__(28);
-exports.geqrf = geqrf_1.geqrf;
-var orgqr_1 = __webpack_require__(32);
-exports.orgqr = orgqr_1.orgqr;
-var potrf_1 = __webpack_require__(33);
-exports.potrf = potrf_1.potrf;
-
-
-/***/ }),
-/* 12 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-/*
-
-Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
-
-This file is part of bluemath.
-
-bluemath is free software: you can redistribute it and/or modify
-it under the terms of the GNU Affero General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-bluemath is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU Affero General Public License for more details.
-
-You should have received a copy of the GNU Affero General Public License
-along with bluemath. If not, see <http://www.gnu.org/licenses/>.
-
-*/
-Object.defineProperty(exports, "__esModule", { value: true });
-var ndarray_1 = __webpack_require__(35);
-//import testVector from './vector'
-//import testMatrix from './matrix'
-function testBasic() {
-    ndarray_1.default();
-    //testVector();
-    //testMatrix();
-}
-exports.default = testBasic;
-
-
-/***/ }),
 /* 13 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-/*
-
-Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
-
-This file is part of bluemath.
-
-bluemath is free software: you can redistribute it and/or modify
-it under the terms of the GNU Affero General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-bluemath is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU Affero General Public License for more details.
-
-You should have received a copy of the GNU Affero General Public License
-along with bluemath. If not, see <http://www.gnu.org/licenses/>.
-
-*/
-//import testBLAS from './blas'
-var construction_1 = __webpack_require__(37);
-var operations_1 = __webpack_require__(39);
-var lapack_1 = __webpack_require__(38);
-function testLinalg() {
-    QUnit.module('linalg', function () {
-        //testBLAS();
-        construction_1.default();
-        operations_1.default();
-        lapack_1.default();
-    });
-}
-exports.default = testLinalg;
-
-
-/***/ }),
-/* 14 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-var matrix_1 = __webpack_require__(7);
-;
-/**
- * @hidden
- */
-var BandMatrix = (function (_super) {
-    __extends(BandMatrix, _super);
-    function BandMatrix(def) {
-        var _this = this;
-        var nrows = def.lowerbandwidth + def.upperbandwidth + 1;
-        var ncols = Math.min(def.rows, def.cols);
-        console.assert(def.data.length === nrows * ncols);
-        _this = _super.call(this, { rows: nrows, cols: ncols, data: def.data }) || this;
-        _this._def = def;
-        return _this;
-    }
-    /**
-     *
-     * @example
-     * For the rectangular matrix
-     *    -                         -
-     *    | a11 a12 a13   0   0   0 |
-     *    | a21 a22 a23 a24   0   0 |
-     *    |   0 a32 a33 a34 a35   0 |
-     *    |   0   0 a43 a44 a45   0 |
-     *    |   0   0   0 a54 a55 a56 |
-     *    |   0   0   0   0 a65 a66 |
-     *    -                         -
-     *
-     * Band matrix is given by
-     *    lower bandwidth p = 1
-     *    upper bandwidth q = 2
-     *    -                         -
-     *    |   *   * a13 a24 a35 a46 |
-     *    |   * a12 a23 a34 a45 a56 |
-     *    | a11 a22 a33 a44 a55 a66 |
-     *    | a21 a32 a43 a54 a65   * |
-     *    -                         -
-     */
-    BandMatrix.prototype.toRectangularMatrix = function () {
-        var m = new matrix_1.default({
-            rows: this._def.rows,
-            cols: this._def.cols
-        }, 'f32');
-        var q = this._def.upperbandwidth;
-        for (var i = 0; i < m.rows; i++) {
-            for (var j = 0; j < m.cols; j++) {
-                var brow = i - j + q;
-                var bcol = j;
-                if (brow < 0 || brow >= this.rows ||
-                    bcol < 0 || bcol >= this.cols) {
-                    m.set(i, j, 0);
-                }
-                else {
-                    m.set(i, j, this.get(brow, bcol));
-                }
-            }
-        }
-        return m;
-    };
-    return BandMatrix;
-}(matrix_1.default));
-exports.default = BandMatrix;
-
-
-/***/ }),
-/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2113,7 +2116,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var vector_1 = __webpack_require__(4);
-var matrix_1 = __webpack_require__(7);
+var matrix_1 = __webpack_require__(5);
 /**
  * @hidden
  */
@@ -2149,7 +2152,7 @@ exports.default = PermutationVector;
 
 
 /***/ }),
-/* 16 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2234,7 +2237,7 @@ exports.default = Vector2;
 
 
 /***/ }),
-/* 17 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2288,7 +2291,7 @@ exports.default = Vector3;
 
 
 /***/ }),
-/* 18 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2314,438 +2317,7 @@ along with bluemath. If not, see <http://www.gnu.org/licenses/>.
 
 */
 Object.defineProperty(exports, "__esModule", { value: true });
-var nurbs = __webpack_require__(21);
-exports.nurbs = nurbs;
-
-
-/***/ }),
-/* 19 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-/*
-
-Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
-
-This file is part of bluemath.
-
-bluemath is free software: you can redistribute it and/or modify
-it under the terms of the GNU Affero General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-bluemath is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU Affero General Public License for more details.
-
-You should have received a copy of the GNU Affero General Public License
-along with bluemath. If not, see <http://www.gnu.org/licenses/>.
-
-*/
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-var helper_1 = __webpack_require__(20);
-var basic_1 = __webpack_require__(6);
-/**
- * @hidden
- */
-var BSplineCurve = (function () {
-    function BSplineCurve(degree, cpoints, knots, weights) {
-        this.degree = degree;
-        this.cpoints = cpoints;
-        this.knots = knots;
-        this.weights = weights;
-        /*
-         The degree p, number of control points n+1, number of knots m+1
-         are related by
-         m = n + p + 1
-         [The NURBS book, P3.1]
-         */
-        var p = degree;
-        var m = knots.length + 1;
-        var n = cpoints.length + 1;
-        console.assert(m === n + p + 1);
-    }
-    /**
-     * Is this Rational BSpline Curve
-     */
-    BSplineCurve.prototype.isRational = function () {
-        return !!this.weights;
-    };
-    /**
-     * Evaluate basis function derivatives upto n'th
-     */
-    BSplineCurve.prototype.evaluateBasisDerivatives = function (span, n, t) {
-        return helper_1.getBasisFunctionDerivatives(this.degree, t, span, this.knots, n);
-    };
-    BSplineCurve.prototype.evaluateBasis = function (span, t) {
-        return helper_1.getBasisFunction(this.degree, this.knots, span, t);
-    };
-    BSplineCurve.prototype.findSpan = function (t) {
-        return helper_1.findSpan(this.degree, this.knots, t);
-    };
-    BSplineCurve.prototype.getTermDenominator = function (span, N) {
-        var p = this.degree;
-        var denominator;
-        if (this.weights) {
-            denominator = 0.0;
-            for (var i = 0; i < N.length; i++) {
-                denominator += N[i] * this.weights[span - p + i];
-            }
-        }
-        else {
-            denominator = 1.0;
-        }
-        return denominator;
-    };
-    return BSplineCurve;
-}());
-exports.BSplineCurve = BSplineCurve;
-/**
- * @hidden
- */
-var BSplineCurve2D = (function (_super) {
-    __extends(BSplineCurve2D, _super);
-    function BSplineCurve2D(degree, cpoints, knots, weights) {
-        return _super.call(this, degree, cpoints, knots, weights) || this;
-    }
-    BSplineCurve2D.prototype.evaluate = function (t) {
-        var p = this.degree;
-        var span = this.findSpan(t);
-        var N = this.evaluateBasis(span, t);
-        var point = new basic_1.Vector2();
-        var denominator = this.getTermDenominator(span, N);
-        for (var i = 0; i < p + 1; i++) {
-            var K = void 0;
-            if (this.weights) {
-                K = N[i] * this.weights[span - p + i] / denominator;
-            }
-            else {
-                K = N[i] / denominator;
-            }
-            var cpoint = this.cpoints[span - p + i];
-            point.x += K * cpoint.x;
-            point.y += K * cpoint.y;
-        }
-        return point;
-    };
-    return BSplineCurve2D;
-}(BSplineCurve));
-exports.BSplineCurve2D = BSplineCurve2D;
-/**
- * @hidden
- */
-var BSplineCurve3D = (function (_super) {
-    __extends(BSplineCurve3D, _super);
-    function BSplineCurve3D(degree, cpoints, knots, weights) {
-        return _super.call(this, degree, cpoints, knots, weights) || this;
-    }
-    BSplineCurve3D.prototype.evaluate = function (t) {
-        var p = this.degree;
-        var span = this.findSpan(t);
-        var N = this.evaluateBasis(span, t);
-        var point = new basic_1.Vector3();
-        var denominator = this.getTermDenominator(span, N);
-        for (var i = 0; i < p + 1; i++) {
-            var K = void 0;
-            if (this.weights) {
-                K = N[i] * this.weights[span - p + i] / denominator;
-            }
-            else {
-                K = N[i] / denominator;
-            }
-            var cpoint = this.cpoints[span - p + i];
-            point.x += K * cpoint.x;
-            point.y += K * cpoint.y;
-            point.z += K * cpoint.z;
-        }
-        return point;
-    };
-    return BSplineCurve3D;
-}(BSplineCurve));
-exports.BSplineCurve3D = BSplineCurve3D;
-
-
-/***/ }),
-/* 20 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-/*
-
- Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
-
- This file is part of Zector Math.
-
- Zector Math is free software: you can redistribute it and/or modify
- it under the terms of the GNU Affero General Public License as published by
- the Free Software Foundation, either version 3 of the License, or
- (at your option) any later version.
-
- Zector Math is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU Affero General Public License for more details.
-
- You should have received a copy of the GNU Affero General Public License
- along with Zector Math.  If not, see <http://www.gnu.org/licenses/>.
-
- */
-Object.defineProperty(exports, "__esModule", { value: true });
-var utils_1 = __webpack_require__(5);
-/**
- * @hidden
- * Compute all n'th degree bernstein polynomials at given parameter value
- */
-function bernstein(n, u) {
-    var B = new Array(n + 1);
-    B[0] = 1.0;
-    var u1 = 1.0 - u;
-    for (var j = 1; j <= n; j++) {
-        var saved = 0.0;
-        for (var k = 0; k < j; k++) {
-            var temp = B[k];
-            B[k] = saved + u1 * temp;
-            saved = u * temp;
-        }
-        B[j] = saved;
-    }
-    return B;
-}
-exports.bernstein = bernstein;
-/**
- * @hidden
- * Find the index of the knot span in which `u` lies
- * @param {number} p Degree
- * @param {Array.<number>} U Knot vector
- * @param {number} u Parameter
- * @returns {number}
- */
-function findSpan(p, U, u) {
-    var m = U.length - 1;
-    var n = m - p - 1;
-    if (utils_1.isequal(u, U[n + 1])) {
-        return n;
-    }
-    var low = p;
-    var high = n + 1;
-    var mid = Math.floor((low + high) / 2);
-    while (u < U[mid] || u >= U[mid + 1]) {
-        if (u < U[mid]) {
-            high = mid;
-        }
-        else {
-            low = mid;
-        }
-        mid = Math.floor((low + high) / 2);
-    }
-    return mid;
-}
-exports.findSpan = findSpan;
-/**
- * @hidden
- * Evaluate basis function values
- * @param {number} p Degree
- * @param {Array.<number>} U Knot vector
- * @param {number} i Knot span index
- * @param {number} u Parameter
- * @returns {Array} Basis function values at i,u
- */
-function getBasisFunction(p, U, i, u) {
-    var N = new Array(p + 1);
-    N[0] = 1.0;
-    var left = new Array(p + 1);
-    var right = new Array(p + 1);
-    for (var j = 1; j <= p; j++) {
-        left[j] = u - U[i + 1 - j];
-        right[j] = U[i + j] - u;
-        var saved = 0.0;
-        for (var r = 0; r < j; r++) {
-            var temp = N[r] / (right[r + 1] + left[j - r]);
-            N[r] = saved + right[r + 1] * temp;
-            saved = left[j - r] * temp;
-        }
-        N[j] = saved;
-    }
-    return N;
-}
-exports.getBasisFunction = getBasisFunction;
-/**
- * @hidden
- * Compute non-zero basis functions and their derivatives, upto and including
- * n'th derivative (n <= p). Output is 2-dimensional array `ders`
- * @param {number} p Degree
- * @param {number} u Parameter
- * @param {number} i Knot span
- * @param {Array.<number>} U Knot vector
- * @param {number} n nth derivative
- * @returns {Array.<Array<number>>} ders ders[k][j] is k'th derivative of
- *            basic function N(i-p+j,p), where 0<=k<=n and 0<=j<=p
- */
-function getBasisFunctionDerivatives(p, u, i, U, n) {
-    var ders = new Array(n + 1);
-    for (var i_1 = 0; i_1 < n + 1; i_1++) {
-        ders[i_1] = new Array(p + 1);
-    }
-    var ndu = new Array(p + 1);
-    for (var i_2 = 0; i_2 < p + 1; i_2++) {
-        ndu[i_2] = new Array(p + 1);
-    }
-    ndu[0][0] = 1.0;
-    var a = new Array(2);
-    for (var i_3 = 0; i_3 < 2; i_3++) {
-        a[i_3] = new Array(p + 1);
-    }
-    var left = [];
-    var right = [];
-    for (var j = 1; j <= p; j++) {
-        left[j] = u - U[i + 1 - j];
-        right[j] = U[i + j] - u;
-        var saved = 0.0;
-        for (var r_1 = 0; r_1 < j; r_1++) {
-            // Lower triangle
-            ndu[j][r_1] = right[r_1 + 1] + left[j - r_1];
-            var temp = ndu[r_1][j - 1] / ndu[j][r_1];
-            // Upper triangle
-            ndu[r_1][j] = saved + right[r_1 + 1] * temp;
-            saved = left[j - r_1] * temp;
-        }
-        ndu[j][j] = saved;
-    }
-    for (var j = 0; j <= p; j++) {
-        ders[0][j] = ndu[j][p];
-    }
-    // This section computes the derivatives (eq 2.9)
-    for (var r_2 = 0; r_2 <= p; r_2++) {
-        var s1 = 0;
-        var s2 = 1;
-        // Alternate rows in array a
-        a[0][0] = 1.0;
-        for (var k = 1; k <= n; k++) {
-            var d = 0.0;
-            var rk = r_2 - k;
-            var pk = p - k;
-            if (r_2 >= k) {
-                a[s2][0] = a[s1][0] / ndu[pk + 1][rk];
-                d = a[s2][0] * ndu[rk][pk];
-            }
-            var j1 = void 0, j2 = void 0;
-            if (rk >= -1) {
-                j1 = 1;
-            }
-            else {
-                j1 = -rk;
-            }
-            if (r_2 - 1 <= pk) {
-                j2 = k - 1;
-            }
-            else {
-                j2 = p - r_2;
-            }
-            for (var j = j1; j <= j2; j++) {
-                a[s2][j] = (a[s1][j] - a[s1][j - 1]) / ndu[pk + 1][rk + j];
-                d += a[s2][j] * ndu[rk + j][pk];
-            }
-            if (r_2 <= pk) {
-                a[s2][k] = -a[s1][k - 1] / ndu[pk + 1][r_2];
-                d += a[s2][k] * ndu[r_2][pk];
-            }
-            ders[k][r_2] = d;
-            // Switch rows
-            var temp = s1;
-            s1 = s2;
-            s2 = temp;
-        }
-    }
-    // Multiply through by the correct factors (eq 2.9)
-    var r = p;
-    for (var k = 1; k <= n; k++) {
-        for (var j = 0; j <= p; j++) {
-            ders[k][j] *= r;
-        }
-        r *= p - k;
-    }
-    return ders;
-}
-exports.getBasisFunctionDerivatives = getBasisFunctionDerivatives;
-
-
-/***/ }),
-/* 21 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-/*
-
-Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
-
-This file is part of bluemath.
-
-bluemath is free software: you can redistribute it and/or modify
-it under the terms of the GNU Affero General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-bluemath is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU Affero General Public License for more details.
-
-You should have received a copy of the GNU Affero General Public License
-along with bluemath. If not, see <http://www.gnu.org/licenses/>.
-
-*/
-Object.defineProperty(exports, "__esModule", { value: true });
-var bcurve_1 = __webpack_require__(19);
-exports.BSplineCurve = bcurve_1.BSplineCurve;
-exports.BSplineCurve2D = bcurve_1.BSplineCurve2D;
-exports.BSplineCurve3D = bcurve_1.BSplineCurve3D;
-
-
-/***/ }),
-/* 22 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-/*
-
-Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
-
-This file is part of bluemath.
-
-bluemath is free software: you can redistribute it and/or modify
-it under the terms of the GNU Affero General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-bluemath is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU Affero General Public License for more details.
-
-You should have received a copy of the GNU Affero General Public License
-along with bluemath. If not, see <http://www.gnu.org/licenses/>.
-
-*/
-Object.defineProperty(exports, "__esModule", { value: true });
-var construction_1 = __webpack_require__(10);
-exports.eye = construction_1.eye;
-exports.zeros = construction_1.zeros;
-var operations_1 = __webpack_require__(34);
+var operations_1 = __webpack_require__(28);
 exports.matmul = operations_1.matmul;
 exports.norm = operations_1.norm;
 exports.solve = operations_1.solve;
@@ -2763,12 +2335,12 @@ exports.qr = operations_1.qr;
 exports.triu = operations_1.triu;
 exports.tril = operations_1.tril;
 exports.eig = operations_1.eig;
-var lapack = __webpack_require__(11);
+var lapack = __webpack_require__(7);
 exports.lapack = lapack;
 
 
 /***/ }),
-/* 23 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2830,7 +2402,7 @@ exports.dot = dot;
 
 
 /***/ }),
-/* 24 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2899,7 +2471,7 @@ exports.gemv = gemv;
 
 
 /***/ }),
-/* 25 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2965,7 +2537,7 @@ exports.gemm = gemm;
 
 
 /***/ }),
-/* 26 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2991,7 +2563,7 @@ along with bluemath. If not, see <http://www.gnu.org/licenses/>.
 
 */
 Object.defineProperty(exports, "__esModule", { value: true });
-var lapacklite = __webpack_require__(1);
+var lapacklite = __webpack_require__(2);
 var em = lapacklite.Module;
 var common_1 = __webpack_require__(0);
 /**
@@ -3048,7 +2620,7 @@ exports.geev = geev;
 
 
 /***/ }),
-/* 27 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3074,7 +2646,7 @@ along with bluemath. If not, see <http://www.gnu.org/licenses/>.
 
 */
 Object.defineProperty(exports, "__esModule", { value: true });
-var lapacklite = __webpack_require__(1);
+var lapacklite = __webpack_require__(2);
 var em = lapacklite.Module;
 var common_1 = __webpack_require__(0);
 /**
@@ -3130,7 +2702,7 @@ exports.gelsd = gelsd;
 
 
 /***/ }),
-/* 28 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3156,7 +2728,7 @@ along with bluemath. If not, see <http://www.gnu.org/licenses/>.
 
 */
 Object.defineProperty(exports, "__esModule", { value: true });
-var lapacklite = __webpack_require__(1);
+var lapacklite = __webpack_require__(2);
 var em = lapacklite.Module;
 var common_1 = __webpack_require__(0);
 /**
@@ -3201,7 +2773,7 @@ exports.geqrf = geqrf;
 
 
 /***/ }),
-/* 29 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3227,7 +2799,7 @@ along with bluemath. If not, see <http://www.gnu.org/licenses/>.
 
 */
 Object.defineProperty(exports, "__esModule", { value: true });
-var lapacklite = __webpack_require__(1);
+var lapacklite = __webpack_require__(2);
 var em = lapacklite.Module;
 var common_1 = __webpack_require__(0);
 /**
@@ -3286,7 +2858,7 @@ exports.gesdd = gesdd;
 
 
 /***/ }),
-/* 30 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3347,7 +2919,7 @@ exports.gesv = gesv;
 
 
 /***/ }),
-/* 31 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3373,7 +2945,7 @@ along with bluemath. If not, see <http://www.gnu.org/licenses/>.
 
 */
 Object.defineProperty(exports, "__esModule", { value: true });
-var lapacklite = __webpack_require__(1);
+var lapacklite = __webpack_require__(2);
 var em = lapacklite.Module;
 var common_1 = __webpack_require__(0);
 /**
@@ -3415,7 +2987,7 @@ exports.getrf = getrf;
 
 
 /***/ }),
-/* 32 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3441,7 +3013,7 @@ along with bluemath. If not, see <http://www.gnu.org/licenses/>.
 
 */
 Object.defineProperty(exports, "__esModule", { value: true });
-var lapacklite = __webpack_require__(1);
+var lapacklite = __webpack_require__(2);
 var em = lapacklite.Module;
 var common_1 = __webpack_require__(0);
 /**
@@ -3486,7 +3058,7 @@ exports.orgqr = orgqr;
 
 
 /***/ }),
-/* 33 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3512,7 +3084,7 @@ along with bluemath. If not, see <http://www.gnu.org/licenses/>.
 
 */
 Object.defineProperty(exports, "__esModule", { value: true });
-var lapacklite = __webpack_require__(1);
+var lapacklite = __webpack_require__(2);
 var em = lapacklite.Module;
 var common_1 = __webpack_require__(0);
 /**
@@ -3551,7 +3123,7 @@ exports.potrf = potrf;
 
 
 /***/ }),
-/* 34 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3577,11 +3149,9 @@ along with bluemath. If not, see <http://www.gnu.org/licenses/>.
 
 */
 Object.defineProperty(exports, "__esModule", { value: true });
-var basic_1 = __webpack_require__(6);
-var construction_1 = __webpack_require__(10);
-var lapack = __webpack_require__(11);
-var constants_1 = __webpack_require__(2);
-var utils_1 = __webpack_require__(5);
+var lapack = __webpack_require__(7);
+var constants_1 = __webpack_require__(3);
+var __1 = __webpack_require__(1);
 /**
  * Matrix multiplication
  *
@@ -3623,7 +3193,7 @@ function matmul(A, B) {
     else {
         mB = B;
     }
-    var result = new basic_1.NDArray({ shape: [mA.shape[0], mB.shape[1]] });
+    var result = new __1.NDArray({ shape: [mA.shape[0], mB.shape[1]] });
     for (var i = 0; i < mA.shape[0]; i++) {
         for (var j = 0; j < mB.shape[1]; j++) {
             var value = 0.0;
@@ -3733,7 +3303,7 @@ function lu_custom(A) {
         throw new Error('Input is not a Square Matrix');
     }
     var n = A.shape[0];
-    var perm = new basic_1.NDArray({ shape: [n] });
+    var perm = new __1.NDArray({ shape: [n] });
     for (var i = 0; i < n; i++) {
         perm.set(i, i);
     }
@@ -3756,7 +3326,7 @@ function lu_custom(A) {
         // Swap rows k and ipivot
         A.swaprows(k, ipivot);
         recordPermutation(k, ipivot);
-        if (utils_1.iszero(pivot)) {
+        if (__1.iszero(pivot)) {
             throw new Error('Can\'t perform LU decomp. 0 on diagonal');
         }
         for (var i = k + 1; i < n; i++) {
@@ -4004,9 +3574,9 @@ function svd(A, full_matrices, compute_uv) {
         ucols = m;
         vtrows = n;
     }
-    var U = new basic_1.NDArray({ shape: [urows, ucols] });
-    var VT = new basic_1.NDArray({ shape: [vtrows, vtcols] });
-    var S = new basic_1.NDArray({ shape: [minmn] });
+    var U = new __1.NDArray({ shape: [urows, ucols] });
+    var VT = new __1.NDArray({ shape: [vtrows, vtcols] });
+    var S = new __1.NDArray({ shape: [minmn] });
     A.swapOrder();
     lapack.gesdd(A.data, m, n, U.data, S.data, VT.data, job);
     U.swapOrder();
@@ -4073,15 +3643,15 @@ function lstsq(A, B, rcond) {
     var nrhs = copyB.shape[1];
     copyA.swapOrder();
     copyB.swapOrder();
-    var S = new basic_1.NDArray({ shape: [Math.min(m, n)] });
+    var S = new __1.NDArray({ shape: [Math.min(m, n)] });
     var rank = lapack.gelsd(copyA.data, m, n, nrhs, rcond, copyB.data, S.data);
     copyB.swapOrder();
     // Residuals - TODO: test more
-    var residuals = new basic_1.NDArray([]);
+    var residuals = new __1.NDArray([]);
     if (rank === n && m > n) {
         var i = void 0;
         if (is_1d) {
-            residuals = new basic_1.NDArray({ shape: [1] });
+            residuals = new __1.NDArray({ shape: [1] });
             var sum = 0;
             for (i = n; i < m; i++) {
                 var K = copyB.shape[1];
@@ -4093,7 +3663,7 @@ function lstsq(A, B, rcond) {
             residuals.set(0, sum);
         }
         else {
-            residuals = new basic_1.NDArray({ shape: [m - n] });
+            residuals = new __1.NDArray({ shape: [m - n] });
             for (i = n; i < m; i++) {
                 var K = copyB.shape[1];
                 var sum = 0;
@@ -4131,7 +3701,7 @@ function slogdet(A) {
     var m = A.shape[0];
     var copyA = A.clone();
     copyA.swapOrder();
-    var ipiv = new basic_1.NDArray({ shape: [m], datatype: 'i32' });
+    var ipiv = new __1.NDArray({ shape: [m], datatype: 'i32' });
     lapack.getrf(copyA.data, m, m, ipiv.data);
     copyA.swapOrder();
     // Multiply diagonal elements of Upper triangular matrix to get determinant
@@ -4181,7 +3751,7 @@ function inv(A) {
     var copyA = A.clone();
     copyA.swapOrder();
     var n = A.shape[0];
-    var I = construction_1.eye(n);
+    var I = __1.eye(n);
     lapack.gesv(copyA.data, I.data, n, n);
     I.swapOrder();
     return I;
@@ -4239,7 +3809,7 @@ function qr(A) {
     var copyA = A.clone();
     var minmn = Math.min(m, n);
     copyA.swapOrder();
-    var tau = new basic_1.NDArray({ shape: [minmn] });
+    var tau = new __1.NDArray({ shape: [minmn] });
     lapack.geqrf(copyA.data, m, n, tau.data);
     var r = copyA.clone();
     r.swapOrder();
@@ -4264,20 +3834,20 @@ function eig(A) {
     var copyA = A.clone();
     copyA.swapOrder();
     var _a = lapack.geev(copyA.data, n, true, true), WR = _a[0], WI = _a[1], VL = _a[2], VR = _a[3];
-    var eigval = new basic_1.NDArray({ shape: [n] });
-    var eigvecL = new basic_1.NDArray({ shape: [n, n] });
-    var eigvecR = new basic_1.NDArray({ shape: [n, n] });
+    var eigval = new __1.NDArray({ shape: [n] });
+    var eigvecL = new __1.NDArray({ shape: [n, n] });
+    var eigvecR = new __1.NDArray({ shape: [n, n] });
     for (var i = 0; i < n; i++) {
-        if (utils_1.iszero(WI[i])) {
+        if (__1.iszero(WI[i])) {
             eigval.set(i, WR[i]);
         }
         else {
-            eigval.set(i, new basic_1.Complex(WR[i], WI[i]));
+            eigval.set(i, new __1.Complex(WR[i], WI[i]));
         }
     }
     for (var i = 0; i < n; i++) {
         for (var j = 0; j < n;) {
-            if (utils_1.iszero(WI[j])) {
+            if (__1.iszero(WI[j])) {
                 // We want to extract eigen-vectors in i'th column of VL and VR
                 eigvecL.set(i, j, VL[j * n + i]);
                 eigvecR.set(i, j, VR[j * n + i]);
@@ -4287,10 +3857,10 @@ function eig(A) {
                 // i-th eigen vector will be complex and
                 // i+1-th eigen vector will be its conjugate
                 // There are n eigen-vectors for i'th eigen-value
-                eigvecL.set(i, j, new basic_1.Complex(VL[j * n + i], VL[(j + 1) * n + i]));
-                eigvecL.set(i, j + 1, new basic_1.Complex(VL[j * n + i], -VL[(j + 1) * n + i]));
-                eigvecR.set(i, j, new basic_1.Complex(VR[j * n + i], VR[(j + 1) * n + i]));
-                eigvecR.set(i, j + 1, new basic_1.Complex(VR[j * n + i], -VR[(j + 1) * n + i]));
+                eigvecL.set(i, j, new __1.Complex(VL[j * n + i], VL[(j + 1) * n + i]));
+                eigvecL.set(i, j + 1, new __1.Complex(VL[j * n + i], -VL[(j + 1) * n + i]));
+                eigvecR.set(i, j, new __1.Complex(VR[j * n + i], VR[(j + 1) * n + i]));
+                eigvecR.set(i, j + 1, new __1.Complex(VR[j * n + i], -VR[(j + 1) * n + i]));
                 j += 2;
             }
         }
@@ -4301,7 +3871,7 @@ exports.eig = eig;
 
 
 /***/ }),
-/* 35 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4327,8 +3897,394 @@ You should have received a copy of the GNU Affero General Public License
 along with bluemath. If not, see <http://www.gnu.org/licenses/>.
 
 */
-var src_1 = __webpack_require__(3);
-var NDArray = src_1.basic.NDArray;
+var constants_1 = __webpack_require__(3);
+var _1 = __webpack_require__(1);
+/**
+ * Convert angle to degrees
+ */
+function todeg(angleInRadians) {
+    return 180 * angleInRadians / Math.PI;
+}
+exports.todeg = todeg;
+/**
+ * Convert angle to radians
+ */
+function torad(angleInDegrees) {
+    return Math.PI * angleInDegrees / 180;
+}
+exports.torad = torad;
+/**
+ * Check if input equals zero within given tolerance
+ */
+function iszero(x, tolerance) {
+    if (tolerance === void 0) { tolerance = constants_1.EPSILON; }
+    return Math.abs(x) < tolerance;
+}
+exports.iszero = iszero;
+/**
+ * Check if two input numbers are equal within given tolerance
+ */
+function isequal(a, b, tolerance) {
+    if (tolerance === void 0) { tolerance = constants_1.EPSILON; }
+    return iszero(a - b, tolerance);
+}
+exports.isequal = isequal;
+/**
+ * Find cube root of given number. Math.pow return NaN while taking
+ * cube root of negative number, because some of the results might
+ * be complex numbers. This function only return the real cubeRoot
+ * of given number
+ */
+function cuberoot(x) {
+    return x < 0 ? -Math.pow(-x, 1 / 3) : Math.pow(x, 1 / 3);
+}
+exports.cuberoot = cuberoot;
+/**
+ * Generate array of integers within given range.
+ * If both a and b are specified then return [a,b)
+ * if only a is specifed then return [0,a)
+ */
+function range(a, b) {
+    if (b === undefined) {
+        b = a;
+    }
+    b = Math.max(b, 0);
+    var arr = [];
+    for (var i = a; i < b; i++) {
+        arr.push(i);
+    }
+    return arr;
+}
+exports.range = range;
+/**
+ * Creates m-by-n Identity matrix
+ *
+ * ```
+ * eye(2) // Creates 2x2 Identity matrix
+ * eye([2,2]) // Creates 2x2 Identity matrix
+ * eye([2,3]) // Create 2x3 Identity matrix with main diagonal set to 1
+ * eye(2,'i32') // Creates 2x2 Identity matrix of 32-bit integers
+ * ```
+ */
+function eye(arg0, datatype) {
+    var n, m;
+    if (Array.isArray(arg0)) {
+        n = arg0[0];
+        if (arg0.length > 1) {
+            m = arg0[1];
+        }
+        else {
+            m = n;
+        }
+    }
+    else {
+        n = m = arg0;
+    }
+    var A = new _1.NDArray({ shape: [n, m], datatype: datatype, fill: 0 });
+    var ndiag = Math.min(n, m);
+    for (var i = 0; i < ndiag; i++) {
+        A.set(i, i, 1);
+    }
+    return A;
+}
+exports.eye = eye;
+/**
+ * Creates NDArray filled with zeros
+ *
+ * ```
+ * zeros(2) // Creates 2x2 matrix of zeros
+ * zeros([2,2,2]) // Create 2x2x2 matrix of zeros
+ * zeros(2,'i16') // Creates 2x2 matrix of 16-bit integers filled with zeros
+ * ```
+ */
+function zeros(arg0, datatype) {
+    var A;
+    if (Array.isArray(arg0)) {
+        A = new _1.NDArray({ shape: arg0, datatype: datatype });
+    }
+    else {
+        A = new _1.NDArray({ shape: [arg0, arg0], datatype: datatype });
+    }
+    A.fill(0);
+    return A;
+}
+exports.zeros = zeros;
+/**
+ * @hidden
+ */
+function _add_numbers(a, b) {
+    if (typeof a === 'number') {
+        if (typeof b === 'number') {
+            return a + b;
+        }
+        else if (b instanceof _1.Complex) {
+            var answer = b.clone();
+            answer.real += a;
+            return answer;
+        }
+    }
+    else if (a instanceof _1.Complex) {
+        if (typeof b === 'number') {
+            var answer = a.clone();
+            answer.real += b;
+            return answer;
+        }
+        else if (b instanceof _1.Complex) {
+            var answer = a.clone();
+            answer.real += b.real;
+            answer.imag += b.imag;
+            return answer;
+        }
+    }
+    throw new Error('Addition of incompatible types');
+}
+/**
+ * @hidden
+ */
+function _add_ndarrays(a, b) {
+    if (!a.isShapeEqual(b)) {
+        throw new Error('Addition of NDArray with mismatched shapes');
+    }
+    var answer = a.clone();
+    a.forEach(function (value) {
+        var index = [];
+        for (var _i = 1; _i < arguments.length; _i++) {
+            index[_i - 1] = arguments[_i];
+        }
+        var aval = value;
+        var bval = b.get.apply(b, index);
+        var ansval = _add_numbers(aval, bval);
+        answer.set.apply(answer, index.concat([ansval]));
+    });
+    return answer;
+}
+/**
+ * @hidden
+ */
+function _add_ndarray_and_number(a, b) {
+    var answer = a.clone();
+    a.forEach(function (value) {
+        var index = [];
+        for (var _i = 1; _i < arguments.length; _i++) {
+            index[_i - 1] = arguments[_i];
+        }
+        var aval = value;
+        var ansval = _add_numbers(aval, b);
+        answer.set.apply(answer, index.concat([ansval]));
+    });
+    return answer;
+}
+/**
+ * @hidden
+ */
+function _add_two(a, b) {
+    if (a === 0) {
+        return b;
+    }
+    if (b === 0) {
+        return a;
+    }
+    if (typeof a === 'number') {
+        if (typeof b === 'number' || b instanceof _1.Complex) {
+            return _add_numbers(a, b);
+        }
+        else if (b instanceof _1.NDArray) {
+            return _add_ndarray_and_number(b, a);
+        }
+    }
+    else if (a instanceof _1.NDArray) {
+        if (typeof b === 'number' || b instanceof _1.Complex) {
+            return _add_ndarray_and_number(a, b);
+        }
+        else if (b instanceof _1.NDArray) {
+            return _add_ndarrays(a, b);
+        }
+    }
+    else if (a instanceof _1.Complex) {
+        if (typeof b === 'number' || b instanceof _1.Complex) {
+            return _add_numbers(a, b);
+        }
+        else if (b instanceof _1.NDArray) {
+            return _add_ndarray_and_number(b, a);
+        }
+    }
+    throw new Error('Addition of invalid types');
+}
+/**
+ * Add all arguments in accordance to their types
+ * The arguments could be NDArray or numbers (real/complex).
+ * If some of them are NDArray's, then their shapes have to match,
+ * otherwise exception is thrown
+ * The order of addition starts from left to right
+ */
+function add() {
+    var args = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        args[_i] = arguments[_i];
+    }
+    var acc = args[0];
+    for (var i = 1; i < args.length; i++) {
+        acc = _add_two(acc, args[i]);
+    }
+    return acc;
+}
+exports.add = add;
+/**
+ * @hidden
+ */
+function _mul_numbers(a, b) {
+    if (typeof a === 'number') {
+        if (typeof b === 'number') {
+            return a * b;
+        }
+        else if (b instanceof _1.Complex) {
+            var answer = b.clone();
+            answer.real *= a;
+            answer.imag *= a;
+            return answer;
+        }
+    }
+    else if (a instanceof _1.Complex) {
+        if (typeof b === 'number') {
+            var answer = a.clone();
+            answer.real *= b;
+            answer.imag *= b;
+            return answer;
+        }
+        else if (b instanceof _1.Complex) {
+            var answer = new _1.Complex();
+            answer.real = a.real * b.real - a.imag * b.imag;
+            answer.imag = a.imag * b.real + a.real * b.imag;
+            return answer;
+        }
+    }
+    throw new Error('Multiplication of incompatible types');
+}
+/**
+ * @hidden
+ */
+function _mul_two(a, b) {
+    if (a === 1) {
+        return b;
+    }
+    if (b === 1) {
+        return a;
+    }
+    if (typeof a === 'number' || a instanceof _1.Complex) {
+        if (typeof b === 'number' || b instanceof _1.Complex) {
+            return _mul_numbers(a, b);
+        }
+        else if (b instanceof _1.NDArray) {
+            var answer_1 = b.clone();
+            answer_1.forEach(function (value) {
+                var index = [];
+                for (var _i = 1; _i < arguments.length; _i++) {
+                    index[_i - 1] = arguments[_i];
+                }
+                answer_1.set.apply(answer_1, index.concat([_mul_numbers(a, value)]));
+            });
+            return answer_1;
+        }
+    }
+    else if (a instanceof _1.NDArray) {
+        if (typeof b === 'number' || b instanceof _1.Complex) {
+            var answer_2 = a.clone();
+            answer_2.forEach(function (value) {
+                var index = [];
+                for (var _i = 1; _i < arguments.length; _i++) {
+                    index[_i - 1] = arguments[_i];
+                }
+                answer_2.set.apply(answer_2, index.concat([_mul_numbers(b, value)]));
+            });
+            return answer_2;
+        }
+        else if (b instanceof _1.NDArray) {
+            return _1.linalg.matmul(a, b);
+        }
+    }
+    throw new Error('Multiplication of incompatible types');
+}
+/**
+ * Multiply all arguments in accordance with their data types
+ * Each argument can be a number (real or complex) or NDArray.
+ * If some of the arguments are NDArrays, then their shapes should
+ * be compatible with the other operand of multiplication operation,
+ * otherwise an exception is thrown
+ * The order of multiplication starts from left to right
+ */
+function mul() {
+    var args = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        args[_i] = arguments[_i];
+    }
+    var acc = args[0];
+    for (var i = 1; i < args.length; i++) {
+        acc = _mul_two(acc, args[i]);
+    }
+    return acc;
+}
+exports.mul = mul;
+/**
+ * Subtract second argument from first
+ * The arguments could be a number (real or complex) or NDArray.
+ * If some of the arguments are NDArrays, then their shapes should
+ * be compatible with the other operand of subtraction operation,
+ * otherwise an exception is thrown
+ */
+function sub(a, b) {
+    return _add_two(a, _mul_two(-1, b));
+}
+exports.sub = sub;
+/**
+ * Divide first argument by second
+ * The first argument can be a number (real or complex) or NDArray.
+ * The second argument can be a number (real or complex)
+ */
+function div(a, b) {
+    var binv;
+    if (b instanceof _1.Complex) {
+        // 1/Complex number is converted to a usable complex number by
+        // multiplying both numerator and denominator by complex conjugate
+        // of the original number
+        var den = b.real * b.real + b.imag * b.imag;
+        binv = new _1.Complex(b.real / den, -b.imag / den);
+    }
+    else {
+        binv = 1 / b;
+    }
+    return _mul_two(a, binv);
+}
+exports.div = div;
+
+
+/***/ }),
+/* 30 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+/*
+
+Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
+
+This file is part of bluemath.
+
+bluemath is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+bluemath is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with bluemath. If not, see <http://www.gnu.org/licenses/>.
+
+*/
+var src_1 = __webpack_require__(1);
 /// <reference path="qunit/index.d.ts" />
 function testNDArray() {
     QUnit.module('NDArray', function () {
@@ -4336,7 +4292,7 @@ function testNDArray() {
             QUnit.module('From Array', function () {
                 QUnit.module('deduceShape and size', function () {
                     QUnit.test('3x3', function (assert) {
-                        var A = new NDArray([
+                        var A = new src_1.NDArray([
                             [2, 4, 6],
                             [3, 5, 2],
                             [1, 6, 5]
@@ -4345,35 +4301,35 @@ function testNDArray() {
                         assert.equal(A.size, 9);
                     });
                     QUnit.test('1x3', function (assert) {
-                        var A = new NDArray([
+                        var A = new src_1.NDArray([
                             [2, 4, 6]
                         ]);
                         assert.deepEqual(A.shape, [1, 3]);
                         assert.equal(A.size, 3);
                     });
                     QUnit.test('3x1', function (assert) {
-                        var A = new NDArray([
+                        var A = new src_1.NDArray([
                             [2], [4], [6]
                         ]);
                         assert.deepEqual(A.shape, [3, 1]);
                         assert.equal(A.size, 3);
                     });
                     QUnit.test('1x1', function (assert) {
-                        var A = new NDArray([
+                        var A = new src_1.NDArray([
                             [2]
                         ]);
                         assert.deepEqual(A.shape, [1, 1]);
                         assert.equal(A.size, 1);
                     });
                     QUnit.test('5', function (assert) {
-                        var A = new NDArray([
+                        var A = new src_1.NDArray([
                             2, 3, 4, 5, 6
                         ]);
                         assert.deepEqual(A.shape, [5]);
                         assert.equal(A.size, 5);
                     });
                     QUnit.test("2x2x2", function (assert) {
-                        var A = new NDArray([
+                        var A = new src_1.NDArray([
                             [
                                 [1, 0],
                                 [2, 1]
@@ -4388,28 +4344,28 @@ function testNDArray() {
                     });
                 });
                 QUnit.test('to float32 default', function (assert) {
-                    var A = new NDArray([
+                    var A = new src_1.NDArray([
                         2, 3, 4, 5, 6
                     ]);
                     assert.equal(A.datatype, 'f32');
                     assert.equal(A.get(0), 2);
                 });
                 QUnit.test('to float64 default', function (assert) {
-                    var A = new NDArray([
+                    var A = new src_1.NDArray([
                         2, 3, 4, 5, 6
                     ], { datatype: 'f64' });
                     assert.equal(A.datatype, 'f64');
                     assert.equal(A.get(1), 3);
                 });
                 QUnit.test('to int16 default', function (assert) {
-                    var A = new NDArray([
+                    var A = new src_1.NDArray([
                         2, 3, -4, 5, 6
                     ], { datatype: 'i16' });
                     assert.equal(A.datatype, 'i16');
                     assert.equal(A.get(2), -4);
                 });
                 QUnit.test('to uint16 default', function (assert) {
-                    var A = new NDArray([
+                    var A = new src_1.NDArray([
                         2, 3, -4, 5, 6
                     ], { datatype: 'ui16' });
                     assert.equal(A.datatype, 'ui16');
@@ -4419,23 +4375,23 @@ function testNDArray() {
             QUnit.module('From Raw Data', function () {
                 QUnit.module('shape', function () {
                     QUnit.test('default flat', function (assert) {
-                        var A = new NDArray(new Float32Array([3, 7, 5, 6]));
+                        var A = new src_1.NDArray(new Float32Array([3, 7, 5, 6]));
                         assert.deepEqual(A.shape, [4]);
                     });
                     QUnit.test('2x2', function (assert) {
-                        var A = new NDArray(new Float32Array([3, 7, 5, 6]), { shape: [2, 2] });
+                        var A = new src_1.NDArray(new Float32Array([3, 7, 5, 6]), { shape: [2, 2] });
                         assert.deepEqual(A.shape, [2, 2]);
                         assert.equal(A.get(0, 1), 7);
                         assert.equal(A.get(1, 1), 6);
                     });
                     QUnit.test('1x4', function (assert) {
-                        var A = new NDArray(new Float32Array([3, 7, 5, 6]), { shape: [1, 4] });
+                        var A = new src_1.NDArray(new Float32Array([3, 7, 5, 6]), { shape: [1, 4] });
                         assert.deepEqual(A.shape, [1, 4]);
                         assert.equal(A.get(0, 1), 7);
                         assert.equal(A.get(0, 3), 6);
                     });
                     QUnit.test('4x1', function (assert) {
-                        var A = new NDArray(new Float32Array([3, 7, 5, 6]), { shape: [4, 1] });
+                        var A = new src_1.NDArray(new Float32Array([3, 7, 5, 6]), { shape: [4, 1] });
                         assert.deepEqual(A.shape, [4, 1]);
                         assert.equal(A.get(1, 0), 7);
                         assert.equal(A.get(3, 0), 6);
@@ -4444,7 +4400,7 @@ function testNDArray() {
             });
             QUnit.module('No Data', function () {
                 QUnit.test('fill with 0', function (assert) {
-                    var A = new NDArray({ shape: [2, 2], fill: 0 });
+                    var A = new src_1.NDArray({ shape: [2, 2], fill: 0 });
                     assert.equal(A.size, 4);
                     assert.equal(A.get(0, 0), 0);
                     assert.equal(A.get(0, 1), 0);
@@ -4452,7 +4408,7 @@ function testNDArray() {
                     assert.equal(A.get(1, 1), 0);
                 });
                 QUnit.test('fill with 5', function (assert) {
-                    var A = new NDArray({ shape: [2, 2], fill: 5 });
+                    var A = new src_1.NDArray({ shape: [2, 2], fill: 5 });
                     assert.equal(A.size, 4);
                     assert.equal(A.get(0, 0), 5);
                     assert.equal(A.get(0, 1), 5);
@@ -4463,46 +4419,46 @@ function testNDArray() {
         });
         QUnit.module('Equality', function () {
             QUnit.test('2x2 equal', function (assert) {
-                var A = new NDArray([[4, 7], [3, 4]]);
-                var B = new NDArray([[4, 7], [3, 4]]);
+                var A = new src_1.NDArray([[4, 7], [3, 4]]);
+                var B = new src_1.NDArray([[4, 7], [3, 4]]);
                 assert.ok(A.isEqual(B));
             });
             QUnit.test('2x2 not equal', function (assert) {
-                var A = new NDArray([[4, 7], [3, 4]]);
-                var B = new NDArray([[4, 9], [3, 4]]);
+                var A = new src_1.NDArray([[4, 7], [3, 4]]);
+                var B = new src_1.NDArray([[4, 9], [3, 4]]);
                 assert.notOk(A.isEqual(B));
             });
             QUnit.test('2x2 and 3x3', function (assert) {
-                var A = new NDArray([[4, 7], [3, 4]]);
-                var B = new NDArray([[4, 7, 3], [3, 4, 3], [3, 2, 2]]);
+                var A = new src_1.NDArray([[4, 7], [3, 4]]);
+                var B = new src_1.NDArray([[4, 7, 3], [3, 4, 3], [3, 2, 2]]);
                 assert.notOk(A.isEqual(B));
             });
             QUnit.test('2x2 and 1', function (assert) {
-                var A = new NDArray([[4, 7], [3, 4]]);
-                var B = new NDArray([34]);
+                var A = new src_1.NDArray([[4, 7], [3, 4]]);
+                var B = new src_1.NDArray([34]);
                 assert.notOk(A.isEqual(B));
             });
             QUnit.test('2x2 int32 vs float32 equal', function (assert) {
-                var A = new NDArray([[4, 7], [3, 4]], { datatype: 'i32' });
-                var B = new NDArray([[4, 9], [3, 4]], { datatype: 'f32' });
+                var A = new src_1.NDArray([[4, 7], [3, 4]], { datatype: 'i32' });
+                var B = new src_1.NDArray([[4, 9], [3, 4]], { datatype: 'f32' });
                 assert.notOk(A.isEqual(B));
             });
         });
         QUnit.test("swaprows", function (assert) {
-            var A = new NDArray([[1, 0], [2, 1], [6, 9]], 'i16');
-            var B = new NDArray([[2, 1], [1, 0], [6, 9]], 'i16');
+            var A = new src_1.NDArray([[1, 0], [2, 1], [6, 9]], 'i16');
+            var B = new src_1.NDArray([[2, 1], [1, 0], [6, 9]], 'i16');
             A.swaprows(0, 1);
             assert.ok(A.isEqual(B));
         });
         QUnit.module("toArray", function () {
             QUnit.test("4", function (assert) {
                 var arr = [5, 6, 7, 8];
-                var A = new NDArray(arr, 'i16');
+                var A = new src_1.NDArray(arr, 'i16');
                 assert.deepEqual(arr, A.toArray());
             });
             QUnit.test("3x2", function (assert) {
                 var arr = [[1, 0], [2, 1], [6, 9]];
-                var A = new NDArray(arr, 'i16');
+                var A = new src_1.NDArray(arr, 'i16');
                 assert.deepEqual(arr, A.toArray());
             });
             QUnit.test("2x2x2", function (assert) {
@@ -4516,7 +4472,7 @@ function testNDArray() {
                         [5, 4]
                     ]
                 ];
-                var A = new NDArray(arr, 'i16');
+                var A = new src_1.NDArray(arr, 'i16');
                 assert.deepEqual(arr, A.toArray());
             });
             QUnit.test("2x3x1", function (assert) {
@@ -4532,7 +4488,7 @@ function testNDArray() {
                         [10]
                     ]
                 ];
-                var A = new NDArray(arr, 'i16');
+                var A = new src_1.NDArray(arr, 'i16');
                 assert.deepEqual(arr, A.toArray());
             });
             QUnit.test("1x4x3x2", function (assert) {
@@ -4552,32 +4508,32 @@ function testNDArray() {
                         ]
                     ]
                 ];
-                var A = new NDArray(arr, 'i16');
+                var A = new src_1.NDArray(arr, 'i16');
                 assert.deepEqual(arr, A.toArray());
             });
         });
         QUnit.module('Indexing', function () {
             QUnit.module('Invalid Access', function () {
                 QUnit.test('Wrong num of dim', function (assert) {
-                    var A = new NDArray(new Float32Array([3, 7, 5, 6]));
+                    var A = new src_1.NDArray(new Float32Array([3, 7, 5, 6]));
                     assert.throws(function () {
                         A.get(0, 0);
                     });
                 });
                 QUnit.test('Invalid dim-0', function (assert) {
-                    var A = new NDArray(new Float32Array([3, 7, 5, 6]));
+                    var A = new src_1.NDArray(new Float32Array([3, 7, 5, 6]));
                     assert.throws(function () {
                         A.get(5);
                     });
                 });
                 QUnit.test('Invalid dim-1', function (assert) {
-                    var A = new NDArray(new Float32Array([3, 7, 5, 6]), { shape: [2, 2] });
+                    var A = new src_1.NDArray(new Float32Array([3, 7, 5, 6]), { shape: [2, 2] });
                     assert.throws(function () {
                         A.get(0, 3);
                     });
                 });
                 QUnit.test('Negative dim-1', function (assert) {
-                    var A = new NDArray(new Float32Array([3, 7, 5, 6]), { shape: [2, 2] });
+                    var A = new src_1.NDArray(new Float32Array([3, 7, 5, 6]), { shape: [2, 2] });
                     assert.throws(function () {
                         A.get(0, -1);
                     });
@@ -4585,38 +4541,38 @@ function testNDArray() {
             });
             QUnit.module('Data index to index', function () {
                 QUnit.test('3x3x3', function (assert) {
-                    var A = new NDArray({ shape: [3, 3, 3] });
+                    var A = new src_1.NDArray({ shape: [3, 3, 3] });
                     assert.deepEqual(A._addressToIndex(10), [1, 0, 1]);
                     assert.deepEqual(A._addressToIndex(11), [1, 0, 2]);
                     assert.deepEqual(A._addressToIndex(13), [1, 1, 1]);
                     assert.deepEqual(A._addressToIndex(14), [1, 1, 2]);
                 });
                 QUnit.test('1x6', function (assert) {
-                    var A = new NDArray({ shape: [1, 6] });
+                    var A = new src_1.NDArray({ shape: [1, 6] });
                     assert.deepEqual(A._addressToIndex(3), [0, 3]);
                 });
             });
             QUnit.module('Set', function () {
                 QUnit.test('flat', function (assert) {
-                    var A = new NDArray(new Float32Array([3, 7, 5, 6]), { shape: [4] });
+                    var A = new src_1.NDArray(new Float32Array([3, 7, 5, 6]), { shape: [4] });
                     assert.equal(A.get(1), 7);
                     A.set(1, 589);
                     assert.equal(A.get(1), 589);
                 });
                 QUnit.test('2x2', function (assert) {
-                    var A = new NDArray(new Float32Array([3, 7, 5, 6]), { shape: [2, 2] });
+                    var A = new src_1.NDArray(new Float32Array([3, 7, 5, 6]), { shape: [2, 2] });
                     assert.equal(A.get(1, 1), 6);
                     A.set(1, 1, 589);
                     assert.equal(A.get(1, 1), 589);
                 });
                 QUnit.test('4x1', function (assert) {
-                    var A = new NDArray(new Float32Array([3, 7, 5, 6]), { shape: [4, 1] });
+                    var A = new src_1.NDArray(new Float32Array([3, 7, 5, 6]), { shape: [4, 1] });
                     assert.equal(A.get(2, 0), 5);
                     A.set(2, 0, 589);
                     assert.equal(A.get(2, 0), 589);
                 });
                 QUnit.test('1x4', function (assert) {
-                    var A = new NDArray(new Float32Array([3, 7, 5, 6]), { shape: [1, 4] });
+                    var A = new src_1.NDArray(new Float32Array([3, 7, 5, 6]), { shape: [1, 4] });
                     assert.equal(A.get(0, 2), 5);
                     A.set(0, 2, 589);
                     assert.equal(A.get(0, 2), 589);
@@ -4625,7 +4581,7 @@ function testNDArray() {
         });
         QUnit.module('Reshape', function () {
             QUnit.test('6 to 2x3', function (assert) {
-                var A = new NDArray([3, 5, 7, 4, 5, 6]);
+                var A = new src_1.NDArray([3, 5, 7, 4, 5, 6]);
                 assert.equal(A.get(2), 7);
                 assert.throws(function () {
                     A.get(0, 2);
@@ -4639,7 +4595,7 @@ function testNDArray() {
                 assert.equal(A.size, 6);
             });
             QUnit.test('2x3 to 6', function (assert) {
-                var A = new NDArray([
+                var A = new src_1.NDArray([
                     [3, 5, 7],
                     [4, 5, 6]
                 ]);
@@ -4656,7 +4612,7 @@ function testNDArray() {
                 assert.equal(A.size, 6);
             });
             QUnit.test('6 to 4x2', function (assert) {
-                var A = new NDArray([3, 5, 7, 4, 5, 6]);
+                var A = new src_1.NDArray([3, 5, 7, 4, 5, 6]);
                 assert.equal(A.size, 6);
                 assert.equal(A.get(2), 7);
                 A.reshape([4, 2]);
@@ -4669,7 +4625,7 @@ function testNDArray() {
         });
         QUnit.module('clone', function () {
             QUnit.test('3x3', function (assert) {
-                var A = new NDArray([
+                var A = new src_1.NDArray([
                     [2, 4, 6],
                     [1, 0, 9],
                     [0, 2, 3]
@@ -4686,62 +4642,90 @@ function testNDArray() {
                 assert.equal(A.get(1, 2), 186);
                 assert.equal(B.get(1, 2), 45);
             });
+            QUnit.test('complex', function (assert) {
+                var A = new src_1.NDArray({ shape: [2] });
+                A.set(0, new src_1.Complex(3, 5));
+                A.set(1, 32);
+                var copyA = A.clone();
+                assert.ok(new src_1.Complex(3, 5).isEqual(copyA.get(0)));
+                assert.equal(32, copyA.get(1));
+            });
         });
         QUnit.module('slice', function () {
             QUnit.test('3x3', function (assert) {
-                var A = new NDArray([
+                var A = new src_1.NDArray([
                     [2, 4, 6],
                     [1, 0, 9],
                     [0, 2, 3]
                 ], { datatype: 'f64' });
-                assert.ok(A.slice(':1', ':2').isEqual(new NDArray([
+                assert.ok(A.slice(':1', ':2').isEqual(new src_1.NDArray([
                     [2, 4],
                 ])));
-                assert.ok(A.slice(0, ':2').isEqual(new NDArray([
+                assert.ok(A.slice(0, ':2').isEqual(new src_1.NDArray([
                     [2, 4],
                 ])));
-                assert.ok(A.slice(':1', ':3').isEqual(new NDArray([
+                assert.ok(A.slice(null).isEqual(new src_1.NDArray([
+                    [2, 4, 6],
+                    [1, 0, 9],
+                    [0, 2, 3]
+                ])));
+                assert.ok(A.slice(1, null).isEqual(new src_1.NDArray([
+                    [1, 0, 9],
+                ])));
+                assert.ok(A.slice(0).isEqual(new src_1.NDArray([
                     [2, 4, 6],
                 ])));
-                assert.ok(A.slice(':1', ':4').isEqual(new NDArray([
+                assert.ok(A.slice(1).isEqual(new src_1.NDArray([
+                    [1, 0, 9],
+                ])));
+                assert.ok(A.slice('1:2').isEqual(new src_1.NDArray([
+                    [1, 0, 9],
+                ])));
+                assert.ok(A.slice('1:2', 2).isEqual(new src_1.NDArray([
+                    [9],
+                ])));
+                assert.ok(A.slice(':1', ':3').isEqual(new src_1.NDArray([
                     [2, 4, 6],
                 ])));
-                assert.ok(A.slice(':1', ':').isEqual(new NDArray([
+                assert.ok(A.slice(':1', ':4').isEqual(new src_1.NDArray([
                     [2, 4, 6],
                 ])));
-                assert.ok(A.slice(':1').isEqual(new NDArray([
+                assert.ok(A.slice(':1', ':').isEqual(new src_1.NDArray([
                     [2, 4, 6],
                 ])));
-                assert.ok(A.slice(':', ':1').isEqual(new NDArray([
+                assert.ok(A.slice(':1').isEqual(new src_1.NDArray([
+                    [2, 4, 6],
+                ])));
+                assert.ok(A.slice(':', ':1').isEqual(new src_1.NDArray([
                     [2],
                     [1],
                     [0]
                 ])));
-                assert.ok(A.slice(':', 0).isEqual(new NDArray([
+                assert.ok(A.slice(':', 0).isEqual(new src_1.NDArray([
                     [2],
                     [1],
                     [0]
                 ])));
-                assert.ok(A.slice(':', 2).isEqual(new NDArray([
+                assert.ok(A.slice(':', 2).isEqual(new src_1.NDArray([
                     [6],
                     [9],
                     [3]
                 ])));
-                assert.ok(A.slice(':2', ':3').isEqual(new NDArray([
+                assert.ok(A.slice(':2', ':3').isEqual(new src_1.NDArray([
                     [2, 4, 6],
                     [1, 0, 9],
                 ])));
-                assert.ok(A.slice(':', ':').isEqual(new NDArray([
-                    [2, 4, 6],
-                    [1, 0, 9],
-                    [0, 2, 3]
-                ])));
-                assert.ok(A.slice(':').isEqual(new NDArray([
+                assert.ok(A.slice(':', ':').isEqual(new src_1.NDArray([
                     [2, 4, 6],
                     [1, 0, 9],
                     [0, 2, 3]
                 ])));
-                assert.ok(A.slice().isEqual(new NDArray([
+                assert.ok(A.slice(':').isEqual(new src_1.NDArray([
+                    [2, 4, 6],
+                    [1, 0, 9],
+                    [0, 2, 3]
+                ])));
+                assert.ok(A.slice().isEqual(new src_1.NDArray([
                     [2, 4, 6],
                     [1, 0, 9],
                     [0, 2, 3]
@@ -4754,7 +4738,7 @@ exports.default = testNDArray;
 
 
 /***/ }),
-/* 36 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4780,9 +4764,9 @@ along with bluemath. If not, see <http://www.gnu.org/licenses/>.
 
 */
 Object.defineProperty(exports, "__esModule", { value: true });
-var basic_1 = __webpack_require__(12);
+var basic_1 = __webpack_require__(8);
 //import testGeom from './geom'
-var linalg_1 = __webpack_require__(13);
+var linalg_1 = __webpack_require__(9);
 window.onload = function () {
     var qunitDiv = document.createElement('div');
     qunitDiv.setAttribute('id', 'qunit');
@@ -4797,12 +4781,11 @@ window.onload = function () {
 
 
 /***/ }),
-/* 37 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-Object.defineProperty(exports, "__esModule", { value: true });
 /*
 
 Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
@@ -4823,19 +4806,20 @@ You should have received a copy of the GNU Affero General Public License
 along with bluemath. If not, see <http://www.gnu.org/licenses/>.
 
 */
-var src_1 = __webpack_require__(3);
+Object.defineProperty(exports, "__esModule", { value: true });
+var src_1 = __webpack_require__(1);
 function testConstruction() {
     QUnit.module('Construction', function () {
         QUnit.module('eye', function () {
             QUnit.test('Square 2x2', function (assert) {
-                var I = src_1.linalg.eye(2);
+                var I = src_1.eye(2);
                 assert.equal(I.get(0, 0), 1);
                 assert.equal(I.get(0, 1), 0);
                 assert.equal(I.get(1, 0), 0);
                 assert.equal(I.get(1, 1), 1);
             });
             QUnit.test('Rectangular 2x3', function (assert) {
-                var I = src_1.linalg.eye([2, 3]);
+                var I = src_1.eye([2, 3]);
                 assert.equal(I.get(0, 0), 1);
                 assert.equal(I.get(0, 1), 0);
                 assert.equal(I.get(1, 0), 0);
@@ -4844,7 +4828,7 @@ function testConstruction() {
                 assert.equal(I.get(1, 2), 0);
             });
             QUnit.test('Rectangular 3x2', function (assert) {
-                var I = src_1.linalg.eye([3, 2]);
+                var I = src_1.eye([3, 2]);
                 assert.equal(I.get(0, 0), 1);
                 assert.equal(I.get(0, 1), 0);
                 assert.equal(I.get(1, 0), 0);
@@ -4855,14 +4839,14 @@ function testConstruction() {
         });
         QUnit.module('zeros', function () {
             QUnit.test('Rectangular 2x2', function (assert) {
-                var Z = src_1.linalg.zeros(2);
+                var Z = src_1.zeros(2);
                 assert.equal(Z.get(0, 0), 0);
                 assert.equal(Z.get(0, 1), 0);
                 assert.equal(Z.get(1, 0), 0);
                 assert.equal(Z.get(1, 1), 0);
             });
             QUnit.test('Rectangular 2x2 ui32', function (assert) {
-                var Z = src_1.linalg.zeros([2, 2], 'ui32');
+                var Z = src_1.zeros([2, 2], 'ui32');
                 assert.equal(Z.datatype, 'ui32');
             });
         });
@@ -4872,7 +4856,7 @@ exports.default = testConstruction;
 
 
 /***/ }),
-/* 38 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4898,20 +4882,19 @@ You should have received a copy of the GNU Affero General Public License
 along with bluemath. If not, see <http://www.gnu.org/licenses/>.
 
 */
-var src_1 = __webpack_require__(3);
-var NDArray = src_1.basic.NDArray;
+var src_1 = __webpack_require__(1);
 function testLAPACK() {
     QUnit.module('LAPACK', function () {
         QUnit.module('BLAS Level 1', function () {
             QUnit.module('dot', function () {
                 QUnit.test('sdot', function (assert) {
-                    var sx = new NDArray([1, 2, 3, 4]);
-                    var sy = new NDArray([2, 3, 4, 5]);
+                    var sx = new src_1.NDArray([1, 2, 3, 4]);
+                    var sy = new src_1.NDArray([2, 3, 4, 5]);
                     assert.equal(src_1.linalg.lapack.dot(sx.data, sy.data), 40);
                 });
                 QUnit.test('ddot', function (assert) {
-                    var dx = new NDArray([1, 2, 3, 4], { datatype: 'f64' });
-                    var dy = new NDArray([2, 3, 4, 5], { datatype: 'f64' });
+                    var dx = new src_1.NDArray([1, 2, 3, 4], { datatype: 'f64' });
+                    var dy = new src_1.NDArray([2, 3, 4, 5], { datatype: 'f64' });
                     assert.equal(src_1.linalg.lapack.dot(dx.data, dy.data), 40);
                 });
             });
@@ -4919,22 +4902,22 @@ function testLAPACK() {
         QUnit.module('BLAS Level 2', function () {
             QUnit.module('gemv', function () {
                 QUnit.test('sgemv', function (assert) {
-                    var A = new NDArray([
+                    var A = new src_1.NDArray([
                         [2, 3, 4, 5],
                         [1, 0, 7, 5]
                     ]);
-                    var x = new NDArray([2, 2, 2, 2]);
-                    var y = new NDArray([3, 3]);
+                    var x = new src_1.NDArray([2, 2, 2, 2]);
+                    var y = new src_1.NDArray([3, 3]);
                     src_1.linalg.lapack.gemv(2, A.data, A.shape[0], A.shape[1], x.data, y.data, 5);
                     assert.deepEqual(y.toArray(), [71, 67]);
                 });
                 QUnit.test('dgemv', function (assert) {
-                    var A = new NDArray([
+                    var A = new src_1.NDArray([
                         [2, 3, 4, 5],
                         [1, 0, 7, 5]
                     ], { datatype: 'f64' });
-                    var x = new NDArray([2, 2, 2, 2], { datatype: 'f64' });
-                    var y = new NDArray([1, 1], { datatype: 'f64' });
+                    var x = new src_1.NDArray([2, 2, 2, 2], { datatype: 'f64' });
+                    var y = new src_1.NDArray([1, 1], { datatype: 'f64' });
                     src_1.linalg.lapack.gemv(2, A.data, A.shape[0], A.shape[1], x.data, y.data, 5);
                     assert.deepEqual(y.toArray(), [61, 57]);
                 });
@@ -4943,19 +4926,19 @@ function testLAPACK() {
         QUnit.module('BLAS Level 3', function () {
             QUnit.module('gemm', function () {
                 QUnit.test('sgemm', function (assert) {
-                    var A = new NDArray([
+                    var A = new src_1.NDArray([
                         [1, 1, 1, 1],
                         [1, 1, 1, 1],
                         [1, 1, 1, 1],
                         [1, 1, 1, 1]
                     ]);
-                    var B = new NDArray([
+                    var B = new src_1.NDArray([
                         [1, 1, 1, 1],
                         [1, 1, 1, 1],
                         [1, 1, 1, 1],
                         [1, 1, 1, 1]
                     ]);
-                    var C = new NDArray([
+                    var C = new src_1.NDArray([
                         [1, 1, 1, 1],
                         [1, 1, 1, 1],
                         [1, 1, 1, 1],
@@ -4970,19 +4953,19 @@ function testLAPACK() {
                     ]);
                 });
                 QUnit.test('dgemm', function (assert) {
-                    var A = new NDArray([
+                    var A = new src_1.NDArray([
                         [1, 1, 1, 1],
                         [1, 1, 1, 1],
                         [1, 1, 1, 1],
                         [1, 1, 1, 1]
                     ], { datatype: 'f64' });
-                    var B = new NDArray([
+                    var B = new src_1.NDArray([
                         [1, 1, 1, 1],
                         [1, 1, 1, 1],
                         [1, 1, 1, 1],
                         [1, 1, 1, 1]
                     ], { datatype: 'f64' });
-                    var C = new NDArray([
+                    var C = new src_1.NDArray([
                         [1, 1, 1, 1],
                         [1, 1, 1, 1],
                         [1, 1, 1, 1],
@@ -5000,45 +4983,45 @@ function testLAPACK() {
         });
         QUnit.module('gesv', function () {
             QUnit.test('sgesv - no permutation', function (assert) {
-                var A = new NDArray([
+                var A = new src_1.NDArray([
                     [11, -3, 0],
                     [-3, 6, -1],
                     [0, -1, 3]
                 ]);
-                var x = new NDArray([30, 5, -25]);
+                var x = new src_1.NDArray([30, 5, -25]);
                 var ipiv = src_1.linalg.lapack.gesv(A.data, x.data, A.shape[0], 1);
                 assert.deepEqual(x.toArray(), [3, 1, -8]);
                 assert.deepEqual(Array.prototype.slice.call(ipiv), [1, 2, 3]);
             });
             QUnit.test('sgesv - permutation', function (assert) {
-                var A = new NDArray([
+                var A = new src_1.NDArray([
                     [-3, 6, -1],
                     [11, -3, 0],
                     [0, -1, 3]
                 ]);
-                var x = new NDArray([30, 5, -25]); // TODO: why this doesn't have to change?
+                var x = new src_1.NDArray([30, 5, -25]); // TODO: why this doesn't have to change?
                 var ipiv = src_1.linalg.lapack.gesv(A.data, x.data, A.shape[0], 1);
                 assert.deepEqual(x.toArray(), [1, 3, -8]);
                 assert.deepEqual(Array.prototype.slice.call(ipiv), [2, 2, 3]);
             });
             QUnit.test('dgesv - no permutation', function (assert) {
-                var A = new NDArray([
+                var A = new src_1.NDArray([
                     [11, -3, 0],
                     [-3, 6, -1],
                     [0, -1, 3]
                 ], { datatype: 'f64' });
-                var x = new NDArray([30, 5, -25], { datatype: 'f64' });
+                var x = new src_1.NDArray([30, 5, -25], { datatype: 'f64' });
                 var ipiv = src_1.linalg.lapack.gesv(A.data, x.data, A.shape[0], 1);
                 assert.deepEqual(x.toArray(), [3, 1, -8]);
                 assert.deepEqual(Array.prototype.slice.call(ipiv), [1, 2, 3]);
             });
             QUnit.test('dgesv - permutation', function (assert) {
-                var A = new NDArray([
+                var A = new src_1.NDArray([
                     [-3, 6, -1],
                     [11, -3, 0],
                     [0, -1, 3]
                 ], { datatype: 'f64' });
-                var x = new NDArray([30, 5, -25], { datatype: 'f64' }); // TODO: why this doesn't have to change?
+                var x = new src_1.NDArray([30, 5, -25], { datatype: 'f64' }); // TODO: why this doesn't have to change?
                 var ipiv = src_1.linalg.lapack.gesv(A.data, x.data, A.shape[0], 1);
                 assert.deepEqual(x.toArray(), [1, 3, -8]);
                 assert.deepEqual(Array.prototype.slice.call(ipiv), [2, 2, 3]);
@@ -5047,56 +5030,56 @@ function testLAPACK() {
         // TODO
         QUnit.module('gesdd', function () {
             QUnit.test('dgesdd', function (assert) {
-                var A = new NDArray([
+                var A = new src_1.NDArray([
                     [-3, 6, -1],
                     [11, -3, 0],
                     [0, -1, 3]
                 ], { datatype: 'f64' });
                 A.swapOrder();
-                var U = new NDArray({ shape: [3, 3] });
-                var VT = new NDArray({ shape: [3, 3] });
-                var S = new NDArray({ shape: [3] });
+                var U = new src_1.NDArray({ shape: [3, 3] });
+                var VT = new src_1.NDArray({ shape: [3, 3] });
+                var S = new src_1.NDArray({ shape: [3] });
                 src_1.linalg.lapack.gesdd(A.data, 3, 3, U.data, S.data, VT.data, 'A');
                 U.swapOrder();
                 VT.swapOrder();
                 // Results generated from numpy
-                assert.ok(U.isEqual(new NDArray([
+                assert.ok(U.isEqual(new src_1.NDArray([
                     [-0.42847299, -0.81649658, 0.386968],
                     [0.90241006, -0.40824829, 0.1378021],
                     [0.04546408, 0.40824829, 0.91173809]
                 ])));
-                assert.ok(S.isEqual(new NDArray([
+                assert.ok(S.isEqual(new src_1.NDArray([
                     12.4244289, 5.0, 2.5755711
                 ])));
-                assert.ok(VT.isEqual(new NDArray([
+                assert.ok(VT.isEqual(new src_1.NDArray([
                     [0.90241006, -0.42847299, 0.04546408],
                     [-0.40824829, -0.81649658, 0.40824829],
                     [0.1378021, 0.386968, 0.91173809]
                 ])));
             });
             QUnit.test('sgesdd', function (assert) {
-                var A = new NDArray([
+                var A = new src_1.NDArray([
                     [-3, 6, -1],
                     [11, -3, 0],
                     [0, -1, 3]
                 ], { datatype: 'f32' });
                 A.swapOrder();
-                var U = new NDArray({ shape: [3, 3] });
-                var VT = new NDArray({ shape: [3, 3] });
-                var S = new NDArray({ shape: [3] });
+                var U = new src_1.NDArray({ shape: [3, 3] });
+                var VT = new src_1.NDArray({ shape: [3, 3] });
+                var S = new src_1.NDArray({ shape: [3] });
                 src_1.linalg.lapack.gesdd(A.data, 3, 3, U.data, S.data, VT.data, 'A');
                 U.swapOrder();
                 VT.swapOrder();
                 // Results generated from numpy
-                assert.ok(U.isEqual(new NDArray([
+                assert.ok(U.isEqual(new src_1.NDArray([
                     [-0.42847299, -0.81649658, 0.386968],
                     [0.90241006, -0.40824829, 0.1378021],
                     [0.04546408, 0.40824829, 0.91173809]
                 ])));
-                assert.ok(S.isEqual(new NDArray([
+                assert.ok(S.isEqual(new src_1.NDArray([
                     12.4244289, 5.0, 2.5755711
                 ])));
-                assert.ok(VT.isEqual(new NDArray([
+                assert.ok(VT.isEqual(new src_1.NDArray([
                     [0.90241006, -0.42847299, 0.04546408],
                     [-0.40824829, -0.81649658, 0.40824829],
                     [0.1378021, 0.386968, 0.91173809]
@@ -5105,11 +5088,11 @@ function testLAPACK() {
         });
         QUnit.module('gelsd', function () {
             QUnit.test('dgelsd', function (assert) {
-                var Y = new NDArray([-1, 0.2, 0.9, 2.1]);
-                var A = new NDArray([
+                var Y = new src_1.NDArray([-1, 0.2, 0.9, 2.1]);
+                var A = new src_1.NDArray([
                     [0, 1], [1, 1], [2, 1], [3, 1]
                 ]);
-                var S = new NDArray({ shape: [2] });
+                var S = new src_1.NDArray({ shape: [2] });
                 src_1.linalg.lapack.gelsd(A.data, 4, 2, 1, -1, Y.data, S.data);
                 /*
                 Test output computed from numpy.linalg.lapack_lite.dgelsd execution
@@ -5118,29 +5101,29 @@ function testLAPACK() {
                 In [21]: B = np.array([-1,0.2,0.9,2.1],np.double)
                 In [22]: np.linalg.lapack_lite.dgelsd(4,2,1,A,4,B,4,np.zeros(2),-1,0,work,802,np.zeros(20,np.int32),0)
                 */
-                assert.ok(A.isEqual(new NDArray([
+                assert.ok(A.isEqual(new src_1.NDArray([
                     [-1.73205081, 0.],
                     [0.57735027, 0.57735027],
                     [-2.88675135, 2.5819889],
                     [-0.04056742, 0.41363159]
                 ])));
-                assert.ok(Y.isEqual(new NDArray([
+                assert.ok(Y.isEqual(new src_1.NDArray([
                     1.65, -0.35, 0.4356074, 1.35655674
                 ])));
             });
         });
         QUnit.module('getrf', function () {
             QUnit.test('dgetrf', function (assert) {
-                var A = new NDArray([
+                var A = new src_1.NDArray([
                     [3, 6, 2],
                     [1, 7, 6],
                     [9, 3, 2]
                 ], { datatype: 'f64' });
-                var ipiv = new NDArray({ shape: [3], datatype: 'i32' });
+                var ipiv = new src_1.NDArray({ shape: [3], datatype: 'i32' });
                 A.swapOrder();
                 src_1.linalg.lapack.getrf(A.data, 3, 3, ipiv.data);
                 A.swapOrder();
-                var customLU = new NDArray([
+                var customLU = new src_1.NDArray([
                     [3, 6, 2],
                     [1, 7, 6],
                     [9, 3, 2]
@@ -5158,7 +5141,7 @@ function testLAPACK() {
                   [9,3,2]
                 ],{datatype:'f64'});
                 */
-                var A = new NDArray([
+                var A = new src_1.NDArray([
                     [1, 0, 0],
                     [0, 2, 0],
                     [0, 0, 3]
@@ -5167,30 +5150,30 @@ function testLAPACK() {
                 var _a = src_1.linalg.lapack.geev(A.data, 3, true, true), WR = _a[0], WI = _a[1], VL = _a[2], VR = _a[3];
                 assert.ok(WR[0] === 1 && WR[1] === 2 && WR[2] === 3);
                 assert.ok(WI[0] === 0 && WI[1] === 0 && WI[2] === 0);
-                var vl = new NDArray(VL, { shape: [3, 3] });
-                var vr = new NDArray(VR, { shape: [3, 3] });
+                var vl = new src_1.NDArray(VL, { shape: [3, 3] });
+                var vr = new src_1.NDArray(VR, { shape: [3, 3] });
                 vl.swapOrder();
                 vr.swapOrder();
-                assert.ok(vl.isEqual(new NDArray([
+                assert.ok(vl.isEqual(new src_1.NDArray([
                     [1, 0, 0],
                     [0, 1, 0],
                     [0, 0, 1]
                 ])));
-                assert.ok(vr.isEqual(new NDArray([
+                assert.ok(vr.isEqual(new src_1.NDArray([
                     [1, 0, 0],
                     [0, 1, 0],
                     [0, 0, 1]
                 ])));
             });
             QUnit.test('dgeev 2x2', function (assert) {
-                var A = new NDArray([
+                var A = new src_1.NDArray([
                     [3, 1],
                     [0, 2],
                 ], { datatype: 'f64' });
                 A.swapOrder();
                 var _a = src_1.linalg.lapack.geev(A.data, 2, true, true), WR = _a[0], WI = _a[1], VL = _a[2], VR = _a[3];
-                var vl = new NDArray(VL, { shape: [2, 2] });
-                var vr = new NDArray(VR, { shape: [2, 2] });
+                var vl = new src_1.NDArray(VL, { shape: [2, 2] });
+                var vr = new src_1.NDArray(VR, { shape: [2, 2] });
                 vl.swapOrder();
                 vr.swapOrder();
                 assert.equal(WR[0], 3);
@@ -5199,28 +5182,28 @@ function testLAPACK() {
                 assert.equal(WI[1], 0);
                 //assert.ok(vl.isEqual(new NDArray([[0.7071,0.0000],[0.7071,1.0000]]),1e-4))
                 // As returned by numpy (it only returns right eigen vectors)
-                assert.ok(vr.isEqual(new NDArray([[1.0000, -0.7071,], [0.0000, 0.7071]]), 1e-4));
+                assert.ok(vr.isEqual(new src_1.NDArray([[1.0000, -0.7071,], [0.0000, 0.7071]]), 1e-4));
             });
         });
         QUnit.module('geqrf-orgqr', function () {
             QUnit.test('dgeqrf-dorgqr', function (assert) {
-                var A = new NDArray([
+                var A = new src_1.NDArray([
                     [3, 6, 2],
                     [1, 7, 6],
                     [9, 3, 2]
                 ]);
-                var tau = new NDArray({ shape: [3], datatype: 'f64' });
+                var tau = new src_1.NDArray({ shape: [3], datatype: 'f64' });
                 src_1.linalg.lapack.geqrf(A.data, 3, 3, tau.data);
-                assert.ok(A.isEqual(new NDArray([
+                assert.ok(A.isEqual(new src_1.NDArray([
                     [-7., 0.6, 0.2],
                     [-8.14285714, -4.43777845, 0.7008373],
                     [-7., 3.38006959, 5.79440502]
                 ])));
-                assert.ok(tau.isEqual(new NDArray([
+                assert.ok(tau.isEqual(new src_1.NDArray([
                     1.42857143, 1.34122607, 0.
                 ])));
                 src_1.linalg.lapack.orgqr(A.data, 3, 3, 3, tau.data);
-                assert.ok(A.isEqual(new NDArray([
+                assert.ok(A.isEqual(new src_1.NDArray([
                     [-0.42857143, -0.85714286, -0.28571429],
                     [0.56104557, -0.00459873, -0.82777215],
                     [0.70820506, -0.51505822, 0.48286708]
@@ -5230,7 +5213,7 @@ function testLAPACK() {
         QUnit.module('potrf', function () {
             QUnit.test('dpotrf', function (assert) {
                 // From wikipedia
-                var A = new NDArray([
+                var A = new src_1.NDArray([
                     [4, 12, -16],
                     [12, 37, -43],
                     [-16, -43, 98]
@@ -5251,7 +5234,7 @@ exports.default = testLAPACK;
 
 
 /***/ }),
-/* 39 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5277,19 +5260,212 @@ You should have received a copy of the GNU Affero General Public License
 along with bluemath. If not, see <http://www.gnu.org/licenses/>.
 
 */
-var src_1 = __webpack_require__(3);
-var NDArray = src_1.basic.NDArray, Complex = src_1.basic.Complex;
+var src_1 = __webpack_require__(1);
+// For debugging purposes
 window.bluemath = {
-    NDArray: NDArray
+    NDArray: src_1.NDArray,
+    Complex: src_1.Complex
 };
 function testOperations() {
     QUnit.module('Operations', function () {
+        QUnit.module('add', function () {
+            QUnit.test('Real numbers', function (assert) {
+                assert.equal(src_1.add(4, 5), 9);
+                assert.equal(src_1.add(4, 5, 10), 19);
+            });
+            QUnit.test('Real and Complex numbers', function (assert) {
+                assert.ok(new src_1.Complex(9, 5).isEqual(src_1.add(4, new src_1.Complex(5, 5))));
+                assert.ok(new src_1.Complex(9, 5).isEqual(src_1.add(new src_1.Complex(5, 5), 4)));
+                assert.ok(new src_1.Complex(19, 5).isEqual(src_1.add(4, new src_1.Complex(5, 5), 10)));
+                assert.ok(new src_1.Complex(9, 15).isEqual(src_1.add(4, new src_1.Complex(5, 5), new src_1.Complex(0, 10))));
+            });
+            QUnit.test('Real numbers and NDArray', function (assert) {
+                assert.ok(new src_1.NDArray([4, 4, 4]).isEqual(src_1.add(new src_1.NDArray([1, 1, 1]), 3)));
+                assert.ok(new src_1.NDArray([4, 4, 4]).isEqual(src_1.add(3, new src_1.NDArray([1, 1, 1]))));
+                assert.ok(new src_1.NDArray([4, 4, 4]).isEqual(src_1.add(1, 2, new src_1.NDArray([1, 1, 1]))));
+                assert.ok(new src_1.NDArray([4, 4, 4]).isEqual(src_1.add(1, new src_1.NDArray([1, 1, 1]), 2)));
+                assert.ok(new src_1.NDArray([[4, 4], [4, 4]]).isEqual(src_1.add(new src_1.NDArray([[1, 1], [1, 1]]), 3)));
+            });
+            QUnit.test('Complex numbers and NDArray', function (assert) {
+                var sarr = new src_1.NDArray({ shape: [3] });
+                sarr.set(0, new src_1.Complex(1, 1));
+                sarr.set(1, new src_1.Complex(1, 2));
+                sarr.set(2, new src_1.Complex(2, 1));
+                var tarr = sarr.clone();
+                tarr.set(0, new src_1.Complex(2, 2));
+                tarr.set(1, new src_1.Complex(2, 3));
+                tarr.set(2, new src_1.Complex(3, 2));
+                assert.ok(tarr.isEqual(src_1.add(sarr, new src_1.Complex(1, 1))));
+                assert.ok(tarr.isEqual(src_1.add(new src_1.Complex(1, 1), sarr)));
+                assert.ok(tarr.isEqual(src_1.add(new src_1.Complex(0, 1), sarr, new src_1.Complex(1, 0))));
+                sarr = new src_1.NDArray({ shape: [2, 2] });
+                sarr.set(0, 0, new src_1.Complex(3, 3));
+                sarr.set(0, 1, new src_1.Complex(3, 3));
+                sarr.set(1, 0, new src_1.Complex(5, 5));
+                sarr.set(1, 1, new src_1.Complex(5, 5));
+                tarr = sarr.clone();
+                tarr.set(0, 0, new src_1.Complex(4, 4));
+                tarr.set(0, 1, new src_1.Complex(4, 4));
+                tarr.set(1, 0, new src_1.Complex(6, 6));
+                tarr.set(1, 1, new src_1.Complex(6, 6));
+                assert.ok(tarr.isEqual(src_1.add(sarr, new src_1.Complex(1, 1))));
+                assert.ok(tarr.isEqual(src_1.add(1, sarr, new src_1.Complex(0, 1))));
+                sarr = new src_1.NDArray({ shape: [2, 2] });
+                sarr.set(0, 0, new src_1.Complex(3, 3));
+                sarr.set(0, 1, 3);
+                sarr.set(1, 0, new src_1.Complex(5, 5));
+                sarr.set(1, 1, 5);
+                tarr = sarr.clone();
+                tarr.set(0, 0, new src_1.Complex(4, 4));
+                tarr.set(0, 1, new src_1.Complex(3, 1));
+                tarr.set(1, 0, new src_1.Complex(6, 6));
+                tarr.set(1, 1, new src_1.Complex(6, 1));
+                assert.ok(tarr.isEqual(src_1.add(sarr, new src_1.Complex(1, 1))));
+            });
+            QUnit.test('NDArrays', function (assert) {
+                var arrA = new src_1.NDArray([1, 1, 1]);
+                var arrB = new src_1.NDArray([1, 1, 1]);
+                assert.ok(new src_1.NDArray([2, 2, 2]).isEqual(src_1.add(arrA, arrB)));
+                assert.ok(new src_1.NDArray([3, 3, 3]).isEqual(src_1.add(arrA, arrB, arrA)));
+                assert.ok(new src_1.NDArray([4, 4, 4]).isEqual(src_1.add(arrA, arrB, 1, arrA)));
+                assert.throws(function () {
+                    src_1.add(arrA, new src_1.NDArray([[1, 2], [4, 4]]));
+                });
+                assert.throws(function () {
+                    src_1.add(arrA, new src_1.NDArray([1, 1]));
+                });
+                var sarr1 = new src_1.NDArray({ shape: [2] });
+                sarr1.set(0, new src_1.Complex(1, 1));
+                sarr1.set(1, new src_1.Complex(2, 0));
+                var sarr2 = new src_1.NDArray({ shape: [2] });
+                sarr2.set(0, 1);
+                sarr2.set(1, new src_1.Complex(0, 1));
+                var tarr = new src_1.NDArray({ shape: [2] });
+                tarr.set(0, new src_1.Complex(2, 1));
+                tarr.set(1, new src_1.Complex(2, 1));
+                assert.ok(tarr.isEqual(src_1.add(sarr1, sarr2)));
+            });
+        });
+        QUnit.module('mul', function () {
+            QUnit.test("Real and Complex numbers", function (assert) {
+                assert.equal(src_1.mul(2, 5), 10);
+                assert.equal(src_1.mul(2, 5, 3), 30);
+                assert.ok(new src_1.Complex(4, 6).isEqual(src_1.mul(2, new src_1.Complex(2, 3))));
+                assert.ok(new src_1.Complex(4, 6).isEqual(src_1.mul(new src_1.Complex(2, 3), 2)));
+                assert.ok(new src_1.Complex(12, 18).isEqual(src_1.mul(new src_1.Complex(2, 3), 2, 3)));
+                assert.ok(new src_1.Complex(-6, 10).isEqual(src_1.mul(new src_1.Complex(1, 4), new src_1.Complex(2, 2))));
+                assert.ok(new src_1.Complex(-28, 24).isEqual(src_1.mul(new src_1.Complex(1, 4), new src_1.Complex(2, 2), new src_1.Complex(3, 1))));
+            });
+            QUnit.test('Numbers and NDArray', function (assert) {
+                assert.ok(new src_1.NDArray([4, 4]).isEqual(src_1.mul(2, new src_1.NDArray([2, 2]))));
+                assert.ok(new src_1.NDArray([4, 4]).isEqual(src_1.mul(new src_1.NDArray([2, 2]), 2)));
+                assert.ok(new src_1.NDArray([8, 8]).isEqual(src_1.mul(new src_1.NDArray([2, 2]), 2, 2)));
+                var sarr = new src_1.NDArray({ shape: [2] });
+                sarr.set(0, new src_1.Complex(2, 2));
+                sarr.set(1, 2);
+                var tarr = sarr.clone();
+                tarr.set(0, new src_1.Complex(6, 6));
+                tarr.set(1, 6);
+                assert.ok(tarr.isEqual(src_1.mul(sarr, 3)));
+            });
+            QUnit.test('NDArrays', function (assert) {
+                var A = new src_1.NDArray([[2, 2, 2], [2, 2, 2], [2, 2, 2]], { datatype: 'i16' });
+                var B = new src_1.NDArray([[5, 5, 5], [5, 5, 5], [5, 5, 5]], { datatype: 'i16' });
+                var M = src_1.mul(A, B);
+                assert.ok(M.isEqual(new src_1.NDArray([
+                    [30, 30, 30],
+                    [30, 30, 30],
+                    [30, 30, 30]
+                ])));
+            });
+        });
+        QUnit.module('sub', function () {
+            QUnit.test('Real and complex numbers', function (assert) {
+                assert.equal(src_1.sub(3, 4), -1);
+                assert.ok(new src_1.Complex(0, -3).isEqual(src_1.sub(3, new src_1.Complex(3, 3))));
+                assert.ok(new src_1.Complex(2, 3).isEqual(src_1.sub(new src_1.Complex(3, 3), 1)));
+                assert.ok(new src_1.Complex(2, 2).isEqual(src_1.sub(new src_1.Complex(3, 3), new src_1.Complex(1, 1))));
+            });
+            QUnit.test('Numbers and NDArrays', function (assert) {
+                var A = new src_1.NDArray([
+                    [4, 5],
+                    [2, 7]
+                ]);
+                assert.ok(new src_1.NDArray([
+                    [3, 4],
+                    [1, 6]
+                ]).isEqual(src_1.sub(A, 1)));
+                assert.ok(new src_1.NDArray([
+                    [-3, -4],
+                    [-1, -6]
+                ]).isEqual(src_1.sub(1, A)));
+                var sarr = new src_1.NDArray({ shape: [2] });
+                sarr.set(0, 3);
+                sarr.set(1, new src_1.Complex(4, 5));
+                var tarr = sarr.clone();
+                tarr.set(0, 2);
+                tarr.set(1, new src_1.Complex(3, 5));
+                assert.ok(tarr.isEqual(src_1.sub(sarr, 1)));
+                tarr = sarr.clone();
+                tarr.set(0, -2);
+                tarr.set(1, new src_1.Complex(-3, -5));
+                assert.ok(tarr.isEqual(src_1.sub(1, sarr)));
+                tarr = sarr.clone();
+                tarr.set(0, new src_1.Complex(-2, 1));
+                tarr.set(1, new src_1.Complex(-3, -4));
+                assert.ok(tarr.isEqual(src_1.sub(new src_1.Complex(1, 1), sarr)));
+                tarr = sarr.clone();
+                tarr.set(0, new src_1.Complex(2, -1));
+                tarr.set(1, new src_1.Complex(3, 4));
+                assert.ok(tarr.isEqual(src_1.sub(sarr, new src_1.Complex(1, 1))));
+            });
+            QUnit.test('NDArrays', function (assert) {
+                var A = new src_1.NDArray([
+                    [4, 5],
+                    [2, 7]
+                ]);
+                var B = new src_1.NDArray([
+                    [1, 4],
+                    [5, 2]
+                ]);
+                assert.ok(new src_1.NDArray([
+                    [3, 1],
+                    [-3, 5]
+                ]).isEqual(src_1.sub(A, B)));
+                var sarr1 = new src_1.NDArray({ shape: [2] });
+                sarr1.set(0, 3);
+                sarr1.set(1, new src_1.Complex(4, 5));
+                var sarr2 = new src_1.NDArray([3, 3]);
+                var tarr = sarr1.clone();
+                tarr.set(0, 0);
+                tarr.set(1, new src_1.Complex(1, 5));
+                assert.ok(tarr.isEqual(src_1.sub(sarr1, sarr2)));
+            });
+        });
+        QUnit.module('div', function () {
+            QUnit.test('Real and complex numbers', function (assert) {
+                assert.equal(src_1.div(10, 5), 2);
+                assert.ok(new src_1.Complex(6, 8).isEqual(src_1.div(new src_1.Complex(12, 16), 2)));
+                assert.ok(new src_1.Complex(0.8, -1.6).isEqual(src_1.div(4, new src_1.Complex(1, 2))));
+            });
+            QUnit.test('Numbers and NDArray', function (assert) {
+                var A = new src_1.NDArray([4, 6, 8]);
+                assert.ok(new src_1.NDArray([2, 3, 4]).isEqual(src_1.div(A, 2)));
+                var sarr = new src_1.NDArray({ shape: [2] });
+                sarr.set(0, 4);
+                sarr.set(1, new src_1.Complex(4, 4));
+                var tarr = new src_1.NDArray({ shape: [2] });
+                tarr.set(0, 2);
+                tarr.set(1, new src_1.Complex(2, 2));
+                assert.ok(tarr.isEqual(src_1.div(sarr, 2)));
+            });
+        });
         QUnit.module('matmul', function () {
             QUnit.test("Square 3x3", function (assert) {
-                var A = new NDArray([[2, 2, 2], [2, 2, 2], [2, 2, 2]], { datatype: 'i16' });
-                var B = new NDArray([[5, 5, 5], [5, 5, 5], [5, 5, 5]], { datatype: 'i16' });
+                var A = new src_1.NDArray([[2, 2, 2], [2, 2, 2], [2, 2, 2]], { datatype: 'i16' });
+                var B = new src_1.NDArray([[5, 5, 5], [5, 5, 5], [5, 5, 5]], { datatype: 'i16' });
                 var M = src_1.linalg.matmul(A, B);
-                if (M instanceof NDArray) {
+                if (M instanceof src_1.NDArray) {
                     assert.deepEqual(M.shape, [3, 3]);
                     for (var i = 0; i < 3; i++) {
                         for (var j = 0; j < 3; j++) {
@@ -5302,10 +5478,10 @@ function testOperations() {
                 }
             });
             QUnit.test("3x2 mul 2x3", function (assert) {
-                var A = new NDArray([[1, 0], [2, 1], [6, 9]], { datatype: 'i16' });
-                var B = new NDArray([[1, 2, 3], [1, 2, 9]], { datatype: 'i16' });
+                var A = new src_1.NDArray([[1, 0], [2, 1], [6, 9]], { datatype: 'i16' });
+                var B = new src_1.NDArray([[1, 2, 3], [1, 2, 9]], { datatype: 'i16' });
                 var M = src_1.linalg.matmul(A, B);
-                if (M instanceof NDArray) {
+                if (M instanceof src_1.NDArray) {
                     assert.deepEqual(M.shape, [3, 3]);
                     assert.equal(M.get(1, 0), 3);
                     assert.equal(M.get(1, 2), 15);
@@ -5317,29 +5493,29 @@ function testOperations() {
                 }
             });
             QUnit.test("3x2 mul 3x3, error", function (assert) {
-                var A = new NDArray([[1, 0], [2, 1], [6, 9]], { datatype: 'i16' });
-                var B = new NDArray([[1, 2, 3], [1, 2, 9], [4, 5, 3]], { datatype: 'i16' });
+                var A = new src_1.NDArray([[1, 0], [2, 1], [6, 9]], { datatype: 'i16' });
+                var B = new src_1.NDArray([[1, 2, 3], [1, 2, 9], [4, 5, 3]], { datatype: 'i16' });
                 assert.throws(function () {
                     src_1.linalg.matmul(A, B);
                 });
             });
             QUnit.test("mul by Vector (inner product)", function (assert) {
-                var A = new NDArray([[1, 0, 2]], { datatype: 'i16' });
-                var B = new NDArray([[4, 4, 9]], { datatype: 'i16' });
+                var A = new src_1.NDArray([[1, 0, 2]], { datatype: 'i16' });
+                var B = new src_1.NDArray([[4, 4, 9]], { datatype: 'i16' });
                 B.reshape([3, 1]);
                 var M = src_1.linalg.matmul(A, B);
                 assert.deepEqual(M.shape, [1, 1]);
                 assert.equal(M.get(0, 0), 22);
             });
             QUnit.test("mul by Vector, error", function (assert) {
-                var A = new NDArray([[1, 0, 2], [3, 5, 6]], { datatype: 'i16' });
-                var B = new NDArray([[4, 4, 9]], { datatype: 'i16' });
+                var A = new src_1.NDArray([[1, 0, 2], [3, 5, 6]], { datatype: 'i16' });
+                var B = new src_1.NDArray([[4, 4, 9]], { datatype: 'i16' });
                 assert.throws(function () { return src_1.linalg.matmul(A, B); });
             });
             QUnit.test("mul by Vector (outer product)", function (assert) {
-                var A = new NDArray([[3, 3]], { datatype: 'i16' });
+                var A = new src_1.NDArray([[3, 3]], { datatype: 'i16' });
                 A.reshape([2, 1]);
-                var B = new NDArray([[2, 2]], { datatype: 'i16' });
+                var B = new src_1.NDArray([[2, 2]], { datatype: 'i16' });
                 var M = src_1.linalg.matmul(A, B);
                 assert.deepEqual(M.shape, [2, 2]);
                 assert.equal(M.get(0, 0), 6);
@@ -5350,124 +5526,124 @@ function testOperations() {
         });
         QUnit.module('inner', function () {
             QUnit.test('A(3), B(3)', function (assert) {
-                var A = new NDArray([3, 4, 5]);
-                var B = new NDArray([1, 2, 5]);
+                var A = new src_1.NDArray([3, 4, 5]);
+                var B = new src_1.NDArray([1, 2, 5]);
                 assert.equal(src_1.linalg.inner(A, B), 36);
             });
             QUnit.test('A(3), B(4)', function (assert) {
-                var A = new NDArray([3, 4, 5]);
-                var B = new NDArray([1, 2, 5, 7]);
+                var A = new src_1.NDArray([3, 4, 5]);
+                var B = new src_1.NDArray([1, 2, 5, 7]);
                 assert.equal(src_1.linalg.inner(A, B), 36);
             });
             QUnit.test('A(4), B(3)', function (assert) {
-                var A = new NDArray([3, 4, 5, 6]);
-                var B = new NDArray([1, 2, 5]);
+                var A = new src_1.NDArray([3, 4, 5, 6]);
+                var B = new src_1.NDArray([1, 2, 5]);
                 assert.throws(function () { return src_1.linalg.inner(A, B); });
             });
         });
         QUnit.module('outer', function () {
             QUnit.test('A(3), B(3)', function (assert) {
-                var A = new NDArray([1, 1, 1]);
-                var B = new NDArray([1, 1, 1]);
+                var A = new src_1.NDArray([1, 1, 1]);
+                var B = new src_1.NDArray([1, 1, 1]);
                 assert.deepEqual(src_1.linalg.outer(A, B).toArray(), [
                     [1, 1, 1], [1, 1, 1], [1, 1, 1]
                 ]);
             });
             QUnit.test('A(3x1), B(1x3)', function (assert) {
-                var A = new NDArray([[1], [1], [1]]);
-                var B = new NDArray([1, 1, 1]);
+                var A = new src_1.NDArray([[1], [1], [1]]);
+                var B = new src_1.NDArray([1, 1, 1]);
                 assert.deepEqual(src_1.linalg.outer(A, B).toArray(), [
                     [1, 1, 1], [1, 1, 1], [1, 1, 1]
                 ]);
             });
             QUnit.test('A(1x3), B(3x1)', function (assert) {
-                var A = new NDArray([1, 1, 1]);
-                var B = new NDArray([[1], [1], [1]]);
+                var A = new src_1.NDArray([1, 1, 1]);
+                var B = new src_1.NDArray([[1], [1], [1]]);
                 assert.throws(function () { return src_1.linalg.outer(A, B); });
             });
         });
         QUnit.module('norm', function () {
             QUnit.module('Vector', function () {
                 QUnit.test('0-norm', function (assert) {
-                    var A = new NDArray([0, 3, 0, 5]);
+                    var A = new src_1.NDArray([0, 3, 0, 5]);
                     assert.equal(src_1.linalg.norm(A, 0), 2);
                 });
                 QUnit.test('1-norm', function (assert) {
-                    var A = new NDArray([2, 3, 4, 5]);
+                    var A = new src_1.NDArray([2, 3, 4, 5]);
                     assert.equal(src_1.linalg.norm(A, 1), 14);
                 });
                 QUnit.test('2-norm', function (assert) {
-                    var A = new NDArray([2, 3, 4, 5]);
-                    assert.ok(src_1.utils.isequal(src_1.linalg.norm(A, 2), 7.34847));
+                    var A = new src_1.NDArray([2, 3, 4, 5]);
+                    assert.ok(src_1.isequal(src_1.linalg.norm(A, 2), 7.34847));
                 });
                 QUnit.test('3-norm', function (assert) {
-                    var A = new NDArray([2, 3, 4, 5]);
-                    assert.ok(src_1.utils.isequal(src_1.linalg.norm(A, 3), 6.07318, 1e-4));
+                    var A = new src_1.NDArray([2, 3, 4, 5]);
+                    assert.ok(src_1.isequal(src_1.linalg.norm(A, 3), 6.07318, 1e-4));
                 });
                 QUnit.test('Infinity-norm', function (assert) {
-                    var A = new NDArray([2, 3, 4, 5]);
+                    var A = new src_1.NDArray([2, 3, 4, 5]);
                     assert.equal(src_1.linalg.norm(A, Infinity), 5);
-                    A = new NDArray([2, 3, -48, 5]);
+                    A = new src_1.NDArray([2, 3, -48, 5]);
                     assert.equal(src_1.linalg.norm(A, Infinity), 48);
                 });
                 QUnit.test('-Infinity-norm', function (assert) {
-                    var A = new NDArray([2, 3, 4, 5]);
+                    var A = new src_1.NDArray([2, 3, 4, 5]);
                     assert.equal(src_1.linalg.norm(A, -Infinity), 2);
-                    A = new NDArray([2, 3, -48, 5]);
+                    A = new src_1.NDArray([2, 3, -48, 5]);
                     assert.equal(src_1.linalg.norm(A, -Infinity), 2);
                 });
             });
             QUnit.module('Matrix', function () {
                 QUnit.test('Frobenius norm', function (assert) {
-                    var A = new NDArray([
+                    var A = new src_1.NDArray([
                         [2, 3, 4],
                         [4, 2, -9],
                         [0, 3, 1]
                     ]);
-                    assert.ok(src_1.utils.isequal(src_1.linalg.norm(A, 'fro'), 11.832159566199232, 1e-6));
+                    assert.ok(src_1.isequal(src_1.linalg.norm(A, 'fro'), 11.832159566199232, 1e-6));
                 });
             });
         });
         QUnit.module('lstsq', function () {
             QUnit.test('Line fitting 1', function (assert) {
-                var Y = new NDArray([-1, 0.2, 0.9, 2.1]);
-                var A = new NDArray([
+                var Y = new src_1.NDArray([-1, 0.2, 0.9, 2.1]);
+                var A = new src_1.NDArray([
                     [0, 1], [1, 1], [2, 1], [3, 1]
                 ]);
                 var _a = src_1.linalg.lstsq(A, Y), x = _a.x, residuals = _a.residuals, rank = _a.rank, singulars = _a.singulars;
-                assert.ok(src_1.utils.isequal(x.get(0, 0), 1));
-                assert.ok(src_1.utils.isequal(x.get(1, 0), -0.95));
+                assert.ok(src_1.isequal(x.get(0, 0), 1));
+                assert.ok(src_1.isequal(x.get(1, 0), -0.95));
                 assert.equal(rank, 2);
-                assert.ok(residuals.isEqual(new NDArray([0.05])));
-                assert.ok(singulars.isEqual(new NDArray([4.10003045, 1.09075677])));
+                assert.ok(residuals.isEqual(new src_1.NDArray([0.05])));
+                assert.ok(singulars.isEqual(new src_1.NDArray([4.10003045, 1.09075677])));
             });
             QUnit.test('Line fitting 2', function (assert) {
-                var Y = new NDArray([3.9, 2.3, 2, -1.4, -1, -0.1]);
-                var A = new NDArray([
+                var Y = new src_1.NDArray([3.9, 2.3, 2, -1.4, -1, -0.1]);
+                var A = new src_1.NDArray([
                     [-3, 1], [-0.9, 1], [-1.8, 1],
                     [3.2, 1], [1, 1], [3.3, 1]
                 ]);
                 var _a = src_1.linalg.lstsq(A, Y), x = _a.x, residuals = _a.residuals, rank = _a.rank, singulars = _a.singulars;
-                assert.ok(src_1.utils.isequal(x.get(0, 0), -0.71853349));
-                assert.ok(src_1.utils.isequal(x.get(1, 0), 1.16556005));
+                assert.ok(src_1.isequal(x.get(0, 0), -0.71853349));
+                assert.ok(src_1.isequal(x.get(1, 0), 1.16556005));
                 assert.equal(rank, 2);
-                assert.ok(residuals.isEqual(new NDArray([4.1707015])));
-                assert.ok(singulars.isEqual(new NDArray([5.94059051, 2.42680538])));
+                assert.ok(residuals.isEqual(new src_1.NDArray([4.1707015])));
+                assert.ok(singulars.isEqual(new src_1.NDArray([5.94059051, 2.42680538])));
             });
         });
         QUnit.module('slogdet', function () {
             QUnit.test('3x3', function (assert) {
-                var A = new NDArray([
+                var A = new src_1.NDArray([
                     [4, 5, 6],
                     [1, 5, 3],
                     [8, 4, 5]
                 ]);
                 var _a = src_1.linalg.slogdet(A), sign = _a[0], logdet = _a[1];
                 assert.equal(sign, -1);
-                assert.ok(src_1.utils.isequal(logdet, Math.log(69)));
+                assert.ok(src_1.isequal(logdet, Math.log(69)));
             });
             QUnit.test('2x2', function (assert) {
-                var A = new NDArray([
+                var A = new src_1.NDArray([
                     [4, 5],
                     [1, 5],
                 ]);
@@ -5478,16 +5654,16 @@ function testOperations() {
         });
         QUnit.module('det', function () {
             QUnit.test('3x3', function (assert) {
-                var A = new NDArray([
+                var A = new src_1.NDArray([
                     [4, 5, 6],
                     [1, 5, 3],
                     [8, 4, 5]
                 ]);
                 var det = src_1.linalg.det(A);
-                assert.ok(src_1.utils.isequal(det, -69, 1e-5));
+                assert.ok(src_1.isequal(det, -69, 1e-5));
             });
             QUnit.test('2x2', function (assert) {
-                var A = new NDArray([
+                var A = new src_1.NDArray([
                     [4, 5],
                     [1, 5],
                 ]);
@@ -5497,37 +5673,37 @@ function testOperations() {
         });
         QUnit.module('inv', function () {
             QUnit.test('2x2', function (assert) {
-                var A = new NDArray([
+                var A = new src_1.NDArray([
                     [4, 5],
                     [1, 3]
                 ]);
                 var invA = src_1.linalg.inv(A);
-                assert.ok(invA.isEqual(new NDArray([
+                assert.ok(invA.isEqual(new src_1.NDArray([
                     [0.42857143, -0.71428571],
                     [-0.14285714, 0.57142857]
                 ])));
             });
             QUnit.test('3x3 test1', function (assert) {
-                var A = new NDArray([
+                var A = new src_1.NDArray([
                     [4, 5, 6],
                     [1, 5, 3],
                     [8, 4, 5]
                 ]);
                 var invA = src_1.linalg.inv(A);
-                assert.ok(invA.isEqual(new NDArray([
+                assert.ok(invA.isEqual(new src_1.NDArray([
                     [-0.1884058, 0.01449275, 0.2173913],
                     [-0.27536232, 0.4057971, 0.08695652],
                     [0.52173913, -0.34782609, -0.2173913]
                 ])));
             });
             QUnit.test('3x3 test2', function (assert) {
-                var A = new NDArray([
+                var A = new src_1.NDArray([
                     [4, -5, 6],
                     [1, 0, 3],
                     [-8, 4, 5]
                 ]);
                 var invA = src_1.linalg.inv(A);
-                assert.ok(invA.isEqual(new NDArray([
+                assert.ok(invA.isEqual(new src_1.NDArray([
                     [-0.09917355, 0.40495868, -0.12396694],
                     [-0.23966942, 0.56198347, -0.04958678],
                     [0.03305785, 0.19834711, 0.04132231]
@@ -5536,19 +5712,19 @@ function testOperations() {
         });
         QUnit.module('rank', function () {
             QUnit.test('Full rank 3x3', function (assert) {
-                var A = new NDArray([
+                var A = new src_1.NDArray([
                     [3, 5, 6], [3, 2, 1], [7, 8, 16]
                 ]);
                 assert.equal(src_1.linalg.rank(A), 3);
             });
             QUnit.test('Rank 2 for 3x3', function (assert) {
-                var A = new NDArray([
+                var A = new src_1.NDArray([
                     [3, 5, 6], [3, 2, 6], [6, 8, 12]
                 ]);
                 assert.equal(src_1.linalg.rank(A), 2);
             });
             QUnit.test('Rank 1 for 3x3', function (assert) {
-                var A = new NDArray([
+                var A = new src_1.NDArray([
                     [3, 5, 6], [3, 5, 6], [6, 10, 12]
                 ]);
                 assert.equal(src_1.linalg.rank(A), 1);
@@ -5556,91 +5732,91 @@ function testOperations() {
         });
         QUnit.module('SVD', function () {
             QUnit.test('svd 3x3 - full_matrices=true, complete_uv=true', function (assert) {
-                var A = new NDArray([
+                var A = new src_1.NDArray([
                     [-3, 6, -1],
                     [11, -3, 0],
                     [0, -1, 3]
                 ], { datatype: 'f32' });
                 var _a = src_1.linalg.svd(A, true, true), U = _a[0], S = _a[1], VT = _a[2];
                 // Results generated from numpy
-                assert.ok(U.isEqual(new NDArray([
+                assert.ok(U.isEqual(new src_1.NDArray([
                     [-0.42847299, -0.81649658, 0.386968],
                     [0.90241006, -0.40824829, 0.1378021],
                     [0.04546408, 0.40824829, 0.91173809]
                 ])));
-                assert.ok(S.isEqual(new NDArray([
+                assert.ok(S.isEqual(new src_1.NDArray([
                     12.4244289, 5.0, 2.5755711
                 ])));
-                assert.ok(VT.isEqual(new NDArray([
+                assert.ok(VT.isEqual(new src_1.NDArray([
                     [0.90241006, -0.42847299, 0.04546408],
                     [-0.40824829, -0.81649658, 0.40824829],
                     [0.1378021, 0.386968, 0.91173809]
                 ])));
             });
             QUnit.test('svd 3x3 - full_matrices=false, complete_uv=false', function (assert) {
-                var A = new NDArray([
+                var A = new src_1.NDArray([
                     [-3, 6, -1],
                     [11, -3, 0],
                     [0, -1, 3]
                 ], { datatype: 'f32' });
                 var S = src_1.linalg.svd(A, true, false)[0];
-                assert.ok(S.isEqual(new NDArray([
+                assert.ok(S.isEqual(new src_1.NDArray([
                     12.4244289, 5.0, 2.5755711
                 ])));
             });
             QUnit.test('svd 4x3 - full_matrices=false, complete_uv=false', function (assert) {
-                var A = new NDArray([
+                var A = new src_1.NDArray([
                     [-3, 6, -1],
                     [11, -3, 0],
                     [0, -1, 3],
                     [4, 4, 4]
                 ], { datatype: 'f32' });
                 var S = src_1.linalg.svd(A, true, false)[0];
-                assert.ok(S.isEqual(new NDArray([
+                assert.ok(S.isEqual(new src_1.NDArray([
                     12.66786356, 7.40286577, 4.32698638
                 ])));
             });
             QUnit.skip('svd 4x3 - full_matrices=true, complete_uv=false', function (assert) {
-                var A = new NDArray([
+                var A = new src_1.NDArray([
                     [-3, 6, -1],
                     [11, -3, 0],
                     [0, -1, 3],
                     [4, 4, 4]
                 ], { datatype: 'f32' });
                 var _a = src_1.linalg.svd(A, true, true), U = _a[0], S = _a[1], VT = _a[2];
-                assert.ok(U.isEqual(new NDArray([
+                assert.ok(U.isEqual(new src_1.NDArray([
                     [-0.38547869, -0.56023949, 0.51437432, -0.52245282],
                     [0.89197997, -0.02652779, 0.34920785, -0.28587041],
                     [0.05307408, -0.03691955, -0.71131891, -0.69988963],
                     [0.2301327, -0.82708218, -0.3278694, 0.39430402]
                 ])));
-                assert.ok(S.isEqual(new NDArray([
+                assert.ok(S.isEqual(new src_1.NDArray([
                     12.66786356, 7.40286577, 4.32698638
                 ])));
-                assert.ok(VT.isEqual(new NDArray([
+                assert.ok(VT.isEqual(new src_1.NDArray([
                     [0.93849657, -0.32533941, 0.11566526],
                     [-0.25928012, -0.88523323, -0.38618124],
                     [0.22803071, 0.33244007, -0.91514239]
                 ])));
             });
             QUnit.test('svd 4x3 - full_matrices=false, complete_uv=false', function (assert) {
-                var A = new NDArray([
+                var A = new src_1.NDArray([
                     [-3, 6, -1],
                     [11, -3, 0],
                     [0, -1, 3],
                     [4, 4, 4]
                 ], { datatype: 'f32' });
                 var _a = src_1.linalg.svd(A, false, true), U = _a[0], S = _a[1], VT = _a[2];
-                assert.ok(U.isEqual(new NDArray([
+                assert.ok(U.isEqual(new src_1.NDArray([
                     [-0.38547869, -0.56023949, 0.51437432],
                     [0.89197997, -0.02652779, 0.34920785],
                     [0.05307408, -0.03691955, -0.71131891],
                     [0.2301327, -0.82708218, -0.3278694]
                 ])));
-                assert.ok(S.isEqual(new NDArray([
+                assert.ok(S.isEqual(new src_1.NDArray([
                     12.66786356, 7.40286577, 4.32698638
                 ])));
-                assert.ok(VT.isEqual(new NDArray([
+                assert.ok(VT.isEqual(new src_1.NDArray([
                     [0.93849657, -0.32533941, 0.11566526],
                     [-0.25928012, -0.88523323, -0.38618124],
                     [0.22803071, 0.33244007, -0.91514239]
@@ -5691,99 +5867,99 @@ function testOperations() {
         */
         QUnit.module('Solve', function () {
             QUnit.test('Upper tri', function (assert) {
-                var A = new NDArray([
+                var A = new src_1.NDArray([
                     [4, 9],
                     [0, 5]
                 ]);
-                var x = new NDArray([32, 10]);
+                var x = new src_1.NDArray([32, 10]);
                 src_1.linalg.solve(A, x);
-                assert.ok(x.isEqual(new NDArray([3.5, 2])));
+                assert.ok(x.isEqual(new src_1.NDArray([3.5, 2])));
             });
             QUnit.test('Lower tri', function (assert) {
-                var A = new NDArray([
+                var A = new src_1.NDArray([
                     [3, 0],
                     [11, 5]
                 ]);
-                var x = new NDArray([21, 99]);
+                var x = new src_1.NDArray([21, 99]);
                 src_1.linalg.solve(A, x);
-                assert.ok(x.isEqual(new NDArray([7, 4.4])));
+                assert.ok(x.isEqual(new src_1.NDArray([7, 4.4])));
             });
             QUnit.module('LU Solve', function () {
                 QUnit.test("Circuit matrix", function (assert) {
-                    var A = new NDArray([
+                    var A = new src_1.NDArray([
                         [11, -3, 0],
                         [-3, 6, -1],
                         [0, -1, 3]
                     ]);
-                    var x = new NDArray([30, 5, -25]);
+                    var x = new src_1.NDArray([30, 5, -25]);
                     src_1.linalg.solve(A, x);
-                    assert.ok(x.isEqual(new NDArray([3, 1, -8])));
+                    assert.ok(x.isEqual(new src_1.NDArray([3, 1, -8])));
                 });
                 QUnit.test("From numpy tests", function (assert) {
-                    var A = new NDArray([
+                    var A = new src_1.NDArray([
                         [3, 1],
                         [1, 2]
                     ]);
-                    var x = new NDArray([9, 8]);
+                    var x = new src_1.NDArray([9, 8]);
                     src_1.linalg.solve(A, x);
-                    assert.ok(x.isEqual(new NDArray([2, 3])));
+                    assert.ok(x.isEqual(new src_1.NDArray([2, 3])));
                 });
                 QUnit.test("From GSL tests", function (assert) {
-                    var A = new NDArray([
+                    var A = new src_1.NDArray([
                         [0.18, 0.60, 0.57, 0.96],
                         [0.41, 0.24, 0.99, 0.58],
                         [0.14, 0.30, 0.97, 0.66],
                         [0.51, 0.13, 0.19, 0.85]
                     ], { datatype: 'f64' });
-                    var x = new NDArray([1, 2, 3, 4]);
+                    var x = new src_1.NDArray([1, 2, 3, 4]);
                     src_1.linalg.solve(A, x);
-                    assert.ok(x.isEqual(new NDArray([-4.05205, -12.6056, 1.66091, 8.69377], { datatype: 'f64' }), 1e-4));
+                    assert.ok(x.isEqual(new src_1.NDArray([-4.05205, -12.6056, 1.66091, 8.69377], { datatype: 'f64' }), 1e-4));
                 });
                 QUnit.test("Random tests 1 (match with numpy)", function (assert) {
-                    var A = new NDArray([
+                    var A = new src_1.NDArray([
                         [4, 7, 5, 12], [4, 3, 2, 1], [6, 2, 9, 3], [4, 1, 8, 8]
                     ]);
-                    var x = new NDArray([13, 15, 2, 90]);
+                    var x = new src_1.NDArray([13, 15, 2, 90]);
                     src_1.linalg.solve(A, x);
-                    assert.ok(x.isEqual(new NDArray([40.50877193, -39.30526316, -25.02807018, 20.93684211]), 1e-4));
+                    assert.ok(x.isEqual(new src_1.NDArray([40.50877193, -39.30526316, -25.02807018, 20.93684211]), 1e-4));
                 });
                 QUnit.test("Random tests 2 (match with numpy)", function (assert) {
-                    var A = new NDArray([
+                    var A = new src_1.NDArray([
                         [4, 7, 5, 0.5], [4, 3, 2, 1], [6, 2, 99, 3], [4, 1, 8, 8]
                     ]);
-                    var x = new NDArray([13, 15, 2, 90]);
+                    var x = new src_1.NDArray([13, 15, 2, 90]);
                     src_1.linalg.solve(A, x);
-                    assert.ok(x.isEqual(new NDArray([0.19644227, 1.19044879, -0.36008822, 11.36306099])));
+                    assert.ok(x.isEqual(new src_1.NDArray([0.19644227, 1.19044879, -0.36008822, 11.36306099])));
                 });
                 QUnit.test("Random tests 3 (match with numpy)", function (assert) {
-                    var A = new NDArray([
+                    var A = new src_1.NDArray([
                         [4, 0.0007, 5, 0.5], [4, 3, 2, 1], [6, 2, 9999, 3], [4, 1, 8, 8]
                     ]);
-                    var x = new NDArray([13, 15, 2, 90]);
+                    var x = new src_1.NDArray([13, 15, 2, 90]);
                     src_1.linalg.solve(A, x);
-                    assert.ok(x.isEqual(new NDArray([1.95364698e+00, -1.07265497e+00, -3.88138726e-03,
+                    assert.ok(x.isEqual(new src_1.NDArray([1.95364698e+00, -1.07265497e+00, -3.88138726e-03,
                         1.04111398e+01])));
                 });
                 QUnit.test("Random tests 4 (match with numpy)", function (assert) {
-                    var A = new NDArray([
+                    var A = new src_1.NDArray([
                         [4, 0.0007, 5, 0.5], [4, 3, 2, 1], [6, 2, 9999, 3], [4, 1, 8, 8]
                     ]);
-                    var x = new NDArray([13, 0.15, 2986, 90]);
+                    var x = new src_1.NDArray([13, 0.15, 2986, 90]);
                     src_1.linalg.solve(A, x);
-                    assert.ok(x.isEqual(new NDArray([1.51620015, -5.80949758, 0.295605, 10.92248213]), 1e-5));
+                    assert.ok(x.isEqual(new src_1.NDArray([1.51620015, -5.80949758, 0.295605, 10.92248213]), 1e-5));
                 });
                 QUnit.test("Solve multiple", function (assert) {
-                    var A = new NDArray([
+                    var A = new src_1.NDArray([
                         [4, 7, 5, 12], [4, 3, 2, 1], [6, 2, 9, 3], [4, 1, 8, 8]
                     ]);
-                    var x = new NDArray([
+                    var x = new src_1.NDArray([
                         [13, 45, 3],
                         [15, 66, 3],
                         [2, 0.02, 8],
                         [90, 1, 0]
                     ]);
                     src_1.linalg.solve(A, x);
-                    assert.ok(x.isEqual(new NDArray([
+                    assert.ok(x.isEqual(new src_1.NDArray([
                         [40.50877193, 31.61561404, -1.66667],
                         [-39.30526316, -8.06736842, 2.4],
                         [-25.02807018, -21.58596491, 1.933333],
@@ -5795,14 +5971,14 @@ function testOperations() {
         QUnit.module('tri', function () {
             QUnit.module('tril', function () {
                 QUnit.test('4x4', function (assert) {
-                    var A = new NDArray([
+                    var A = new src_1.NDArray([
                         [5, 5, 5, 5],
                         [5, 5, 5, 5],
                         [5, 5, 5, 5],
                         [5, 5, 5, 5]
                     ]);
                     var trilA = src_1.linalg.tril(A);
-                    assert.ok(trilA.isEqual(new NDArray([
+                    assert.ok(trilA.isEqual(new src_1.NDArray([
                         [5, 0, 0, 0],
                         [5, 5, 0, 0],
                         [5, 5, 5, 0],
@@ -5810,14 +5986,14 @@ function testOperations() {
                     ])));
                 });
                 QUnit.test('4x4 diag -1', function (assert) {
-                    var A = new NDArray([
+                    var A = new src_1.NDArray([
                         [5, 5, 5, 5],
                         [5, 5, 5, 5],
                         [5, 5, 5, 5],
                         [5, 5, 5, 5]
                     ]);
                     var trilA = src_1.linalg.tril(A, -1);
-                    assert.ok(trilA.isEqual(new NDArray([
+                    assert.ok(trilA.isEqual(new src_1.NDArray([
                         [0, 0, 0, 0],
                         [5, 0, 0, 0],
                         [5, 5, 0, 0],
@@ -5825,14 +6001,14 @@ function testOperations() {
                     ])));
                 });
                 QUnit.test('4x4 diag 1', function (assert) {
-                    var A = new NDArray([
+                    var A = new src_1.NDArray([
                         [5, 5, 5, 5],
                         [5, 5, 5, 5],
                         [5, 5, 5, 5],
                         [5, 5, 5, 5]
                     ]);
                     var trilA = src_1.linalg.tril(A, 1);
-                    assert.ok(trilA.isEqual(new NDArray([
+                    assert.ok(trilA.isEqual(new src_1.NDArray([
                         [5, 5, 0, 0],
                         [5, 5, 5, 0],
                         [5, 5, 5, 5],
@@ -5840,7 +6016,7 @@ function testOperations() {
                     ])));
                 });
                 QUnit.test('6x4', function (assert) {
-                    var A = new NDArray([
+                    var A = new src_1.NDArray([
                         [5, 5, 5, 5],
                         [5, 5, 5, 5],
                         [5, 5, 5, 5],
@@ -5849,7 +6025,7 @@ function testOperations() {
                         [5, 5, 5, 5]
                     ]);
                     var trilA = src_1.linalg.tril(A);
-                    assert.ok(trilA.isEqual(new NDArray([
+                    assert.ok(trilA.isEqual(new src_1.NDArray([
                         [5, 0, 0, 0],
                         [5, 5, 0, 0],
                         [5, 5, 5, 0],
@@ -5859,14 +6035,14 @@ function testOperations() {
                     ])));
                 });
                 QUnit.test('4x6', function (assert) {
-                    var A = new NDArray([
+                    var A = new src_1.NDArray([
                         [5, 5, 5, 5, 5, 5],
                         [5, 5, 5, 5, 5, 5],
                         [5, 5, 5, 5, 5, 5],
                         [5, 5, 5, 5, 5, 5]
                     ]);
                     var trilA = src_1.linalg.tril(A);
-                    assert.ok(trilA.isEqual(new NDArray([
+                    assert.ok(trilA.isEqual(new src_1.NDArray([
                         [5, 0, 0, 0, 0, 0],
                         [5, 5, 0, 0, 0, 0],
                         [5, 5, 5, 0, 0, 0],
@@ -5876,14 +6052,14 @@ function testOperations() {
             });
             QUnit.module('triu', function () {
                 QUnit.test('4x4', function (assert) {
-                    var A = new NDArray([
+                    var A = new src_1.NDArray([
                         [5, 5, 5, 5],
                         [5, 5, 5, 5],
                         [5, 5, 5, 5],
                         [5, 5, 5, 5]
                     ]);
                     var triuA = src_1.linalg.triu(A);
-                    assert.ok(triuA.isEqual(new NDArray([
+                    assert.ok(triuA.isEqual(new src_1.NDArray([
                         [5, 5, 5, 5],
                         [0, 5, 5, 5],
                         [0, 0, 5, 5],
@@ -5891,14 +6067,14 @@ function testOperations() {
                     ])));
                 });
                 QUnit.test('4x4 diag -1', function (assert) {
-                    var A = new NDArray([
+                    var A = new src_1.NDArray([
                         [5, 5, 5, 5],
                         [5, 5, 5, 5],
                         [5, 5, 5, 5],
                         [5, 5, 5, 5]
                     ]);
                     var triuA = src_1.linalg.triu(A, -1);
-                    assert.ok(triuA.isEqual(new NDArray([
+                    assert.ok(triuA.isEqual(new src_1.NDArray([
                         [5, 5, 5, 5],
                         [5, 5, 5, 5],
                         [0, 5, 5, 5],
@@ -5906,14 +6082,14 @@ function testOperations() {
                     ])));
                 });
                 QUnit.test('4x4 diag +1', function (assert) {
-                    var A = new NDArray([
+                    var A = new src_1.NDArray([
                         [5, 5, 5, 5],
                         [5, 5, 5, 5],
                         [5, 5, 5, 5],
                         [5, 5, 5, 5]
                     ]);
                     var triuA = src_1.linalg.triu(A, 1);
-                    assert.ok(triuA.isEqual(new NDArray([
+                    assert.ok(triuA.isEqual(new src_1.NDArray([
                         [0, 5, 5, 5],
                         [0, 0, 5, 5],
                         [0, 0, 0, 5],
@@ -5921,7 +6097,7 @@ function testOperations() {
                     ])));
                 });
                 QUnit.test('6x4', function (assert) {
-                    var A = new NDArray([
+                    var A = new src_1.NDArray([
                         [5, 5, 5, 5],
                         [5, 5, 5, 5],
                         [5, 5, 5, 5],
@@ -5930,7 +6106,7 @@ function testOperations() {
                         [5, 5, 5, 5]
                     ]);
                     var triuA = src_1.linalg.triu(A);
-                    assert.ok(triuA.isEqual(new NDArray([
+                    assert.ok(triuA.isEqual(new src_1.NDArray([
                         [5, 5, 5, 5],
                         [0, 5, 5, 5],
                         [0, 0, 5, 5],
@@ -5940,14 +6116,14 @@ function testOperations() {
                     ])));
                 });
                 QUnit.test('4x6', function (assert) {
-                    var A = new NDArray([
+                    var A = new src_1.NDArray([
                         [5, 5, 5, 5, 5, 5],
                         [5, 5, 5, 5, 5, 5],
                         [5, 5, 5, 5, 5, 5],
                         [5, 5, 5, 5, 5, 5]
                     ]);
                     var triuA = src_1.linalg.triu(A);
-                    assert.ok(triuA.isEqual(new NDArray([
+                    assert.ok(triuA.isEqual(new src_1.NDArray([
                         [5, 5, 5, 5, 5, 5],
                         [0, 5, 5, 5, 5, 5],
                         [0, 0, 5, 5, 5, 5],
@@ -5958,67 +6134,67 @@ function testOperations() {
         });
         QUnit.module('QR', function () {
             QUnit.test('3x3', function (assert) {
-                var A = new NDArray([
+                var A = new src_1.NDArray([
                     [3, 6, 2],
                     [1, 7, 6],
                     [9, 3, 2]
                 ]);
                 var _a = src_1.linalg.qr(A), q = _a[0], r = _a[1];
-                assert.ok(q.isEqual(new NDArray([
+                assert.ok(q.isEqual(new src_1.NDArray([
                     [-0.31448545, -0.53452248, -0.78446454],
                     [-0.10482848, -0.80178373, 0.58834841],
                     [-0.94345635, 0.26726124, 0.19611614]
                 ])));
-                assert.ok(r.isEqual(new NDArray([
+                assert.ok(r.isEqual(new src_1.NDArray([
                     [-9.53939201, -5.45108115, -3.14485451],
                     [0., -8.01783726, -5.34522484],
                     [0., 0., 2.35339362]
                 ])));
             });
             QUnit.test('2x2', function (assert) {
-                var A = new NDArray([
+                var A = new src_1.NDArray([
                     [3, 6],
                     [9, 2]
                 ]);
                 var _a = src_1.linalg.qr(A), q = _a[0], r = _a[1];
-                assert.ok(q.isEqual(new NDArray([
+                assert.ok(q.isEqual(new src_1.NDArray([
                     [-0.31622777, -0.9486833],
                     [-0.9486833, 0.31622777]
                 ])));
-                assert.ok(r.isEqual(new NDArray([
+                assert.ok(r.isEqual(new src_1.NDArray([
                     [-9.48683298, -3.79473319],
                     [0., -5.05964426]
                 ])));
             });
             QUnit.skip('3x2', function (assert) {
-                var A = new NDArray([
+                var A = new src_1.NDArray([
                     [3, 6],
                     [9, 2],
                     [6, 7]
                 ]);
                 var _a = src_1.linalg.qr(A), q = _a[0], r = _a[1];
-                assert.ok(q.isEqual(new NDArray([
+                assert.ok(q.isEqual(new src_1.NDArray([
                     [-0.26726124, 0.64927181],
                     [-0.80178373, -0.55971708],
                     [-0.53452248, 0.51493971]
                 ])));
                 console.log(r.toString());
-                assert.ok(r.isEqual(new NDArray([
+                assert.ok(r.isEqual(new src_1.NDArray([
                     [-11.22497216, -6.94879229],
                     [0., 6.3807747]
                 ])));
             });
             QUnit.skip('2x4', function (assert) {
-                var A = new NDArray([
+                var A = new src_1.NDArray([
                     [3, 6, 7, 8],
                     [9, 2, 5, 5]
                 ]);
                 var _a = src_1.linalg.qr(A), q = _a[0], r = _a[1];
-                assert.ok(q.isEqual(new NDArray([
+                assert.ok(q.isEqual(new src_1.NDArray([
                     [-0.31622777, -0.9486833],
                     [-0.9486833, 0.31622777]
                 ])));
-                assert.ok(r.isEqual(new NDArray([
+                assert.ok(r.isEqual(new src_1.NDArray([
                     [-9.48683298, -3.79473319, -6.95701085, -7.27323862],
                     [0., -5.05964426, -5.05964426, -6.00832755]
                 ])));
@@ -6026,37 +6202,37 @@ function testOperations() {
         });
         QUnit.module('Eigen', function () {
             QUnit.test('eig 2x2', function (assert) {
-                var A = new NDArray([
+                var A = new src_1.NDArray([
                     [3, 1],
                     [0, 2]
                 ]);
                 var _a = src_1.linalg.eig(A), w = _a[0], vl = _a[1], vr = _a[2];
                 !vl; // to fix the unused warning
-                assert.ok(w.isEqual(new NDArray([3, 2])));
-                assert.ok(vr.isEqual(new NDArray([
+                assert.ok(w.isEqual(new src_1.NDArray([3, 2])));
+                assert.ok(vr.isEqual(new src_1.NDArray([
                     [1, -0.70710678],
                     [0, 0.70710678]
                 ])));
             });
             QUnit.test('eig 3x3', function (assert) {
-                var A = new NDArray([
+                var A = new src_1.NDArray([
                     [3, 6, 2],
                     [1, 7, 6],
                     [9, 3, 2]
                 ]);
                 var _a = src_1.linalg.eig(A), w = _a[0], vl = _a[1], vr = _a[2];
                 !vl; // to fix the unused warning
-                var target_w = new NDArray({ shape: [3] });
-                target_w.set(0, new Complex(-0.56082135, 3.66104822));
-                target_w.set(1, new Complex(-0.56082135, -3.66104822));
+                var target_w = new src_1.NDArray({ shape: [3] });
+                target_w.set(0, new src_1.Complex(-0.56082135, 3.66104822));
+                target_w.set(1, new src_1.Complex(-0.56082135, -3.66104822));
                 target_w.set(2, 13.12164269);
                 assert.ok(w.isEqual(target_w));
-                var target_vr = new NDArray({ shape: [3, 3] });
-                target_vr.set(0, 0, new Complex(-0.06160653, 0.39509838));
-                target_vr.set(0, 1, new Complex(-0.06160653, -0.39509838));
+                var target_vr = new src_1.NDArray({ shape: [3, 3] });
+                target_vr.set(0, 0, new src_1.Complex(-0.06160653, 0.39509838));
+                target_vr.set(0, 1, new src_1.Complex(-0.06160653, -0.39509838));
                 target_vr.set(0, 2, -0.49774794);
-                target_vr.set(1, 0, new Complex(-0.45396105, -0.27206987));
-                target_vr.set(1, 1, new Complex(-0.45396105, 0.27206987));
+                target_vr.set(1, 0, new src_1.Complex(-0.45396105, -0.27206987));
+                target_vr.set(1, 1, new src_1.Complex(-0.45396105, 0.27206987));
                 target_vr.set(1, 2, -0.64721249);
                 target_vr.set(2, 0, 0.74833098);
                 target_vr.set(2, 1, 0.74833098);
@@ -6064,7 +6240,7 @@ function testOperations() {
                 assert.ok(vr.isEqual(target_vr));
             });
             QUnit.test('eig 4x4', function (assert) {
-                var A = new NDArray([
+                var A = new src_1.NDArray([
                     [3, 6, 2, 1],
                     [1, 7, 6, 1],
                     [9, 3, 2, 1],
@@ -6072,27 +6248,27 @@ function testOperations() {
                 ]);
                 var _a = src_1.linalg.eig(A), w = _a[0], vl = _a[1], vr = _a[2];
                 !vl; // to fix the unused warning
-                var target_w = new NDArray({ shape: [4] });
+                var target_w = new src_1.NDArray({ shape: [4] });
                 target_w.set(0, 14.4616694);
-                target_w.set(1, new Complex(-0.730834679, 3.55021966));
-                target_w.set(2, new Complex(-0.730834679, -3.55021966));
+                target_w.set(1, new src_1.Complex(-0.730834679, 3.55021966));
+                target_w.set(2, new src_1.Complex(-0.730834679, -3.55021966));
                 target_w.set(3, 0);
                 assert.ok(w.isEqual(target_w));
-                var target_vr = new NDArray({ shape: [4, 4] });
+                var target_vr = new src_1.NDArray({ shape: [4, 4] });
                 // TODO:
                 // target_vr values at (0,0), (1,0), (2,0), (3,0) should
                 // have opposite signs to match the numpy output
                 target_vr.set(0, 0, 0.397234093);
-                target_vr.set(0, 1, new Complex(-0.295467105, 0.08333459));
-                target_vr.set(0, 2, new Complex(-0.295467105, -0.08333459));
+                target_vr.set(0, 1, new src_1.Complex(-0.295467105, 0.08333459));
+                target_vr.set(0, 2, new src_1.Complex(-0.295467105, -0.08333459));
                 target_vr.set(0, 3, 0.0659380473);
                 target_vr.set(1, 0, 0.503683695);
-                target_vr.set(1, 1, new Complex(-0.0629882747, -0.36737993));
-                target_vr.set(1, 2, new Complex(-0.0629882747, 0.36737993));
+                target_vr.set(1, 1, new src_1.Complex(-0.0629882747, -0.36737993));
+                target_vr.set(1, 2, new src_1.Complex(-0.0629882747, 0.36737993));
                 target_vr.set(1, 3, -0.131876095);
                 target_vr.set(2, 0, 0.457555861);
-                target_vr.set(2, 1, new Complex(0.225571507, 0.42219946));
-                target_vr.set(2, 2, new Complex(0.225571507, -0.42219946));
+                target_vr.set(2, 1, new src_1.Complex(0.225571507, 0.42219946));
+                target_vr.set(2, 2, new src_1.Complex(0.225571507, -0.42219946));
                 target_vr.set(2, 3, 0);
                 target_vr.set(3, 0, 0.615751934);
                 target_vr.set(3, 1, 0.733269467);
@@ -6103,29 +6279,29 @@ function testOperations() {
         });
         QUnit.module('Cholesky', function () {
             QUnit.test('3x3 1', function (assert) {
-                var A = new NDArray([
+                var A = new src_1.NDArray([
                     [4, 12, -16],
                     [12, 37, -43],
                     [-16, -43, 98]
                 ]);
                 var chA = src_1.linalg.cholesky(A);
-                assert.ok(chA.isEqual(new NDArray([
+                assert.ok(chA.isEqual(new src_1.NDArray([
                     [2, 0, 0],
                     [6, 1, 0],
                     [-8, 5, 3]
                 ])));
             });
             QUnit.test('3x3 2', function (assert) {
-                var A = new NDArray([[2, -1, 0], [-1, 2, -1], [0, -1, 2]]);
+                var A = new src_1.NDArray([[2, -1, 0], [-1, 2, -1], [0, -1, 2]]);
                 var chA = src_1.linalg.cholesky(A);
-                assert.ok(chA.isEqual(new NDArray([
+                assert.ok(chA.isEqual(new src_1.NDArray([
                     [1.41421356, 0., 0.],
                     [-0.70710678, 1.22474487, 0.],
                     [0., -0.81649658, 1.15470054]
                 ])));
             });
             QUnit.test('not positive definite', function (assert) {
-                var A = new NDArray([
+                var A = new src_1.NDArray([
                     [4, 12, -16], [12, 0, -43], [-16, -43, 98]
                 ]);
                 assert.throws(function () {
@@ -6139,7 +6315,7 @@ exports.default = testOperations;
 
 
 /***/ }),
-/* 40 */
+/* 35 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser

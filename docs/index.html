@@ -890,125 +890,35 @@ img { max-width: 100%; }
 </header>
 <nav class="tsd-navigation secondary">
 	<ul>
-		<li class=" tsd-kind-class">
-			<a href="classes/complex.html" class="tsd-kind-icon">Complex</a>
-		</li>
-		<li class=" tsd-kind-class">
-			<a href="classes/ndarray.html" class="tsd-kind-icon">NDArray</a>
-		</li>
-		<li class=" tsd-kind-interface">
-			<a href="interfaces/ndarrayoptions.html" class="tsd-kind-icon">NDArray<wbr>Options</a>
-		</li>
-		<li class=" tsd-kind-interface">
-			<a href="interfaces/lstsq_return.html" class="tsd-kind-icon">lstsq_<wbr>return</a>
-		</li>
-		<li class=" tsd-kind-function">
-			<a href="globals.html#cholesky" class="tsd-kind-icon">cholesky</a>
-		</li>
-		<li class=" tsd-kind-function">
-			<a href="globals.html#det" class="tsd-kind-icon">det</a>
-		</li>
-		<li class=" tsd-kind-function">
-			<a href="globals.html#eig" class="tsd-kind-icon">eig</a>
-		</li>
-		<li class=" tsd-kind-function">
-			<a href="globals.html#eye" class="tsd-kind-icon">eye</a>
-		</li>
-		<li class=" tsd-kind-function">
-			<a href="globals.html#inner" class="tsd-kind-icon">inner</a>
-		</li>
-		<li class=" tsd-kind-function">
-			<a href="globals.html#inv" class="tsd-kind-icon">inv</a>
-		</li>
-		<li class=" tsd-kind-function">
-			<a href="globals.html#isequal" class="tsd-kind-icon">isequal</a>
-		</li>
-		<li class=" tsd-kind-function">
-			<a href="globals.html#iszero" class="tsd-kind-icon">iszero</a>
-		</li>
-		<li class=" tsd-kind-function">
-			<a href="globals.html#lstsq" class="tsd-kind-icon">lstsq</a>
-		</li>
-		<li class=" tsd-kind-function">
-			<a href="globals.html#matmul" class="tsd-kind-icon">matmul</a>
-		</li>
-		<li class=" tsd-kind-function">
-			<a href="globals.html#norm" class="tsd-kind-icon">norm</a>
-		</li>
-		<li class=" tsd-kind-function">
-			<a href="globals.html#outer" class="tsd-kind-icon">outer</a>
-		</li>
-		<li class=" tsd-kind-function">
-			<a href="globals.html#qr" class="tsd-kind-icon">qr</a>
-		</li>
-		<li class=" tsd-kind-function">
-			<a href="globals.html#rank" class="tsd-kind-icon">rank</a>
-		</li>
-		<li class=" tsd-kind-function">
-			<a href="globals.html#slogdet" class="tsd-kind-icon">slogdet</a>
-		</li>
-		<li class=" tsd-kind-function">
-			<a href="globals.html#solve" class="tsd-kind-icon">solve</a>
-		</li>
-		<li class=" tsd-kind-function">
-			<a href="globals.html#svd" class="tsd-kind-icon">svd</a>
-		</li>
-		<li class=" tsd-kind-function">
-			<a href="globals.html#tril" class="tsd-kind-icon">tril</a>
-		</li>
-		<li class=" tsd-kind-function">
-			<a href="globals.html#triu" class="tsd-kind-icon">triu</a>
-		</li>
-		<li class=" tsd-kind-function">
-			<a href="globals.html#zeros" class="tsd-kind-icon">zeros</a>
-		</li>
 	</ul>
 </nav>
 <div class="container container-main">
 	<div class="content-wrap">
 		<div class="tsd-panel tsd-typography">
-			<h1 id="linalg">linalg</h1>
-			<p>This module supports linear algebra operations on vectors (1d) and matrices (2d) that are represented by n-dimensional array class <a href="classes/ndarray.html">NDArray</a></p>
-			<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {linalg} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'bluemath'</span>);
-<span class="hljs-built_in">console</span>.log(linalg.zeros(<span class="hljs-number">3</span>).toString());
-</code></pre>
-			<h2 id="basic-operations">Basic operations</h2>
-			<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {basic,linalg} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'bluemath'</span>);
-<span class="hljs-keyword">let</span> {NDArray} = basic;
-
-<span class="hljs-keyword">let</span> A = <span class="hljs-keyword">new</span> NDArray([<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>]);
-<span class="hljs-keyword">let</span> B = <span class="hljs-keyword">new</span> NDArray([[<span class="hljs-number">1</span>],[<span class="hljs-number">1</span>],[<span class="hljs-number">1</span>]]);
-
-<span class="hljs-built_in">console</span>.log(linalg.outer(A,B).toArray());
-<span class="hljs-comment">// [</span>
-<span class="hljs-comment">//  [1,1,1],</span>
-<span class="hljs-comment">//  [1,1,1],</span>
-<span class="hljs-comment">//  [1,1,1]</span>
-<span class="hljs-comment">// ]</span>
-</code></pre>
-			<p>Ref: <a href="globals.html#outer">outer</a></p>
-			<h2 id="solving-equations">Solving Equations</h2>
-			<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> {linalg, basic} <span class="hljs-keyword">from</span> <span class="hljs-string">'bluemath'</span>
-<span class="hljs-keyword">let</span> A = <span class="hljs-keyword">new</span> basic.NDArray([
-    [<span class="hljs-number">11</span>,<span class="hljs-number">-3</span>,<span class="hljs-number">0</span>],
-    [<span class="hljs-number">-3</span>,<span class="hljs-number">6</span>,<span class="hljs-number">-1</span>],
-    [<span class="hljs-number">0</span>,<span class="hljs-number">-1</span>,<span class="hljs-number">3</span>]
-]);
-<span class="hljs-keyword">let</span> B = <span class="hljs-keyword">new</span> basic.NDArray([<span class="hljs-number">30</span>,<span class="hljs-number">5</span>,<span class="hljs-number">-25</span>]);
-linalg.solve(A,B);
-<span class="hljs-built_in">console</span>.log(B.toArray()); <span class="hljs-comment">// [3,1,-8]</span>
-</code></pre>
-			<p>Ref: <a href="globals.html#solve">solve</a></p>
-			<h2 id="svd">SVD</h2>
-			<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> A = <span class="hljs-keyword">new</span> NDArray([
-  [<span class="hljs-number">-3</span>,<span class="hljs-number">6</span>,<span class="hljs-number">-1</span>],
-  [<span class="hljs-number">11</span>,<span class="hljs-number">-3</span>,<span class="hljs-number">0</span>],
-  [<span class="hljs-number">0</span>,<span class="hljs-number">-1</span>,<span class="hljs-number">3</span>]
-]);
-<span class="hljs-keyword">let</span> [U,S,VT] = linalg.svd(A,<span class="hljs-literal">true</span>,<span class="hljs-literal">true</span>);
-<span class="hljs-built_in">console</span>.log(U,S,VT);
-</code></pre>
-			<p>Ref: <a href="globals.html#svd">svd</a></p>
+			<h1 id="api">API</h1>
+			<p><strong>NDArray</strong>  <a href="./classes/_basic_ndarray_.ndarray.html">bluemath.NDArray</a></p>
+			<p><strong>Basic Math operations</strong>  <a href="./modules/_ops_.html">bluemath.*</a></p>
+			<p><strong>Linear Algebra</strong>  <a href="./modules/_linalg_operations_.html">bluemath.linalg.*</a></p>
+			<h1 id="linear-algebra">Linear Algebra</h1>
+			<h2 id="matrix-and-vector-products">Matrix and Vector products</h2>
+			<p><a href="modules/_linalg_operations_.html#inner">inner</a></p>
+			<p><a href="modules/_linalg_operations_.html#outer">outer</a></p>
+			<p><a href="modules/_linalg_operations_.html#matmul">matmul</a></p>
+			<h2 id="decompositions">Decompositions</h2>
+			<p><a href="modules/_linalg_operations_.html#cholesky">cholesky</a></p>
+			<p><a href="modules/_linalg_operations_.html#qr">qr</a></p>
+			<p><a href="modules/_linalg_operations_.html#svd">svd</a></p>
+			<h2 id="matrix-eigenvalues">Matrix Eigenvalues</h2>
+			<p><a href="modules/_linalg_operations_.html#eig">eig</a></p>
+			<h2 id="norms-and-other-numbers">Norms and other numbers</h2>
+			<p><a href="modules/_linalg_operations_.html#norm">norm</a></p>
+			<p><a href="interfaces/_linalg_operations_.lstsq_return.html#rank">rank</a></p>
+			<p><a href="modules/_linalg_operations_.html#det">det</a></p>
+			<p><a href="modules/_linalg_operations_.html#slogdet">slogdet</a></p>
+			<h2 id="solving-equations-and-inverting-matrices">Solving equations and inverting matrices</h2>
+			<p><a href="modules/_linalg_operations_.html#solve">solve</a></p>
+			<p><a href="modules/_linalg_operations_.html#lstsq">lstsq</a></p>
+			<p><a href="modules/_linalg_operations_.html#inv">inv</a></p>
 		</div>
 		<!--
 <footer class="with-border-bottom">

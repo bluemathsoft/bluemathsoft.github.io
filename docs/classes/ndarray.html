@@ -918,10 +918,16 @@ img { max-width: 100%; }
 					<a href="ndarray.html#fill" class="tsd-kind-icon">fill</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="ndarray.html#foreach" class="tsd-kind-icon">for<wbr>Each</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
 					<a href="ndarray.html#get" class="tsd-kind-icon">get</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class">
 					<a href="ndarray.html#isequal" class="tsd-kind-icon">is<wbr>Equal</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="ndarray.html#isshapeequal" class="tsd-kind-icon">is<wbr>Shape<wbr>Equal</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class">
 					<a href="ndarray.html#reshape" class="tsd-kind-icon">reshape</a>
@@ -952,11 +958,26 @@ img { max-width: 100%; }
 		<li class=" tsd-kind-interface">
 			<a href="../interfaces/lstsq_return.html" class="tsd-kind-icon">lstsq_<wbr>return</a>
 		</li>
+		<li class=" tsd-kind-type-alias">
+			<a href="../globals.html#numbertype" class="tsd-kind-icon">Number<wbr>Type</a>
+		</li>
+		<li class=" tsd-kind-type-alias">
+			<a href="../globals.html#typedarray" class="tsd-kind-icon">Typed<wbr>Array</a>
+		</li>
+		<li class=" tsd-kind-function">
+			<a href="../globals.html#add" class="tsd-kind-icon">add</a>
+		</li>
 		<li class=" tsd-kind-function">
 			<a href="../globals.html#cholesky" class="tsd-kind-icon">cholesky</a>
 		</li>
 		<li class=" tsd-kind-function">
+			<a href="../globals.html#cuberoot" class="tsd-kind-icon">cuberoot</a>
+		</li>
+		<li class=" tsd-kind-function">
 			<a href="../globals.html#det" class="tsd-kind-icon">det</a>
+		</li>
+		<li class=" tsd-kind-function">
+			<a href="../globals.html#div" class="tsd-kind-icon">div</a>
 		</li>
 		<li class=" tsd-kind-function">
 			<a href="../globals.html#eig" class="tsd-kind-icon">eig</a>
@@ -983,6 +1004,12 @@ img { max-width: 100%; }
 			<a href="../globals.html#matmul" class="tsd-kind-icon">matmul</a>
 		</li>
 		<li class=" tsd-kind-function">
+			<a href="../globals.html#minimize" class="tsd-kind-icon">minimize</a>
+		</li>
+		<li class=" tsd-kind-function">
+			<a href="../globals.html#mul" class="tsd-kind-icon">mul</a>
+		</li>
+		<li class=" tsd-kind-function">
 			<a href="../globals.html#norm" class="tsd-kind-icon">norm</a>
 		</li>
 		<li class=" tsd-kind-function">
@@ -990,6 +1017,9 @@ img { max-width: 100%; }
 		</li>
 		<li class=" tsd-kind-function">
 			<a href="../globals.html#qr" class="tsd-kind-icon">qr</a>
+		</li>
+		<li class=" tsd-kind-function">
+			<a href="../globals.html#range" class="tsd-kind-icon">range</a>
 		</li>
 		<li class=" tsd-kind-function">
 			<a href="../globals.html#rank" class="tsd-kind-icon">rank</a>
@@ -1001,7 +1031,16 @@ img { max-width: 100%; }
 			<a href="../globals.html#solve" class="tsd-kind-icon">solve</a>
 		</li>
 		<li class=" tsd-kind-function">
+			<a href="../globals.html#sub" class="tsd-kind-icon">sub</a>
+		</li>
+		<li class=" tsd-kind-function">
 			<a href="../globals.html#svd" class="tsd-kind-icon">svd</a>
+		</li>
+		<li class=" tsd-kind-function">
+			<a href="../globals.html#todeg" class="tsd-kind-icon">todeg</a>
+		</li>
+		<li class=" tsd-kind-function">
+			<a href="../globals.html#torad" class="tsd-kind-icon">torad</a>
 		</li>
 		<li class=" tsd-kind-function">
 			<a href="../globals.html#tril" class="tsd-kind-icon">tril</a>
@@ -1019,11 +1058,39 @@ img { max-width: 100%; }
 		<section class="tsd-panel tsd-comment">
 			<div class="tsd-comment tsd-typography">
 				<div class="lead">
-					<p>N-Dimensional array class
-						It can store real as well as complex numbers in n-dimensions
-						It can be used to store Vectors (1D) or Matrices (2D).
-					This class stores the data internally in flat typed arrays</p>
+					<h1 id="n-dimensional-array">N-Dimensional Array</h1>
 				</div>
+				<p>It can store real as well as complex numbers in n-dimensions
+					It can be used to store Vectors (1D) or Matrices (2D).
+				This class stores the data internally in flat typed arrays</p>
+				<p>NDArray is the central class of Bluemath library.
+				It&#39;s used to input and output data to/from most of the APIs of this library.</p>
+				<h2 id="construction">Construction</h2>
+				<p>You can create an NDArray</p>
+				<ul>
+					<li><p>With shape and/or data type</p>
+						<pre><code class="lang-javascript"><span class="hljs-comment">// 3-dimensional array with 32-bit integer storage</span>
+<span class="hljs-keyword">new</span> NDArray({<span class="hljs-attr">shape</span>:[<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">3</span>],<span class="hljs-attr">datatype</span>:<span class="hljs-string">'i32'</span>});
+</code></pre>
+					</li>
+					<li><p>Initializing it with array data</p>
+						<pre><code class="lang-javascript"><span class="hljs-comment">// 2x3 Matrix with 64-bit floating point (double) storage</span>
+<span class="hljs-keyword">new</span> NDArray([[<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>],[<span class="hljs-number">4</span>,<span class="hljs-number">4</span>,<span class="hljs-number">4</span>]],{<span class="hljs-attr">datatype</span>:<span class="hljs-string">'f64'</span>});
+</code></pre>
+					</li>
+					<li><p>Using standard functions</p>
+						<pre><code class="lang-javascript">zeros([<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>]); <span class="hljs-comment">// Returns 2x2x2 NDArray of zeros</span>
+eye([<span class="hljs-number">4</span>,<span class="hljs-number">4</span>]); <span class="hljs-comment">// Creates 4x4 Identity matrix</span>
+</code></pre>
+					</li>
+				</ul>
+				<h2 id="basic-math-operations">Basic math operations</h2>
+				<p>Bluemath provides functions that allow basic math operations
+				on NDArrays</p>
+				<p><a href="../globals.html#add">add</a></p>
+				<p><a href="../globals.html#sub">sub</a></p>
+				<p><a href="../globals.html#mul">mul</a></p>
+				<p><a href="../globals.html#div">div</a></p>
 			</div>
 		</section>
 		<section class="tsd-panel tsd-hierarchy">
@@ -1063,8 +1130,10 @@ img { max-width: 100%; }
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="ndarray.html#clone" class="tsd-kind-icon">clone</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="ndarray.html#fill" class="tsd-kind-icon">fill</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="ndarray.html#foreach" class="tsd-kind-icon">for<wbr>Each</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="ndarray.html#get" class="tsd-kind-icon">get</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="ndarray.html#isequal" class="tsd-kind-icon">is<wbr>Equal</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="ndarray.html#isshapeequal" class="tsd-kind-icon">is<wbr>Shape<wbr>Equal</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="ndarray.html#reshape" class="tsd-kind-icon">reshape</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="ndarray.html#set" class="tsd-kind-icon">set</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="ndarray.html#slice" class="tsd-kind-icon">slice</a></li>
@@ -1083,19 +1152,19 @@ img { max-width: 100%; }
 				<a name="constructor" class="tsd-anchor"></a>
 				<h3>constructor</h3>
 				<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-					<li class="tsd-signature tsd-kind-icon">new NDArray<span class="tsd-signature-symbol">(</span>arg0<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TypedArray</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/ndarrayoptions.html" class="tsd-signature-type">NDArrayOptions</a>, arg1<span class="tsd-signature-symbol">?: </span><a href="../interfaces/ndarrayoptions.html" class="tsd-signature-type">NDArrayOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="ndarray.html" class="tsd-signature-type">NDArray</a></li>
+					<li class="tsd-signature tsd-kind-icon">new NDArray<span class="tsd-signature-symbol">(</span>arg0<span class="tsd-signature-symbol">: </span><a href="../globals.html#typedarray" class="tsd-signature-type">TypedArray</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/ndarrayoptions.html" class="tsd-signature-type">NDArrayOptions</a>, arg1<span class="tsd-signature-symbol">?: </span><a href="../interfaces/ndarrayoptions.html" class="tsd-signature-type">NDArrayOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="ndarray.html" class="tsd-signature-type">NDArray</a></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/9d7bd2b/src/basic/ndarray.ts#L154">basic/ndarray.ts:154</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/0ca593b/src/basic/ndarray.ts#L196">basic/ndarray.ts:196</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5>arg0: <span class="tsd-signature-type">TypedArray</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/ndarrayoptions.html" class="tsd-signature-type">NDArrayOptions</a></h5>
+								<h5>arg0: <a href="../globals.html#typedarray" class="tsd-signature-type">TypedArray</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/ndarrayoptions.html" class="tsd-signature-type">NDArrayOptions</a></h5>
 							</li>
 							<li>
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> arg1: <a href="../interfaces/ndarrayoptions.html" class="tsd-signature-type">NDArrayOptions</a></h5>
@@ -1111,10 +1180,10 @@ img { max-width: 100%; }
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 				<a name="datatype" class="tsd-anchor"></a>
 				<h3>datatype</h3>
-				<div class="tsd-signature tsd-kind-icon">datatype<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">NumberType</span></div>
+				<div class="tsd-signature tsd-kind-icon">datatype<span class="tsd-signature-symbol">:</span> <a href="../globals.html#numbertype" class="tsd-signature-type">NumberType</a></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/9d7bd2b/src/basic/ndarray.ts#L138">basic/ndarray.ts:138</a></li>
+						<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/0ca593b/src/basic/ndarray.ts#L180">basic/ndarray.ts:180</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1129,7 +1198,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">shape<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/9d7bd2b/src/basic/ndarray.ts#L127">basic/ndarray.ts:127</a></li>
+						<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/0ca593b/src/basic/ndarray.ts#L169">basic/ndarray.ts:169</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1144,7 +1213,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/9d7bd2b/src/basic/ndarray.ts#L133">basic/ndarray.ts:133</a></li>
+						<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/0ca593b/src/basic/ndarray.ts#L175">basic/ndarray.ts:175</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1163,7 +1232,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">data<span class="tsd-signature-symbol">:</span> </div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/9d7bd2b/src/basic/ndarray.ts#L196">basic/ndarray.ts:196</a></li>
+						<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/0ca593b/src/basic/ndarray.ts#L247">basic/ndarray.ts:247</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1180,7 +1249,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/9d7bd2b/src/basic/ndarray.ts#L222">basic/ndarray.ts:222</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/0ca593b/src/basic/ndarray.ts#L273">basic/ndarray.ts:273</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1202,7 +1271,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/9d7bd2b/src/basic/ndarray.ts#L328">basic/ndarray.ts:328</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/0ca593b/src/basic/ndarray.ts#L379">basic/ndarray.ts:379</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1221,6 +1290,55 @@ img { max-width: 100%; }
 				</ul>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="foreach" class="tsd-anchor"></a>
+				<h3>for<wbr>Each</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">for<wbr>Each<span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/0ca593b/src/basic/ndarray.ts#L460">basic/ndarray.ts:460</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Iterate over each element, invoke a callback with each index and value</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>callback: <span class="tsd-signature-type">function</span></h5>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter-siganture">
+										<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+											<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="complex.html" class="tsd-signature-type">Complex</a>, <span class="tsd-signature-symbol">...</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+										</ul>
+										<ul class="tsd-descriptions">
+											<li class="tsd-description">
+												<h4 class="tsd-parameters-title">Parameters</h4>
+												<ul class="tsd-parameters">
+													<li>
+														<h5>value: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="complex.html" class="tsd-signature-type">Complex</a></h5>
+													</li>
+													<li>
+														<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>index: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h5>
+													</li>
+												</ul>
+												<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 				<a name="get" class="tsd-anchor"></a>
 				<h3>get</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -1230,7 +1348,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/9d7bd2b/src/basic/ndarray.ts#L335">basic/ndarray.ts:335</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/0ca593b/src/basic/ndarray.ts#L386">basic/ndarray.ts:386</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1261,7 +1379,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/9d7bd2b/src/basic/ndarray.ts#L408">basic/ndarray.ts:408</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/0ca593b/src/basic/ndarray.ts#L492">basic/ndarray.ts:492</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1289,6 +1407,34 @@ img { max-width: 100%; }
 				</ul>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="isshapeequal" class="tsd-anchor"></a>
+				<h3>is<wbr>Shape<wbr>Equal</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">is<wbr>Shape<wbr>Equal<span class="tsd-signature-symbol">(</span>other<span class="tsd-signature-symbol">: </span><a href="ndarray.html" class="tsd-signature-type">NDArray</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/0ca593b/src/basic/ndarray.ts#L474">basic/ndarray.ts:474</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Checks if the shape of this ndarray matches the shape of other</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>other: <a href="ndarray.html" class="tsd-signature-type">NDArray</a></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 				<a name="reshape" class="tsd-anchor"></a>
 				<h3>reshape</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -1298,7 +1444,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/9d7bd2b/src/basic/ndarray.ts#L207">basic/ndarray.ts:207</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/0ca593b/src/basic/ndarray.ts#L258">basic/ndarray.ts:258</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1332,7 +1478,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/9d7bd2b/src/basic/ndarray.ts#L345">basic/ndarray.ts:345</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/0ca593b/src/basic/ndarray.ts#L400">basic/ndarray.ts:400</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1362,20 +1508,53 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/9d7bd2b/src/basic/ndarray.ts#L447">basic/ndarray.ts:447</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/0ca593b/src/basic/ndarray.ts#L566">basic/ndarray.ts:566</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>TBD</p>
+								<p>Bluemath supports extracting of NDArray slices using a syntax similar
+								to numpy. Slicing is supported by NDArray.slice function.</p>
 							</div>
+							<p>The function accepts number of arguments not greater than the dimensions
+								of the NDArray.
+								Each argument could be a <code>number</code>, a <code>string</code> in format <code>&lt;start&gt;:&lt;stop&gt;</code>
+							or <code>undefined</code> or <code>null</code>.</p>
+							<p>If the argument is a number then it represents a single slice,
+								i.e. all the elements in the lower dimension
+							are returned for this index in given dimension.</p>
+							<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> A = <span class="hljs-keyword">new</span> NDArray([
+  [<span class="hljs-number">2</span>,<span class="hljs-number">4</span>,<span class="hljs-number">6</span>],
+  [<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">9</span>],
+  [<span class="hljs-number">0</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]
+]);
+A.slice(<span class="hljs-number">0</span>); <span class="hljs-comment">// [[2,4,6]]</span>
+</code></pre>
+							<p>If the argument is <code>undefined</code> or <code>null</code>, then that&#39;s interpreted as
+							all items in the given dimension.</p>
+							<pre><code class="lang-javascript">A.slice(<span class="hljs-literal">null</span>); <span class="hljs-comment">// [[2,4,6],[1,0,9],[0,2,3]]</span>
+A.slice(<span class="hljs-number">1</span>,<span class="hljs-literal">null</span>); <span class="hljs-comment">// [[1,0,9]]</span>
+</code></pre>
+							<p>A string argument of format <code>&lt;start&gt;:&lt;stop&gt;</code> is used to specify range of
+								slices in the given dimension.
+							Both <code>&lt;start&gt;</code> and <code>&lt;stop&gt;</code> are optional.</p>
+							<pre><code class="lang-javascript">A.slice(<span class="hljs-string">'1:2'</span>); <span class="hljs-comment">// [[1,0,9]]</span>
+A.slice(<span class="hljs-string">':1'</span>); <span class="hljs-comment">// [[2,4,6]]</span>
+A.slice(<span class="hljs-string">':'</span>); <span class="hljs-comment">// [[2,4,6],[1,0,9],[0,2,3]]</span>
+A.slice(<span class="hljs-string">':'</span>,<span class="hljs-number">2</span>); <span class="hljs-comment">// [[6],[9],[3]]</span>
+</code></pre>
+							<p>The argument order is interpreted as going from outermost dimension to
+							innermost.</p>
+							<h2 id="caveats">Caveats</h2>
+							<ul>
+								<li>Negative indices not supported yet</li>
+								<li>No support for <code>&lt;start&gt;:&lt;stop&gt;:&lt;step&gt;</code> format yet</li>
+							</ul>
 						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
 								<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>slices: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span></h5>
-								<div class="tsd-comment tsd-typography">
-								</div>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <a href="ndarray.html" class="tsd-signature-type">NDArray</a></h4>
@@ -1392,7 +1571,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/9d7bd2b/src/basic/ndarray.ts#L423">basic/ndarray.ts:423</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/0ca593b/src/basic/ndarray.ts#L500">basic/ndarray.ts:500</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1414,7 +1593,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/9d7bd2b/src/basic/ndarray.ts#L361">basic/ndarray.ts:361</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/0ca593b/src/basic/ndarray.ts#L416">basic/ndarray.ts:416</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1445,7 +1624,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/9d7bd2b/src/basic/ndarray.ts#L282">basic/ndarray.ts:282</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/0ca593b/src/basic/ndarray.ts#L333">basic/ndarray.ts:333</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1467,7 +1646,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/9d7bd2b/src/basic/ndarray.ts#L519">basic/ndarray.ts:519</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/0ca593b/src/basic/ndarray.ts#L641">basic/ndarray.ts:641</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>

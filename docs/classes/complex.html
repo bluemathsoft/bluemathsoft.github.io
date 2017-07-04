@@ -903,6 +903,9 @@ img { max-width: 100%; }
 					<a href="complex.html#real" class="tsd-kind-icon">real</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="complex.html#clone" class="tsd-kind-icon">clone</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
 					<a href="complex.html#isequal" class="tsd-kind-icon">is<wbr>Equal</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class">
@@ -919,11 +922,26 @@ img { max-width: 100%; }
 		<li class=" tsd-kind-interface">
 			<a href="../interfaces/lstsq_return.html" class="tsd-kind-icon">lstsq_<wbr>return</a>
 		</li>
+		<li class=" tsd-kind-type-alias">
+			<a href="../globals.html#numbertype" class="tsd-kind-icon">Number<wbr>Type</a>
+		</li>
+		<li class=" tsd-kind-type-alias">
+			<a href="../globals.html#typedarray" class="tsd-kind-icon">Typed<wbr>Array</a>
+		</li>
+		<li class=" tsd-kind-function">
+			<a href="../globals.html#add" class="tsd-kind-icon">add</a>
+		</li>
 		<li class=" tsd-kind-function">
 			<a href="../globals.html#cholesky" class="tsd-kind-icon">cholesky</a>
 		</li>
 		<li class=" tsd-kind-function">
+			<a href="../globals.html#cuberoot" class="tsd-kind-icon">cuberoot</a>
+		</li>
+		<li class=" tsd-kind-function">
 			<a href="../globals.html#det" class="tsd-kind-icon">det</a>
+		</li>
+		<li class=" tsd-kind-function">
+			<a href="../globals.html#div" class="tsd-kind-icon">div</a>
 		</li>
 		<li class=" tsd-kind-function">
 			<a href="../globals.html#eig" class="tsd-kind-icon">eig</a>
@@ -950,6 +968,12 @@ img { max-width: 100%; }
 			<a href="../globals.html#matmul" class="tsd-kind-icon">matmul</a>
 		</li>
 		<li class=" tsd-kind-function">
+			<a href="../globals.html#minimize" class="tsd-kind-icon">minimize</a>
+		</li>
+		<li class=" tsd-kind-function">
+			<a href="../globals.html#mul" class="tsd-kind-icon">mul</a>
+		</li>
+		<li class=" tsd-kind-function">
 			<a href="../globals.html#norm" class="tsd-kind-icon">norm</a>
 		</li>
 		<li class=" tsd-kind-function">
@@ -957,6 +981,9 @@ img { max-width: 100%; }
 		</li>
 		<li class=" tsd-kind-function">
 			<a href="../globals.html#qr" class="tsd-kind-icon">qr</a>
+		</li>
+		<li class=" tsd-kind-function">
+			<a href="../globals.html#range" class="tsd-kind-icon">range</a>
 		</li>
 		<li class=" tsd-kind-function">
 			<a href="../globals.html#rank" class="tsd-kind-icon">rank</a>
@@ -968,7 +995,16 @@ img { max-width: 100%; }
 			<a href="../globals.html#solve" class="tsd-kind-icon">solve</a>
 		</li>
 		<li class=" tsd-kind-function">
+			<a href="../globals.html#sub" class="tsd-kind-icon">sub</a>
+		</li>
+		<li class=" tsd-kind-function">
 			<a href="../globals.html#svd" class="tsd-kind-icon">svd</a>
+		</li>
+		<li class=" tsd-kind-function">
+			<a href="../globals.html#todeg" class="tsd-kind-icon">todeg</a>
+		</li>
+		<li class=" tsd-kind-function">
+			<a href="../globals.html#torad" class="tsd-kind-icon">torad</a>
 		</li>
 		<li class=" tsd-kind-function">
 			<a href="../globals.html#tril" class="tsd-kind-icon">tril</a>
@@ -1011,6 +1047,7 @@ img { max-width: 100%; }
 					<section class="tsd-index-section ">
 						<h3>Methods</h3>
 						<ul class="tsd-index-list">
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="complex.html#clone" class="tsd-kind-icon">clone</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="complex.html#isequal" class="tsd-kind-icon">is<wbr>Equal</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="complex.html#tostring" class="tsd-kind-icon">to<wbr>String</a></li>
 						</ul>
@@ -1030,7 +1067,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/9d7bd2b/src/basic/complex.ts#L27">basic/complex.ts:27</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/0ca593b/src/basic/complex.ts#L27">basic/complex.ts:27</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1055,7 +1092,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">imag<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/9d7bd2b/src/basic/complex.ts#L27">basic/complex.ts:27</a></li>
+						<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/0ca593b/src/basic/complex.ts#L27">basic/complex.ts:27</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1065,13 +1102,30 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">real<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/9d7bd2b/src/basic/complex.ts#L26">basic/complex.ts:26</a></li>
+						<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/0ca593b/src/basic/complex.ts#L26">basic/complex.ts:26</a></li>
 					</ul>
 				</aside>
 			</section>
 		</section>
 		<section class="tsd-panel-group tsd-member-group ">
 			<h2>Methods</h2>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="clone" class="tsd-anchor"></a>
+				<h3>clone</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">clone<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="complex.html" class="tsd-signature-type">Complex</a></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/0ca593b/src/basic/complex.ts#L34">basic/complex.ts:34</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-returns-title">Returns <a href="complex.html" class="tsd-signature-type">Complex</a></h4>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 				<a name="isequal" class="tsd-anchor"></a>
 				<h3>is<wbr>Equal</h3>
@@ -1082,7 +1136,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/9d7bd2b/src/basic/complex.ts#L34">basic/complex.ts:34</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/0ca593b/src/basic/complex.ts#L38">basic/complex.ts:38</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1108,7 +1162,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/9d7bd2b/src/basic/complex.ts#L39">basic/complex.ts:39</a></li>
+								<li>Defined in <a href="https://github.com/bluemathsoft/bluemath/blob/0ca593b/src/basic/complex.ts#L43">basic/complex.ts:43</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>

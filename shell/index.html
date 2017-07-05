@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+  <title>BlueMath Shell</title>
+</head>
+
+<body>
+<script src="./ext/monaco-editor/min/vs/loader.js"></script>
+
+<table>
+	<tr>
+		<td>
+			<div id="container" style="width:600px;height:600px;border:1px solid grey"></div>
+		</td>
+		<td>
+			<iframe src="runtime.html" width="400" height="600" style="margin-left:0px;border:1px solid grey">
+			</iframe>
+		</td>
+	</tr>
+</table>
+
+
+<br/>
+<input type="button" name="run" value="Run"></input>
+
+
+<script>
+  var editor;
+	require.config({ paths: { 'vs': './ext/monaco-editor/min/vs' }});
+	require(['vs/editor/editor.main'], function() {
+		editor = monaco.editor.create(document.getElementById('container'), {
+			value: [
+				'function x() {',
+				'\tconsole.log("Hello world!");',
+				'}'
+			].join('\n'),
+			language: 'javascript'
+		});
+	});
+
+  var runbutton = document.querySelector('input[name="run"]');
+  runbutton.onclick = () => {
+    let ifrm = document.querySelector('iframe');
+    let codestring = editor.getModel().getValue();
+    ifrm.contentWindow.eval(codestring);
+    //ifrm.contentWindow.postMessage(codestring,'*');
+  }
+
+</script>
+</body>
+</html>

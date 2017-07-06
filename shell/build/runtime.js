@@ -432,6 +432,7 @@ exports.Vector3 = basic_1.Vector3;
 exports.Complex = basic_1.Complex;
 exports.PermutationVector = basic_1.PermutationVector;
 exports.BandMatrix = basic_1.BandMatrix;
+exports.version = '0.2.11'; // TODO: populate from package.json
 
 
 /***/ }),
@@ -1230,6 +1231,15 @@ var Complex = (function () {
     Complex.prototype.clone = function () {
         return new Complex(this.real, this.imag);
     };
+    Complex.prototype.inverse = function () {
+        // 1/Complex number is converted to a usable complex number by
+        // multiplying both numerator and denominator by complex conjugate
+        // of the original number (rationalizing the denominator)
+        var r = this.real;
+        var i = this.imag;
+        var den = r * r + i * i;
+        return new Complex(r / den, -i / den);
+    };
     Complex.prototype.isEqual = function (other, tolerance) {
         if (tolerance === void 0) { tolerance = constants_1.EPSILON; }
         return __1.isequal(this.real, other.real, tolerance) &&
@@ -1265,7 +1275,36 @@ window.console = {
         var el = document.createElement('p');
         el.textContent = msg;
         document.body.appendChild(el);
+    },
+    error: function () {
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i] = arguments[_i];
+        }
+        var msg = args.map(function (a) { return new String(a); }).join('');
+        var el = document.createElement('p');
+        el.textContent = msg;
+        document.body.appendChild(el);
+    },
+    assert: function (condition) {
+        if (!condition) {
+            throw new Error("Assertion failed");
+        }
     }
+};
+window.bmlog = function () {
+    var args = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        args[_i] = arguments[_i];
+    }
+    var s = '';
+    for (var _a = 0, args_1 = args; _a < args_1.length; _a++) {
+        var arg = args_1[_a];
+        s += arg.toString().replace(/\n/g, '<br/>').replace(/\s/g, '&nbsp;');
+    }
+    var el = document.createElement('p');
+    el.innerHTML = s;
+    document.body.appendChild(el);
 };
 
 
@@ -1640,18 +1679,12 @@ exports.sub = sub;
  * The second argument can be a number (real or complex)
  */
 function div(a, b) {
-    var binv;
     if (b instanceof _1.Complex) {
-        // 1/Complex number is converted to a usable complex number by
-        // multiplying both numerator and denominator by complex conjugate
-        // of the original number
-        var den = b.real * b.real + b.imag * b.imag;
-        binv = new _1.Complex(b.real / den, -b.imag / den);
+        return _mul_two(a, b.inverse());
     }
     else {
-        binv = 1 / b;
+        return _mul_two(a, 1 / b);
     }
-    return _mul_two(a, binv);
 }
 exports.div = div;
 
@@ -1683,24 +1716,24 @@ along with bluemath. If not, see <http://www.gnu.org/licenses/>.
 
 */
 Object.defineProperty(exports, "__esModule", { value: true });
-var operations_1 = __webpack_require__(11);
-exports.matmul = operations_1.matmul;
-exports.norm = operations_1.norm;
-exports.solve = operations_1.solve;
-exports.cholesky = operations_1.cholesky;
-exports.inner = operations_1.inner;
-exports.outer = operations_1.outer;
-exports.svd = operations_1.svd;
-exports.rank = operations_1.rank;
-exports.lstsq = operations_1.lstsq;
-exports.lu_custom = operations_1.lu_custom;
-exports.slogdet = operations_1.slogdet;
-exports.det = operations_1.det;
-exports.inv = operations_1.inv;
-exports.qr = operations_1.qr;
-exports.triu = operations_1.triu;
-exports.tril = operations_1.tril;
-exports.eig = operations_1.eig;
+var ops_1 = __webpack_require__(11);
+exports.matmul = ops_1.matmul;
+exports.norm = ops_1.norm;
+exports.solve = ops_1.solve;
+exports.cholesky = ops_1.cholesky;
+exports.inner = ops_1.inner;
+exports.outer = ops_1.outer;
+exports.svd = ops_1.svd;
+exports.rank = ops_1.rank;
+exports.lstsq = ops_1.lstsq;
+exports.lu_custom = ops_1.lu_custom;
+exports.slogdet = ops_1.slogdet;
+exports.det = ops_1.det;
+exports.inv = ops_1.inv;
+exports.qr = ops_1.qr;
+exports.triu = ops_1.triu;
+exports.tril = ops_1.tril;
+exports.eig = ops_1.eig;
 var lapack = __webpack_require__(6);
 exports.lapack = lapack;
 
@@ -4216,6 +4249,14 @@ var NDArray = (function () {
         return shapeequal && other.datacompare(this._data, this._idata, tolerance);
     };
     /**
+     * Return 1D copy of this array
+     */
+    NDArray.prototype.flatten = function () {
+        var copy = this.clone();
+        copy.reshape([this.size]);
+        return copy;
+    };
+    /**
      * Change between Row-major and Column-major layout
      */
     NDArray.prototype.swapOrder = function () {
@@ -4357,30 +4398,171 @@ var NDArray = (function () {
         }
         return newndarray;
     };
+    NDArray.prototype.take = function (indices, axis) {
+        !indices;
+        !axis;
+        throw new Error('TODO');
+    };
+    NDArray.prototype.max = function () {
+        throw new Error('TODO');
+    };
+    NDArray.prototype.min = function () {
+        throw new Error('TODO');
+    };
+    NDArray.prototype.mean = function () {
+        throw new Error('TODO');
+    };
+    NDArray.prototype.all = function () {
+        throw new Error('TODO');
+    };
+    NDArray.prototype.any = function () {
+        throw new Error('TODO');
+    };
+    NDArray.prototype.sort = function () {
+        throw new Error('TODO');
+    };
+    NDArray.prototype.argsort = function () {
+        throw new Error('TODO');
+    };
+    /*
+    toString(precision=4) {
+      return JSON.stringify(this.toArray(), function (key, val) {
+        !key; // to avoid unused variable warning
+        if(val instanceof Complex) {
+          return val.toString();
+        } else if(typeof val === 'number') {
+          return Number(val.toFixed(precision));
+        } else if(Array.isArray(val) && !Array.isArray(val[0])) {
+          return '['+val.map(v => {
+            if(v instanceof Complex) {
+              return v.toString();
+            } else {
+              return v.toFixed(precision)
+            }
+          }).join(',')+']';
+        } else {
+          return val;
+        }
+      },precision);
+    }
+    */
     NDArray.prototype.toString = function (precision) {
         if (precision === void 0) { precision = 4; }
-        return JSON.stringify(this.toArray(), function (key, val) {
-            !key; // to avoid unused variable warning
-            if (val instanceof complex_1.default) {
-                return val.toString();
+        if (['i8', 'ui8', 'i16', 'ui16', 'i32', 'ui32'].indexOf(this.datatype) >= 0) {
+            precision = 0;
+        }
+        function whitespace(length) {
+            if (length === void 0) { length = 0; }
+            var s = '';
+            for (var i = 0; i < length; i++) {
+                s += ' ';
             }
-            else if (typeof val === 'number') {
-                return Number(val.toFixed(3));
-            }
-            else if (Array.isArray(val) && !Array.isArray(val[0])) {
-                return '[' + val.map(function (v) {
-                    if (v instanceof complex_1.default) {
-                        return v.toString();
+            return s;
+        }
+        if (this.shape.length <= 0) {
+            return '[]';
+        }
+        var sarr = [];
+        var step = 1;
+        var _loop_1 = function (i) {
+            // Step size in i'th dimension
+            var d = this_1.shape[i];
+            step = step * d;
+            // number of elements in i'th dimension
+            var nelem = this_1.size / step;
+            if (i === this_1.shape.length - 1) {
+                // innermost dimension, create array from all elements
+                for (var j = 0; j < nelem; j++) {
+                    var str = whitespace(i + 1) + '[';
+                    for (var k = 0; k < d; k++) {
+                        var index = j * step + k;
+                        if (this_1._idata[index] === undefined) {
+                            str += this_1._data[index].toFixed(precision);
+                        }
+                        else {
+                            str += new complex_1.default(this_1._data[index], this_1._idata[index])
+                                .toString(precision);
+                        }
+                        if (k < d - 1) {
+                            str += ',';
+                        }
                     }
-                    else {
-                        return v.toFixed(precision);
-                    }
-                }).join(',') + ']';
+                    str += ']';
+                    sarr.push(str);
+                }
             }
             else {
-                return val;
+                // outer dimensions, create array from inner dimension's arrays
+                var sdarr = new Array(nelem);
+                for (var j = 0; j < nelem; j++) {
+                    sdarr[j] =
+                        whitespace(i + 1) + '[\n' +
+                            sarr.slice(j * d, (j + 1) * d).map(function (s) { return whitespace(i + 1) + s; }).join(',\n') + '\n' +
+                            whitespace(i + 1) + ']';
+                }
+                sarr = sdarr;
             }
-        }, precision);
+        };
+        var this_1 = this;
+        // iterate over dimensions from innermost to outermost
+        for (var i = this.shape.length - 1; i >= 0; i--) {
+            _loop_1(i);
+        }
+        return sarr[0];
+    };
+    NDArray.prototype.toHTML = function (precision) {
+        if (precision === void 0) { precision = 4; }
+        if (['i8', 'ui8', 'i16', 'ui16', 'i32', 'ui32'].indexOf(this.datatype) >= 0) {
+            precision = 0;
+        }
+        var tagnames = ['table', 'tr', 'td'];
+        if (this.shape.length <= 0) {
+            return '<table></table>';
+        }
+        var sarr = [];
+        var step = 1;
+        // iterate over dimensions from innermost to outermost
+        for (var i = this.shape.length - 1; i >= 0; i--) {
+            // Step size in i'th dimension
+            var d = this.shape[i];
+            step = step * d;
+            var tag = tagnames[(i + 1) % 3];
+            var outertag = tagnames[(3 + i) % 3]; // adding 3 wraps around the mod range
+            // number of elements in i'th dimension
+            var nelem = this.size / step;
+            if (i === this.shape.length - 1) {
+                // innermost dimension, create array from all elements
+                for (var j = 0; j < nelem; j++) {
+                    var str = "<" + outertag + ">";
+                    for (var k = 0; k < d; k++) {
+                        var index = j * step + k;
+                        str += "<" + tag + ">";
+                        if (this._idata[index] === undefined) {
+                            str += this._data[index].toFixed(precision);
+                        }
+                        else {
+                            str += new complex_1.default(this._data[index], this._idata[index])
+                                .toString(precision);
+                        }
+                        str += "</" + tag + ">";
+                    }
+                    str += "</" + outertag + ">";
+                    sarr.push(str);
+                }
+            }
+            else {
+                // outer dimensions, create array from inner dimension's arrays
+                var sdarr = new Array(nelem);
+                for (var j = 0; j < nelem; j++) {
+                    sdarr[j] = "<" + outertag + ">" +
+                        sarr.slice(j * d, (j + 1) * d).join('') +
+                        ("</" + outertag + ">");
+                }
+                sarr = sdarr;
+            }
+        }
+        return sarr[0];
+        //return '<table>'+sarr[0]+'</table>';
     };
     return NDArray;
 }());

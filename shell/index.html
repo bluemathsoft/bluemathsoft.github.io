@@ -4,50 +4,103 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
   <title>BlueMath Shell</title>
+  <link rel='stylesheet', href='/ext/font-awesome.min.css'/>
+	<style>
+		body {
+			overflow:hidden;
+		}
+		#container {
+			min-width: 100px;
+		}
+
+		#container > #editor {
+			width : 600px;
+			height : 100%;
+			border: 0px;
+			float : left;
+		}
+		#container > #runtime {
+			width : 400px;
+			height : 100%;
+			margin-left : 600px;
+			background : #f8f8f8;
+		}
+		#container > #runtime > iframe {
+			width : 95%;
+			height : 80%;
+			border: 0px;
+		}
+		#docholder {
+			position : absolute;
+			top : 0px;
+			height : 0px;
+			width : 0px;
+		}
+		#docholder > #docsclose {
+			top : 0px;
+			right : 0px;
+			position : absolute;
+		}
+
+		#btn-panel {
+			display : flex;
+			justify-content: initial;
+		}
+
+		.btn {
+			margin-left : 10px;
+			margin-right : 10px;
+			cursor : pointer;
+		}
+
+		.styled-select {
+			background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
+			height: 29px;
+			overflow: hidden;
+			width: 240px;
+	   	-webkit-border-radius: 5px;
+   		-moz-border-radius: 5px;
+   		border-radius: 5px;
+			background-color :#b0b0ff;
+		}
+
+		.styled-select select {
+			background: transparent;
+			border: none;
+			font-size: 14px;
+			height: 29px;
+			padding: 5px; /* If you add too much padding here, the options won't show in IE */
+			width: 268px;
+			cursor : pointer;
+		}
+	</style>
 </head>
 
 <body>
+<script src="./ext/FileSaver.min.js"></script>
+<script src="./src/examples.js"></script>
+<script src="./build/extralibs.js"></script>
 <script src="./ext/monaco-editor/min/vs/loader.js"></script>
 
-<table>
-	<tr>
-		<td>
-			<div id="container" style="width:600px;height:600px;border:1px solid grey"></div>
-		</td>
-		<td>
-			<iframe src="runtime.html" width="400" height="600" style="margin-left:0px;border:1px solid grey">
-			</iframe>
-		</td>
-	</tr>
-</table>
+	<div id="container">
+		<div id="editor"></div>
+		<div id="runtime"></div>
+	</div>
+	<br/>
+	<div id="btn-panel">
+		<div class="styled-select">
+			<select id="examples-choices"></select>
+		</div>
+		<i class="btn fa fa-play fa-2x" id="btn-run" title="Run"></i>
+		<i class="btn fa fa-trash fa-2x" id="btn-clear" title="Clear"></i>
+		<i class="btn fa fa-save fa-2x" id="btn-save" title="Save"></i>
+		<i class="btn fa fa-book fa-2x" id="btn-docs" title="API Docs"></i>
+	</div>
+	<div id="docholder">
+		<i class="btn fa fa-window-close fa-2x" id="docsclose" title="Close"></i>
+	</div>
 
 
-<br/>
-<input type="button" name="run" value="Run"></input>
-
-
-<script>
-  var editor;
-	require.config({ paths: { 'vs': './ext/monaco-editor/min/vs' }});
-	require(['vs/editor/editor.main'], function() {
-		editor = monaco.editor.create(document.getElementById('container'), {
-			value: [
-				'function x() {',
-				'\tconsole.log("Hello world!");',
-				'}'
-			].join('\n'),
-			language: 'javascript'
-		});
-	});
-
-  var runbutton = document.querySelector('input[name="run"]');
-  runbutton.onclick = () => {
-    let ifrm = document.querySelector('iframe');
-    let codestring = editor.getModel().getValue();
-    ifrm.contentWindow.eval(codestring);
-    //ifrm.contentWindow.postMessage(codestring,'*');
-  }
-
-</script>
+<script src="src/main.js"></script>
 </body>
 </html>

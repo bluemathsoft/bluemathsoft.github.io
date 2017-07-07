@@ -20,44 +20,55 @@
   <body>
     {% include topbar.html %}
 
-    <!--
-    <div class="col-lg-12">
+    <div class="page-header">
     </div>
-    -->
-      <div class="page-header">
+
+    <div class="container">
+
+      <div class="jumbotron">
+        <h1>Blue Math</h1>
+        <p>
+          Math library for the Web. TypeScript. Open Source.
+        </p>
+        <p>
+          <a href="/shell/index.html" class="btn btn-launch-shell">Launch Shell</a>
+        </p>
       </div>
 
-      <div class="container">
-
-        <div class="jumbotron">
-          <h1>Blue Math</h1>
-          <!--
+      <div class="list-group">
+        <div class="list-group-item">
+          <h2>NDArray</h2>
           <p>
-            Math kernel library. Javascript. Open Source.
-          </p>
-          -->
-          <p>
-            Work in progress!
+            N-Dimensional array data structure like numpy's ndarray.
+            <ul>
+              <li>Efficient storage in Typed Arrays</li>
+              <li>Flexible slicing and indexing</li>
+            </ul>
+            <a href="/docs/classes/ndarray.html" >API Reference</a>
           </p>
         </div>
-
-        <!--
-        <div class="list-group">
-          <div class="list-group-item">
-            <h2>NURBS</h2>
-            <p>
-            BSpline Curves
-            </p>
-          </div>
-          <div class="list-group-item">
-            <h2>Linear Algebra</h2>
-            <p>
-            Vector and Matrix Math. LU Decomposition.
-            </p>
-          </div>
+        <div class="list-group-item">
+          <h2>Linear Algebra</h2>
+          <p>
+          Vector and Matrix Math.
+          <ul>
+            <li>
+              Powered by venerable LAPACK library, compiled to Javascript using Emscripten.
+            </li>
+            <li>
+              Solving of linear equation systems (LU decomposition, Least Square)
+            </li>
+            <li>
+              Matrix decomposition operations (SVD, Cholesky, QR)
+            </li>
+            <li>
+              Standard matrix properties (Rank, Determinant, Inverse)
+            </li>
+          </ul>
+          </p>
         </div>
-        -->
-
       </div>
+
+    </div>
   </body>
 </html>

@@ -411,6 +411,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var ops_1 = __webpack_require__(9);
 exports.eye = ops_1.eye;
 exports.zeros = ops_1.zeros;
+exports.range = ops_1.range;
 exports.iszero = ops_1.iszero;
 exports.isequal = ops_1.isequal;
 exports.torad = ops_1.torad;
@@ -432,7 +433,7 @@ exports.Vector3 = basic_1.Vector3;
 exports.Complex = basic_1.Complex;
 exports.PermutationVector = basic_1.PermutationVector;
 exports.BandMatrix = basic_1.BandMatrix;
-exports.version = '0.2.11'; // TODO: populate from package.json
+exports.version = '0.2.13'; // TODO: populate from package.json
 
 
 /***/ }),
@@ -1385,13 +1386,14 @@ exports.cuberoot = cuberoot;
 function range(a, b) {
     if (b === undefined) {
         b = a;
+        a = 0;
     }
     b = Math.max(b, 0);
     var arr = [];
     for (var i = a; i < b; i++) {
         arr.push(i);
     }
-    return arr;
+    return new _1.NDArray(arr, { datatype: 'i32' });
 }
 exports.range = range;
 /**

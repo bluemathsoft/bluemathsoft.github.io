@@ -33,9 +33,6 @@
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
 /******/
-/******/ 	// identity function for calling harmony imports with the correct context
-/******/ 	__webpack_require__.i = function(value) { return value; };
-/******/
 /******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
 /******/ 		if(!__webpack_require__.o(exports, name)) {
@@ -63,11 +60,66 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 31);
+/******/ 	return __webpack_require__(__webpack_require__.s = 8);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+/*
+
+Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
+
+This file is part of bluemath.
+
+bluemath is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+bluemath is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with bluemath. If not, see <http://www.gnu.org/licenses/>.
+
+*/
+Object.defineProperty(exports, "__esModule", { value: true });
+var ops_1 = __webpack_require__(11);
+exports.eye = ops_1.eye;
+exports.zeros = ops_1.zeros;
+exports.range = ops_1.range;
+exports.iszero = ops_1.iszero;
+exports.isequal = ops_1.isequal;
+exports.torad = ops_1.torad;
+exports.todeg = ops_1.todeg;
+exports.add = ops_1.add;
+exports.mul = ops_1.mul;
+exports.sub = ops_1.sub;
+exports.div = ops_1.div;
+var linalg = __webpack_require__(12);
+exports.linalg = linalg;
+var constants_1 = __webpack_require__(3);
+exports.EPSILON = constants_1.EPSILON;
+var basic_1 = __webpack_require__(26);
+exports.NDArray = basic_1.NDArray;
+exports.Matrix = basic_1.Matrix;
+exports.Vector = basic_1.Vector;
+exports.Vector2 = basic_1.Vector2;
+exports.Vector3 = basic_1.Vector3;
+exports.Complex = basic_1.Complex;
+exports.PermutationVector = basic_1.PermutationVector;
+exports.BandMatrix = basic_1.BandMatrix;
+exports.version = '0.2.13'; // TODO: populate from package.json
+
+
+/***/ }),
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -329,59 +381,6 @@ exports.defineEmArrayVariable = defineEmArrayVariable;
 
 
 /***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-/*
-
-Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
-
-This file is part of bluemath.
-
-bluemath is free software: you can redistribute it and/or modify
-it under the terms of the GNU Affero General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-bluemath is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU Affero General Public License for more details.
-
-You should have received a copy of the GNU Affero General Public License
-along with bluemath. If not, see <http://www.gnu.org/licenses/>.
-
-*/
-Object.defineProperty(exports, "__esModule", { value: true });
-var ops_1 = __webpack_require__(29);
-exports.eye = ops_1.eye;
-exports.zeros = ops_1.zeros;
-exports.iszero = ops_1.iszero;
-exports.isequal = ops_1.isequal;
-exports.torad = ops_1.torad;
-exports.todeg = ops_1.todeg;
-exports.add = ops_1.add;
-exports.mul = ops_1.mul;
-exports.sub = ops_1.sub;
-exports.div = ops_1.div;
-var linalg = __webpack_require__(16);
-exports.linalg = linalg;
-var constants_1 = __webpack_require__(3);
-exports.EPSILON = constants_1.EPSILON;
-var basic_1 = __webpack_require__(11);
-exports.NDArray = basic_1.NDArray;
-exports.Matrix = basic_1.Matrix;
-exports.Vector = basic_1.Vector;
-exports.Vector2 = basic_1.Vector2;
-exports.Vector3 = basic_1.Vector3;
-exports.Complex = basic_1.Complex;
-exports.PermutationVector = basic_1.PermutationVector;
-exports.BandMatrix = basic_1.BandMatrix;
-
-
-/***/ }),
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -435,7 +434,7 @@ return {Module:Module};
 
 }));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(35)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ }),
 /* 3 */
@@ -495,7 +494,7 @@ along with bluemath. If not, see <http://www.gnu.org/licenses/>.
 
 */
 Object.defineProperty(exports, "__esModule", { value: true });
-var __1 = __webpack_require__(1);
+var __1 = __webpack_require__(0);
 var constants_1 = __webpack_require__(3);
 /**
  * @hidden
@@ -808,7 +807,7 @@ along with bluemath. If not, see <http://www.gnu.org/licenses/>.
 
 */
 Object.defineProperty(exports, "__esModule", { value: true });
-var __1 = __webpack_require__(1);
+var __1 = __webpack_require__(0);
 var vector_1 = __webpack_require__(4);
 var constants_1 = __webpack_require__(3);
 /**
@@ -1152,6 +1151,56 @@ exports.default = Matrix;
 
 "use strict";
 
+Object.defineProperty(exports, "__esModule", { value: true });
+/*
+Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
+
+This file is part of bluemath.
+
+bluemath is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+bluemath is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with bluemath. If not, see <http://www.gnu.org/licenses/>.
+
+*/
+var dot_1 = __webpack_require__(14);
+exports.dot = dot_1.dot;
+var gemv_1 = __webpack_require__(16);
+exports.gemv = gemv_1.gemv;
+var gemm_1 = __webpack_require__(17);
+exports.gemm = gemm_1.gemm;
+var gesv_1 = __webpack_require__(18);
+exports.gesv = gesv_1.gesv;
+var gesdd_1 = __webpack_require__(19);
+exports.gesdd = gesdd_1.gesdd;
+var gelsd_1 = __webpack_require__(20);
+exports.gelsd = gelsd_1.gelsd;
+var getrf_1 = __webpack_require__(21);
+exports.getrf = getrf_1.getrf;
+var geev_1 = __webpack_require__(22);
+exports.geev = geev_1.geev;
+var geqrf_1 = __webpack_require__(23);
+exports.geqrf = geqrf_1.geqrf;
+var orgqr_1 = __webpack_require__(24);
+exports.orgqr = orgqr_1.orgqr;
+var potrf_1 = __webpack_require__(25);
+exports.potrf = potrf_1.potrf;
+
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
 /*
 
 Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
@@ -1174,7 +1223,7 @@ along with bluemath. If not, see <http://www.gnu.org/licenses/>.
 */
 Object.defineProperty(exports, "__esModule", { value: true });
 var constants_1 = __webpack_require__(3);
-var __1 = __webpack_require__(1);
+var __1 = __webpack_require__(0);
 var Complex = (function () {
     function Complex(real, imag) {
         this.real = real || 0;
@@ -1182,6 +1231,15 @@ var Complex = (function () {
     }
     Complex.prototype.clone = function () {
         return new Complex(this.real, this.imag);
+    };
+    Complex.prototype.inverse = function () {
+        // 1/Complex number is converted to a usable complex number by
+        // multiplying both numerator and denominator by complex conjugate
+        // of the original number (rationalizing the denominator)
+        var r = this.real;
+        var i = this.imag;
+        var den = r * r + i * i;
+        return new Complex(r / den, -i / den);
     };
     Complex.prototype.isEqual = function (other, tolerance) {
         if (tolerance === void 0) { tolerance = constants_1.EPSILON; }
@@ -1197,56 +1255,6 @@ var Complex = (function () {
     return Complex;
 }());
 exports.default = Complex;
-
-
-/***/ }),
-/* 7 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-/*
-Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
-
-This file is part of bluemath.
-
-bluemath is free software: you can redistribute it and/or modify
-it under the terms of the GNU Affero General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-bluemath is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU Affero General Public License for more details.
-
-You should have received a copy of the GNU Affero General Public License
-along with bluemath. If not, see <http://www.gnu.org/licenses/>.
-
-*/
-var dot_1 = __webpack_require__(17);
-exports.dot = dot_1.dot;
-var gemv_1 = __webpack_require__(18);
-exports.gemv = gemv_1.gemv;
-var gemm_1 = __webpack_require__(19);
-exports.gemm = gemm_1.gemm;
-var gesv_1 = __webpack_require__(24);
-exports.gesv = gesv_1.gesv;
-var gesdd_1 = __webpack_require__(23);
-exports.gesdd = gesdd_1.gesdd;
-var gelsd_1 = __webpack_require__(21);
-exports.gelsd = gelsd_1.gelsd;
-var getrf_1 = __webpack_require__(25);
-exports.getrf = getrf_1.getrf;
-var geev_1 = __webpack_require__(20);
-exports.geev = geev_1.geev;
-var geqrf_1 = __webpack_require__(22);
-exports.geqrf = geqrf_1.geqrf;
-var orgqr_1 = __webpack_require__(26);
-exports.orgqr = orgqr_1.orgqr;
-var potrf_1 = __webpack_require__(27);
-exports.potrf = potrf_1.potrf;
 
 
 /***/ }),
@@ -1276,7 +1284,55 @@ along with bluemath. If not, see <http://www.gnu.org/licenses/>.
 
 */
 Object.defineProperty(exports, "__esModule", { value: true });
-var ndarray_1 = __webpack_require__(30);
+var basic_1 = __webpack_require__(9);
+//import testGeom from './geom'
+var linalg_1 = __webpack_require__(32);
+var ops_1 = __webpack_require__(35);
+var bluemath = __webpack_require__(0);
+window.bluemath = bluemath;
+window.onload = function () {
+    console.log('BlueMath v' + bluemath.version);
+    var qunitDiv = document.createElement('div');
+    qunitDiv.setAttribute('id', 'qunit');
+    document.body.appendChild(qunitDiv);
+    var qunitFixtureDiv = document.createElement('div');
+    qunitFixtureDiv.setAttribute('id', 'qunit-fixture');
+    document.body.appendChild(qunitFixtureDiv);
+    basic_1.default();
+    ops_1.default();
+    //testGeom();
+    linalg_1.default();
+};
+
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+/*
+
+Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
+
+This file is part of bluemath.
+
+bluemath is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+bluemath is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with bluemath. If not, see <http://www.gnu.org/licenses/>.
+
+*/
+Object.defineProperty(exports, "__esModule", { value: true });
+var ndarray_1 = __webpack_require__(10);
 //import testVector from './vector'
 //import testMatrix from './matrix'
 function testBasic() {
@@ -1288,7 +1344,7 @@ exports.default = testBasic;
 
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1314,101 +1370,505 @@ You should have received a copy of the GNU Affero General Public License
 along with bluemath. If not, see <http://www.gnu.org/licenses/>.
 
 */
-//import testBLAS from './blas'
-var construction_1 = __webpack_require__(32);
-var operations_1 = __webpack_require__(34);
-var lapack_1 = __webpack_require__(33);
-function testLinalg() {
-    QUnit.module('linalg', function () {
-        //testBLAS();
-        construction_1.default();
-        operations_1.default();
-        lapack_1.default();
+var src_1 = __webpack_require__(0);
+/// <reference path="qunit/index.d.ts" />
+function testNDArray() {
+    QUnit.module('NDArray', function () {
+        QUnit.module('construction', function () {
+            QUnit.module('From Array', function () {
+                QUnit.module('deduceShape and size', function () {
+                    QUnit.test('3x3', function (assert) {
+                        var A = new src_1.NDArray([
+                            [2, 4, 6],
+                            [3, 5, 2],
+                            [1, 6, 5]
+                        ]);
+                        assert.deepEqual(A.shape, [3, 3]);
+                        assert.equal(A.size, 9);
+                    });
+                    QUnit.test('1x3', function (assert) {
+                        var A = new src_1.NDArray([
+                            [2, 4, 6]
+                        ]);
+                        assert.deepEqual(A.shape, [1, 3]);
+                        assert.equal(A.size, 3);
+                    });
+                    QUnit.test('3x1', function (assert) {
+                        var A = new src_1.NDArray([
+                            [2], [4], [6]
+                        ]);
+                        assert.deepEqual(A.shape, [3, 1]);
+                        assert.equal(A.size, 3);
+                    });
+                    QUnit.test('1x1', function (assert) {
+                        var A = new src_1.NDArray([
+                            [2]
+                        ]);
+                        assert.deepEqual(A.shape, [1, 1]);
+                        assert.equal(A.size, 1);
+                    });
+                    QUnit.test('5', function (assert) {
+                        var A = new src_1.NDArray([
+                            2, 3, 4, 5, 6
+                        ]);
+                        assert.deepEqual(A.shape, [5]);
+                        assert.equal(A.size, 5);
+                    });
+                    QUnit.test("2x2x2", function (assert) {
+                        var A = new src_1.NDArray([
+                            [
+                                [1, 0],
+                                [2, 1]
+                            ],
+                            [
+                                [2, 3],
+                                [5, 4]
+                            ]
+                        ], { datatype: 'i16' });
+                        assert.deepEqual(A.shape, [2, 2, 2]);
+                        assert.equal(A.size, 8);
+                    });
+                });
+                QUnit.test('to float32 default', function (assert) {
+                    var A = new src_1.NDArray([
+                        2, 3, 4, 5, 6
+                    ]);
+                    assert.equal(A.datatype, 'f32');
+                    assert.equal(A.get(0), 2);
+                });
+                QUnit.test('to float64 default', function (assert) {
+                    var A = new src_1.NDArray([
+                        2, 3, 4, 5, 6
+                    ], { datatype: 'f64' });
+                    assert.equal(A.datatype, 'f64');
+                    assert.equal(A.get(1), 3);
+                });
+                QUnit.test('to int16 default', function (assert) {
+                    var A = new src_1.NDArray([
+                        2, 3, -4, 5, 6
+                    ], { datatype: 'i16' });
+                    assert.equal(A.datatype, 'i16');
+                    assert.equal(A.get(2), -4);
+                });
+                QUnit.test('to uint16 default', function (assert) {
+                    var A = new src_1.NDArray([
+                        2, 3, -4, 5, 6
+                    ], { datatype: 'ui16' });
+                    assert.equal(A.datatype, 'ui16');
+                    assert.notEqual(A.get(2), -4);
+                });
+            });
+            QUnit.module('From Raw Data', function () {
+                QUnit.module('shape', function () {
+                    QUnit.test('default flat', function (assert) {
+                        var A = new src_1.NDArray(new Float32Array([3, 7, 5, 6]));
+                        assert.deepEqual(A.shape, [4]);
+                    });
+                    QUnit.test('2x2', function (assert) {
+                        var A = new src_1.NDArray(new Float32Array([3, 7, 5, 6]), { shape: [2, 2] });
+                        assert.deepEqual(A.shape, [2, 2]);
+                        assert.equal(A.get(0, 1), 7);
+                        assert.equal(A.get(1, 1), 6);
+                    });
+                    QUnit.test('1x4', function (assert) {
+                        var A = new src_1.NDArray(new Float32Array([3, 7, 5, 6]), { shape: [1, 4] });
+                        assert.deepEqual(A.shape, [1, 4]);
+                        assert.equal(A.get(0, 1), 7);
+                        assert.equal(A.get(0, 3), 6);
+                    });
+                    QUnit.test('4x1', function (assert) {
+                        var A = new src_1.NDArray(new Float32Array([3, 7, 5, 6]), { shape: [4, 1] });
+                        assert.deepEqual(A.shape, [4, 1]);
+                        assert.equal(A.get(1, 0), 7);
+                        assert.equal(A.get(3, 0), 6);
+                    });
+                });
+            });
+            QUnit.module('No Data', function () {
+                QUnit.test('fill with 0', function (assert) {
+                    var A = new src_1.NDArray({ shape: [2, 2], fill: 0 });
+                    assert.equal(A.size, 4);
+                    assert.equal(A.get(0, 0), 0);
+                    assert.equal(A.get(0, 1), 0);
+                    assert.equal(A.get(1, 0), 0);
+                    assert.equal(A.get(1, 1), 0);
+                });
+                QUnit.test('fill with 5', function (assert) {
+                    var A = new src_1.NDArray({ shape: [2, 2], fill: 5 });
+                    assert.equal(A.size, 4);
+                    assert.equal(A.get(0, 0), 5);
+                    assert.equal(A.get(0, 1), 5);
+                    assert.equal(A.get(1, 0), 5);
+                    assert.equal(A.get(1, 1), 5);
+                });
+            });
+        });
+        QUnit.module('Equality', function () {
+            QUnit.test('2x2 equal', function (assert) {
+                var A = new src_1.NDArray([[4, 7], [3, 4]]);
+                var B = new src_1.NDArray([[4, 7], [3, 4]]);
+                assert.ok(A.isEqual(B));
+            });
+            QUnit.test('2x2 not equal', function (assert) {
+                var A = new src_1.NDArray([[4, 7], [3, 4]]);
+                var B = new src_1.NDArray([[4, 9], [3, 4]]);
+                assert.notOk(A.isEqual(B));
+            });
+            QUnit.test('2x2 and 3x3', function (assert) {
+                var A = new src_1.NDArray([[4, 7], [3, 4]]);
+                var B = new src_1.NDArray([[4, 7, 3], [3, 4, 3], [3, 2, 2]]);
+                assert.notOk(A.isEqual(B));
+            });
+            QUnit.test('2x2 and 1', function (assert) {
+                var A = new src_1.NDArray([[4, 7], [3, 4]]);
+                var B = new src_1.NDArray([34]);
+                assert.notOk(A.isEqual(B));
+            });
+            QUnit.test('2x2 int32 vs float32 equal', function (assert) {
+                var A = new src_1.NDArray([[4, 7], [3, 4]], { datatype: 'i32' });
+                var B = new src_1.NDArray([[4, 9], [3, 4]], { datatype: 'f32' });
+                assert.notOk(A.isEqual(B));
+            });
+        });
+        QUnit.test("swaprows", function (assert) {
+            var A = new src_1.NDArray([[1, 0], [2, 1], [6, 9]], { datatype: 'i16' });
+            var B = new src_1.NDArray([[2, 1], [1, 0], [6, 9]], { datatype: 'i16' });
+            A.swaprows(0, 1);
+            assert.ok(A.isEqual(B));
+        });
+        QUnit.module('max', function () {
+            QUnit.test("No axis", function (assert) {
+                assert.equal((new src_1.NDArray([3, 4, 5, 8]).max()), 8);
+                assert.equal((new src_1.NDArray([[3, 4], [5, 8]]).max()), 8);
+                assert.equal((new src_1.NDArray([[3, 4], [23, -99], [5, 8]]).max()), 23);
+            });
+            QUnit.test("1 Axis of 2x2", function (assert) {
+                var A = new src_1.NDArray([[1, 2], [3, 4]], { datatype: 'i32' });
+                assert.ok(new src_1.NDArray([3, 4]).isEqual(A.max(0)));
+                assert.ok(new src_1.NDArray([2, 4]).isEqual(A.max(1)));
+            });
+            QUnit.test("1 Axis of 3x3", function (assert) {
+                var A = new src_1.NDArray([[1, 2, 3], [4, 5, 6], [7, 8, 9]], { datatype: 'i32' });
+                assert.ok(new src_1.NDArray([7, 8, 9]).isEqual(A.max(0)));
+                assert.ok(new src_1.NDArray([3, 6, 9]).isEqual(A.max(1)));
+            });
+            QUnit.test("1 Axis of 3x3x3", function (assert) {
+                var A = src_1.range(27);
+                A.reshape([3, 3, 3]);
+                console.log(A.toString());
+                console.log(A.max(2).toString());
+                assert.ok(new src_1.NDArray([
+                    [2, 5, 8],
+                    [11, 14, 17],
+                    [20, 23, 26]
+                ]).isEqual(A.max(2)));
+            });
+        });
+        QUnit.module("toArray", function () {
+            QUnit.test("4", function (assert) {
+                var arr = [5, 6, 7, 8];
+                var A = new src_1.NDArray(arr, { datatype: 'i16' });
+                assert.deepEqual(arr, A.toArray());
+            });
+            QUnit.test("3x2", function (assert) {
+                var arr = [[1, 0], [2, 1], [6, 9]];
+                var A = new src_1.NDArray(arr, { datatype: 'i16' });
+                assert.deepEqual(arr, A.toArray());
+            });
+            QUnit.test("2x2x2", function (assert) {
+                var arr = [
+                    [
+                        [1, 0],
+                        [2, 1]
+                    ],
+                    [
+                        [2, 3],
+                        [5, 4]
+                    ]
+                ];
+                var A = new src_1.NDArray(arr, { datatype: 'i16' });
+                assert.deepEqual(arr, A.toArray());
+            });
+            QUnit.test("2x3x1", function (assert) {
+                var arr = [
+                    [
+                        [3],
+                        [6],
+                        [89]
+                    ],
+                    [
+                        [2],
+                        [-8],
+                        [10]
+                    ]
+                ];
+                var A = new src_1.NDArray(arr, { datatype: 'i16' });
+                assert.deepEqual(arr, A.toArray());
+            });
+            QUnit.test("1x4x3x2", function (assert) {
+                var arr = [
+                    [
+                        [
+                            [3, 5], [2, 1], [3, 5]
+                        ],
+                        [
+                            [4, 1], [9, 8], [3, 5]
+                        ],
+                        [
+                            [2, 7], [3, 5], [6, 1]
+                        ],
+                        [
+                            [10, 8], [6, 2], [2, 5]
+                        ]
+                    ]
+                ];
+                var A = new src_1.NDArray(arr, { datatype: 'i16' });
+                assert.deepEqual(arr, A.toArray());
+            });
+        });
+        QUnit.module('Indexing', function () {
+            QUnit.module('Invalid Access', function () {
+                QUnit.test('Wrong num of dim', function (assert) {
+                    var A = new src_1.NDArray(new Float32Array([3, 7, 5, 6]));
+                    assert.throws(function () {
+                        A.get(0, 0);
+                    });
+                });
+                QUnit.test('Invalid dim-0', function (assert) {
+                    var A = new src_1.NDArray(new Float32Array([3, 7, 5, 6]));
+                    assert.throws(function () {
+                        A.get(5);
+                    });
+                });
+                QUnit.test('Invalid dim-1', function (assert) {
+                    var A = new src_1.NDArray(new Float32Array([3, 7, 5, 6]), { shape: [2, 2] });
+                    assert.throws(function () {
+                        A.get(0, 3);
+                    });
+                });
+                QUnit.test('Negative dim-1', function (assert) {
+                    var A = new src_1.NDArray(new Float32Array([3, 7, 5, 6]), { shape: [2, 2] });
+                    assert.throws(function () {
+                        A.get(0, -1);
+                    });
+                });
+            });
+            QUnit.module('Data index to index', function () {
+                QUnit.test('3x3x3', function (assert) {
+                    var A = new src_1.NDArray({ shape: [3, 3, 3] });
+                    assert.deepEqual(A._addressToIndex(10), [1, 0, 1]);
+                    assert.deepEqual(A._addressToIndex(11), [1, 0, 2]);
+                    assert.deepEqual(A._addressToIndex(13), [1, 1, 1]);
+                    assert.deepEqual(A._addressToIndex(14), [1, 1, 2]);
+                });
+                QUnit.test('1x6', function (assert) {
+                    var A = new src_1.NDArray({ shape: [1, 6] });
+                    assert.deepEqual(A._addressToIndex(3), [0, 3]);
+                });
+            });
+            QUnit.module('Set', function () {
+                QUnit.test('flat', function (assert) {
+                    var A = new src_1.NDArray(new Float32Array([3, 7, 5, 6]), { shape: [4] });
+                    assert.equal(A.get(1), 7);
+                    A.set(1, 589);
+                    assert.equal(A.get(1), 589);
+                });
+                QUnit.test('2x2', function (assert) {
+                    var A = new src_1.NDArray(new Float32Array([3, 7, 5, 6]), { shape: [2, 2] });
+                    assert.equal(A.get(1, 1), 6);
+                    A.set(1, 1, 589);
+                    assert.equal(A.get(1, 1), 589);
+                });
+                QUnit.test('4x1', function (assert) {
+                    var A = new src_1.NDArray(new Float32Array([3, 7, 5, 6]), { shape: [4, 1] });
+                    assert.equal(A.get(2, 0), 5);
+                    A.set(2, 0, 589);
+                    assert.equal(A.get(2, 0), 589);
+                });
+                QUnit.test('1x4', function (assert) {
+                    var A = new src_1.NDArray(new Float32Array([3, 7, 5, 6]), { shape: [1, 4] });
+                    assert.equal(A.get(0, 2), 5);
+                    A.set(0, 2, 589);
+                    assert.equal(A.get(0, 2), 589);
+                });
+            });
+        });
+        QUnit.module('Reshape', function () {
+            QUnit.test('6 to 2x3', function (assert) {
+                var A = new src_1.NDArray([3, 5, 7, 4, 5, 6]);
+                assert.equal(A.get(2), 7);
+                assert.throws(function () {
+                    A.get(0, 2);
+                });
+                assert.equal(A.size, 6);
+                A.reshape([2, 3]);
+                assert.equal(A.get(0, 2), 7);
+                assert.throws(function () {
+                    A.get(2);
+                });
+                assert.equal(A.size, 6);
+            });
+            QUnit.test('2x3 to 6', function (assert) {
+                var A = new src_1.NDArray([
+                    [3, 5, 7],
+                    [4, 5, 6]
+                ]);
+                assert.equal(A.get(0, 2), 7);
+                assert.throws(function () {
+                    A.get(2);
+                });
+                assert.equal(A.size, 6);
+                A.reshape([6]);
+                assert.equal(A.get(2), 7);
+                assert.throws(function () {
+                    A.get(0, 2);
+                });
+                assert.equal(A.size, 6);
+            });
+            QUnit.test('6 to 4x2', function (assert) {
+                var A = new src_1.NDArray([3, 5, 7, 4, 5, 6]);
+                assert.equal(A.size, 6);
+                assert.equal(A.get(2), 7);
+                A.reshape([4, 2]);
+                assert.equal(A.size, 8);
+                assert.equal(A.get(1, 0), 7);
+                assert.equal(A.get(2, 1), 6);
+                assert.equal(A.get(3, 0), 0);
+                assert.equal(A.get(3, 1), 0);
+            });
+        });
+        QUnit.module('flatten', function () {
+            QUnit.test('2x2', function (assert) {
+                var A = new src_1.NDArray([[2, 7], [9, 5]]);
+                assert.ok(new src_1.NDArray([2, 7, 9, 5]).isEqual(A.flatten()));
+            });
+            QUnit.test('3x3', function (assert) {
+                var A = new src_1.NDArray([[2, 7, 8], [9, 5, 8], [0, 3, 4]]);
+                assert.ok(new src_1.NDArray([2, 7, 8, 9, 5, 8, 0, 3, 4]).isEqual(A.flatten()));
+            });
+            QUnit.test('5', function (assert) {
+                var A = new src_1.NDArray([2, 7, 8, 9, 5]);
+                assert.ok(new src_1.NDArray([2, 7, 8, 9, 5]).isEqual(A.flatten()));
+            });
+        });
+        QUnit.module('clone', function () {
+            QUnit.test('3x3', function (assert) {
+                var A = new src_1.NDArray([
+                    [2, 4, 6],
+                    [1, 0, 9],
+                    [0, 2, 3]
+                ], { datatype: 'f64' });
+                assert.equal(A.get(1, 2), 9);
+                var B = A.clone();
+                assert.equal(B.get(1, 2), 9);
+                assert.deepEqual(A.shape, B.shape);
+                assert.equal(A.datatype, B.datatype);
+                B.set(1, 2, 45);
+                assert.equal(B.get(1, 2), 45);
+                assert.equal(A.get(1, 2), 9);
+                A.set(1, 2, 186);
+                assert.equal(A.get(1, 2), 186);
+                assert.equal(B.get(1, 2), 45);
+            });
+            QUnit.test('complex', function (assert) {
+                var A = new src_1.NDArray({ shape: [2] });
+                A.set(0, new src_1.Complex(3, 5));
+                A.set(1, 32);
+                var copyA = A.clone();
+                assert.ok(new src_1.Complex(3, 5).isEqual(copyA.get(0)));
+                assert.equal(32, copyA.get(1));
+            });
+        });
+        QUnit.module('slice', function () {
+            QUnit.test('3x3', function (assert) {
+                var A = new src_1.NDArray([
+                    [2, 4, 6],
+                    [1, 0, 9],
+                    [0, 2, 3]
+                ], { datatype: 'f64' });
+                assert.ok(A.slice(':1', ':2').isEqual(new src_1.NDArray([
+                    [2, 4],
+                ])));
+                assert.ok(A.slice(0, ':2').isEqual(new src_1.NDArray([
+                    [2, 4],
+                ])));
+                assert.ok(A.slice(null).isEqual(new src_1.NDArray([
+                    [2, 4, 6],
+                    [1, 0, 9],
+                    [0, 2, 3]
+                ])));
+                assert.ok(A.slice(1, null).isEqual(new src_1.NDArray([
+                    [1, 0, 9],
+                ])));
+                assert.ok(A.slice(0).isEqual(new src_1.NDArray([
+                    [2, 4, 6],
+                ])));
+                assert.ok(A.slice(1).isEqual(new src_1.NDArray([
+                    [1, 0, 9],
+                ])));
+                assert.ok(A.slice('1:2').isEqual(new src_1.NDArray([
+                    [1, 0, 9],
+                ])));
+                assert.ok(A.slice('1:2', 2).isEqual(new src_1.NDArray([
+                    [9],
+                ])));
+                assert.ok(A.slice(':1', ':3').isEqual(new src_1.NDArray([
+                    [2, 4, 6],
+                ])));
+                assert.ok(A.slice(':1', ':4').isEqual(new src_1.NDArray([
+                    [2, 4, 6],
+                ])));
+                assert.ok(A.slice(':1', ':').isEqual(new src_1.NDArray([
+                    [2, 4, 6],
+                ])));
+                assert.ok(A.slice(':1').isEqual(new src_1.NDArray([
+                    [2, 4, 6],
+                ])));
+                assert.ok(A.slice(':', ':1').isEqual(new src_1.NDArray([
+                    [2],
+                    [1],
+                    [0]
+                ])));
+                assert.ok(A.slice(':', 0).isEqual(new src_1.NDArray([
+                    [2],
+                    [1],
+                    [0]
+                ])));
+                assert.ok(A.slice(':', 2).isEqual(new src_1.NDArray([
+                    [6],
+                    [9],
+                    [3]
+                ])));
+                assert.ok(A.slice(':2', ':3').isEqual(new src_1.NDArray([
+                    [2, 4, 6],
+                    [1, 0, 9],
+                ])));
+                assert.ok(A.slice(':', ':').isEqual(new src_1.NDArray([
+                    [2, 4, 6],
+                    [1, 0, 9],
+                    [0, 2, 3]
+                ])));
+                assert.ok(A.slice(':').isEqual(new src_1.NDArray([
+                    [2, 4, 6],
+                    [1, 0, 9],
+                    [0, 2, 3]
+                ])));
+                assert.ok(A.slice().isEqual(new src_1.NDArray([
+                    [2, 4, 6],
+                    [1, 0, 9],
+                    [0, 2, 3]
+                ])));
+            });
+            QUnit.test('3x3x3', function (assert) {
+                var A = src_1.range(27);
+                A.reshape([3, 3, 3]);
+                console.log(A.slice(0, 0, ':').toString());
+                assert.ok(new src_1.NDArray([0, 1, 2]).isEqual(A.slice(0, 0, ':')));
+            });
+        });
     });
 }
-exports.default = testLinalg;
-
-
-/***/ }),
-/* 10 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-var matrix_1 = __webpack_require__(5);
-;
-/**
- * @hidden
- */
-var BandMatrix = (function (_super) {
-    __extends(BandMatrix, _super);
-    function BandMatrix(def) {
-        var _this = this;
-        var nrows = def.lowerbandwidth + def.upperbandwidth + 1;
-        var ncols = Math.min(def.rows, def.cols);
-        console.assert(def.data.length === nrows * ncols);
-        _this = _super.call(this, { rows: nrows, cols: ncols, data: def.data }) || this;
-        _this._def = def;
-        return _this;
-    }
-    /**
-     *
-     * @example
-     * For the rectangular matrix
-     *    -                         -
-     *    | a11 a12 a13   0   0   0 |
-     *    | a21 a22 a23 a24   0   0 |
-     *    |   0 a32 a33 a34 a35   0 |
-     *    |   0   0 a43 a44 a45   0 |
-     *    |   0   0   0 a54 a55 a56 |
-     *    |   0   0   0   0 a65 a66 |
-     *    -                         -
-     *
-     * Band matrix is given by
-     *    lower bandwidth p = 1
-     *    upper bandwidth q = 2
-     *    -                         -
-     *    |   *   * a13 a24 a35 a46 |
-     *    |   * a12 a23 a34 a45 a56 |
-     *    | a11 a22 a33 a44 a55 a66 |
-     *    | a21 a32 a43 a54 a65   * |
-     *    -                         -
-     */
-    BandMatrix.prototype.toRectangularMatrix = function () {
-        var m = new matrix_1.default({
-            rows: this._def.rows,
-            cols: this._def.cols
-        }, 'f32');
-        var q = this._def.upperbandwidth;
-        for (var i = 0; i < m.rows; i++) {
-            for (var j = 0; j < m.cols; j++) {
-                var brow = i - j + q;
-                var bcol = j;
-                if (brow < 0 || brow >= this.rows ||
-                    bcol < 0 || bcol >= this.cols) {
-                    m.set(i, j, 0);
-                }
-                else {
-                    m.set(i, j, this.get(brow, bcol));
-                }
-            }
-        }
-        return m;
-    };
-    return BandMatrix;
-}(matrix_1.default));
-exports.default = BandMatrix;
+exports.default = testNDArray;
 
 
 /***/ }),
@@ -1417,6 +1877,7 @@ exports.default = BandMatrix;
 
 "use strict";
 
+Object.defineProperty(exports, "__esModule", { value: true });
 /*
 
 Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
@@ -1437,23 +1898,359 @@ You should have received a copy of the GNU Affero General Public License
 along with bluemath. If not, see <http://www.gnu.org/licenses/>.
 
 */
-Object.defineProperty(exports, "__esModule", { value: true });
-var matrix_1 = __webpack_require__(5);
-exports.Matrix = matrix_1.default;
-var bmatrix_1 = __webpack_require__(10);
-exports.BandMatrix = bmatrix_1.default;
-var vector_1 = __webpack_require__(4);
-exports.Vector = vector_1.default;
-var vector2_1 = __webpack_require__(14);
-exports.Vector2 = vector2_1.default;
-var vector3_1 = __webpack_require__(15);
-exports.Vector3 = vector3_1.default;
-var pvector_1 = __webpack_require__(13);
-exports.PermutationVector = pvector_1.default;
-var ndarray_1 = __webpack_require__(12);
-exports.NDArray = ndarray_1.default;
-var complex_1 = __webpack_require__(6);
-exports.Complex = complex_1.default;
+var constants_1 = __webpack_require__(3);
+var _1 = __webpack_require__(0);
+/**
+ * Convert angle to degrees
+ */
+function todeg(angleInRadians) {
+    return 180 * angleInRadians / Math.PI;
+}
+exports.todeg = todeg;
+/**
+ * Convert angle to radians
+ */
+function torad(angleInDegrees) {
+    return Math.PI * angleInDegrees / 180;
+}
+exports.torad = torad;
+/**
+ * Check if input equals zero within given tolerance
+ */
+function iszero(x, tolerance) {
+    if (tolerance === void 0) { tolerance = constants_1.EPSILON; }
+    return Math.abs(x) < tolerance;
+}
+exports.iszero = iszero;
+/**
+ * Check if two input numbers are equal within given tolerance
+ */
+function isequal(a, b, tolerance) {
+    if (tolerance === void 0) { tolerance = constants_1.EPSILON; }
+    return iszero(a - b, tolerance);
+}
+exports.isequal = isequal;
+/**
+ * Find cube root of given number. Math.pow return NaN while taking
+ * cube root of negative number, because some of the results might
+ * be complex numbers. This function only return the real cubeRoot
+ * of given number
+ */
+function cuberoot(x) {
+    return x < 0 ? -Math.pow(-x, 1 / 3) : Math.pow(x, 1 / 3);
+}
+exports.cuberoot = cuberoot;
+/**
+ * Generate array of integers within given range.
+ * If both a and b are specified then return [a,b)
+ * if only a is specifed then return [0,a)
+ */
+function range(a, b) {
+    if (b === undefined) {
+        b = a;
+        a = 0;
+    }
+    b = Math.max(b, 0);
+    var arr = [];
+    for (var i = a; i < b; i++) {
+        arr.push(i);
+    }
+    return new _1.NDArray(arr, { datatype: 'i32' });
+}
+exports.range = range;
+/**
+ * Creates m-by-n Identity matrix
+ *
+ * ```
+ * eye(2) // Creates 2x2 Identity matrix
+ * eye([2,2]) // Creates 2x2 Identity matrix
+ * eye([2,3]) // Create 2x3 Identity matrix with main diagonal set to 1
+ * eye(2,'i32') // Creates 2x2 Identity matrix of 32-bit integers
+ * ```
+ */
+function eye(arg0, datatype) {
+    var n, m;
+    if (Array.isArray(arg0)) {
+        n = arg0[0];
+        if (arg0.length > 1) {
+            m = arg0[1];
+        }
+        else {
+            m = n;
+        }
+    }
+    else {
+        n = m = arg0;
+    }
+    var A = new _1.NDArray({ shape: [n, m], datatype: datatype, fill: 0 });
+    var ndiag = Math.min(n, m);
+    for (var i = 0; i < ndiag; i++) {
+        A.set(i, i, 1);
+    }
+    return A;
+}
+exports.eye = eye;
+/**
+ * Creates NDArray filled with zeros
+ *
+ * ```
+ * zeros(2) // Creates 2x2 matrix of zeros
+ * zeros([2,2,2]) // Create 2x2x2 matrix of zeros
+ * zeros(2,'i16') // Creates 2x2 matrix of 16-bit integers filled with zeros
+ * ```
+ */
+function zeros(arg0, datatype) {
+    var A;
+    if (Array.isArray(arg0)) {
+        A = new _1.NDArray({ shape: arg0, datatype: datatype });
+    }
+    else {
+        A = new _1.NDArray({ shape: [arg0, arg0], datatype: datatype });
+    }
+    A.fill(0);
+    return A;
+}
+exports.zeros = zeros;
+/**
+ * @hidden
+ */
+function _add_numbers(a, b) {
+    if (typeof a === 'number') {
+        if (typeof b === 'number') {
+            return a + b;
+        }
+        else if (b instanceof _1.Complex) {
+            var answer = b.clone();
+            answer.real += a;
+            return answer;
+        }
+    }
+    else if (a instanceof _1.Complex) {
+        if (typeof b === 'number') {
+            var answer = a.clone();
+            answer.real += b;
+            return answer;
+        }
+        else if (b instanceof _1.Complex) {
+            var answer = a.clone();
+            answer.real += b.real;
+            answer.imag += b.imag;
+            return answer;
+        }
+    }
+    throw new Error('Addition of incompatible types');
+}
+/**
+ * @hidden
+ */
+function _add_ndarrays(a, b) {
+    if (!a.isShapeEqual(b)) {
+        throw new Error('Addition of NDArray with mismatched shapes');
+    }
+    var answer = a.clone();
+    a.forEach(function (value) {
+        var index = [];
+        for (var _i = 1; _i < arguments.length; _i++) {
+            index[_i - 1] = arguments[_i];
+        }
+        var aval = value;
+        var bval = b.get.apply(b, index);
+        var ansval = _add_numbers(aval, bval);
+        answer.set.apply(answer, index.concat([ansval]));
+    });
+    return answer;
+}
+/**
+ * @hidden
+ */
+function _add_ndarray_and_number(a, b) {
+    var answer = a.clone();
+    a.forEach(function (value) {
+        var index = [];
+        for (var _i = 1; _i < arguments.length; _i++) {
+            index[_i - 1] = arguments[_i];
+        }
+        var aval = value;
+        var ansval = _add_numbers(aval, b);
+        answer.set.apply(answer, index.concat([ansval]));
+    });
+    return answer;
+}
+/**
+ * @hidden
+ */
+function _add_two(a, b) {
+    if (a === 0) {
+        return b;
+    }
+    if (b === 0) {
+        return a;
+    }
+    if (typeof a === 'number') {
+        if (typeof b === 'number' || b instanceof _1.Complex) {
+            return _add_numbers(a, b);
+        }
+        else if (b instanceof _1.NDArray) {
+            return _add_ndarray_and_number(b, a);
+        }
+    }
+    else if (a instanceof _1.NDArray) {
+        if (typeof b === 'number' || b instanceof _1.Complex) {
+            return _add_ndarray_and_number(a, b);
+        }
+        else if (b instanceof _1.NDArray) {
+            return _add_ndarrays(a, b);
+        }
+    }
+    else if (a instanceof _1.Complex) {
+        if (typeof b === 'number' || b instanceof _1.Complex) {
+            return _add_numbers(a, b);
+        }
+        else if (b instanceof _1.NDArray) {
+            return _add_ndarray_and_number(b, a);
+        }
+    }
+    throw new Error('Addition of invalid types');
+}
+/**
+ * Add all arguments in accordance to their types
+ * The arguments could be NDArray or numbers (real/complex).
+ * If some of them are NDArray's, then their shapes have to match,
+ * otherwise exception is thrown
+ * The order of addition starts from left to right
+ */
+function add() {
+    var args = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        args[_i] = arguments[_i];
+    }
+    var acc = args[0];
+    for (var i = 1; i < args.length; i++) {
+        acc = _add_two(acc, args[i]);
+    }
+    return acc;
+}
+exports.add = add;
+/**
+ * @hidden
+ */
+function _mul_numbers(a, b) {
+    if (typeof a === 'number') {
+        if (typeof b === 'number') {
+            return a * b;
+        }
+        else if (b instanceof _1.Complex) {
+            var answer = b.clone();
+            answer.real *= a;
+            answer.imag *= a;
+            return answer;
+        }
+    }
+    else if (a instanceof _1.Complex) {
+        if (typeof b === 'number') {
+            var answer = a.clone();
+            answer.real *= b;
+            answer.imag *= b;
+            return answer;
+        }
+        else if (b instanceof _1.Complex) {
+            var answer = new _1.Complex();
+            answer.real = a.real * b.real - a.imag * b.imag;
+            answer.imag = a.imag * b.real + a.real * b.imag;
+            return answer;
+        }
+    }
+    throw new Error('Multiplication of incompatible types');
+}
+/**
+ * @hidden
+ */
+function _mul_two(a, b) {
+    if (a === 1) {
+        return b;
+    }
+    if (b === 1) {
+        return a;
+    }
+    if (typeof a === 'number' || a instanceof _1.Complex) {
+        if (typeof b === 'number' || b instanceof _1.Complex) {
+            return _mul_numbers(a, b);
+        }
+        else if (b instanceof _1.NDArray) {
+            var answer_1 = b.clone();
+            answer_1.forEach(function (value) {
+                var index = [];
+                for (var _i = 1; _i < arguments.length; _i++) {
+                    index[_i - 1] = arguments[_i];
+                }
+                answer_1.set.apply(answer_1, index.concat([_mul_numbers(a, value)]));
+            });
+            return answer_1;
+        }
+    }
+    else if (a instanceof _1.NDArray) {
+        if (typeof b === 'number' || b instanceof _1.Complex) {
+            var answer_2 = a.clone();
+            answer_2.forEach(function (value) {
+                var index = [];
+                for (var _i = 1; _i < arguments.length; _i++) {
+                    index[_i - 1] = arguments[_i];
+                }
+                answer_2.set.apply(answer_2, index.concat([_mul_numbers(b, value)]));
+            });
+            return answer_2;
+        }
+        else if (b instanceof _1.NDArray) {
+            return _1.linalg.matmul(a, b);
+        }
+    }
+    throw new Error('Multiplication of incompatible types');
+}
+/**
+ * Multiply all arguments in accordance with their data types
+ * Each argument can be a number (real or complex) or NDArray.
+ * If some of the arguments are NDArrays, then their shapes should
+ * be compatible with the other operand of multiplication operation,
+ * otherwise an exception is thrown
+ * The order of multiplication starts from left to right
+ */
+function mul() {
+    var args = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        args[_i] = arguments[_i];
+    }
+    var acc = args[0];
+    for (var i = 1; i < args.length; i++) {
+        acc = _mul_two(acc, args[i]);
+    }
+    return acc;
+}
+exports.mul = mul;
+/**
+ * Subtract second argument from first
+ * The arguments could be a number (real or complex) or NDArray.
+ * If some of the arguments are NDArrays, then their shapes should
+ * be compatible with the other operand of subtraction operation,
+ * otherwise an exception is thrown
+ */
+function sub(a, b) {
+    return _add_two(a, _mul_two(-1, b));
+}
+exports.sub = sub;
+/**
+ * Divide first argument by second
+ * The first argument can be a number (real or complex) or NDArray.
+ * The second argument can be a number (real or complex)
+ */
+function div(a, b) {
+    if (b instanceof _1.Complex) {
+        return _mul_two(a, b.inverse());
+    }
+    else {
+        return _mul_two(a, 1 / b);
+    }
+}
+exports.div = div;
 
 
 /***/ }),
@@ -1483,619 +2280,26 @@ along with bluemath. If not, see <http://www.gnu.org/licenses/>.
 
 */
 Object.defineProperty(exports, "__esModule", { value: true });
-var __1 = __webpack_require__(1);
-var constants_1 = __webpack_require__(3);
-var complex_1 = __webpack_require__(6);
-/**
- * @hidden
- */
-function deduceShape(data) {
-    var dim = 0;
-    var d = data;
-    var shape = [data.length];
-    while (Array.isArray(d[0])) {
-        shape.push(d[0].length);
-        dim++;
-        d = d[0];
-    }
-    return shape;
-}
-/**
- * @hidden
- */
-function deduceNumberType(data) {
-    if (data instanceof Float32Array) {
-        return 'f32';
-    }
-    else if (data instanceof Float64Array) {
-        return 'f64';
-    }
-    else if (data instanceof Int8Array) {
-        return 'i8';
-    }
-    else if (data instanceof Uint8Array) {
-        return 'ui8';
-    }
-    else if (data instanceof Int16Array) {
-        return 'i16';
-    }
-    else if (data instanceof Uint16Array) {
-        return 'ui16';
-    }
-    else if (data instanceof Int32Array) {
-        return 'i32';
-    }
-    else if (data instanceof Uint32Array) {
-        return 'ui32';
-    }
-    else {
-        throw new Error('Unknown datatype');
-    }
-}
-/**
- * @hidden
- */
-function populateFromArray(data, idx, arr) {
-    if (Array.isArray(arr[0])) {
-        var len = 0;
-        for (var i = 0; i < arr.length; i++) {
-            var l = populateFromArray(data, idx + len, arr[i]);
-            len += l;
-        }
-        return len;
-    }
-    else {
-        for (var i = 0; i < arr.length; i++) {
-            data[idx + i] = arr[i];
-        }
-        return arr.length;
-    }
-}
-function getDataArrayType(typestr) {
-    switch (typestr) {
-        case 'i8':
-            return Int8Array;
-        case 'ui8':
-            return Uint8Array;
-        case 'i16':
-            return Int16Array;
-        case 'ui16':
-            return Uint16Array;
-        case 'i32':
-            return Int32Array;
-        case 'ui32':
-            return Uint32Array;
-        case 'f32':
-            return Float32Array;
-        case 'f64':
-            return Float64Array;
-        default:
-            throw new Error('Unknown datatype');
-    }
-}
-/**
- * N-Dimensional Array
- * ===
- *
- * It can store real as well as complex numbers in n-dimensions
- * It can be used to store Vectors (1D) or Matrices (2D).
- * This class stores the data internally in flat typed arrays
- *
- * NDArray is the central class of Bluemath library.
- * It's used to input and output data to/from most of the APIs of this library.
- *
- * Construction
- * ---
- *
- * You can create an NDArray
- *
- * * With shape and/or data type
- * ```javascript
- * // 3-dimensional array with 32-bit integer storage
- * new NDArray({shape:[3,4,3],datatype:'i32'});
- * ```
- *
- * * Initializing it with array data
- * ```javascript
- * // 2x3 Matrix with 64-bit floating point (double) storage
- * new NDArray([[1,1,1],[4,4,4]],{datatype:'f64'});
- * ```
- *
- * * Using standard functions
- * ```javascript
- * zeros([2,2,2]); // Returns 2x2x2 NDArray of zeros
- * eye([4,4]); // Creates 4x4 Identity matrix
- * ```
- *
- * Basic math operations
- * ---
- *
- * Bluemath provides functions that allow basic math operations
- * on NDArrays
- *
- * [[add]]
- *
- * [[sub]]
- *
- * [[mul]]
- *
- * [[div]]
- */
-var NDArray = (function () {
-    function NDArray(arg0, arg1) {
-        this.size = 0;
-        this.datatype = 'f32';
-        this._idata = [];
-        if (Array.isArray(arg0)) {
-            this.shape = deduceShape(arg0);
-            this._calcSize();
-            if (arg1 && arg1.datatype) {
-                this.datatype = arg1.datatype;
-            }
-            this._alloc(this.size, arg0, this.datatype);
-            if (arg1 && arg1.idata) {
-                this._idata = arg1.idata;
-            }
-        }
-        else if (ArrayBuffer.isView(arg0)) {
-            this._data = arg0;
-            if (arg1 && arg1.shape) {
-                this.shape = arg1.shape;
-            }
-            else {
-                this.shape = [arg0.length];
-            }
-            // in this case options.datatype is ignored if supplied
-            this.datatype = deduceNumberType(arg0);
-            this._calcSize();
-            if (arg1 && arg1.idata) {
-                this._idata = arg1.idata;
-            }
-        }
-        else {
-            var options = arg0;
-            if (options.datatype) {
-                this.datatype = options.datatype;
-            }
-            if (options.shape) {
-                this.shape = options.shape;
-                this._calcSize();
-                this._alloc(this.size, undefined, this.datatype);
-                if (options.fill) {
-                    this._data.fill(options.fill);
-                }
-            }
-            if (options.idata) {
-                this._idata = options.idata;
-            }
-        }
-    }
-    Object.defineProperty(NDArray.prototype, "data", {
-        get: function () {
-            return this._data;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    /**
-     * Set new shape for the data stored in the array
-     * The old data remains intact. If the total size with the new shape
-     * is larger than the old size, then excess elements of the data are
-     * fill with zero.
-     * @param shape New shape
-     */
-    NDArray.prototype.reshape = function (shape) {
-        this.shape = shape;
-        var oldsize = this.size;
-        this._calcSize();
-        if (this.size > oldsize) {
-            // Rellocate a buffer of bigger size, copy old data to it
-            this._alloc(this.size, this._data, this.datatype);
-            // Fill the excess elements in new buffer with 0
-            this._data.fill(0, oldsize);
-        }
-    };
-    /**
-     * Create deep copy of the array
-     */
-    NDArray.prototype.clone = function () {
-        var dataArrayType = getDataArrayType(this.datatype);
-        var data = new dataArrayType(this._data);
-        return new NDArray(data, { shape: this.shape.slice(), idata: this._idata.slice() });
-    };
-    NDArray.prototype._calcSize = function () {
-        this.size = this.shape.reduce(function (prev, cur) { return prev * cur; }, 1);
-    };
-    NDArray.prototype._alloc = function (size, data, datatype) {
-        var dataArrayType = getDataArrayType(datatype);
-        this._data = new dataArrayType(size);
-        if (Array.isArray(data)) {
-            populateFromArray(this._data, 0, data);
-        }
-        else if (ArrayBuffer.isView(data)) {
-            this._data.set(data);
-        }
-    };
-    NDArray.prototype._indexToAddress = function () {
-        var indices = [];
-        for (var _i = 0; _i < arguments.length; _i++) {
-            indices[_i] = arguments[_i];
-        }
-        if (indices.length !== this.shape.length) {
-            throw new Error('Mismatched number of dimensions');
-        }
-        var addr = 0;
-        for (var i = 0; i < this.shape.length; i++) {
-            if (i < this.shape.length - 1) {
-                addr += this.shape[i + 1] * indices[i];
-            }
-            else {
-                if (indices[i] < 0) {
-                    throw new Error('Invalid index ' + indices[i]);
-                }
-                if (indices[i] >= this.shape[i]) {
-                    throw new Error('Index out of bounds ' + indices[i]);
-                }
-                addr += indices[i];
-            }
-        }
-        return addr;
-    };
-    /**
-     * @hidden
-     */
-    NDArray.prototype._addressToIndex = function (di) {
-        if (di >= this.size) {
-            throw new Error("Data index out of range");
-        }
-        var index = new Array(this.shape.length);
-        for (var i = this.shape.length - 1; i >= 0; i--) {
-            var d = this.shape[i];
-            index[i] = di % d;
-            di = Math.floor(di / d);
-        }
-        return index;
-    };
-    /**
-     * Create nested array
-     */
-    NDArray.prototype.toArray = function () {
-        if (this.shape.length <= 0) {
-            throw new Error('Zero shape');
-        }
-        var aarr = [];
-        var step = 1;
-        // iterate over dimensions from innermost to outermost
-        for (var i = this.shape.length - 1; i >= 0; i--) {
-            // Step size in i'th dimension
-            var d = this.shape[i];
-            step = step * d;
-            // number of elements in i'th dimension
-            var nelem = this.size / step;
-            if (i === this.shape.length - 1) {
-                // innermost dimension, create array from all elements
-                for (var j = 0; j < nelem; j++) {
-                    var arr = new Array(step);
-                    for (var k = 0; k < d; k++) {
-                        var index = j * step + k;
-                        if (this._idata[index] === undefined) {
-                            arr[k] = this._data[index];
-                        }
-                        else {
-                            arr[k] = new complex_1.default(this._data[index], this._idata[index]);
-                        }
-                    }
-                    aarr.push(arr);
-                }
-            }
-            else {
-                // outer dimensions, create array from inner dimension's arrays
-                var darr = new Array(nelem);
-                for (var j = 0; j < nelem; j++) {
-                    darr[j] = aarr.slice(j * d, (j + 1) * d);
-                }
-                aarr = darr;
-            }
-        }
-        return aarr[0];
-    };
-    /**
-     * Set all members of this array to given value
-     */
-    NDArray.prototype.fill = function (value) {
-        this._data.fill(value);
-    };
-    /**
-     * Access member at given index
-     */
-    NDArray.prototype.get = function () {
-        var index = [];
-        for (var _i = 0; _i < arguments.length; _i++) {
-            index[_i] = arguments[_i];
-        }
-        var addr = this._indexToAddress.apply(this, index);
-        if (this._idata[addr] === undefined) {
-            return this._data[addr];
-        }
-        else {
-            return new complex_1.default(this._data[addr], this._idata[addr]);
-        }
-    };
-    /**
-     * Set member at given index
-     * All but the last argument should specify the index.
-     * The last argument is the value to set.
-     */
-    NDArray.prototype.set = function () {
-        var args = [];
-        for (var _i = 0; _i < arguments.length; _i++) {
-            args[_i] = arguments[_i];
-        }
-        var nargs = args.length;
-        var index = (args.slice(0, nargs - 1));
-        var addr = this._indexToAddress.apply(this, index);
-        var val = args[nargs - 1];
-        if (val instanceof complex_1.default) {
-            this._data[addr] = val.real;
-            this._idata[addr] = val.imag;
-        }
-        else {
-            this._data[addr] = val;
-        }
-    };
-    /**
-     * Swaps matrix rows (this must be a 2D array)
-     */
-    NDArray.prototype.swaprows = function (i, j) {
-        if (this.shape.length !== 2) {
-            throw new Error('This NDArray is not a Matrix (2D)');
-        }
-        if (i === j) {
-            return; // No need to swap
-        }
-        var nrows = this.shape[0];
-        var ncols = this.shape[1];
-        if (i >= nrows || j >= nrows) {
-            throw new Error("Index out of range");
-        }
-        for (var k = 0; k < ncols; k++) {
-            var tmp = this.get(i, k);
-            this.set(i, k, this.get(j, k));
-            this.set(j, k, tmp);
-        }
-    };
-    /**
-     * @hidden
-     */
-    NDArray.prototype.datacompare = function (otherdata, otheridata, tolerance) {
-        if (tolerance === void 0) { tolerance = constants_1.EPSILON; }
-        for (var i = 0; i < this._data.length; i++) {
-            if (this._idata[i] === undefined) {
-                if (!__1.isequal(this._data[i], otherdata[i], tolerance)) {
-                    return false;
-                }
-            }
-            else {
-                if (otheridata[i] === undefined) {
-                    // other is not complex number
-                    return false;
-                }
-                var thisC = new complex_1.default(this._data[i], this._idata[i]);
-                var otherC = new complex_1.default(otherdata[i], otheridata[i]);
-                return thisC.isEqual(otherC);
-            }
-        }
-        return true;
-    };
-    /**
-     * Iterate over each element, invoke a callback with each index and value
-     */
-    NDArray.prototype.forEach = function (callback) {
-        for (var i = 0; i < this.size; i++) {
-            var index = this._addressToIndex(i);
-            if (this._idata[i] === undefined) {
-                callback.apply(void 0, [this._data[i]].concat(index));
-            }
-            else {
-                callback.apply(void 0, [new complex_1.default(this._data[i], this._idata[i])].concat(index));
-            }
-        }
-    };
-    /**
-     * Checks if the shape of this ndarray matches the shape of other
-     */
-    NDArray.prototype.isShapeEqual = function (other) {
-        if (this.shape.length !== other.shape.length) {
-            return false;
-        }
-        for (var i = 0; i < this.shape.length; i++) {
-            if (this.shape[i] !== other.shape[i]) {
-                return false;
-            }
-        }
-        return true;
-    };
-    /**
-     * Does equality test for each element of the array as well as the
-     * shape of the arrays
-     * @param other Other NDArray to compare with
-     * @param tolerance
-     */
-    NDArray.prototype.isEqual = function (other, tolerance) {
-        if (tolerance === void 0) { tolerance = constants_1.EPSILON; }
-        var shapeequal = this.isShapeEqual(other);
-        return shapeequal && other.datacompare(this._data, this._idata, tolerance);
-    };
-    /**
-     * Change between Row-major and Column-major layout
-     */
-    NDArray.prototype.swapOrder = function () {
-        if (this.shape.length !== 2) {
-            throw new Error('swapOrder is not defined for ndarrays other than dim 2');
-        }
-        var clone = this.clone();
-        var I = this.shape[0];
-        var J = this.shape[1];
-        this.reshape([J, I]);
-        for (var i = 0; i < J; i++) {
-            for (var j = 0; j < I; j++) {
-                this.set(i, j, clone.get(j, i));
-            }
-        }
-    };
-    /**
-     * Bluemath supports extracting of NDArray slices using a syntax similar
-     * to numpy. Slicing is supported by NDArray.slice function.
-     *
-     * The function accepts number of arguments not greater than the dimensions
-     * of the NDArray.
-     * Each argument could be a `number`, a `string` in format `<start>:<stop>`
-     * or `undefined` or `null`.
-     *
-     * If the argument is a number then it represents a single slice,
-     * i.e. all the elements in the lower dimension
-     * are returned for this index in given dimension.
-     * ```javascript
-     * let A = new NDArray([
-     *   [2,4,6],
-     *   [1,0,9],
-     *   [0,2,3]
-     * ]);
-     * A.slice(0); // [[2,4,6]]
-     * ```
-     *
-     * If the argument is `undefined` or `null`, then that's interpreted as
-     * all items in the given dimension.
-     * ```javascript
-     * A.slice(null); // [[2,4,6],[1,0,9],[0,2,3]]
-     * A.slice(1,null); // [[1,0,9]]
-     * ```
-     *
-     * A string argument of format `<start>:<stop>` is used to specify range of
-     * slices in the given dimension.
-     * Both `<start>` and `<stop>` are optional.
-     * ```javascript
-     * A.slice('1:2'); // [[1,0,9]]
-     * A.slice(':1'); // [[2,4,6]]
-     * A.slice(':'); // [[2,4,6],[1,0,9],[0,2,3]]
-     * A.slice(':',2); // [[6],[9],[3]]
-     * ```
-     *
-     * The argument order is interpreted as going from outermost dimension to
-     * innermost.
-     *
-     * Caveats
-     * ---
-     * * Negative indices not supported yet
-     * * No support for `<start>:<stop>:<step>` format yet
-     */
-    NDArray.prototype.slice = function () {
-        var slices = [];
-        for (var _i = 0; _i < arguments.length; _i++) {
-            slices[_i] = arguments[_i];
-        }
-        if (slices.length > this.shape.length) {
-            throw new Error('Excess number of dimensions specified');
-        }
-        var slice_recipe = [];
-        // Each slice specifies the index-range in that dimension to return
-        for (var i = 0; i < slices.length; i++) {
-            var slice = slices[i];
-            var max = this.shape[i];
-            if (slice === undefined || slice === null || slice === ':') {
-                // gather all indices in this dimension
-                slice_recipe.push([0, max]);
-            }
-            else if (typeof slice === 'string') {
-                // assume the slice format to be [<from_index>:<to_index>]
-                // if from_index or to_index is missing then they are replaced
-                // by 0 or max respectively
-                var match = /([-\d]*)\:([-\d]*)/.exec(slice);
-                var from = 0;
-                var to = max;
-                if (match) {
-                    if (match[1] !== '') {
-                        from = parseInt(match[1], 10);
-                    }
-                    if (match[2] !== '') {
-                        to = Math.min(parseInt(match[2], 10), max);
-                    }
-                }
-                slice_recipe.push([from, to]);
-            }
-            else if (typeof slice === 'number') {
-                slice_recipe.push([slice, slice + 1]);
-            }
-            else {
-                throw new Error("Unexpected slice :" + slice);
-            }
-        }
-        // At this point slice_recipe contains an array of index ranges
-        // index range is an array [from_index,to_index]
-        // If slices argument has less slices than the number of dimensions
-        // of this array (i.e. this.shape.length),
-        // then we assume that lower (i.e. inner) dimensions are missing and
-        // we take that as wildcard and return all indices in those
-        // dimensions
-        for (var i = slice_recipe.length; i < this.shape.length; i++) {
-            slice_recipe.push([0, this.shape[i]]);
-        }
-        console.assert(slice_recipe.length === this.shape.length);
-        // From slice_recipe find the total size of the result array
-        // and also the shape of the result array
-        var newsize = 1;
-        var newshape = [];
-        for (var i = 0; i < slice_recipe.length; i++) {
-            var recipe = slice_recipe[i];
-            var dimsize = recipe[1] - recipe[0];
-            newshape.push(dimsize);
-            newsize *= dimsize;
-        }
-        var newndarray;
-        var dataArrayType = getDataArrayType(this.datatype);
-        if (newsize > 0) {
-            // Create result array of the calculated size
-            newndarray = new NDArray(new dataArrayType(newsize), { shape: newshape });
-            // populate the result array from the original array (i.e. this)
-            for (var i = 0; i < newsize; i++) {
-                var newindices = newndarray._addressToIndex(i);
-                var oldindices = newindices.map(function (idx, i) { return idx + slice_recipe[i][0]; });
-                newndarray.set.apply(newndarray, newindices.concat([this.get.apply(this, oldindices)])); // todo
-            }
-        }
-        else {
-            newndarray = new NDArray({ shape: [0] });
-        }
-        return newndarray;
-    };
-    NDArray.prototype.toString = function (precision) {
-        if (precision === void 0) { precision = 4; }
-        return JSON.stringify(this.toArray(), function (key, val) {
-            !key; // to avoid unused variable warning
-            if (val instanceof complex_1.default) {
-                return val.toString();
-            }
-            else if (typeof val === 'number') {
-                return Number(val.toFixed(3));
-            }
-            else if (Array.isArray(val) && !Array.isArray(val[0])) {
-                return '[' + val.map(function (v) {
-                    if (v instanceof complex_1.default) {
-                        return v.toString();
-                    }
-                    else {
-                        return v.toFixed(precision);
-                    }
-                }).join(',') + ']';
-            }
-            else {
-                return val;
-            }
-        }, precision);
-    };
-    return NDArray;
-}());
-exports.default = NDArray;
+var ops_1 = __webpack_require__(13);
+exports.matmul = ops_1.matmul;
+exports.norm = ops_1.norm;
+exports.solve = ops_1.solve;
+exports.cholesky = ops_1.cholesky;
+exports.inner = ops_1.inner;
+exports.outer = ops_1.outer;
+exports.svd = ops_1.svd;
+exports.rank = ops_1.rank;
+exports.lstsq = ops_1.lstsq;
+exports.lu_custom = ops_1.lu_custom;
+exports.slogdet = ops_1.slogdet;
+exports.det = ops_1.det;
+exports.inv = ops_1.inv;
+exports.qr = ops_1.qr;
+exports.triu = ops_1.triu;
+exports.tril = ops_1.tril;
+exports.eig = ops_1.eig;
+var lapack = __webpack_require__(6);
+exports.lapack = lapack;
 
 
 /***/ }),
@@ -2104,198 +2308,6 @@ exports.default = NDArray;
 
 "use strict";
 
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-var vector_1 = __webpack_require__(4);
-var matrix_1 = __webpack_require__(5);
-/**
- * @hidden
- */
-var PermutationVector = (function (_super) {
-    __extends(PermutationVector, _super);
-    function PermutationVector(arg0, datatype) {
-        var _this = _super.call(this, arg0, datatype || 'i16') || this;
-        if (typeof arg0 === 'number') {
-            // Initialize the Permutation vector to [0,1,2,...,n-1]
-            // This corresponds to Identity matrix
-            for (var i = 0; i < arg0; i++) {
-                _this._data[i] = i;
-            }
-        }
-        return _this;
-    }
-    PermutationVector.prototype.toMatrix = function () {
-        var n = this._data.length;
-        var d = new Int32Array(n * n);
-        for (var i = 0; i < n; i++) {
-            var j = this.get(i);
-            d[i * n + j] = 1;
-        }
-        return new matrix_1.default({
-            rows: this._data.length,
-            cols: this._data.length,
-            data: d
-        });
-    };
-    return PermutationVector;
-}(vector_1.default));
-exports.default = PermutationVector;
-
-
-/***/ }),
-/* 14 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-/*
-
-Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
-
-This file is part of bluemath.
-
-bluemath is free software: you can redistribute it and/or modify
-it under the terms of the GNU Affero General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-bluemath is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU Affero General Public License for more details.
-
-You should have received a copy of the GNU Affero General Public License
-along with bluemath. If not, see <http://www.gnu.org/licenses/>.
-
-*/
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-var vector_1 = __webpack_require__(4);
-/**
- * @hidden
- */
-var Vector2 = (function (_super) {
-    __extends(Vector2, _super);
-    function Vector2(x, y) {
-        if (x === void 0) { x = 0.0; }
-        if (y === void 0) { y = 0.0; }
-        return _super.call(this, [x, y]) || this;
-    }
-    Object.defineProperty(Vector2.prototype, "x", {
-        get: function () {
-            return this._data[0];
-        },
-        set: function (newx) {
-            this._data[0] = newx;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(Vector2.prototype, "y", {
-        get: function () {
-            return this._data[1];
-        },
-        set: function (newy) {
-            this._data[1] = newy;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    /**
-     * Cross product with other vector
-     */
-    Vector2.prototype.cross = function (other) {
-        return this.x * other.y - this.y * other.x;
-    };
-    /**
-     * Vector orthogonal to this vector
-     */
-    Vector2.prototype.orthogonal = function () {
-        return new Vector2(this.y, -this.x);
-    };
-    return Vector2;
-}(vector_1.default));
-exports.default = Vector2;
-
-
-/***/ }),
-/* 15 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-/*
-
- Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
-
- This file is part of bluemath.
-
- bluemath is free software: you can redistribute it and/or modify
- it under the terms of the GNU Affero General Public License as published by
- the Free Software Foundation, either version 3 of the License, or
- (at your option) any later version.
-
- bluemath is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- GNU Affero General Public License for more details.
-
- You should have received a copy of the GNU Affero General Public License
- along with bluemath. If not, see <http://www.gnu.org/licenses/>.
-
-*/
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-var vector_1 = __webpack_require__(4);
-/**
- * @hidden
- */
-var Vector3 = (function (_super) {
-    __extends(Vector3, _super);
-    function Vector3(x, y, z) {
-        if (x === void 0) { x = 0.0; }
-        if (y === void 0) { y = 0.0; }
-        if (z === void 0) { z = 0.0; }
-        return _super.call(this, [x, y, z]) || this;
-    }
-    return Vector3;
-}(vector_1.default));
-exports.default = Vector3;
-
-
-/***/ }),
-/* 16 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
 /*
 
 Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
@@ -2317,841 +2329,9 @@ along with bluemath. If not, see <http://www.gnu.org/licenses/>.
 
 */
 Object.defineProperty(exports, "__esModule", { value: true });
-var operations_1 = __webpack_require__(28);
-exports.matmul = operations_1.matmul;
-exports.norm = operations_1.norm;
-exports.solve = operations_1.solve;
-exports.cholesky = operations_1.cholesky;
-exports.inner = operations_1.inner;
-exports.outer = operations_1.outer;
-exports.svd = operations_1.svd;
-exports.rank = operations_1.rank;
-exports.lstsq = operations_1.lstsq;
-exports.lu_custom = operations_1.lu_custom;
-exports.slogdet = operations_1.slogdet;
-exports.det = operations_1.det;
-exports.inv = operations_1.inv;
-exports.qr = operations_1.qr;
-exports.triu = operations_1.triu;
-exports.tril = operations_1.tril;
-exports.eig = operations_1.eig;
-var lapack = __webpack_require__(7);
-exports.lapack = lapack;
-
-
-/***/ }),
-/* 17 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-/*
-
-Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
-
-This file is part of bluemath.
-
-bluemath is free software: you can redistribute it and/or modify
-it under the terms of the GNU Affero General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-bluemath is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU Affero General Public License for more details.
-
-You should have received a copy of the GNU Affero General Public License
-along with bluemath. If not, see <http://www.gnu.org/licenses/>.
-
-*/
-Object.defineProperty(exports, "__esModule", { value: true });
-var common_1 = __webpack_require__(0);
-/**
- * @hidden
- */
-function dot_internal(vx, vy, ntype) {
-    var n = vx.length;
-    var pn = common_1.defineEmVariable('i32', n);
-    var pincx = common_1.defineEmVariable('i32', 1);
-    var pincy = common_1.defineEmVariable('i32', 1);
-    var px = common_1.defineEmArrayVariable(ntype, n, vx)[0];
-    var py = common_1.defineEmArrayVariable(ntype, n, vy)[0];
-    if (ntype === 'f32') {
-        return common_1.sdot_wrap(pn, px, pincx, py, pincy);
-    }
-    else {
-        return common_1.ddot_wrap(pn, px, pincx, py, pincy);
-    }
-}
-/**
- * @hidden
- */
-function dot(vx, vy) {
-    if (vx.length !== vy.length) {
-        throw new Error('Input vectors of different size');
-    }
-    if (vx instanceof Float64Array || vy instanceof Float64Array) {
-        return dot_internal(vx, vy, 'f64');
-    }
-    else {
-        return dot_internal(vx, vy, 'f32');
-    }
-}
-exports.dot = dot;
-
-
-/***/ }),
-/* 18 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-/*
-
-Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
-
-This file is part of bluemath.
-
-bluemath is free software: you can redistribute it and/or modify
-it under the terms of the GNU Affero General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-bluemath is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU Affero General Public License for more details.
-
-You should have received a copy of the GNU Affero General Public License
-along with bluemath. If not, see <http://www.gnu.org/licenses/>.
-
-*/
-Object.defineProperty(exports, "__esModule", { value: true });
-var common_1 = __webpack_require__(0);
-function gemv_internal(alpha, mA, m, n, vx, vy, beta, ntype) {
-    if (vx.length !== n) {
-        throw new Error('Length of x doesn\'t match num columns of A');
-    }
-    if (vy.length !== m) {
-        throw new Error('Length of y doesn\'t match num rows of A');
-    }
-    var ptrans = common_1.defineEmVariable('i8', 'N'.charCodeAt(0));
-    var pm = common_1.defineEmVariable('i32', m);
-    var pn = common_1.defineEmVariable('i32', n);
-    var plda = common_1.defineEmVariable('i32', m);
-    var pincx = common_1.defineEmVariable('i32', 1);
-    var pincy = common_1.defineEmVariable('i32', 1);
-    var palpha = common_1.defineEmVariable(ntype, alpha);
-    var pbeta = common_1.defineEmVariable(ntype, beta);
-    var pA = common_1.defineEmArrayVariable(ntype, m * n, mA)[0];
-    var px = common_1.defineEmArrayVariable(ntype, n, vx)[0];
-    var _a = common_1.defineEmArrayVariable(ntype, m, vy), py = _a[0], y = _a[1];
-    if (ntype === 'f32') {
-        common_1.sgemv_wrap(ptrans, pm, pn, palpha, pA, plda, px, pincx, pbeta, py, pincy);
-    }
-    else {
-        common_1.dgemv_wrap(ptrans, pm, pn, palpha, pA, plda, px, pincx, pbeta, py, pincy);
-    }
-    vy.set(y);
-}
-/**
- * @hidden
- */
-function gemv(alpha, mA, m, n, vx, vy, beta) {
-    if (mA instanceof Float64Array ||
-        vx instanceof Float64Array || vy instanceof Float64Array) {
-        gemv_internal(alpha, mA, m, n, vx, vy, beta, 'f64');
-    }
-    else {
-        gemv_internal(alpha, mA, m, n, vx, vy, beta, 'f32');
-    }
-}
-exports.gemv = gemv;
-
-
-/***/ }),
-/* 19 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-/*
-
-Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
-
-This file is part of bluemath.
-
-bluemath is free software: you can redistribute it and/or modify
-it under the terms of the GNU Affero General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-bluemath is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU Affero General Public License for more details.
-
-You should have received a copy of the GNU Affero General Public License
-along with bluemath. If not, see <http://www.gnu.org/licenses/>.
-
-*/
-Object.defineProperty(exports, "__esModule", { value: true });
-var common_1 = __webpack_require__(0);
-function gemm_internal(mA, mB, mC, m, n, k, alpha, beta, numtype) {
-    var ptransa = common_1.defineEmVariable('i8', 'N'.charCodeAt(0));
-    var ptransb = common_1.defineEmVariable('i8', 'N'.charCodeAt(0));
-    var pm = common_1.defineEmVariable('i32', m);
-    var pn = common_1.defineEmVariable('i32', n);
-    var pk = common_1.defineEmVariable('i32', k);
-    var palpha = common_1.defineEmVariable(numtype, alpha);
-    var pbeta = common_1.defineEmVariable(numtype, beta);
-    var pA = common_1.defineEmArrayVariable(numtype, m * k, mA)[0];
-    var pB = common_1.defineEmArrayVariable(numtype, k * n, mB)[0];
-    var _a = common_1.defineEmArrayVariable(numtype, m * n, mC), pC = _a[0], C = _a[1];
-    var plda = common_1.defineEmVariable('i32', m);
-    var pldb = common_1.defineEmVariable('i32', k);
-    var pldc = common_1.defineEmVariable('i32', m);
-    if (numtype === 'f32') {
-        common_1.sgemm_wrap(ptransa, ptransb, pm, pn, pk, palpha, pA, plda, pB, pldb, pbeta, pC, pldc);
-    }
-    else {
-        common_1.dgemm_wrap(ptransa, ptransb, pm, pn, pk, palpha, pA, plda, pB, pldb, pbeta, pC, pldc);
-    }
-    mC.set(C);
-}
-/**
- * @hidden
- */
-function gemm(mA, mB, mC, m, n, k, alpha, beta) {
-    if (mA instanceof Float64Array ||
-        mB instanceof Float64Array ||
-        mC instanceof Float64Array) {
-        gemm_internal(mA, mB, mC, m, n, k, alpha, beta, 'f64');
-    }
-    else {
-        gemm_internal(mA, mB, mC, m, n, k, alpha, beta, 'f32');
-    }
-}
-exports.gemm = gemm;
-
-
-/***/ }),
-/* 20 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-/*
-
-Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
-
-This file is part of bluemath.
-
-bluemath is free software: you can redistribute it and/or modify
-it under the terms of the GNU Affero General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-bluemath is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU Affero General Public License for more details.
-
-You should have received a copy of the GNU Affero General Public License
-along with bluemath. If not, see <http://www.gnu.org/licenses/>.
-
-*/
-Object.defineProperty(exports, "__esModule", { value: true });
-var lapacklite = __webpack_require__(2);
-var em = lapacklite.Module;
-var common_1 = __webpack_require__(0);
-/**
- * @hidden
- */
-function geev_internal(mA, n, compleft, compright, numtype) {
-    var fn = numtype === 'f32' ? common_1.sgeev_wrap : common_1.dgeev_wrap;
-    var lda = Math.max(1, n);
-    var ldvl = compleft ? n : 1;
-    var ldvr = compright ? n : 1;
-    var jobvl = compleft ? 'V' : 'N';
-    var jobvr = compright ? 'V' : 'N';
-    var pjobvl = common_1.defineEmVariable('i8', jobvl.charCodeAt(0));
-    var pjobvr = common_1.defineEmVariable('i8', jobvr.charCodeAt(0));
-    var pn = common_1.defineEmVariable('i32', n);
-    var plda = common_1.defineEmVariable('i32', lda);
-    var pldvl = common_1.defineEmVariable('i32', ldvl);
-    var pldvr = common_1.defineEmVariable('i32', ldvr);
-    var plwork = common_1.defineEmVariable('i32', -1);
-    var pinfo = common_1.defineEmVariable('i32');
-    var pA = common_1.defineEmArrayVariable(numtype, n * n, mA)[0];
-    var _a = common_1.defineEmArrayVariable(numtype, compleft ? ldvl * n : 1), pVL = _a[0], VL = _a[1];
-    var _b = common_1.defineEmArrayVariable(numtype, compright ? ldvr * n : 1), pVR = _b[0], VR = _b[1];
-    var _c = common_1.defineEmArrayVariable(numtype, n), pwr = _c[0], WR = _c[1];
-    var _d = common_1.defineEmArrayVariable(numtype, n), pwi = _d[0], WI = _d[1];
-    var pwork = common_1.defineEmArrayVariable(numtype, 1)[0];
-    // work size query
-    fn(pjobvl, pjobvr, pn, pA, plda, pwr, pwi, pVL, pldvl, pVR, pldvr, pwork, plwork, pinfo);
-    var worksize = em.getValue(pwork, numtype === 'f32' ? 'float' : 'double');
-    pwork = common_1.defineEmArrayVariable(numtype, worksize)[0];
-    em.setValue(plwork, worksize, 'i32');
-    fn(pjobvl, pjobvr, pn, pA, plda, pwr, pwi, pVL, pldvl, pVR, pldvr, pwork, plwork, pinfo);
-    var info = em.getValue(pinfo, 'i32');
-    if (info < 0) {
-        throw new Error('Invalid argument (' + (-info) + ')');
-    }
-    if (info > 0) {
-        throw new Error('Failed to compute all eigen values (' + info + ')');
-    }
-    return [WR, WI, VL, VR];
-}
-/**
- * @hidden
- */
-function geev(A, n, compleft, compright) {
-    if (A instanceof Float64Array) {
-        return geev_internal(A, n, compleft, compright, 'f64');
-    }
-    else {
-        return geev_internal(A, n, compleft, compright, 'f32');
-    }
-}
-exports.geev = geev;
-
-
-/***/ }),
-/* 21 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-/*
-
-Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
-
-This file is part of bluemath.
-
-bluemath is free software: you can redistribute it and/or modify
-it under the terms of the GNU Affero General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-bluemath is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU Affero General Public License for more details.
-
-You should have received a copy of the GNU Affero General Public License
-along with bluemath. If not, see <http://www.gnu.org/licenses/>.
-
-*/
-Object.defineProperty(exports, "__esModule", { value: true });
-var lapacklite = __webpack_require__(2);
-var em = lapacklite.Module;
-var common_1 = __webpack_require__(0);
-/**
- * @hidden
- */
-function gelsd_internal(mA, m, n, nrhs, rcond, mB, mS) {
-    var fn = common_1.dgelsd_wrap;
-    var lda = Math.max(1, m);
-    var ldb = Math.max(1, m, n);
-    var nlvl = Math.max(0, Math.round(Math.log(Math.min(m, n) / 2.)) + 1);
-    var iworksize = 3 * Math.min(m, n) * nlvl + 11 * Math.min(m, n);
-    var pm = common_1.defineEmVariable('i32', m);
-    var pn = common_1.defineEmVariable('i32', n);
-    var pnrhs = common_1.defineEmVariable('i32', nrhs);
-    var plda = common_1.defineEmVariable('i32', lda);
-    var pldb = common_1.defineEmVariable('i32', ldb);
-    var prank = common_1.defineEmVariable('i32');
-    var plwork = common_1.defineEmVariable('i32', -1);
-    var prcond = common_1.defineEmVariable('f64', rcond);
-    console.assert(mB.length === ldb * nrhs);
-    var _a = common_1.defineEmArrayVariable('f64', m * n, mA), pA = _a[0], A = _a[1];
-    var _b = common_1.defineEmArrayVariable('f64', ldb * nrhs, mB), pB = _b[0], B = _b[1];
-    var _c = common_1.defineEmArrayVariable('f64', Math.min(m, n)), pS = _c[0], S = _c[1];
-    var piwork = common_1.defineEmArrayVariable('i32', iworksize)[0];
-    var pwork = common_1.defineEmArrayVariable('f64', 1)[0];
-    var pinfo = common_1.defineEmVariable('i32');
-    // work size query
-    fn(pm, pn, pnrhs, pA, plda, pB, pldb, pS, prcond, prank, pwork, plwork, piwork, pinfo);
-    var worksize = em.getValue(pwork, 'double');
-    pwork = common_1.defineEmArrayVariable('f64', worksize)[0];
-    em.setValue(plwork, worksize, 'i32');
-    fn(pm, pn, pnrhs, pA, plda, pB, pldb, pS, prcond, prank, pwork, plwork, piwork, pinfo);
-    var info = em.getValue(pinfo, 'i32');
-    if (info < 0) {
-        throw new Error('Invalid argument (' + (-info) + ')');
-    }
-    if (info > 0) {
-        throw new Error('SVD algorithm failed to converge (' + info + ')');
-    }
-    var rank = em.getValue(prank, 'i32');
-    mA.set(A);
-    mB.set(B);
-    mS.set(S);
-    return rank;
-}
-/**
- * @hidden
- */
-function gelsd(mA, m, n, nrhs, rcond, mB, mS) {
-    return gelsd_internal(mA, m, n, nrhs, rcond, mB, mS);
-}
-exports.gelsd = gelsd;
-
-
-/***/ }),
-/* 22 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-/*
-
-Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
-
-This file is part of bluemath.
-
-bluemath is free software: you can redistribute it and/or modify
-it under the terms of the GNU Affero General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-bluemath is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU Affero General Public License for more details.
-
-You should have received a copy of the GNU Affero General Public License
-along with bluemath. If not, see <http://www.gnu.org/licenses/>.
-
-*/
-Object.defineProperty(exports, "__esModule", { value: true });
-var lapacklite = __webpack_require__(2);
-var em = lapacklite.Module;
-var common_1 = __webpack_require__(0);
-/**
- * @hidden
- */
-function geqrf_internal(mA, m, n, mTau, numtype) {
-    var fn = numtype === 'f32' ? common_1.sgeqrf_wrap : common_1.dgeqrf_wrap;
-    var lda = Math.max(1, m);
-    var pm = common_1.defineEmVariable('i32', m);
-    var pn = common_1.defineEmVariable('i32', n);
-    var plda = common_1.defineEmVariable('i32', lda);
-    var plwork = common_1.defineEmVariable('i32', -1);
-    var pinfo = common_1.defineEmVariable('i32');
-    var _a = common_1.defineEmArrayVariable(numtype, m * n, mA), pA = _a[0], A = _a[1];
-    var _b = common_1.defineEmArrayVariable(numtype, Math.min(m, n)), ptau = _b[0], tau = _b[1];
-    var pwork = common_1.defineEmArrayVariable(numtype, 1)[0];
-    // work size query
-    fn(pm, pn, pA, plda, ptau, pwork, plwork, pinfo);
-    var worksize = em.getValue(pwork, numtype === 'f32' ? 'float' : 'double');
-    pwork = common_1.defineEmArrayVariable(numtype, worksize)[0];
-    em.setValue(plwork, worksize, 'i32');
-    fn(pm, pn, pA, plda, ptau, pwork, plwork, pinfo);
-    var info = em.getValue(pinfo, 'i32');
-    if (info < 0) {
-        throw new Error('Invalid argument (' + (-info) + ')');
-    }
-    mA.set(A);
-    mTau.set(tau);
-}
-/**
- * @hidden
- */
-function geqrf(mA, m, n, mTau) {
-    if (mA instanceof Float64Array) {
-        geqrf_internal(mA, m, n, mTau, 'f64');
-    }
-    else {
-        geqrf_internal(mA, m, n, mTau, 'f32');
-    }
-}
-exports.geqrf = geqrf;
-
-
-/***/ }),
-/* 23 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-/*
-
-Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
-
-This file is part of bluemath.
-
-bluemath is free software: you can redistribute it and/or modify
-it under the terms of the GNU Affero General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-bluemath is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU Affero General Public License for more details.
-
-You should have received a copy of the GNU Affero General Public License
-along with bluemath. If not, see <http://www.gnu.org/licenses/>.
-
-*/
-Object.defineProperty(exports, "__esModule", { value: true });
-var lapacklite = __webpack_require__(2);
-var em = lapacklite.Module;
-var common_1 = __webpack_require__(0);
-/**
- * @hidden
- */
-function gesdd_internal(mA, m, n, mU, mS, mVT, job, numtype) {
-    var fn = (numtype === 'f32') ? common_1.sgesdd_wrap : common_1.dgesdd_wrap;
-    var pjobz = common_1.defineEmVariable('i8', job.charCodeAt(0));
-    var pm = common_1.defineEmVariable('i32', m);
-    var pn = common_1.defineEmVariable('i32', n);
-    var plda = common_1.defineEmVariable('i32', Math.max(m, 1));
-    var pldu = common_1.defineEmVariable('i32', Math.max(m, 1));
-    var pldvt = common_1.defineEmVariable('i32', n);
-    var plwork = common_1.defineEmVariable('i32', -1);
-    var _a = common_1.defineEmArrayVariable(numtype, m * n, mA), pA = _a[0], A = _a[1];
-    var _b = common_1.defineEmArrayVariable(numtype, Math.min(m, n)), pS = _b[0], S = _b[1];
-    var _c = common_1.defineEmArrayVariable(numtype, m * n), pU = _c[0], U = _c[1];
-    var _d = common_1.defineEmArrayVariable(numtype, n * n), pVT = _d[0], VT = _d[1];
-    var piwork = common_1.defineEmArrayVariable('i32', 8 * Math.min(m, n))[0];
-    var pwork = common_1.defineEmArrayVariable(numtype, 1)[0];
-    var pinfo = common_1.defineEmVariable('i32');
-    // work size query
-    fn(pjobz, pm, pn, pA, plda, pS, pU, pldu, pVT, pldvt, pwork, plwork, piwork, pinfo);
-    var worksize = em.getValue(pwork, numtype === 'f32' ? 'float' : 'double');
-    pwork = common_1.defineEmArrayVariable(numtype, worksize)[0];
-    em.setValue(plwork, worksize, 'i32');
-    fn(pjobz, pm, pn, pA, plda, pS, pU, pldu, pVT, pldvt, pwork, plwork, piwork, pinfo);
-    var info = em.getValue(pinfo, 'i32');
-    if (info < 0) {
-        throw new Error('Invalid argument (' + (-info) + ')');
-    }
-    if (info > 0) {
-        throw new Error('DBDSDC did not converge (' + info + ')');
-    }
-    mA.set(A);
-    mS.set(S);
-    if (job !== 'N') {
-        mU.set(U);
-        mVT.set(VT);
-    }
-}
-/**
- * @hidden
- */
-function gesdd(mA, m, n, mU, mS, mVT, job) {
-    if (mA instanceof Float64Array ||
-        mU instanceof Float64Array ||
-        mVT instanceof Float64Array) {
-        return gesdd_internal(mA, m, n, mU, mS, mVT, job, 'f64');
-    }
-    else {
-        return gesdd_internal(mA, m, n, mU, mS, mVT, job, 'f32');
-    }
-}
-exports.gesdd = gesdd;
-
-
-/***/ }),
-/* 24 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-/*
-
-Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
-
-This file is part of bluemath.
-
-bluemath is free software: you can redistribute it and/or modify
-it under the terms of the GNU Affero General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-bluemath is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU Affero General Public License for more details.
-
-You should have received a copy of the GNU Affero General Public License
-along with bluemath. If not, see <http://www.gnu.org/licenses/>.
-
-*/
-Object.defineProperty(exports, "__esModule", { value: true });
-var common_1 = __webpack_require__(0);
-function gesv_internal(mA, mB, n, nrhs, numtype) {
-    var pn = common_1.defineEmVariable('i32', n);
-    var pnrhs = common_1.defineEmVariable('i32', nrhs);
-    var pinfo = common_1.defineEmVariable('i32');
-    var plda = common_1.defineEmVariable('i32', n);
-    var pldb = common_1.defineEmVariable('i32', n);
-    var _a = common_1.defineEmArrayVariable(numtype, n * n, mA), pA = _a[0], A = _a[1];
-    var _b = common_1.defineEmArrayVariable(numtype, n * nrhs, mB), pB = _b[0], B = _b[1];
-    var _c = common_1.defineEmArrayVariable('i32', n), pIPIV = _c[0], IPIV = _c[1];
-    if (numtype === 'f32') {
-        common_1.sgesv_wrap(pn, pnrhs, pA, plda, pIPIV, pB, pldb, pinfo);
-    }
-    else {
-        common_1.dgesv_wrap(pn, pnrhs, pA, plda, pIPIV, pB, pldb, pinfo);
-    }
-    mA.set(A);
-    mB.set(B);
-    return IPIV;
-}
-/**
- * @hidden
- */
-function gesv(mA, mB, n, nrhs) {
-    if (mA instanceof Float64Array || mB instanceof Float64Array) {
-        return gesv_internal(mA, mB, n, nrhs, 'f64');
-    }
-    else {
-        return gesv_internal(mA, mB, n, nrhs, 'f32');
-    }
-}
-exports.gesv = gesv;
-
-
-/***/ }),
-/* 25 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-/*
-
-Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
-
-This file is part of bluemath.
-
-bluemath is free software: you can redistribute it and/or modify
-it under the terms of the GNU Affero General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-bluemath is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU Affero General Public License for more details.
-
-You should have received a copy of the GNU Affero General Public License
-along with bluemath. If not, see <http://www.gnu.org/licenses/>.
-
-*/
-Object.defineProperty(exports, "__esModule", { value: true });
-var lapacklite = __webpack_require__(2);
-var em = lapacklite.Module;
-var common_1 = __webpack_require__(0);
-/**
- * @hidden
- */
-function getrf_internal(mA, m, n, mipiv, numtype) {
-    var fn = numtype === 'f32' ? common_1.sgetrf_wrap : common_1.dgetrf_wrap;
-    var pm = common_1.defineEmVariable('i32', m);
-    var pn = common_1.defineEmVariable('i32', n);
-    var plda = common_1.defineEmVariable('i32', Math.max(1, m));
-    console.assert(mipiv.length === Math.min(m, n));
-    var _a = common_1.defineEmArrayVariable(numtype, m * n, mA), pA = _a[0], A = _a[1];
-    var _b = common_1.defineEmArrayVariable('i32', Math.min(m, n), mipiv), pipiv = _b[0], ipiv = _b[1];
-    var pinfo = common_1.defineEmVariable('i32');
-    fn(pm, pn, pA, plda, pipiv, pinfo);
-    var info = em.getValue(pinfo, 'i32');
-    if (info < 0) {
-        throw new Error('Invalid argument (' + (-info) + ')');
-    }
-    if (info > 0) {
-        // Fortran has 1-based indexing
-        console.error("U(" + (info - 1) + "," + (info - 1) + ") is zero");
-    }
-    mA.set(A);
-    mipiv.set(ipiv);
-}
-/**
- * @hidden
- */
-function getrf(mA, m, n, mipiv) {
-    if (mA instanceof Float64Array) {
-        getrf_internal(mA, m, n, mipiv, 'f64');
-    }
-    else {
-        getrf_internal(mA, m, n, mipiv, 'f32');
-    }
-}
-exports.getrf = getrf;
-
-
-/***/ }),
-/* 26 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-/*
-
-Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
-
-This file is part of bluemath.
-
-bluemath is free software: you can redistribute it and/or modify
-it under the terms of the GNU Affero General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-bluemath is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU Affero General Public License for more details.
-
-You should have received a copy of the GNU Affero General Public License
-along with bluemath. If not, see <http://www.gnu.org/licenses/>.
-
-*/
-Object.defineProperty(exports, "__esModule", { value: true });
-var lapacklite = __webpack_require__(2);
-var em = lapacklite.Module;
-var common_1 = __webpack_require__(0);
-/**
- * @hidden
- */
-function orgqr_internal(mA, m, n, k, mtau, numtype) {
-    var fn = numtype === 'f32' ? common_1.sorgqr_wrap : common_1.dorgqr_wrap;
-    var lda = Math.max(1, m);
-    var pm = common_1.defineEmVariable('i32', m);
-    var pn = common_1.defineEmVariable('i32', n);
-    var pk = common_1.defineEmVariable('i32', k);
-    var plda = common_1.defineEmVariable('i32', lda);
-    var plwork = common_1.defineEmVariable('i32', -1);
-    var pinfo = common_1.defineEmVariable('i32');
-    var _a = common_1.defineEmArrayVariable(numtype, lda * n, mA), pA = _a[0], A = _a[1];
-    var ptau = common_1.defineEmArrayVariable(numtype, k, mtau)[0];
-    var pwork = common_1.defineEmArrayVariable(numtype, 1)[0];
-    // work size query
-    fn(pm, pn, pk, pA, plda, ptau, pwork, plwork, pinfo);
-    var worksize = em.getValue(pwork, numtype === 'f32' ? 'float' : 'double');
-    pwork = common_1.defineEmArrayVariable(numtype, worksize)[0];
-    em.setValue(plwork, worksize, 'i32');
-    fn(pm, pn, pk, pA, plda, ptau, pwork, plwork, pinfo);
-    var info = em.getValue(pinfo, 'i32');
-    if (info < 0) {
-        throw new Error('Invalid argument (' + (-info) + ')');
-    }
-    mA.set(A);
-}
-/**
- * @hidden
- */
-function orgqr(mA, m, n, k, mtau) {
-    if (mA instanceof Float64Array) {
-        orgqr_internal(mA, m, n, k, mtau, 'f64');
-    }
-    else {
-        orgqr_internal(mA, m, n, k, mtau, 'f32');
-    }
-}
-exports.orgqr = orgqr;
-
-
-/***/ }),
-/* 27 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-/*
-
-Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
-
-This file is part of bluemath.
-
-bluemath is free software: you can redistribute it and/or modify
-it under the terms of the GNU Affero General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-bluemath is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU Affero General Public License for more details.
-
-You should have received a copy of the GNU Affero General Public License
-along with bluemath. If not, see <http://www.gnu.org/licenses/>.
-
-*/
-Object.defineProperty(exports, "__esModule", { value: true });
-var lapacklite = __webpack_require__(2);
-var em = lapacklite.Module;
-var common_1 = __webpack_require__(0);
-/**
- * @hidden
- */
-function potrf_internal(mA, n, numtype) {
-    var puplo = common_1.defineEmVariable('i8', 'L'.charCodeAt(0));
-    var pn = common_1.defineEmVariable('i32', n);
-    var plda = common_1.defineEmVariable('i32', n);
-    var pinfo = common_1.defineEmVariable('i32');
-    var _a = common_1.defineEmArrayVariable(numtype, n * n, mA), pA = _a[0], A = _a[1];
-    var fn = numtype === 'f32' ? common_1.spotrf_wrap : common_1.dpotrf_wrap;
-    fn(puplo, pn, pA, plda, pinfo);
-    var info = em.getValue(pinfo, 'i32');
-    if (info < 0) {
-        // Fortran has 1-based indexing
-        throw new Error('Invalid argument (' + (-info) + ')');
-    }
-    if (info > 0) {
-        throw new Error('Matrix is not positive definite');
-    }
-    mA.set(A);
-}
-/**
- * @hidden
- */
-function potrf(mA, n) {
-    if (mA instanceof Float64Array) {
-        return potrf_internal(mA, n, 'f64');
-    }
-    else {
-        return potrf_internal(mA, n, 'f32');
-    }
-}
-exports.potrf = potrf;
-
-
-/***/ }),
-/* 28 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-/*
-
-Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
-
-This file is part of bluemath.
-
-bluemath is free software: you can redistribute it and/or modify
-it under the terms of the GNU Affero General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-bluemath is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU Affero General Public License for more details.
-
-You should have received a copy of the GNU Affero General Public License
-along with bluemath. If not, see <http://www.gnu.org/licenses/>.
-
-*/
-Object.defineProperty(exports, "__esModule", { value: true });
-var lapack = __webpack_require__(7);
+var lapack = __webpack_require__(6);
 var constants_1 = __webpack_require__(3);
-var __1 = __webpack_require__(1);
+var __1 = __webpack_require__(0);
 /**
  * Matrix multiplication
  *
@@ -3871,12 +3051,11 @@ exports.eig = eig;
 
 
 /***/ }),
-/* 29 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-Object.defineProperty(exports, "__esModule", { value: true });
 /*
 
 Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
@@ -3897,364 +3076,1217 @@ You should have received a copy of the GNU Affero General Public License
 along with bluemath. If not, see <http://www.gnu.org/licenses/>.
 
 */
-var constants_1 = __webpack_require__(3);
-var _1 = __webpack_require__(1);
+Object.defineProperty(exports, "__esModule", { value: true });
+var common_1 = __webpack_require__(1);
 /**
- * Convert angle to degrees
+ * @hidden
  */
-function todeg(angleInRadians) {
-    return 180 * angleInRadians / Math.PI;
-}
-exports.todeg = todeg;
-/**
- * Convert angle to radians
- */
-function torad(angleInDegrees) {
-    return Math.PI * angleInDegrees / 180;
-}
-exports.torad = torad;
-/**
- * Check if input equals zero within given tolerance
- */
-function iszero(x, tolerance) {
-    if (tolerance === void 0) { tolerance = constants_1.EPSILON; }
-    return Math.abs(x) < tolerance;
-}
-exports.iszero = iszero;
-/**
- * Check if two input numbers are equal within given tolerance
- */
-function isequal(a, b, tolerance) {
-    if (tolerance === void 0) { tolerance = constants_1.EPSILON; }
-    return iszero(a - b, tolerance);
-}
-exports.isequal = isequal;
-/**
- * Find cube root of given number. Math.pow return NaN while taking
- * cube root of negative number, because some of the results might
- * be complex numbers. This function only return the real cubeRoot
- * of given number
- */
-function cuberoot(x) {
-    return x < 0 ? -Math.pow(-x, 1 / 3) : Math.pow(x, 1 / 3);
-}
-exports.cuberoot = cuberoot;
-/**
- * Generate array of integers within given range.
- * If both a and b are specified then return [a,b)
- * if only a is specifed then return [0,a)
- */
-function range(a, b) {
-    if (b === undefined) {
-        b = a;
-    }
-    b = Math.max(b, 0);
-    var arr = [];
-    for (var i = a; i < b; i++) {
-        arr.push(i);
-    }
-    return arr;
-}
-exports.range = range;
-/**
- * Creates m-by-n Identity matrix
- *
- * ```
- * eye(2) // Creates 2x2 Identity matrix
- * eye([2,2]) // Creates 2x2 Identity matrix
- * eye([2,3]) // Create 2x3 Identity matrix with main diagonal set to 1
- * eye(2,'i32') // Creates 2x2 Identity matrix of 32-bit integers
- * ```
- */
-function eye(arg0, datatype) {
-    var n, m;
-    if (Array.isArray(arg0)) {
-        n = arg0[0];
-        if (arg0.length > 1) {
-            m = arg0[1];
-        }
-        else {
-            m = n;
-        }
+function dot_internal(vx, vy, ntype) {
+    var n = vx.length;
+    var pn = common_1.defineEmVariable('i32', n);
+    var pincx = common_1.defineEmVariable('i32', 1);
+    var pincy = common_1.defineEmVariable('i32', 1);
+    var px = common_1.defineEmArrayVariable(ntype, n, vx)[0];
+    var py = common_1.defineEmArrayVariable(ntype, n, vy)[0];
+    if (ntype === 'f32') {
+        return common_1.sdot_wrap(pn, px, pincx, py, pincy);
     }
     else {
-        n = m = arg0;
+        return common_1.ddot_wrap(pn, px, pincx, py, pincy);
     }
-    var A = new _1.NDArray({ shape: [n, m], datatype: datatype, fill: 0 });
-    var ndiag = Math.min(n, m);
-    for (var i = 0; i < ndiag; i++) {
-        A.set(i, i, 1);
-    }
-    return A;
 }
-exports.eye = eye;
 /**
- * Creates NDArray filled with zeros
- *
- * ```
- * zeros(2) // Creates 2x2 matrix of zeros
- * zeros([2,2,2]) // Create 2x2x2 matrix of zeros
- * zeros(2,'i16') // Creates 2x2 matrix of 16-bit integers filled with zeros
- * ```
+ * @hidden
  */
-function zeros(arg0, datatype) {
-    var A;
-    if (Array.isArray(arg0)) {
-        A = new _1.NDArray({ shape: arg0, datatype: datatype });
+function dot(vx, vy) {
+    if (vx.length !== vy.length) {
+        throw new Error('Input vectors of different size');
+    }
+    if (vx instanceof Float64Array || vy instanceof Float64Array) {
+        return dot_internal(vx, vy, 'f64');
     }
     else {
-        A = new _1.NDArray({ shape: [arg0, arg0], datatype: datatype });
+        return dot_internal(vx, vy, 'f32');
     }
-    A.fill(0);
-    return A;
 }
-exports.zeros = zeros;
+exports.dot = dot;
+
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports) {
+
+// shim for using process in browser
+var process = module.exports = {};
+
+// cached from whatever global is present so that test runners that stub it
+// don't break things.  But we need to wrap it in a try catch in case it is
+// wrapped in strict mode code which doesn't define any globals.  It's inside a
+// function because try/catches deoptimize in certain engines.
+
+var cachedSetTimeout;
+var cachedClearTimeout;
+
+function defaultSetTimout() {
+    throw new Error('setTimeout has not been defined');
+}
+function defaultClearTimeout () {
+    throw new Error('clearTimeout has not been defined');
+}
+(function () {
+    try {
+        if (typeof setTimeout === 'function') {
+            cachedSetTimeout = setTimeout;
+        } else {
+            cachedSetTimeout = defaultSetTimout;
+        }
+    } catch (e) {
+        cachedSetTimeout = defaultSetTimout;
+    }
+    try {
+        if (typeof clearTimeout === 'function') {
+            cachedClearTimeout = clearTimeout;
+        } else {
+            cachedClearTimeout = defaultClearTimeout;
+        }
+    } catch (e) {
+        cachedClearTimeout = defaultClearTimeout;
+    }
+} ())
+function runTimeout(fun) {
+    if (cachedSetTimeout === setTimeout) {
+        //normal enviroments in sane situations
+        return setTimeout(fun, 0);
+    }
+    // if setTimeout wasn't available but was latter defined
+    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
+        cachedSetTimeout = setTimeout;
+        return setTimeout(fun, 0);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedSetTimeout(fun, 0);
+    } catch(e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
+            return cachedSetTimeout.call(null, fun, 0);
+        } catch(e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
+            return cachedSetTimeout.call(this, fun, 0);
+        }
+    }
+
+
+}
+function runClearTimeout(marker) {
+    if (cachedClearTimeout === clearTimeout) {
+        //normal enviroments in sane situations
+        return clearTimeout(marker);
+    }
+    // if clearTimeout wasn't available but was latter defined
+    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
+        cachedClearTimeout = clearTimeout;
+        return clearTimeout(marker);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedClearTimeout(marker);
+    } catch (e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
+            return cachedClearTimeout.call(null, marker);
+        } catch (e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
+            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
+            return cachedClearTimeout.call(this, marker);
+        }
+    }
+
+
+
+}
+var queue = [];
+var draining = false;
+var currentQueue;
+var queueIndex = -1;
+
+function cleanUpNextTick() {
+    if (!draining || !currentQueue) {
+        return;
+    }
+    draining = false;
+    if (currentQueue.length) {
+        queue = currentQueue.concat(queue);
+    } else {
+        queueIndex = -1;
+    }
+    if (queue.length) {
+        drainQueue();
+    }
+}
+
+function drainQueue() {
+    if (draining) {
+        return;
+    }
+    var timeout = runTimeout(cleanUpNextTick);
+    draining = true;
+
+    var len = queue.length;
+    while(len) {
+        currentQueue = queue;
+        queue = [];
+        while (++queueIndex < len) {
+            if (currentQueue) {
+                currentQueue[queueIndex].run();
+            }
+        }
+        queueIndex = -1;
+        len = queue.length;
+    }
+    currentQueue = null;
+    draining = false;
+    runClearTimeout(timeout);
+}
+
+process.nextTick = function (fun) {
+    var args = new Array(arguments.length - 1);
+    if (arguments.length > 1) {
+        for (var i = 1; i < arguments.length; i++) {
+            args[i - 1] = arguments[i];
+        }
+    }
+    queue.push(new Item(fun, args));
+    if (queue.length === 1 && !draining) {
+        runTimeout(drainQueue);
+    }
+};
+
+// v8 likes predictible objects
+function Item(fun, array) {
+    this.fun = fun;
+    this.array = array;
+}
+Item.prototype.run = function () {
+    this.fun.apply(null, this.array);
+};
+process.title = 'browser';
+process.browser = true;
+process.env = {};
+process.argv = [];
+process.version = ''; // empty string to avoid regexp issues
+process.versions = {};
+
+function noop() {}
+
+process.on = noop;
+process.addListener = noop;
+process.once = noop;
+process.off = noop;
+process.removeListener = noop;
+process.removeAllListeners = noop;
+process.emit = noop;
+process.prependListener = noop;
+process.prependOnceListener = noop;
+
+process.listeners = function (name) { return [] }
+
+process.binding = function (name) {
+    throw new Error('process.binding is not supported');
+};
+
+process.cwd = function () { return '/' };
+process.chdir = function (dir) {
+    throw new Error('process.chdir is not supported');
+};
+process.umask = function() { return 0; };
+
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+/*
+
+Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
+
+This file is part of bluemath.
+
+bluemath is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+bluemath is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with bluemath. If not, see <http://www.gnu.org/licenses/>.
+
+*/
+Object.defineProperty(exports, "__esModule", { value: true });
+var common_1 = __webpack_require__(1);
+function gemv_internal(alpha, mA, m, n, vx, vy, beta, ntype) {
+    if (vx.length !== n) {
+        throw new Error('Length of x doesn\'t match num columns of A');
+    }
+    if (vy.length !== m) {
+        throw new Error('Length of y doesn\'t match num rows of A');
+    }
+    var ptrans = common_1.defineEmVariable('i8', 'N'.charCodeAt(0));
+    var pm = common_1.defineEmVariable('i32', m);
+    var pn = common_1.defineEmVariable('i32', n);
+    var plda = common_1.defineEmVariable('i32', m);
+    var pincx = common_1.defineEmVariable('i32', 1);
+    var pincy = common_1.defineEmVariable('i32', 1);
+    var palpha = common_1.defineEmVariable(ntype, alpha);
+    var pbeta = common_1.defineEmVariable(ntype, beta);
+    var pA = common_1.defineEmArrayVariable(ntype, m * n, mA)[0];
+    var px = common_1.defineEmArrayVariable(ntype, n, vx)[0];
+    var _a = common_1.defineEmArrayVariable(ntype, m, vy), py = _a[0], y = _a[1];
+    if (ntype === 'f32') {
+        common_1.sgemv_wrap(ptrans, pm, pn, palpha, pA, plda, px, pincx, pbeta, py, pincy);
+    }
+    else {
+        common_1.dgemv_wrap(ptrans, pm, pn, palpha, pA, plda, px, pincx, pbeta, py, pincy);
+    }
+    vy.set(y);
+}
 /**
  * @hidden
  */
-function _add_numbers(a, b) {
-    if (typeof a === 'number') {
-        if (typeof b === 'number') {
-            return a + b;
-        }
-        else if (b instanceof _1.Complex) {
-            var answer = b.clone();
-            answer.real += a;
-            return answer;
-        }
+function gemv(alpha, mA, m, n, vx, vy, beta) {
+    if (mA instanceof Float64Array ||
+        vx instanceof Float64Array || vy instanceof Float64Array) {
+        gemv_internal(alpha, mA, m, n, vx, vy, beta, 'f64');
     }
-    else if (a instanceof _1.Complex) {
-        if (typeof b === 'number') {
-            var answer = a.clone();
-            answer.real += b;
-            return answer;
-        }
-        else if (b instanceof _1.Complex) {
-            var answer = a.clone();
-            answer.real += b.real;
-            answer.imag += b.imag;
-            return answer;
-        }
+    else {
+        gemv_internal(alpha, mA, m, n, vx, vy, beta, 'f32');
     }
-    throw new Error('Addition of incompatible types');
+}
+exports.gemv = gemv;
+
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+/*
+
+Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
+
+This file is part of bluemath.
+
+bluemath is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+bluemath is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with bluemath. If not, see <http://www.gnu.org/licenses/>.
+
+*/
+Object.defineProperty(exports, "__esModule", { value: true });
+var common_1 = __webpack_require__(1);
+function gemm_internal(mA, mB, mC, m, n, k, alpha, beta, numtype) {
+    var ptransa = common_1.defineEmVariable('i8', 'N'.charCodeAt(0));
+    var ptransb = common_1.defineEmVariable('i8', 'N'.charCodeAt(0));
+    var pm = common_1.defineEmVariable('i32', m);
+    var pn = common_1.defineEmVariable('i32', n);
+    var pk = common_1.defineEmVariable('i32', k);
+    var palpha = common_1.defineEmVariable(numtype, alpha);
+    var pbeta = common_1.defineEmVariable(numtype, beta);
+    var pA = common_1.defineEmArrayVariable(numtype, m * k, mA)[0];
+    var pB = common_1.defineEmArrayVariable(numtype, k * n, mB)[0];
+    var _a = common_1.defineEmArrayVariable(numtype, m * n, mC), pC = _a[0], C = _a[1];
+    var plda = common_1.defineEmVariable('i32', m);
+    var pldb = common_1.defineEmVariable('i32', k);
+    var pldc = common_1.defineEmVariable('i32', m);
+    if (numtype === 'f32') {
+        common_1.sgemm_wrap(ptransa, ptransb, pm, pn, pk, palpha, pA, plda, pB, pldb, pbeta, pC, pldc);
+    }
+    else {
+        common_1.dgemm_wrap(ptransa, ptransb, pm, pn, pk, palpha, pA, plda, pB, pldb, pbeta, pC, pldc);
+    }
+    mC.set(C);
 }
 /**
  * @hidden
  */
-function _add_ndarrays(a, b) {
-    if (!a.isShapeEqual(b)) {
-        throw new Error('Addition of NDArray with mismatched shapes');
+function gemm(mA, mB, mC, m, n, k, alpha, beta) {
+    if (mA instanceof Float64Array ||
+        mB instanceof Float64Array ||
+        mC instanceof Float64Array) {
+        gemm_internal(mA, mB, mC, m, n, k, alpha, beta, 'f64');
     }
-    var answer = a.clone();
-    a.forEach(function (value) {
-        var index = [];
-        for (var _i = 1; _i < arguments.length; _i++) {
-            index[_i - 1] = arguments[_i];
-        }
-        var aval = value;
-        var bval = b.get.apply(b, index);
-        var ansval = _add_numbers(aval, bval);
-        answer.set.apply(answer, index.concat([ansval]));
-    });
-    return answer;
+    else {
+        gemm_internal(mA, mB, mC, m, n, k, alpha, beta, 'f32');
+    }
+}
+exports.gemm = gemm;
+
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+/*
+
+Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
+
+This file is part of bluemath.
+
+bluemath is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+bluemath is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with bluemath. If not, see <http://www.gnu.org/licenses/>.
+
+*/
+Object.defineProperty(exports, "__esModule", { value: true });
+var common_1 = __webpack_require__(1);
+function gesv_internal(mA, mB, n, nrhs, numtype) {
+    var pn = common_1.defineEmVariable('i32', n);
+    var pnrhs = common_1.defineEmVariable('i32', nrhs);
+    var pinfo = common_1.defineEmVariable('i32');
+    var plda = common_1.defineEmVariable('i32', n);
+    var pldb = common_1.defineEmVariable('i32', n);
+    var _a = common_1.defineEmArrayVariable(numtype, n * n, mA), pA = _a[0], A = _a[1];
+    var _b = common_1.defineEmArrayVariable(numtype, n * nrhs, mB), pB = _b[0], B = _b[1];
+    var _c = common_1.defineEmArrayVariable('i32', n), pIPIV = _c[0], IPIV = _c[1];
+    if (numtype === 'f32') {
+        common_1.sgesv_wrap(pn, pnrhs, pA, plda, pIPIV, pB, pldb, pinfo);
+    }
+    else {
+        common_1.dgesv_wrap(pn, pnrhs, pA, plda, pIPIV, pB, pldb, pinfo);
+    }
+    mA.set(A);
+    mB.set(B);
+    return IPIV;
 }
 /**
  * @hidden
  */
-function _add_ndarray_and_number(a, b) {
-    var answer = a.clone();
-    a.forEach(function (value) {
-        var index = [];
-        for (var _i = 1; _i < arguments.length; _i++) {
-            index[_i - 1] = arguments[_i];
-        }
-        var aval = value;
-        var ansval = _add_numbers(aval, b);
-        answer.set.apply(answer, index.concat([ansval]));
-    });
-    return answer;
+function gesv(mA, mB, n, nrhs) {
+    if (mA instanceof Float64Array || mB instanceof Float64Array) {
+        return gesv_internal(mA, mB, n, nrhs, 'f64');
+    }
+    else {
+        return gesv_internal(mA, mB, n, nrhs, 'f32');
+    }
+}
+exports.gesv = gesv;
+
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+/*
+
+Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
+
+This file is part of bluemath.
+
+bluemath is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+bluemath is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with bluemath. If not, see <http://www.gnu.org/licenses/>.
+
+*/
+Object.defineProperty(exports, "__esModule", { value: true });
+var lapacklite = __webpack_require__(2);
+var em = lapacklite.Module;
+var common_1 = __webpack_require__(1);
+/**
+ * @hidden
+ */
+function gesdd_internal(mA, m, n, mU, mS, mVT, job, numtype) {
+    var fn = (numtype === 'f32') ? common_1.sgesdd_wrap : common_1.dgesdd_wrap;
+    var pjobz = common_1.defineEmVariable('i8', job.charCodeAt(0));
+    var pm = common_1.defineEmVariable('i32', m);
+    var pn = common_1.defineEmVariable('i32', n);
+    var plda = common_1.defineEmVariable('i32', Math.max(m, 1));
+    var pldu = common_1.defineEmVariable('i32', Math.max(m, 1));
+    var pldvt = common_1.defineEmVariable('i32', n);
+    var plwork = common_1.defineEmVariable('i32', -1);
+    var _a = common_1.defineEmArrayVariable(numtype, m * n, mA), pA = _a[0], A = _a[1];
+    var _b = common_1.defineEmArrayVariable(numtype, Math.min(m, n)), pS = _b[0], S = _b[1];
+    var _c = common_1.defineEmArrayVariable(numtype, m * n), pU = _c[0], U = _c[1];
+    var _d = common_1.defineEmArrayVariable(numtype, n * n), pVT = _d[0], VT = _d[1];
+    var piwork = common_1.defineEmArrayVariable('i32', 8 * Math.min(m, n))[0];
+    var pwork = common_1.defineEmArrayVariable(numtype, 1)[0];
+    var pinfo = common_1.defineEmVariable('i32');
+    // work size query
+    fn(pjobz, pm, pn, pA, plda, pS, pU, pldu, pVT, pldvt, pwork, plwork, piwork, pinfo);
+    var worksize = em.getValue(pwork, numtype === 'f32' ? 'float' : 'double');
+    pwork = common_1.defineEmArrayVariable(numtype, worksize)[0];
+    em.setValue(plwork, worksize, 'i32');
+    fn(pjobz, pm, pn, pA, plda, pS, pU, pldu, pVT, pldvt, pwork, plwork, piwork, pinfo);
+    var info = em.getValue(pinfo, 'i32');
+    if (info < 0) {
+        throw new Error('Invalid argument (' + (-info) + ')');
+    }
+    if (info > 0) {
+        throw new Error('DBDSDC did not converge (' + info + ')');
+    }
+    mA.set(A);
+    mS.set(S);
+    if (job !== 'N') {
+        mU.set(U);
+        mVT.set(VT);
+    }
 }
 /**
  * @hidden
  */
-function _add_two(a, b) {
-    if (a === 0) {
-        return b;
+function gesdd(mA, m, n, mU, mS, mVT, job) {
+    if (mA instanceof Float64Array ||
+        mU instanceof Float64Array ||
+        mVT instanceof Float64Array) {
+        return gesdd_internal(mA, m, n, mU, mS, mVT, job, 'f64');
     }
-    if (b === 0) {
-        return a;
+    else {
+        return gesdd_internal(mA, m, n, mU, mS, mVT, job, 'f32');
     }
-    if (typeof a === 'number') {
-        if (typeof b === 'number' || b instanceof _1.Complex) {
-            return _add_numbers(a, b);
-        }
-        else if (b instanceof _1.NDArray) {
-            return _add_ndarray_and_number(b, a);
-        }
-    }
-    else if (a instanceof _1.NDArray) {
-        if (typeof b === 'number' || b instanceof _1.Complex) {
-            return _add_ndarray_and_number(a, b);
-        }
-        else if (b instanceof _1.NDArray) {
-            return _add_ndarrays(a, b);
-        }
-    }
-    else if (a instanceof _1.Complex) {
-        if (typeof b === 'number' || b instanceof _1.Complex) {
-            return _add_numbers(a, b);
-        }
-        else if (b instanceof _1.NDArray) {
-            return _add_ndarray_and_number(b, a);
-        }
-    }
-    throw new Error('Addition of invalid types');
 }
-/**
- * Add all arguments in accordance to their types
- * The arguments could be NDArray or numbers (real/complex).
- * If some of them are NDArray's, then their shapes have to match,
- * otherwise exception is thrown
- * The order of addition starts from left to right
- */
-function add() {
-    var args = [];
-    for (var _i = 0; _i < arguments.length; _i++) {
-        args[_i] = arguments[_i];
-    }
-    var acc = args[0];
-    for (var i = 1; i < args.length; i++) {
-        acc = _add_two(acc, args[i]);
-    }
-    return acc;
-}
-exports.add = add;
+exports.gesdd = gesdd;
+
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+/*
+
+Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
+
+This file is part of bluemath.
+
+bluemath is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+bluemath is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with bluemath. If not, see <http://www.gnu.org/licenses/>.
+
+*/
+Object.defineProperty(exports, "__esModule", { value: true });
+var lapacklite = __webpack_require__(2);
+var em = lapacklite.Module;
+var common_1 = __webpack_require__(1);
 /**
  * @hidden
  */
-function _mul_numbers(a, b) {
-    if (typeof a === 'number') {
-        if (typeof b === 'number') {
-            return a * b;
-        }
-        else if (b instanceof _1.Complex) {
-            var answer = b.clone();
-            answer.real *= a;
-            answer.imag *= a;
-            return answer;
-        }
+function gelsd_internal(mA, m, n, nrhs, rcond, mB, mS) {
+    var fn = common_1.dgelsd_wrap;
+    var lda = Math.max(1, m);
+    var ldb = Math.max(1, m, n);
+    var nlvl = Math.max(0, Math.round(Math.log(Math.min(m, n) / 2.)) + 1);
+    var iworksize = 3 * Math.min(m, n) * nlvl + 11 * Math.min(m, n);
+    var pm = common_1.defineEmVariable('i32', m);
+    var pn = common_1.defineEmVariable('i32', n);
+    var pnrhs = common_1.defineEmVariable('i32', nrhs);
+    var plda = common_1.defineEmVariable('i32', lda);
+    var pldb = common_1.defineEmVariable('i32', ldb);
+    var prank = common_1.defineEmVariable('i32');
+    var plwork = common_1.defineEmVariable('i32', -1);
+    var prcond = common_1.defineEmVariable('f64', rcond);
+    console.assert(mB.length === ldb * nrhs);
+    var _a = common_1.defineEmArrayVariable('f64', m * n, mA), pA = _a[0], A = _a[1];
+    var _b = common_1.defineEmArrayVariable('f64', ldb * nrhs, mB), pB = _b[0], B = _b[1];
+    var _c = common_1.defineEmArrayVariable('f64', Math.min(m, n)), pS = _c[0], S = _c[1];
+    var piwork = common_1.defineEmArrayVariable('i32', iworksize)[0];
+    var pwork = common_1.defineEmArrayVariable('f64', 1)[0];
+    var pinfo = common_1.defineEmVariable('i32');
+    // work size query
+    fn(pm, pn, pnrhs, pA, plda, pB, pldb, pS, prcond, prank, pwork, plwork, piwork, pinfo);
+    var worksize = em.getValue(pwork, 'double');
+    pwork = common_1.defineEmArrayVariable('f64', worksize)[0];
+    em.setValue(plwork, worksize, 'i32');
+    fn(pm, pn, pnrhs, pA, plda, pB, pldb, pS, prcond, prank, pwork, plwork, piwork, pinfo);
+    var info = em.getValue(pinfo, 'i32');
+    if (info < 0) {
+        throw new Error('Invalid argument (' + (-info) + ')');
     }
-    else if (a instanceof _1.Complex) {
-        if (typeof b === 'number') {
-            var answer = a.clone();
-            answer.real *= b;
-            answer.imag *= b;
-            return answer;
-        }
-        else if (b instanceof _1.Complex) {
-            var answer = new _1.Complex();
-            answer.real = a.real * b.real - a.imag * b.imag;
-            answer.imag = a.imag * b.real + a.real * b.imag;
-            return answer;
-        }
+    if (info > 0) {
+        throw new Error('SVD algorithm failed to converge (' + info + ')');
     }
-    throw new Error('Multiplication of incompatible types');
+    var rank = em.getValue(prank, 'i32');
+    mA.set(A);
+    mB.set(B);
+    mS.set(S);
+    return rank;
 }
 /**
  * @hidden
  */
-function _mul_two(a, b) {
-    if (a === 1) {
-        return b;
+function gelsd(mA, m, n, nrhs, rcond, mB, mS) {
+    return gelsd_internal(mA, m, n, nrhs, rcond, mB, mS);
+}
+exports.gelsd = gelsd;
+
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+/*
+
+Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
+
+This file is part of bluemath.
+
+bluemath is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+bluemath is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with bluemath. If not, see <http://www.gnu.org/licenses/>.
+
+*/
+Object.defineProperty(exports, "__esModule", { value: true });
+var lapacklite = __webpack_require__(2);
+var em = lapacklite.Module;
+var common_1 = __webpack_require__(1);
+/**
+ * @hidden
+ */
+function getrf_internal(mA, m, n, mipiv, numtype) {
+    var fn = numtype === 'f32' ? common_1.sgetrf_wrap : common_1.dgetrf_wrap;
+    var pm = common_1.defineEmVariable('i32', m);
+    var pn = common_1.defineEmVariable('i32', n);
+    var plda = common_1.defineEmVariable('i32', Math.max(1, m));
+    console.assert(mipiv.length === Math.min(m, n));
+    var _a = common_1.defineEmArrayVariable(numtype, m * n, mA), pA = _a[0], A = _a[1];
+    var _b = common_1.defineEmArrayVariable('i32', Math.min(m, n), mipiv), pipiv = _b[0], ipiv = _b[1];
+    var pinfo = common_1.defineEmVariable('i32');
+    fn(pm, pn, pA, plda, pipiv, pinfo);
+    var info = em.getValue(pinfo, 'i32');
+    if (info < 0) {
+        throw new Error('Invalid argument (' + (-info) + ')');
     }
-    if (b === 1) {
-        return a;
+    if (info > 0) {
+        // Fortran has 1-based indexing
+        console.error("U(" + (info - 1) + "," + (info - 1) + ") is zero");
     }
-    if (typeof a === 'number' || a instanceof _1.Complex) {
-        if (typeof b === 'number' || b instanceof _1.Complex) {
-            return _mul_numbers(a, b);
-        }
-        else if (b instanceof _1.NDArray) {
-            var answer_1 = b.clone();
-            answer_1.forEach(function (value) {
-                var index = [];
-                for (var _i = 1; _i < arguments.length; _i++) {
-                    index[_i - 1] = arguments[_i];
+    mA.set(A);
+    mipiv.set(ipiv);
+}
+/**
+ * @hidden
+ */
+function getrf(mA, m, n, mipiv) {
+    if (mA instanceof Float64Array) {
+        getrf_internal(mA, m, n, mipiv, 'f64');
+    }
+    else {
+        getrf_internal(mA, m, n, mipiv, 'f32');
+    }
+}
+exports.getrf = getrf;
+
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+/*
+
+Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
+
+This file is part of bluemath.
+
+bluemath is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+bluemath is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with bluemath. If not, see <http://www.gnu.org/licenses/>.
+
+*/
+Object.defineProperty(exports, "__esModule", { value: true });
+var lapacklite = __webpack_require__(2);
+var em = lapacklite.Module;
+var common_1 = __webpack_require__(1);
+/**
+ * @hidden
+ */
+function geev_internal(mA, n, compleft, compright, numtype) {
+    var fn = numtype === 'f32' ? common_1.sgeev_wrap : common_1.dgeev_wrap;
+    var lda = Math.max(1, n);
+    var ldvl = compleft ? n : 1;
+    var ldvr = compright ? n : 1;
+    var jobvl = compleft ? 'V' : 'N';
+    var jobvr = compright ? 'V' : 'N';
+    var pjobvl = common_1.defineEmVariable('i8', jobvl.charCodeAt(0));
+    var pjobvr = common_1.defineEmVariable('i8', jobvr.charCodeAt(0));
+    var pn = common_1.defineEmVariable('i32', n);
+    var plda = common_1.defineEmVariable('i32', lda);
+    var pldvl = common_1.defineEmVariable('i32', ldvl);
+    var pldvr = common_1.defineEmVariable('i32', ldvr);
+    var plwork = common_1.defineEmVariable('i32', -1);
+    var pinfo = common_1.defineEmVariable('i32');
+    var pA = common_1.defineEmArrayVariable(numtype, n * n, mA)[0];
+    var _a = common_1.defineEmArrayVariable(numtype, compleft ? ldvl * n : 1), pVL = _a[0], VL = _a[1];
+    var _b = common_1.defineEmArrayVariable(numtype, compright ? ldvr * n : 1), pVR = _b[0], VR = _b[1];
+    var _c = common_1.defineEmArrayVariable(numtype, n), pwr = _c[0], WR = _c[1];
+    var _d = common_1.defineEmArrayVariable(numtype, n), pwi = _d[0], WI = _d[1];
+    var pwork = common_1.defineEmArrayVariable(numtype, 1)[0];
+    // work size query
+    fn(pjobvl, pjobvr, pn, pA, plda, pwr, pwi, pVL, pldvl, pVR, pldvr, pwork, plwork, pinfo);
+    var worksize = em.getValue(pwork, numtype === 'f32' ? 'float' : 'double');
+    pwork = common_1.defineEmArrayVariable(numtype, worksize)[0];
+    em.setValue(plwork, worksize, 'i32');
+    fn(pjobvl, pjobvr, pn, pA, plda, pwr, pwi, pVL, pldvl, pVR, pldvr, pwork, plwork, pinfo);
+    var info = em.getValue(pinfo, 'i32');
+    if (info < 0) {
+        throw new Error('Invalid argument (' + (-info) + ')');
+    }
+    if (info > 0) {
+        throw new Error('Failed to compute all eigen values (' + info + ')');
+    }
+    return [WR, WI, VL, VR];
+}
+/**
+ * @hidden
+ */
+function geev(A, n, compleft, compright) {
+    if (A instanceof Float64Array) {
+        return geev_internal(A, n, compleft, compright, 'f64');
+    }
+    else {
+        return geev_internal(A, n, compleft, compright, 'f32');
+    }
+}
+exports.geev = geev;
+
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+/*
+
+Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
+
+This file is part of bluemath.
+
+bluemath is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+bluemath is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with bluemath. If not, see <http://www.gnu.org/licenses/>.
+
+*/
+Object.defineProperty(exports, "__esModule", { value: true });
+var lapacklite = __webpack_require__(2);
+var em = lapacklite.Module;
+var common_1 = __webpack_require__(1);
+/**
+ * @hidden
+ */
+function geqrf_internal(mA, m, n, mTau, numtype) {
+    var fn = numtype === 'f32' ? common_1.sgeqrf_wrap : common_1.dgeqrf_wrap;
+    var lda = Math.max(1, m);
+    var pm = common_1.defineEmVariable('i32', m);
+    var pn = common_1.defineEmVariable('i32', n);
+    var plda = common_1.defineEmVariable('i32', lda);
+    var plwork = common_1.defineEmVariable('i32', -1);
+    var pinfo = common_1.defineEmVariable('i32');
+    var _a = common_1.defineEmArrayVariable(numtype, m * n, mA), pA = _a[0], A = _a[1];
+    var _b = common_1.defineEmArrayVariable(numtype, Math.min(m, n)), ptau = _b[0], tau = _b[1];
+    var pwork = common_1.defineEmArrayVariable(numtype, 1)[0];
+    // work size query
+    fn(pm, pn, pA, plda, ptau, pwork, plwork, pinfo);
+    var worksize = em.getValue(pwork, numtype === 'f32' ? 'float' : 'double');
+    pwork = common_1.defineEmArrayVariable(numtype, worksize)[0];
+    em.setValue(plwork, worksize, 'i32');
+    fn(pm, pn, pA, plda, ptau, pwork, plwork, pinfo);
+    var info = em.getValue(pinfo, 'i32');
+    if (info < 0) {
+        throw new Error('Invalid argument (' + (-info) + ')');
+    }
+    mA.set(A);
+    mTau.set(tau);
+}
+/**
+ * @hidden
+ */
+function geqrf(mA, m, n, mTau) {
+    if (mA instanceof Float64Array) {
+        geqrf_internal(mA, m, n, mTau, 'f64');
+    }
+    else {
+        geqrf_internal(mA, m, n, mTau, 'f32');
+    }
+}
+exports.geqrf = geqrf;
+
+
+/***/ }),
+/* 24 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+/*
+
+Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
+
+This file is part of bluemath.
+
+bluemath is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+bluemath is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with bluemath. If not, see <http://www.gnu.org/licenses/>.
+
+*/
+Object.defineProperty(exports, "__esModule", { value: true });
+var lapacklite = __webpack_require__(2);
+var em = lapacklite.Module;
+var common_1 = __webpack_require__(1);
+/**
+ * @hidden
+ */
+function orgqr_internal(mA, m, n, k, mtau, numtype) {
+    var fn = numtype === 'f32' ? common_1.sorgqr_wrap : common_1.dorgqr_wrap;
+    var lda = Math.max(1, m);
+    var pm = common_1.defineEmVariable('i32', m);
+    var pn = common_1.defineEmVariable('i32', n);
+    var pk = common_1.defineEmVariable('i32', k);
+    var plda = common_1.defineEmVariable('i32', lda);
+    var plwork = common_1.defineEmVariable('i32', -1);
+    var pinfo = common_1.defineEmVariable('i32');
+    var _a = common_1.defineEmArrayVariable(numtype, lda * n, mA), pA = _a[0], A = _a[1];
+    var ptau = common_1.defineEmArrayVariable(numtype, k, mtau)[0];
+    var pwork = common_1.defineEmArrayVariable(numtype, 1)[0];
+    // work size query
+    fn(pm, pn, pk, pA, plda, ptau, pwork, plwork, pinfo);
+    var worksize = em.getValue(pwork, numtype === 'f32' ? 'float' : 'double');
+    pwork = common_1.defineEmArrayVariable(numtype, worksize)[0];
+    em.setValue(plwork, worksize, 'i32');
+    fn(pm, pn, pk, pA, plda, ptau, pwork, plwork, pinfo);
+    var info = em.getValue(pinfo, 'i32');
+    if (info < 0) {
+        throw new Error('Invalid argument (' + (-info) + ')');
+    }
+    mA.set(A);
+}
+/**
+ * @hidden
+ */
+function orgqr(mA, m, n, k, mtau) {
+    if (mA instanceof Float64Array) {
+        orgqr_internal(mA, m, n, k, mtau, 'f64');
+    }
+    else {
+        orgqr_internal(mA, m, n, k, mtau, 'f32');
+    }
+}
+exports.orgqr = orgqr;
+
+
+/***/ }),
+/* 25 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+/*
+
+Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
+
+This file is part of bluemath.
+
+bluemath is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+bluemath is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with bluemath. If not, see <http://www.gnu.org/licenses/>.
+
+*/
+Object.defineProperty(exports, "__esModule", { value: true });
+var lapacklite = __webpack_require__(2);
+var em = lapacklite.Module;
+var common_1 = __webpack_require__(1);
+/**
+ * @hidden
+ */
+function potrf_internal(mA, n, numtype) {
+    var puplo = common_1.defineEmVariable('i8', 'L'.charCodeAt(0));
+    var pn = common_1.defineEmVariable('i32', n);
+    var plda = common_1.defineEmVariable('i32', n);
+    var pinfo = common_1.defineEmVariable('i32');
+    var _a = common_1.defineEmArrayVariable(numtype, n * n, mA), pA = _a[0], A = _a[1];
+    var fn = numtype === 'f32' ? common_1.spotrf_wrap : common_1.dpotrf_wrap;
+    fn(puplo, pn, pA, plda, pinfo);
+    var info = em.getValue(pinfo, 'i32');
+    if (info < 0) {
+        // Fortran has 1-based indexing
+        throw new Error('Invalid argument (' + (-info) + ')');
+    }
+    if (info > 0) {
+        throw new Error('Matrix is not positive definite');
+    }
+    mA.set(A);
+}
+/**
+ * @hidden
+ */
+function potrf(mA, n) {
+    if (mA instanceof Float64Array) {
+        return potrf_internal(mA, n, 'f64');
+    }
+    else {
+        return potrf_internal(mA, n, 'f32');
+    }
+}
+exports.potrf = potrf;
+
+
+/***/ }),
+/* 26 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+/*
+
+Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
+
+This file is part of bluemath.
+
+bluemath is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+bluemath is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with bluemath. If not, see <http://www.gnu.org/licenses/>.
+
+*/
+Object.defineProperty(exports, "__esModule", { value: true });
+var matrix_1 = __webpack_require__(5);
+exports.Matrix = matrix_1.default;
+var bmatrix_1 = __webpack_require__(27);
+exports.BandMatrix = bmatrix_1.default;
+var vector_1 = __webpack_require__(4);
+exports.Vector = vector_1.default;
+var vector2_1 = __webpack_require__(28);
+exports.Vector2 = vector2_1.default;
+var vector3_1 = __webpack_require__(29);
+exports.Vector3 = vector3_1.default;
+var pvector_1 = __webpack_require__(30);
+exports.PermutationVector = pvector_1.default;
+var ndarray_1 = __webpack_require__(31);
+exports.NDArray = ndarray_1.default;
+var complex_1 = __webpack_require__(7);
+exports.Complex = complex_1.default;
+
+
+/***/ }),
+/* 27 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var matrix_1 = __webpack_require__(5);
+;
+/**
+ * @hidden
+ */
+var BandMatrix = (function (_super) {
+    __extends(BandMatrix, _super);
+    function BandMatrix(def) {
+        var _this = this;
+        var nrows = def.lowerbandwidth + def.upperbandwidth + 1;
+        var ncols = Math.min(def.rows, def.cols);
+        console.assert(def.data.length === nrows * ncols);
+        _this = _super.call(this, { rows: nrows, cols: ncols, data: def.data }) || this;
+        _this._def = def;
+        return _this;
+    }
+    /**
+     *
+     * @example
+     * For the rectangular matrix
+     *    -                         -
+     *    | a11 a12 a13   0   0   0 |
+     *    | a21 a22 a23 a24   0   0 |
+     *    |   0 a32 a33 a34 a35   0 |
+     *    |   0   0 a43 a44 a45   0 |
+     *    |   0   0   0 a54 a55 a56 |
+     *    |   0   0   0   0 a65 a66 |
+     *    -                         -
+     *
+     * Band matrix is given by
+     *    lower bandwidth p = 1
+     *    upper bandwidth q = 2
+     *    -                         -
+     *    |   *   * a13 a24 a35 a46 |
+     *    |   * a12 a23 a34 a45 a56 |
+     *    | a11 a22 a33 a44 a55 a66 |
+     *    | a21 a32 a43 a54 a65   * |
+     *    -                         -
+     */
+    BandMatrix.prototype.toRectangularMatrix = function () {
+        var m = new matrix_1.default({
+            rows: this._def.rows,
+            cols: this._def.cols
+        }, 'f32');
+        var q = this._def.upperbandwidth;
+        for (var i = 0; i < m.rows; i++) {
+            for (var j = 0; j < m.cols; j++) {
+                var brow = i - j + q;
+                var bcol = j;
+                if (brow < 0 || brow >= this.rows ||
+                    bcol < 0 || bcol >= this.cols) {
+                    m.set(i, j, 0);
                 }
-                answer_1.set.apply(answer_1, index.concat([_mul_numbers(a, value)]));
-            });
-            return answer_1;
-        }
-    }
-    else if (a instanceof _1.NDArray) {
-        if (typeof b === 'number' || b instanceof _1.Complex) {
-            var answer_2 = a.clone();
-            answer_2.forEach(function (value) {
-                var index = [];
-                for (var _i = 1; _i < arguments.length; _i++) {
-                    index[_i - 1] = arguments[_i];
+                else {
+                    m.set(i, j, this.get(brow, bcol));
                 }
-                answer_2.set.apply(answer_2, index.concat([_mul_numbers(b, value)]));
-            });
-            return answer_2;
+            }
         }
-        else if (b instanceof _1.NDArray) {
-            return _1.linalg.matmul(a, b);
-        }
-    }
-    throw new Error('Multiplication of incompatible types');
-}
+        return m;
+    };
+    return BandMatrix;
+}(matrix_1.default));
+exports.default = BandMatrix;
+
+
+/***/ }),
+/* 28 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+/*
+
+Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
+
+This file is part of bluemath.
+
+bluemath is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+bluemath is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with bluemath. If not, see <http://www.gnu.org/licenses/>.
+
+*/
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var vector_1 = __webpack_require__(4);
 /**
- * Multiply all arguments in accordance with their data types
- * Each argument can be a number (real or complex) or NDArray.
- * If some of the arguments are NDArrays, then their shapes should
- * be compatible with the other operand of multiplication operation,
- * otherwise an exception is thrown
- * The order of multiplication starts from left to right
+ * @hidden
  */
-function mul() {
-    var args = [];
-    for (var _i = 0; _i < arguments.length; _i++) {
-        args[_i] = arguments[_i];
+var Vector2 = (function (_super) {
+    __extends(Vector2, _super);
+    function Vector2(x, y) {
+        if (x === void 0) { x = 0.0; }
+        if (y === void 0) { y = 0.0; }
+        return _super.call(this, [x, y]) || this;
     }
-    var acc = args[0];
-    for (var i = 1; i < args.length; i++) {
-        acc = _mul_two(acc, args[i]);
-    }
-    return acc;
-}
-exports.mul = mul;
+    Object.defineProperty(Vector2.prototype, "x", {
+        get: function () {
+            return this._data[0];
+        },
+        set: function (newx) {
+            this._data[0] = newx;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Vector2.prototype, "y", {
+        get: function () {
+            return this._data[1];
+        },
+        set: function (newy) {
+            this._data[1] = newy;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Cross product with other vector
+     */
+    Vector2.prototype.cross = function (other) {
+        return this.x * other.y - this.y * other.x;
+    };
+    /**
+     * Vector orthogonal to this vector
+     */
+    Vector2.prototype.orthogonal = function () {
+        return new Vector2(this.y, -this.x);
+    };
+    return Vector2;
+}(vector_1.default));
+exports.default = Vector2;
+
+
+/***/ }),
+/* 29 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+/*
+
+ Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
+
+ This file is part of bluemath.
+
+ bluemath is free software: you can redistribute it and/or modify
+ it under the terms of the GNU Affero General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ bluemath is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ GNU Affero General Public License for more details.
+
+ You should have received a copy of the GNU Affero General Public License
+ along with bluemath. If not, see <http://www.gnu.org/licenses/>.
+
+*/
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var vector_1 = __webpack_require__(4);
 /**
- * Subtract second argument from first
- * The arguments could be a number (real or complex) or NDArray.
- * If some of the arguments are NDArrays, then their shapes should
- * be compatible with the other operand of subtraction operation,
- * otherwise an exception is thrown
+ * @hidden
  */
-function sub(a, b) {
-    return _add_two(a, _mul_two(-1, b));
-}
-exports.sub = sub;
-/**
- * Divide first argument by second
- * The first argument can be a number (real or complex) or NDArray.
- * The second argument can be a number (real or complex)
- */
-function div(a, b) {
-    var binv;
-    if (b instanceof _1.Complex) {
-        // 1/Complex number is converted to a usable complex number by
-        // multiplying both numerator and denominator by complex conjugate
-        // of the original number
-        var den = b.real * b.real + b.imag * b.imag;
-        binv = new _1.Complex(b.real / den, -b.imag / den);
+var Vector3 = (function (_super) {
+    __extends(Vector3, _super);
+    function Vector3(x, y, z) {
+        if (x === void 0) { x = 0.0; }
+        if (y === void 0) { y = 0.0; }
+        if (z === void 0) { z = 0.0; }
+        return _super.call(this, [x, y, z]) || this;
     }
-    else {
-        binv = 1 / b;
-    }
-    return _mul_two(a, binv);
-}
-exports.div = div;
+    return Vector3;
+}(vector_1.default));
+exports.default = Vector3;
 
 
 /***/ }),
@@ -4263,478 +4295,51 @@ exports.div = div;
 
 "use strict";
 
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 Object.defineProperty(exports, "__esModule", { value: true });
-/*
-
-Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
-
-This file is part of bluemath.
-
-bluemath is free software: you can redistribute it and/or modify
-it under the terms of the GNU Affero General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-bluemath is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU Affero General Public License for more details.
-
-You should have received a copy of the GNU Affero General Public License
-along with bluemath. If not, see <http://www.gnu.org/licenses/>.
-
-*/
-var src_1 = __webpack_require__(1);
-/// <reference path="qunit/index.d.ts" />
-function testNDArray() {
-    QUnit.module('NDArray', function () {
-        QUnit.module('construction', function () {
-            QUnit.module('From Array', function () {
-                QUnit.module('deduceShape and size', function () {
-                    QUnit.test('3x3', function (assert) {
-                        var A = new src_1.NDArray([
-                            [2, 4, 6],
-                            [3, 5, 2],
-                            [1, 6, 5]
-                        ]);
-                        assert.deepEqual(A.shape, [3, 3]);
-                        assert.equal(A.size, 9);
-                    });
-                    QUnit.test('1x3', function (assert) {
-                        var A = new src_1.NDArray([
-                            [2, 4, 6]
-                        ]);
-                        assert.deepEqual(A.shape, [1, 3]);
-                        assert.equal(A.size, 3);
-                    });
-                    QUnit.test('3x1', function (assert) {
-                        var A = new src_1.NDArray([
-                            [2], [4], [6]
-                        ]);
-                        assert.deepEqual(A.shape, [3, 1]);
-                        assert.equal(A.size, 3);
-                    });
-                    QUnit.test('1x1', function (assert) {
-                        var A = new src_1.NDArray([
-                            [2]
-                        ]);
-                        assert.deepEqual(A.shape, [1, 1]);
-                        assert.equal(A.size, 1);
-                    });
-                    QUnit.test('5', function (assert) {
-                        var A = new src_1.NDArray([
-                            2, 3, 4, 5, 6
-                        ]);
-                        assert.deepEqual(A.shape, [5]);
-                        assert.equal(A.size, 5);
-                    });
-                    QUnit.test("2x2x2", function (assert) {
-                        var A = new src_1.NDArray([
-                            [
-                                [1, 0],
-                                [2, 1]
-                            ],
-                            [
-                                [2, 3],
-                                [5, 4]
-                            ]
-                        ], 'i16');
-                        assert.deepEqual(A.shape, [2, 2, 2]);
-                        assert.equal(A.size, 8);
-                    });
-                });
-                QUnit.test('to float32 default', function (assert) {
-                    var A = new src_1.NDArray([
-                        2, 3, 4, 5, 6
-                    ]);
-                    assert.equal(A.datatype, 'f32');
-                    assert.equal(A.get(0), 2);
-                });
-                QUnit.test('to float64 default', function (assert) {
-                    var A = new src_1.NDArray([
-                        2, 3, 4, 5, 6
-                    ], { datatype: 'f64' });
-                    assert.equal(A.datatype, 'f64');
-                    assert.equal(A.get(1), 3);
-                });
-                QUnit.test('to int16 default', function (assert) {
-                    var A = new src_1.NDArray([
-                        2, 3, -4, 5, 6
-                    ], { datatype: 'i16' });
-                    assert.equal(A.datatype, 'i16');
-                    assert.equal(A.get(2), -4);
-                });
-                QUnit.test('to uint16 default', function (assert) {
-                    var A = new src_1.NDArray([
-                        2, 3, -4, 5, 6
-                    ], { datatype: 'ui16' });
-                    assert.equal(A.datatype, 'ui16');
-                    assert.notEqual(A.get(2), -4);
-                });
-            });
-            QUnit.module('From Raw Data', function () {
-                QUnit.module('shape', function () {
-                    QUnit.test('default flat', function (assert) {
-                        var A = new src_1.NDArray(new Float32Array([3, 7, 5, 6]));
-                        assert.deepEqual(A.shape, [4]);
-                    });
-                    QUnit.test('2x2', function (assert) {
-                        var A = new src_1.NDArray(new Float32Array([3, 7, 5, 6]), { shape: [2, 2] });
-                        assert.deepEqual(A.shape, [2, 2]);
-                        assert.equal(A.get(0, 1), 7);
-                        assert.equal(A.get(1, 1), 6);
-                    });
-                    QUnit.test('1x4', function (assert) {
-                        var A = new src_1.NDArray(new Float32Array([3, 7, 5, 6]), { shape: [1, 4] });
-                        assert.deepEqual(A.shape, [1, 4]);
-                        assert.equal(A.get(0, 1), 7);
-                        assert.equal(A.get(0, 3), 6);
-                    });
-                    QUnit.test('4x1', function (assert) {
-                        var A = new src_1.NDArray(new Float32Array([3, 7, 5, 6]), { shape: [4, 1] });
-                        assert.deepEqual(A.shape, [4, 1]);
-                        assert.equal(A.get(1, 0), 7);
-                        assert.equal(A.get(3, 0), 6);
-                    });
-                });
-            });
-            QUnit.module('No Data', function () {
-                QUnit.test('fill with 0', function (assert) {
-                    var A = new src_1.NDArray({ shape: [2, 2], fill: 0 });
-                    assert.equal(A.size, 4);
-                    assert.equal(A.get(0, 0), 0);
-                    assert.equal(A.get(0, 1), 0);
-                    assert.equal(A.get(1, 0), 0);
-                    assert.equal(A.get(1, 1), 0);
-                });
-                QUnit.test('fill with 5', function (assert) {
-                    var A = new src_1.NDArray({ shape: [2, 2], fill: 5 });
-                    assert.equal(A.size, 4);
-                    assert.equal(A.get(0, 0), 5);
-                    assert.equal(A.get(0, 1), 5);
-                    assert.equal(A.get(1, 0), 5);
-                    assert.equal(A.get(1, 1), 5);
-                });
-            });
+var vector_1 = __webpack_require__(4);
+var matrix_1 = __webpack_require__(5);
+/**
+ * @hidden
+ */
+var PermutationVector = (function (_super) {
+    __extends(PermutationVector, _super);
+    function PermutationVector(arg0, datatype) {
+        var _this = _super.call(this, arg0, datatype || 'i16') || this;
+        if (typeof arg0 === 'number') {
+            // Initialize the Permutation vector to [0,1,2,...,n-1]
+            // This corresponds to Identity matrix
+            for (var i = 0; i < arg0; i++) {
+                _this._data[i] = i;
+            }
+        }
+        return _this;
+    }
+    PermutationVector.prototype.toMatrix = function () {
+        var n = this._data.length;
+        var d = new Int32Array(n * n);
+        for (var i = 0; i < n; i++) {
+            var j = this.get(i);
+            d[i * n + j] = 1;
+        }
+        return new matrix_1.default({
+            rows: this._data.length,
+            cols: this._data.length,
+            data: d
         });
-        QUnit.module('Equality', function () {
-            QUnit.test('2x2 equal', function (assert) {
-                var A = new src_1.NDArray([[4, 7], [3, 4]]);
-                var B = new src_1.NDArray([[4, 7], [3, 4]]);
-                assert.ok(A.isEqual(B));
-            });
-            QUnit.test('2x2 not equal', function (assert) {
-                var A = new src_1.NDArray([[4, 7], [3, 4]]);
-                var B = new src_1.NDArray([[4, 9], [3, 4]]);
-                assert.notOk(A.isEqual(B));
-            });
-            QUnit.test('2x2 and 3x3', function (assert) {
-                var A = new src_1.NDArray([[4, 7], [3, 4]]);
-                var B = new src_1.NDArray([[4, 7, 3], [3, 4, 3], [3, 2, 2]]);
-                assert.notOk(A.isEqual(B));
-            });
-            QUnit.test('2x2 and 1', function (assert) {
-                var A = new src_1.NDArray([[4, 7], [3, 4]]);
-                var B = new src_1.NDArray([34]);
-                assert.notOk(A.isEqual(B));
-            });
-            QUnit.test('2x2 int32 vs float32 equal', function (assert) {
-                var A = new src_1.NDArray([[4, 7], [3, 4]], { datatype: 'i32' });
-                var B = new src_1.NDArray([[4, 9], [3, 4]], { datatype: 'f32' });
-                assert.notOk(A.isEqual(B));
-            });
-        });
-        QUnit.test("swaprows", function (assert) {
-            var A = new src_1.NDArray([[1, 0], [2, 1], [6, 9]], 'i16');
-            var B = new src_1.NDArray([[2, 1], [1, 0], [6, 9]], 'i16');
-            A.swaprows(0, 1);
-            assert.ok(A.isEqual(B));
-        });
-        QUnit.module("toArray", function () {
-            QUnit.test("4", function (assert) {
-                var arr = [5, 6, 7, 8];
-                var A = new src_1.NDArray(arr, 'i16');
-                assert.deepEqual(arr, A.toArray());
-            });
-            QUnit.test("3x2", function (assert) {
-                var arr = [[1, 0], [2, 1], [6, 9]];
-                var A = new src_1.NDArray(arr, 'i16');
-                assert.deepEqual(arr, A.toArray());
-            });
-            QUnit.test("2x2x2", function (assert) {
-                var arr = [
-                    [
-                        [1, 0],
-                        [2, 1]
-                    ],
-                    [
-                        [2, 3],
-                        [5, 4]
-                    ]
-                ];
-                var A = new src_1.NDArray(arr, 'i16');
-                assert.deepEqual(arr, A.toArray());
-            });
-            QUnit.test("2x3x1", function (assert) {
-                var arr = [
-                    [
-                        [3],
-                        [6],
-                        [89]
-                    ],
-                    [
-                        [2],
-                        [-8],
-                        [10]
-                    ]
-                ];
-                var A = new src_1.NDArray(arr, 'i16');
-                assert.deepEqual(arr, A.toArray());
-            });
-            QUnit.test("1x4x3x2", function (assert) {
-                var arr = [
-                    [
-                        [
-                            [3, 5], [2, 1], [3, 5]
-                        ],
-                        [
-                            [4, 1], [9, 8], [3, 5]
-                        ],
-                        [
-                            [2, 7], [3, 5], [6, 1]
-                        ],
-                        [
-                            [10, 8], [6, 2], [2, 5]
-                        ]
-                    ]
-                ];
-                var A = new src_1.NDArray(arr, 'i16');
-                assert.deepEqual(arr, A.toArray());
-            });
-        });
-        QUnit.module('Indexing', function () {
-            QUnit.module('Invalid Access', function () {
-                QUnit.test('Wrong num of dim', function (assert) {
-                    var A = new src_1.NDArray(new Float32Array([3, 7, 5, 6]));
-                    assert.throws(function () {
-                        A.get(0, 0);
-                    });
-                });
-                QUnit.test('Invalid dim-0', function (assert) {
-                    var A = new src_1.NDArray(new Float32Array([3, 7, 5, 6]));
-                    assert.throws(function () {
-                        A.get(5);
-                    });
-                });
-                QUnit.test('Invalid dim-1', function (assert) {
-                    var A = new src_1.NDArray(new Float32Array([3, 7, 5, 6]), { shape: [2, 2] });
-                    assert.throws(function () {
-                        A.get(0, 3);
-                    });
-                });
-                QUnit.test('Negative dim-1', function (assert) {
-                    var A = new src_1.NDArray(new Float32Array([3, 7, 5, 6]), { shape: [2, 2] });
-                    assert.throws(function () {
-                        A.get(0, -1);
-                    });
-                });
-            });
-            QUnit.module('Data index to index', function () {
-                QUnit.test('3x3x3', function (assert) {
-                    var A = new src_1.NDArray({ shape: [3, 3, 3] });
-                    assert.deepEqual(A._addressToIndex(10), [1, 0, 1]);
-                    assert.deepEqual(A._addressToIndex(11), [1, 0, 2]);
-                    assert.deepEqual(A._addressToIndex(13), [1, 1, 1]);
-                    assert.deepEqual(A._addressToIndex(14), [1, 1, 2]);
-                });
-                QUnit.test('1x6', function (assert) {
-                    var A = new src_1.NDArray({ shape: [1, 6] });
-                    assert.deepEqual(A._addressToIndex(3), [0, 3]);
-                });
-            });
-            QUnit.module('Set', function () {
-                QUnit.test('flat', function (assert) {
-                    var A = new src_1.NDArray(new Float32Array([3, 7, 5, 6]), { shape: [4] });
-                    assert.equal(A.get(1), 7);
-                    A.set(1, 589);
-                    assert.equal(A.get(1), 589);
-                });
-                QUnit.test('2x2', function (assert) {
-                    var A = new src_1.NDArray(new Float32Array([3, 7, 5, 6]), { shape: [2, 2] });
-                    assert.equal(A.get(1, 1), 6);
-                    A.set(1, 1, 589);
-                    assert.equal(A.get(1, 1), 589);
-                });
-                QUnit.test('4x1', function (assert) {
-                    var A = new src_1.NDArray(new Float32Array([3, 7, 5, 6]), { shape: [4, 1] });
-                    assert.equal(A.get(2, 0), 5);
-                    A.set(2, 0, 589);
-                    assert.equal(A.get(2, 0), 589);
-                });
-                QUnit.test('1x4', function (assert) {
-                    var A = new src_1.NDArray(new Float32Array([3, 7, 5, 6]), { shape: [1, 4] });
-                    assert.equal(A.get(0, 2), 5);
-                    A.set(0, 2, 589);
-                    assert.equal(A.get(0, 2), 589);
-                });
-            });
-        });
-        QUnit.module('Reshape', function () {
-            QUnit.test('6 to 2x3', function (assert) {
-                var A = new src_1.NDArray([3, 5, 7, 4, 5, 6]);
-                assert.equal(A.get(2), 7);
-                assert.throws(function () {
-                    A.get(0, 2);
-                });
-                assert.equal(A.size, 6);
-                A.reshape([2, 3]);
-                assert.equal(A.get(0, 2), 7);
-                assert.throws(function () {
-                    A.get(2);
-                });
-                assert.equal(A.size, 6);
-            });
-            QUnit.test('2x3 to 6', function (assert) {
-                var A = new src_1.NDArray([
-                    [3, 5, 7],
-                    [4, 5, 6]
-                ]);
-                assert.equal(A.get(0, 2), 7);
-                assert.throws(function () {
-                    A.get(2);
-                });
-                assert.equal(A.size, 6);
-                A.reshape([6]);
-                assert.equal(A.get(2), 7);
-                assert.throws(function () {
-                    A.get(0, 2);
-                });
-                assert.equal(A.size, 6);
-            });
-            QUnit.test('6 to 4x2', function (assert) {
-                var A = new src_1.NDArray([3, 5, 7, 4, 5, 6]);
-                assert.equal(A.size, 6);
-                assert.equal(A.get(2), 7);
-                A.reshape([4, 2]);
-                assert.equal(A.size, 8);
-                assert.equal(A.get(1, 0), 7);
-                assert.equal(A.get(2, 1), 6);
-                assert.equal(A.get(3, 0), 0);
-                assert.equal(A.get(3, 1), 0);
-            });
-        });
-        QUnit.module('clone', function () {
-            QUnit.test('3x3', function (assert) {
-                var A = new src_1.NDArray([
-                    [2, 4, 6],
-                    [1, 0, 9],
-                    [0, 2, 3]
-                ], { datatype: 'f64' });
-                assert.equal(A.get(1, 2), 9);
-                var B = A.clone();
-                assert.equal(B.get(1, 2), 9);
-                assert.deepEqual(A.shape, B.shape);
-                assert.equal(A.datatype, B.datatype);
-                B.set(1, 2, 45);
-                assert.equal(B.get(1, 2), 45);
-                assert.equal(A.get(1, 2), 9);
-                A.set(1, 2, 186);
-                assert.equal(A.get(1, 2), 186);
-                assert.equal(B.get(1, 2), 45);
-            });
-            QUnit.test('complex', function (assert) {
-                var A = new src_1.NDArray({ shape: [2] });
-                A.set(0, new src_1.Complex(3, 5));
-                A.set(1, 32);
-                var copyA = A.clone();
-                assert.ok(new src_1.Complex(3, 5).isEqual(copyA.get(0)));
-                assert.equal(32, copyA.get(1));
-            });
-        });
-        QUnit.module('slice', function () {
-            QUnit.test('3x3', function (assert) {
-                var A = new src_1.NDArray([
-                    [2, 4, 6],
-                    [1, 0, 9],
-                    [0, 2, 3]
-                ], { datatype: 'f64' });
-                assert.ok(A.slice(':1', ':2').isEqual(new src_1.NDArray([
-                    [2, 4],
-                ])));
-                assert.ok(A.slice(0, ':2').isEqual(new src_1.NDArray([
-                    [2, 4],
-                ])));
-                assert.ok(A.slice(null).isEqual(new src_1.NDArray([
-                    [2, 4, 6],
-                    [1, 0, 9],
-                    [0, 2, 3]
-                ])));
-                assert.ok(A.slice(1, null).isEqual(new src_1.NDArray([
-                    [1, 0, 9],
-                ])));
-                assert.ok(A.slice(0).isEqual(new src_1.NDArray([
-                    [2, 4, 6],
-                ])));
-                assert.ok(A.slice(1).isEqual(new src_1.NDArray([
-                    [1, 0, 9],
-                ])));
-                assert.ok(A.slice('1:2').isEqual(new src_1.NDArray([
-                    [1, 0, 9],
-                ])));
-                assert.ok(A.slice('1:2', 2).isEqual(new src_1.NDArray([
-                    [9],
-                ])));
-                assert.ok(A.slice(':1', ':3').isEqual(new src_1.NDArray([
-                    [2, 4, 6],
-                ])));
-                assert.ok(A.slice(':1', ':4').isEqual(new src_1.NDArray([
-                    [2, 4, 6],
-                ])));
-                assert.ok(A.slice(':1', ':').isEqual(new src_1.NDArray([
-                    [2, 4, 6],
-                ])));
-                assert.ok(A.slice(':1').isEqual(new src_1.NDArray([
-                    [2, 4, 6],
-                ])));
-                assert.ok(A.slice(':', ':1').isEqual(new src_1.NDArray([
-                    [2],
-                    [1],
-                    [0]
-                ])));
-                assert.ok(A.slice(':', 0).isEqual(new src_1.NDArray([
-                    [2],
-                    [1],
-                    [0]
-                ])));
-                assert.ok(A.slice(':', 2).isEqual(new src_1.NDArray([
-                    [6],
-                    [9],
-                    [3]
-                ])));
-                assert.ok(A.slice(':2', ':3').isEqual(new src_1.NDArray([
-                    [2, 4, 6],
-                    [1, 0, 9],
-                ])));
-                assert.ok(A.slice(':', ':').isEqual(new src_1.NDArray([
-                    [2, 4, 6],
-                    [1, 0, 9],
-                    [0, 2, 3]
-                ])));
-                assert.ok(A.slice(':').isEqual(new src_1.NDArray([
-                    [2, 4, 6],
-                    [1, 0, 9],
-                    [0, 2, 3]
-                ])));
-                assert.ok(A.slice().isEqual(new src_1.NDArray([
-                    [2, 4, 6],
-                    [1, 0, 9],
-                    [0, 2, 3]
-                ])));
-            });
-        });
-    });
-}
-exports.default = testNDArray;
+    };
+    return PermutationVector;
+}(vector_1.default));
+exports.default = PermutationVector;
 
 
 /***/ }),
@@ -4764,20 +4369,800 @@ along with bluemath. If not, see <http://www.gnu.org/licenses/>.
 
 */
 Object.defineProperty(exports, "__esModule", { value: true });
-var basic_1 = __webpack_require__(8);
-//import testGeom from './geom'
-var linalg_1 = __webpack_require__(9);
-window.onload = function () {
-    var qunitDiv = document.createElement('div');
-    qunitDiv.setAttribute('id', 'qunit');
-    document.body.appendChild(qunitDiv);
-    var qunitFixtureDiv = document.createElement('div');
-    qunitFixtureDiv.setAttribute('id', 'qunit-fixture');
-    document.body.appendChild(qunitFixtureDiv);
-    basic_1.default();
-    //testGeom();
-    linalg_1.default();
-};
+var __1 = __webpack_require__(0);
+var constants_1 = __webpack_require__(3);
+var complex_1 = __webpack_require__(7);
+/**
+ * @hidden
+ */
+function deduceShape(data) {
+    var dim = 0;
+    var d = data;
+    var shape = [data.length];
+    while (Array.isArray(d[0])) {
+        shape.push(d[0].length);
+        dim++;
+        d = d[0];
+    }
+    return shape;
+}
+/**
+ * @hidden
+ */
+function deduceNumberType(data) {
+    if (data instanceof Float32Array) {
+        return 'f32';
+    }
+    else if (data instanceof Float64Array) {
+        return 'f64';
+    }
+    else if (data instanceof Int8Array) {
+        return 'i8';
+    }
+    else if (data instanceof Uint8Array) {
+        return 'ui8';
+    }
+    else if (data instanceof Int16Array) {
+        return 'i16';
+    }
+    else if (data instanceof Uint16Array) {
+        return 'ui16';
+    }
+    else if (data instanceof Int32Array) {
+        return 'i32';
+    }
+    else if (data instanceof Uint32Array) {
+        return 'ui32';
+    }
+    else {
+        throw new Error('Unknown datatype');
+    }
+}
+/**
+ * @hidden
+ */
+function populateFromArray(data, idx, arr) {
+    if (Array.isArray(arr[0])) {
+        var len = 0;
+        for (var i = 0; i < arr.length; i++) {
+            var l = populateFromArray(data, idx + len, arr[i]);
+            len += l;
+        }
+        return len;
+    }
+    else {
+        for (var i = 0; i < arr.length; i++) {
+            data[idx + i] = arr[i];
+        }
+        return arr.length;
+    }
+}
+function getDataArrayType(typestr) {
+    switch (typestr) {
+        case 'i8':
+            return Int8Array;
+        case 'ui8':
+            return Uint8Array;
+        case 'i16':
+            return Int16Array;
+        case 'ui16':
+            return Uint16Array;
+        case 'i32':
+            return Int32Array;
+        case 'ui32':
+            return Uint32Array;
+        case 'f32':
+            return Float32Array;
+        case 'f64':
+            return Float64Array;
+        default:
+            throw new Error('Unknown datatype');
+    }
+}
+/**
+ * N-Dimensional Array
+ * ===
+ *
+ * It can store real as well as complex numbers in n-dimensions
+ * It can be used to store Vectors (1D) or Matrices (2D).
+ * This class stores the data internally in flat typed arrays
+ *
+ * NDArray is the central class of Bluemath library.
+ * It's used to input and output data to/from most of the APIs of this library.
+ *
+ * Construction
+ * ---
+ *
+ * You can create an NDArray
+ *
+ * * With shape and/or data type
+ * ```javascript
+ * // 3-dimensional array with 32-bit integer storage
+ * new NDArray({shape:[3,4,3],datatype:'i32'});
+ * ```
+ *
+ * * Initializing it with array data
+ * ```javascript
+ * // 2x3 Matrix with 64-bit floating point (double) storage
+ * new NDArray([[1,1,1],[4,4,4]],{datatype:'f64'});
+ * ```
+ *
+ * * Using standard functions
+ * ```javascript
+ * zeros([2,2,2]); // Returns 2x2x2 NDArray of zeros
+ * eye([4,4]); // Creates 4x4 Identity matrix
+ * ```
+ *
+ * Basic math operations
+ * ---
+ *
+ * Bluemath provides functions that allow basic math operations
+ * on NDArrays
+ *
+ * [[add]]
+ *
+ * [[sub]]
+ *
+ * [[mul]]
+ *
+ * [[div]]
+ */
+var NDArray = (function () {
+    function NDArray(arg0, arg1) {
+        this.size = 0;
+        this.datatype = 'f32';
+        this._idata = [];
+        if (Array.isArray(arg0)) {
+            this.shape = deduceShape(arg0);
+            this._calcSize();
+            if (arg1 && arg1.datatype) {
+                this.datatype = arg1.datatype;
+            }
+            this._alloc(this.size, arg0, this.datatype);
+            if (arg1 && arg1.idata) {
+                this._idata = arg1.idata;
+            }
+        }
+        else if (ArrayBuffer.isView(arg0)) {
+            this._data = arg0;
+            if (arg1 && arg1.shape) {
+                this.shape = arg1.shape;
+            }
+            else {
+                this.shape = [arg0.length];
+            }
+            // in this case options.datatype is ignored if supplied
+            this.datatype = deduceNumberType(arg0);
+            this._calcSize();
+            if (arg1 && arg1.idata) {
+                this._idata = arg1.idata;
+            }
+        }
+        else {
+            var options = arg0;
+            if (options.datatype) {
+                this.datatype = options.datatype;
+            }
+            if (options.shape) {
+                this.shape = options.shape;
+                this._calcSize();
+                this._alloc(this.size, undefined, this.datatype);
+                if (options.fill) {
+                    this._data.fill(options.fill);
+                }
+            }
+            if (options.idata) {
+                this._idata = options.idata;
+            }
+        }
+    }
+    Object.defineProperty(NDArray.prototype, "data", {
+        get: function () {
+            return this._data;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Set new shape for the data stored in the array
+     * The old data remains intact. If the total size with the new shape
+     * is larger than the old size, then excess elements of the data are
+     * fill with zero.
+     * @param shape New shape
+     */
+    NDArray.prototype.reshape = function (shape) {
+        this.shape = shape;
+        var oldsize = this.size;
+        this._calcSize();
+        if (this.size > oldsize) {
+            // Rellocate a buffer of bigger size, copy old data to it
+            this._alloc(this.size, this._data, this.datatype);
+            // Fill the excess elements in new buffer with 0
+            this._data.fill(0, oldsize);
+        }
+    };
+    /**
+     * Create deep copy of the array
+     */
+    NDArray.prototype.clone = function () {
+        var dataArrayType = getDataArrayType(this.datatype);
+        var data = new dataArrayType(this._data);
+        return new NDArray(data, { shape: this.shape.slice(), idata: this._idata.slice() });
+    };
+    NDArray.prototype._calcSize = function () {
+        this.size = this.shape.reduce(function (prev, cur) { return prev * cur; }, 1);
+    };
+    NDArray.prototype._alloc = function (size, data, datatype) {
+        var dataArrayType = getDataArrayType(datatype);
+        this._data = new dataArrayType(size);
+        if (Array.isArray(data)) {
+            populateFromArray(this._data, 0, data);
+        }
+        else if (ArrayBuffer.isView(data)) {
+            this._data.set(data);
+        }
+    };
+    NDArray.prototype._indexToAddress = function () {
+        var indices = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            indices[_i] = arguments[_i];
+        }
+        if (indices.length !== this.shape.length) {
+            throw new Error('Mismatched number of dimensions');
+        }
+        var addr = 0;
+        for (var i = 0; i < this.shape.length; i++) {
+            if (i < this.shape.length - 1) {
+                addr += this.shape[i + 1] * indices[i];
+            }
+            else {
+                if (indices[i] < 0) {
+                    throw new Error('Invalid index ' + indices[i]);
+                }
+                if (indices[i] >= this.shape[i]) {
+                    throw new Error('Index out of bounds ' + indices[i]);
+                }
+                addr += indices[i];
+            }
+        }
+        return addr;
+    };
+    /**
+     * @hidden
+     */
+    NDArray.prototype._addressToIndex = function (di) {
+        if (di >= this.size) {
+            throw new Error("Data index out of range");
+        }
+        var index = new Array(this.shape.length);
+        for (var i = this.shape.length - 1; i >= 0; i--) {
+            var d = this.shape[i];
+            index[i] = di % d;
+            di = Math.floor(di / d);
+        }
+        return index;
+    };
+    /**
+     * Create nested array
+     */
+    NDArray.prototype.toArray = function () {
+        if (this.shape.length <= 0) {
+            throw new Error('Zero shape');
+        }
+        var aarr = [];
+        var step = 1;
+        // iterate over dimensions from innermost to outermost
+        for (var i = this.shape.length - 1; i >= 0; i--) {
+            // Step size in i'th dimension
+            var d = this.shape[i];
+            step = step * d;
+            // number of elements in i'th dimension
+            var nelem = this.size / step;
+            if (i === this.shape.length - 1) {
+                // innermost dimension, create array from all elements
+                for (var j = 0; j < nelem; j++) {
+                    var arr = new Array(step);
+                    for (var k = 0; k < d; k++) {
+                        var index = j * step + k;
+                        if (this._idata[index] === undefined) {
+                            arr[k] = this._data[index];
+                        }
+                        else {
+                            arr[k] = new complex_1.default(this._data[index], this._idata[index]);
+                        }
+                    }
+                    aarr.push(arr);
+                }
+            }
+            else {
+                // outer dimensions, create array from inner dimension's arrays
+                var darr = new Array(nelem);
+                for (var j = 0; j < nelem; j++) {
+                    darr[j] = aarr.slice(j * d, (j + 1) * d);
+                }
+                aarr = darr;
+            }
+        }
+        return aarr[0];
+    };
+    /**
+     * Set all members of this array to given value
+     */
+    NDArray.prototype.fill = function (value) {
+        this._data.fill(value);
+    };
+    /**
+     * Access member at given index
+     */
+    NDArray.prototype.get = function () {
+        var index = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            index[_i] = arguments[_i];
+        }
+        var addr = this._indexToAddress.apply(this, index);
+        if (this._idata[addr] === undefined) {
+            return this._data[addr];
+        }
+        else {
+            return new complex_1.default(this._data[addr], this._idata[addr]);
+        }
+    };
+    /**
+     * Set member at given index
+     * All but the last argument should specify the index.
+     * The last argument is the value to set.
+     */
+    NDArray.prototype.set = function () {
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i] = arguments[_i];
+        }
+        var nargs = args.length;
+        var index = (args.slice(0, nargs - 1));
+        var addr = this._indexToAddress.apply(this, index);
+        var val = args[nargs - 1];
+        if (val instanceof complex_1.default) {
+            this._data[addr] = val.real;
+            this._idata[addr] = val.imag;
+        }
+        else {
+            this._data[addr] = val;
+        }
+    };
+    /**
+     * Swaps matrix rows (this must be a 2D array)
+     */
+    NDArray.prototype.swaprows = function (i, j) {
+        if (this.shape.length !== 2) {
+            throw new Error('This NDArray is not a Matrix (2D)');
+        }
+        if (i === j) {
+            return; // No need to swap
+        }
+        var nrows = this.shape[0];
+        var ncols = this.shape[1];
+        if (i >= nrows || j >= nrows) {
+            throw new Error("Index out of range");
+        }
+        for (var k = 0; k < ncols; k++) {
+            var tmp = this.get(i, k);
+            this.set(i, k, this.get(j, k));
+            this.set(j, k, tmp);
+        }
+    };
+    /**
+     * @hidden
+     */
+    NDArray.prototype.datacompare = function (otherdata, otheridata, tolerance) {
+        if (tolerance === void 0) { tolerance = constants_1.EPSILON; }
+        for (var i = 0; i < this._data.length; i++) {
+            if (this._idata[i] === undefined) {
+                if (!__1.isequal(this._data[i], otherdata[i], tolerance)) {
+                    return false;
+                }
+            }
+            else {
+                if (otheridata[i] === undefined) {
+                    // other is not complex number
+                    return false;
+                }
+                var thisC = new complex_1.default(this._data[i], this._idata[i]);
+                var otherC = new complex_1.default(otherdata[i], otheridata[i]);
+                return thisC.isEqual(otherC);
+            }
+        }
+        return true;
+    };
+    /**
+     * Iterate over each element, invoke a callback with each index and value
+     */
+    NDArray.prototype.forEach = function (callback) {
+        for (var i = 0; i < this.size; i++) {
+            var index = this._addressToIndex(i);
+            if (this._idata[i] === undefined) {
+                callback.apply(void 0, [this._data[i]].concat(index));
+            }
+            else {
+                callback.apply(void 0, [new complex_1.default(this._data[i], this._idata[i])].concat(index));
+            }
+        }
+    };
+    /**
+     * Checks if the shape of this ndarray matches the shape of other
+     */
+    NDArray.prototype.isShapeEqual = function (other) {
+        if (this.shape.length !== other.shape.length) {
+            return false;
+        }
+        for (var i = 0; i < this.shape.length; i++) {
+            if (this.shape[i] !== other.shape[i]) {
+                return false;
+            }
+        }
+        return true;
+    };
+    /**
+     * Does equality test for each element of the array as well as the
+     * shape of the arrays
+     * @param other Other NDArray to compare with
+     * @param tolerance
+     */
+    NDArray.prototype.isEqual = function (other, tolerance) {
+        if (tolerance === void 0) { tolerance = constants_1.EPSILON; }
+        var shapeequal = this.isShapeEqual(other);
+        return shapeequal && other.datacompare(this._data, this._idata, tolerance);
+    };
+    /**
+     * Return 1D copy of this array
+     */
+    NDArray.prototype.flatten = function () {
+        var copy = this.clone();
+        copy.reshape([this.size]);
+        return copy;
+    };
+    /**
+     * Change between Row-major and Column-major layout
+     */
+    NDArray.prototype.swapOrder = function () {
+        if (this.shape.length !== 2) {
+            throw new Error('swapOrder is not defined for ndarrays other than dim 2');
+        }
+        var clone = this.clone();
+        var I = this.shape[0];
+        var J = this.shape[1];
+        this.reshape([J, I]);
+        for (var i = 0; i < J; i++) {
+            for (var j = 0; j < I; j++) {
+                this.set(i, j, clone.get(j, i));
+            }
+        }
+    };
+    /**
+     * Bluemath supports extracting of NDArray slices using a syntax similar
+     * to numpy. Slicing is supported by NDArray.slice function.
+     *
+     * The function accepts number of arguments not greater than the dimensions
+     * of the NDArray.
+     * Each argument could be a `number`, a `string` in format `<start>:<stop>`
+     * or `undefined` or `null`.
+     *
+     * If the argument is a number then it represents a single slice,
+     * i.e. all the elements in the lower dimension
+     * are returned for this index in given dimension.
+     * ```javascript
+     * let A = new NDArray([
+     *   [2,4,6],
+     *   [1,0,9],
+     *   [0,2,3]
+     * ]);
+     * A.slice(0); // [[2,4,6]]
+     * ```
+     *
+     * If the argument is `undefined` or `null`, then that's interpreted as
+     * all items in the given dimension.
+     * ```javascript
+     * A.slice(null); // [[2,4,6],[1,0,9],[0,2,3]]
+     * A.slice(1,null); // [[1,0,9]]
+     * ```
+     *
+     * A string argument of format `<start>:<stop>` is used to specify range of
+     * slices in the given dimension.
+     * Both `<start>` and `<stop>` are optional.
+     * ```javascript
+     * A.slice('1:2'); // [[1,0,9]]
+     * A.slice(':1'); // [[2,4,6]]
+     * A.slice(':'); // [[2,4,6],[1,0,9],[0,2,3]]
+     * A.slice(':',2); // [[6],[9],[3]]
+     * ```
+     *
+     * The argument order is interpreted as going from outermost dimension to
+     * innermost.
+     *
+     * Caveats
+     * ---
+     * * Negative indices not supported yet
+     * * No support for `<start>:<stop>:<step>` format yet
+     */
+    NDArray.prototype.slice = function () {
+        var slices = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            slices[_i] = arguments[_i];
+        }
+        if (slices.length > this.shape.length) {
+            throw new Error('Excess number of dimensions specified');
+        }
+        var slice_recipe = [];
+        // Each slice specifies the index-range in that dimension to return
+        for (var i = 0; i < slices.length; i++) {
+            var slice = slices[i];
+            var max = this.shape[i];
+            if (slice === undefined || slice === null || slice === ':') {
+                // gather all indices in this dimension
+                slice_recipe.push([0, max]);
+            }
+            else if (typeof slice === 'string') {
+                // assume the slice format to be [<from_index>:<to_index>]
+                // if from_index or to_index is missing then they are replaced
+                // by 0 or max respectively
+                var match = /([-\d]*)\:([-\d]*)/.exec(slice);
+                var from = 0;
+                var to = max;
+                if (match) {
+                    if (match[1] !== '') {
+                        from = parseInt(match[1], 10);
+                    }
+                    if (match[2] !== '') {
+                        to = Math.min(parseInt(match[2], 10), max);
+                    }
+                }
+                slice_recipe.push([from, to]);
+            }
+            else if (typeof slice === 'number') {
+                slice_recipe.push([slice, slice + 1]);
+            }
+            else {
+                throw new Error("Unexpected slice :" + slice);
+            }
+        }
+        // At this point slice_recipe contains an array of index ranges
+        // index range is an array [from_index,to_index]
+        // If slices argument has less slices than the number of dimensions
+        // of this array (i.e. this.shape.length),
+        // then we assume that lower (i.e. inner) dimensions are missing and
+        // we take that as wildcard and return all indices in those
+        // dimensions
+        for (var i = slice_recipe.length; i < this.shape.length; i++) {
+            slice_recipe.push([0, this.shape[i]]);
+        }
+        console.assert(slice_recipe.length === this.shape.length);
+        // From slice_recipe find the total size of the result array
+        // and also the shape of the result array
+        var newsize = 1;
+        var newshape = [];
+        for (var i = 0; i < slice_recipe.length; i++) {
+            var recipe = slice_recipe[i];
+            var dimsize = recipe[1] - recipe[0];
+            newshape.push(dimsize);
+            newsize *= dimsize;
+        }
+        var newndarray;
+        var dataArrayType = getDataArrayType(this.datatype);
+        if (newsize > 0) {
+            // Create result array of the calculated size
+            newndarray = new NDArray(new dataArrayType(newsize), { shape: newshape });
+            // populate the result array from the original array (i.e. this)
+            for (var i = 0; i < newsize; i++) {
+                var newindices = newndarray._addressToIndex(i);
+                var oldindices = newindices.map(function (idx, i) { return idx + slice_recipe[i][0]; });
+                newndarray.set.apply(newndarray, newindices.concat([this.get.apply(this, oldindices)])); // todo
+            }
+        }
+        else {
+            newndarray = new NDArray({ shape: [0] });
+        }
+        return newndarray;
+    };
+    NDArray.prototype.take = function (indices, axis) {
+        !indices;
+        !axis;
+        throw new Error('TODO');
+    };
+    NDArray.prototype.max = function (axis) {
+        if (axis !== undefined && axis !== null) {
+            if (typeof axis === 'number') {
+                if (axis >= this.shape.length) {
+                    throw new Error('axis is out of range');
+                }
+                var maxshape = this.shape.slice();
+                maxshape.splice(axis, 1);
+                var maxsize = maxshape.reduce(function (a, b) { return a * b; }, 1);
+                var maxarr = new NDArray({ datatype: this.datatype, shape: maxshape });
+                for (var i = 0; i < maxsize; i++) {
+                    var maxindex = maxarr._addressToIndex(i);
+                    var sliceindex = maxindex.slice();
+                    sliceindex.splice(axis, 0, ':');
+                    var slice = this.slice.apply(this, sliceindex);
+                    maxarr.set.apply(maxarr, maxindex.concat([slice.max()]));
+                }
+                return maxarr;
+            }
+            else if (Array.isArray(axis)) {
+                throw new Error('TODO');
+            }
+            else {
+                throw new Error('Invalid type for axis');
+            }
+        }
+        else {
+            if (Object.keys(this._idata).length > 0) {
+                throw new Error('TODO');
+            }
+            else {
+                return Math.max.apply(Math.max, this._data);
+            }
+        }
+    };
+    NDArray.prototype.min = function () {
+        throw new Error('TODO');
+    };
+    NDArray.prototype.mean = function () {
+        throw new Error('TODO');
+    };
+    NDArray.prototype.all = function () {
+        throw new Error('TODO');
+    };
+    NDArray.prototype.any = function () {
+        throw new Error('TODO');
+    };
+    NDArray.prototype.sort = function () {
+        throw new Error('TODO');
+    };
+    NDArray.prototype.argsort = function () {
+        throw new Error('TODO');
+    };
+    /*
+    toString(precision=4) {
+      return JSON.stringify(this.toArray(), function (key, val) {
+        !key; // to avoid unused variable warning
+        if(val instanceof Complex) {
+          return val.toString();
+        } else if(typeof val === 'number') {
+          return Number(val.toFixed(precision));
+        } else if(Array.isArray(val) && !Array.isArray(val[0])) {
+          return '['+val.map(v => {
+            if(v instanceof Complex) {
+              return v.toString();
+            } else {
+              return v.toFixed(precision)
+            }
+          }).join(',')+']';
+        } else {
+          return val;
+        }
+      },precision);
+    }
+    */
+    NDArray.prototype.toString = function (precision) {
+        if (precision === void 0) { precision = 4; }
+        if (['i8', 'ui8', 'i16', 'ui16', 'i32', 'ui32'].indexOf(this.datatype) >= 0) {
+            precision = 0;
+        }
+        function whitespace(length) {
+            if (length === void 0) { length = 0; }
+            var s = '';
+            for (var i = 0; i < length; i++) {
+                s += ' ';
+            }
+            return s;
+        }
+        if (this.shape.length <= 0) {
+            return '[]';
+        }
+        var sarr = [];
+        var step = 1;
+        var _loop_1 = function (i) {
+            // Step size in i'th dimension
+            var d = this_1.shape[i];
+            step = step * d;
+            // number of elements in i'th dimension
+            var nelem = this_1.size / step;
+            if (i === this_1.shape.length - 1) {
+                // innermost dimension, create array from all elements
+                for (var j = 0; j < nelem; j++) {
+                    var str = whitespace(i + 1) + '[';
+                    for (var k = 0; k < d; k++) {
+                        var index = j * step + k;
+                        if (this_1._idata[index] === undefined) {
+                            str += this_1._data[index].toFixed(precision);
+                        }
+                        else {
+                            str += new complex_1.default(this_1._data[index], this_1._idata[index])
+                                .toString(precision);
+                        }
+                        if (k < d - 1) {
+                            str += ',';
+                        }
+                    }
+                    str += ']';
+                    sarr.push(str);
+                }
+            }
+            else {
+                // outer dimensions, create array from inner dimension's arrays
+                var sdarr = new Array(nelem);
+                for (var j = 0; j < nelem; j++) {
+                    sdarr[j] =
+                        whitespace(i + 1) + '[\n' +
+                            sarr.slice(j * d, (j + 1) * d).map(function (s) { return whitespace(i + 1) + s; }).join(',\n') + '\n' +
+                            whitespace(i + 1) + ']';
+                }
+                sarr = sdarr;
+            }
+        };
+        var this_1 = this;
+        // iterate over dimensions from innermost to outermost
+        for (var i = this.shape.length - 1; i >= 0; i--) {
+            _loop_1(i);
+        }
+        return sarr[0];
+    };
+    NDArray.prototype.toHTML = function (precision) {
+        if (precision === void 0) { precision = 4; }
+        if (['i8', 'ui8', 'i16', 'ui16', 'i32', 'ui32'].indexOf(this.datatype) >= 0) {
+            precision = 0;
+        }
+        var tagnames = ['table', 'tr', 'td'];
+        if (this.shape.length <= 0) {
+            return '<table></table>';
+        }
+        var sarr = [];
+        var step = 1;
+        // iterate over dimensions from innermost to outermost
+        for (var i = this.shape.length - 1; i >= 0; i--) {
+            // Step size in i'th dimension
+            var d = this.shape[i];
+            step = step * d;
+            var tag = tagnames[(i + 1) % 3];
+            var outertag = tagnames[(3 + i) % 3]; // adding 3 wraps around the mod range
+            // number of elements in i'th dimension
+            var nelem = this.size / step;
+            if (i === this.shape.length - 1) {
+                // innermost dimension, create array from all elements
+                for (var j = 0; j < nelem; j++) {
+                    var str = "<" + outertag + ">";
+                    for (var k = 0; k < d; k++) {
+                        var index = j * step + k;
+                        str += "<" + tag + ">";
+                        if (this._idata[index] === undefined) {
+                            str += this._data[index].toFixed(precision);
+                        }
+                        else {
+                            str += new complex_1.default(this._data[index], this._idata[index])
+                                .toString(precision);
+                        }
+                        str += "</" + tag + ">";
+                    }
+                    str += "</" + outertag + ">";
+                    sarr.push(str);
+                }
+            }
+            else {
+                // outer dimensions, create array from inner dimension's arrays
+                var sdarr = new Array(nelem);
+                for (var j = 0; j < nelem; j++) {
+                    sdarr[j] = "<" + outertag + ">" +
+                        sarr.slice(j * d, (j + 1) * d).join('') +
+                        ("</" + outertag + ">");
+                }
+                sarr = sdarr;
+            }
+        }
+        return sarr[0];
+        //return '<table>'+sarr[0]+'</table>';
+    };
+    return NDArray;
+}());
+exports.default = NDArray;
 
 
 /***/ }),
@@ -4807,52 +5192,15 @@ along with bluemath. If not, see <http://www.gnu.org/licenses/>.
 
 */
 Object.defineProperty(exports, "__esModule", { value: true });
-var src_1 = __webpack_require__(1);
-function testConstruction() {
-    QUnit.module('Construction', function () {
-        QUnit.module('eye', function () {
-            QUnit.test('Square 2x2', function (assert) {
-                var I = src_1.eye(2);
-                assert.equal(I.get(0, 0), 1);
-                assert.equal(I.get(0, 1), 0);
-                assert.equal(I.get(1, 0), 0);
-                assert.equal(I.get(1, 1), 1);
-            });
-            QUnit.test('Rectangular 2x3', function (assert) {
-                var I = src_1.eye([2, 3]);
-                assert.equal(I.get(0, 0), 1);
-                assert.equal(I.get(0, 1), 0);
-                assert.equal(I.get(1, 0), 0);
-                assert.equal(I.get(1, 1), 1);
-                assert.equal(I.get(0, 2), 0);
-                assert.equal(I.get(1, 2), 0);
-            });
-            QUnit.test('Rectangular 3x2', function (assert) {
-                var I = src_1.eye([3, 2]);
-                assert.equal(I.get(0, 0), 1);
-                assert.equal(I.get(0, 1), 0);
-                assert.equal(I.get(1, 0), 0);
-                assert.equal(I.get(1, 1), 1);
-                assert.equal(I.get(2, 0), 0);
-                assert.equal(I.get(2, 1), 0);
-            });
-        });
-        QUnit.module('zeros', function () {
-            QUnit.test('Rectangular 2x2', function (assert) {
-                var Z = src_1.zeros(2);
-                assert.equal(Z.get(0, 0), 0);
-                assert.equal(Z.get(0, 1), 0);
-                assert.equal(Z.get(1, 0), 0);
-                assert.equal(Z.get(1, 1), 0);
-            });
-            QUnit.test('Rectangular 2x2 ui32', function (assert) {
-                var Z = src_1.zeros([2, 2], 'ui32');
-                assert.equal(Z.datatype, 'ui32');
-            });
-        });
+var ops_1 = __webpack_require__(33);
+var lapack_1 = __webpack_require__(34);
+function testLinalg() {
+    QUnit.module('linalg', function () {
+        ops_1.default();
+        lapack_1.default();
     });
 }
-exports.default = testConstruction;
+exports.default = testLinalg;
 
 
 /***/ }),
@@ -4882,584 +5230,9 @@ You should have received a copy of the GNU Affero General Public License
 along with bluemath. If not, see <http://www.gnu.org/licenses/>.
 
 */
-var src_1 = __webpack_require__(1);
-function testLAPACK() {
-    QUnit.module('LAPACK', function () {
-        QUnit.module('BLAS Level 1', function () {
-            QUnit.module('dot', function () {
-                QUnit.test('sdot', function (assert) {
-                    var sx = new src_1.NDArray([1, 2, 3, 4]);
-                    var sy = new src_1.NDArray([2, 3, 4, 5]);
-                    assert.equal(src_1.linalg.lapack.dot(sx.data, sy.data), 40);
-                });
-                QUnit.test('ddot', function (assert) {
-                    var dx = new src_1.NDArray([1, 2, 3, 4], { datatype: 'f64' });
-                    var dy = new src_1.NDArray([2, 3, 4, 5], { datatype: 'f64' });
-                    assert.equal(src_1.linalg.lapack.dot(dx.data, dy.data), 40);
-                });
-            });
-        });
-        QUnit.module('BLAS Level 2', function () {
-            QUnit.module('gemv', function () {
-                QUnit.test('sgemv', function (assert) {
-                    var A = new src_1.NDArray([
-                        [2, 3, 4, 5],
-                        [1, 0, 7, 5]
-                    ]);
-                    var x = new src_1.NDArray([2, 2, 2, 2]);
-                    var y = new src_1.NDArray([3, 3]);
-                    src_1.linalg.lapack.gemv(2, A.data, A.shape[0], A.shape[1], x.data, y.data, 5);
-                    assert.deepEqual(y.toArray(), [71, 67]);
-                });
-                QUnit.test('dgemv', function (assert) {
-                    var A = new src_1.NDArray([
-                        [2, 3, 4, 5],
-                        [1, 0, 7, 5]
-                    ], { datatype: 'f64' });
-                    var x = new src_1.NDArray([2, 2, 2, 2], { datatype: 'f64' });
-                    var y = new src_1.NDArray([1, 1], { datatype: 'f64' });
-                    src_1.linalg.lapack.gemv(2, A.data, A.shape[0], A.shape[1], x.data, y.data, 5);
-                    assert.deepEqual(y.toArray(), [61, 57]);
-                });
-            });
-        });
-        QUnit.module('BLAS Level 3', function () {
-            QUnit.module('gemm', function () {
-                QUnit.test('sgemm', function (assert) {
-                    var A = new src_1.NDArray([
-                        [1, 1, 1, 1],
-                        [1, 1, 1, 1],
-                        [1, 1, 1, 1],
-                        [1, 1, 1, 1]
-                    ]);
-                    var B = new src_1.NDArray([
-                        [1, 1, 1, 1],
-                        [1, 1, 1, 1],
-                        [1, 1, 1, 1],
-                        [1, 1, 1, 1]
-                    ]);
-                    var C = new src_1.NDArray([
-                        [1, 1, 1, 1],
-                        [1, 1, 1, 1],
-                        [1, 1, 1, 1],
-                        [1, 1, 1, 1]
-                    ]);
-                    src_1.linalg.lapack.gemm(A.data, B.data, C.data, 4, 4, 4, 1.5, 2.5);
-                    assert.deepEqual(C.toArray(), [
-                        [8.5, 8.5, 8.5, 8.5],
-                        [8.5, 8.5, 8.5, 8.5],
-                        [8.5, 8.5, 8.5, 8.5],
-                        [8.5, 8.5, 8.5, 8.5]
-                    ]);
-                });
-                QUnit.test('dgemm', function (assert) {
-                    var A = new src_1.NDArray([
-                        [1, 1, 1, 1],
-                        [1, 1, 1, 1],
-                        [1, 1, 1, 1],
-                        [1, 1, 1, 1]
-                    ], { datatype: 'f64' });
-                    var B = new src_1.NDArray([
-                        [1, 1, 1, 1],
-                        [1, 1, 1, 1],
-                        [1, 1, 1, 1],
-                        [1, 1, 1, 1]
-                    ], { datatype: 'f64' });
-                    var C = new src_1.NDArray([
-                        [1, 1, 1, 1],
-                        [1, 1, 1, 1],
-                        [1, 1, 1, 1],
-                        [1, 1, 1, 1]
-                    ], { datatype: 'f64' });
-                    src_1.linalg.lapack.gemm(A.data, B.data, C.data, 4, 4, 4, 1.5, 3.5);
-                    assert.deepEqual(C.toArray(), [
-                        [9.5, 9.5, 9.5, 9.5],
-                        [9.5, 9.5, 9.5, 9.5],
-                        [9.5, 9.5, 9.5, 9.5],
-                        [9.5, 9.5, 9.5, 9.5]
-                    ]);
-                });
-            });
-        });
-        QUnit.module('gesv', function () {
-            QUnit.test('sgesv - no permutation', function (assert) {
-                var A = new src_1.NDArray([
-                    [11, -3, 0],
-                    [-3, 6, -1],
-                    [0, -1, 3]
-                ]);
-                var x = new src_1.NDArray([30, 5, -25]);
-                var ipiv = src_1.linalg.lapack.gesv(A.data, x.data, A.shape[0], 1);
-                assert.deepEqual(x.toArray(), [3, 1, -8]);
-                assert.deepEqual(Array.prototype.slice.call(ipiv), [1, 2, 3]);
-            });
-            QUnit.test('sgesv - permutation', function (assert) {
-                var A = new src_1.NDArray([
-                    [-3, 6, -1],
-                    [11, -3, 0],
-                    [0, -1, 3]
-                ]);
-                var x = new src_1.NDArray([30, 5, -25]); // TODO: why this doesn't have to change?
-                var ipiv = src_1.linalg.lapack.gesv(A.data, x.data, A.shape[0], 1);
-                assert.deepEqual(x.toArray(), [1, 3, -8]);
-                assert.deepEqual(Array.prototype.slice.call(ipiv), [2, 2, 3]);
-            });
-            QUnit.test('dgesv - no permutation', function (assert) {
-                var A = new src_1.NDArray([
-                    [11, -3, 0],
-                    [-3, 6, -1],
-                    [0, -1, 3]
-                ], { datatype: 'f64' });
-                var x = new src_1.NDArray([30, 5, -25], { datatype: 'f64' });
-                var ipiv = src_1.linalg.lapack.gesv(A.data, x.data, A.shape[0], 1);
-                assert.deepEqual(x.toArray(), [3, 1, -8]);
-                assert.deepEqual(Array.prototype.slice.call(ipiv), [1, 2, 3]);
-            });
-            QUnit.test('dgesv - permutation', function (assert) {
-                var A = new src_1.NDArray([
-                    [-3, 6, -1],
-                    [11, -3, 0],
-                    [0, -1, 3]
-                ], { datatype: 'f64' });
-                var x = new src_1.NDArray([30, 5, -25], { datatype: 'f64' }); // TODO: why this doesn't have to change?
-                var ipiv = src_1.linalg.lapack.gesv(A.data, x.data, A.shape[0], 1);
-                assert.deepEqual(x.toArray(), [1, 3, -8]);
-                assert.deepEqual(Array.prototype.slice.call(ipiv), [2, 2, 3]);
-            });
-        });
-        // TODO
-        QUnit.module('gesdd', function () {
-            QUnit.test('dgesdd', function (assert) {
-                var A = new src_1.NDArray([
-                    [-3, 6, -1],
-                    [11, -3, 0],
-                    [0, -1, 3]
-                ], { datatype: 'f64' });
-                A.swapOrder();
-                var U = new src_1.NDArray({ shape: [3, 3] });
-                var VT = new src_1.NDArray({ shape: [3, 3] });
-                var S = new src_1.NDArray({ shape: [3] });
-                src_1.linalg.lapack.gesdd(A.data, 3, 3, U.data, S.data, VT.data, 'A');
-                U.swapOrder();
-                VT.swapOrder();
-                // Results generated from numpy
-                assert.ok(U.isEqual(new src_1.NDArray([
-                    [-0.42847299, -0.81649658, 0.386968],
-                    [0.90241006, -0.40824829, 0.1378021],
-                    [0.04546408, 0.40824829, 0.91173809]
-                ])));
-                assert.ok(S.isEqual(new src_1.NDArray([
-                    12.4244289, 5.0, 2.5755711
-                ])));
-                assert.ok(VT.isEqual(new src_1.NDArray([
-                    [0.90241006, -0.42847299, 0.04546408],
-                    [-0.40824829, -0.81649658, 0.40824829],
-                    [0.1378021, 0.386968, 0.91173809]
-                ])));
-            });
-            QUnit.test('sgesdd', function (assert) {
-                var A = new src_1.NDArray([
-                    [-3, 6, -1],
-                    [11, -3, 0],
-                    [0, -1, 3]
-                ], { datatype: 'f32' });
-                A.swapOrder();
-                var U = new src_1.NDArray({ shape: [3, 3] });
-                var VT = new src_1.NDArray({ shape: [3, 3] });
-                var S = new src_1.NDArray({ shape: [3] });
-                src_1.linalg.lapack.gesdd(A.data, 3, 3, U.data, S.data, VT.data, 'A');
-                U.swapOrder();
-                VT.swapOrder();
-                // Results generated from numpy
-                assert.ok(U.isEqual(new src_1.NDArray([
-                    [-0.42847299, -0.81649658, 0.386968],
-                    [0.90241006, -0.40824829, 0.1378021],
-                    [0.04546408, 0.40824829, 0.91173809]
-                ])));
-                assert.ok(S.isEqual(new src_1.NDArray([
-                    12.4244289, 5.0, 2.5755711
-                ])));
-                assert.ok(VT.isEqual(new src_1.NDArray([
-                    [0.90241006, -0.42847299, 0.04546408],
-                    [-0.40824829, -0.81649658, 0.40824829],
-                    [0.1378021, 0.386968, 0.91173809]
-                ])));
-            });
-        });
-        QUnit.module('gelsd', function () {
-            QUnit.test('dgelsd', function (assert) {
-                var Y = new src_1.NDArray([-1, 0.2, 0.9, 2.1]);
-                var A = new src_1.NDArray([
-                    [0, 1], [1, 1], [2, 1], [3, 1]
-                ]);
-                var S = new src_1.NDArray({ shape: [2] });
-                src_1.linalg.lapack.gelsd(A.data, 4, 2, 1, -1, Y.data, S.data);
-                /*
-                Test output computed from numpy.linalg.lapack_lite.dgelsd execution
-                with same input data
-                In [20]: A = np.array([[0,1],[1,1],[2,1],[3,1]],np.double)
-                In [21]: B = np.array([-1,0.2,0.9,2.1],np.double)
-                In [22]: np.linalg.lapack_lite.dgelsd(4,2,1,A,4,B,4,np.zeros(2),-1,0,work,802,np.zeros(20,np.int32),0)
-                */
-                assert.ok(A.isEqual(new src_1.NDArray([
-                    [-1.73205081, 0.],
-                    [0.57735027, 0.57735027],
-                    [-2.88675135, 2.5819889],
-                    [-0.04056742, 0.41363159]
-                ])));
-                assert.ok(Y.isEqual(new src_1.NDArray([
-                    1.65, -0.35, 0.4356074, 1.35655674
-                ])));
-            });
-        });
-        QUnit.module('getrf', function () {
-            QUnit.test('dgetrf', function (assert) {
-                var A = new src_1.NDArray([
-                    [3, 6, 2],
-                    [1, 7, 6],
-                    [9, 3, 2]
-                ], { datatype: 'f64' });
-                var ipiv = new src_1.NDArray({ shape: [3], datatype: 'i32' });
-                A.swapOrder();
-                src_1.linalg.lapack.getrf(A.data, 3, 3, ipiv.data);
-                A.swapOrder();
-                var customLU = new src_1.NDArray([
-                    [3, 6, 2],
-                    [1, 7, 6],
-                    [9, 3, 2]
-                ], { datatype: 'f64' });
-                src_1.linalg.lu_custom(customLU);
-                assert.ok(A.isEqual(customLU, 1e-4));
-            });
-        });
-        QUnit.module('geev', function () {
-            QUnit.test('dgeev 3x3', function (assert) {
-                /*
-                let A = new NDArray([
-                  [3,6,2],
-                  [1,7,6],
-                  [9,3,2]
-                ],{datatype:'f64'});
-                */
-                var A = new src_1.NDArray([
-                    [1, 0, 0],
-                    [0, 2, 0],
-                    [0, 0, 3]
-                ], { datatype: 'f64' });
-                A.swapOrder();
-                var _a = src_1.linalg.lapack.geev(A.data, 3, true, true), WR = _a[0], WI = _a[1], VL = _a[2], VR = _a[3];
-                assert.ok(WR[0] === 1 && WR[1] === 2 && WR[2] === 3);
-                assert.ok(WI[0] === 0 && WI[1] === 0 && WI[2] === 0);
-                var vl = new src_1.NDArray(VL, { shape: [3, 3] });
-                var vr = new src_1.NDArray(VR, { shape: [3, 3] });
-                vl.swapOrder();
-                vr.swapOrder();
-                assert.ok(vl.isEqual(new src_1.NDArray([
-                    [1, 0, 0],
-                    [0, 1, 0],
-                    [0, 0, 1]
-                ])));
-                assert.ok(vr.isEqual(new src_1.NDArray([
-                    [1, 0, 0],
-                    [0, 1, 0],
-                    [0, 0, 1]
-                ])));
-            });
-            QUnit.test('dgeev 2x2', function (assert) {
-                var A = new src_1.NDArray([
-                    [3, 1],
-                    [0, 2],
-                ], { datatype: 'f64' });
-                A.swapOrder();
-                var _a = src_1.linalg.lapack.geev(A.data, 2, true, true), WR = _a[0], WI = _a[1], VL = _a[2], VR = _a[3];
-                var vl = new src_1.NDArray(VL, { shape: [2, 2] });
-                var vr = new src_1.NDArray(VR, { shape: [2, 2] });
-                vl.swapOrder();
-                vr.swapOrder();
-                assert.equal(WR[0], 3);
-                assert.equal(WR[1], 2);
-                assert.equal(WI[0], 0);
-                assert.equal(WI[1], 0);
-                //assert.ok(vl.isEqual(new NDArray([[0.7071,0.0000],[0.7071,1.0000]]),1e-4))
-                // As returned by numpy (it only returns right eigen vectors)
-                assert.ok(vr.isEqual(new src_1.NDArray([[1.0000, -0.7071,], [0.0000, 0.7071]]), 1e-4));
-            });
-        });
-        QUnit.module('geqrf-orgqr', function () {
-            QUnit.test('dgeqrf-dorgqr', function (assert) {
-                var A = new src_1.NDArray([
-                    [3, 6, 2],
-                    [1, 7, 6],
-                    [9, 3, 2]
-                ]);
-                var tau = new src_1.NDArray({ shape: [3], datatype: 'f64' });
-                src_1.linalg.lapack.geqrf(A.data, 3, 3, tau.data);
-                assert.ok(A.isEqual(new src_1.NDArray([
-                    [-7., 0.6, 0.2],
-                    [-8.14285714, -4.43777845, 0.7008373],
-                    [-7., 3.38006959, 5.79440502]
-                ])));
-                assert.ok(tau.isEqual(new src_1.NDArray([
-                    1.42857143, 1.34122607, 0.
-                ])));
-                src_1.linalg.lapack.orgqr(A.data, 3, 3, 3, tau.data);
-                assert.ok(A.isEqual(new src_1.NDArray([
-                    [-0.42857143, -0.85714286, -0.28571429],
-                    [0.56104557, -0.00459873, -0.82777215],
-                    [0.70820506, -0.51505822, 0.48286708]
-                ])));
-            });
-        });
-        QUnit.module('potrf', function () {
-            QUnit.test('dpotrf', function (assert) {
-                // From wikipedia
-                var A = new src_1.NDArray([
-                    [4, 12, -16],
-                    [12, 37, -43],
-                    [-16, -43, 98]
-                ]);
-                src_1.linalg.lapack.potrf(A.data, 3);
-                //TODO: this only passes if internally 'L' is specified for UPLO
-                assert.equal(A.get(0, 0), 2);
-                assert.equal(A.get(0, 1), 6);
-                assert.equal(A.get(0, 2), -8);
-                assert.equal(A.get(1, 1), 1);
-                assert.equal(A.get(1, 2), 5);
-                assert.equal(A.get(2, 2), 3);
-            });
-        });
-    });
-}
-exports.default = testLAPACK;
-
-
-/***/ }),
-/* 34 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-/*
-
-Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
-
-This file is part of bluemath.
-
-bluemath is free software: you can redistribute it and/or modify
-it under the terms of the GNU Affero General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-bluemath is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU Affero General Public License for more details.
-
-You should have received a copy of the GNU Affero General Public License
-along with bluemath. If not, see <http://www.gnu.org/licenses/>.
-
-*/
-var src_1 = __webpack_require__(1);
-// For debugging purposes
-window.bluemath = {
-    NDArray: src_1.NDArray,
-    Complex: src_1.Complex
-};
-function testOperations() {
-    QUnit.module('Operations', function () {
-        QUnit.module('add', function () {
-            QUnit.test('Real numbers', function (assert) {
-                assert.equal(src_1.add(4, 5), 9);
-                assert.equal(src_1.add(4, 5, 10), 19);
-            });
-            QUnit.test('Real and Complex numbers', function (assert) {
-                assert.ok(new src_1.Complex(9, 5).isEqual(src_1.add(4, new src_1.Complex(5, 5))));
-                assert.ok(new src_1.Complex(9, 5).isEqual(src_1.add(new src_1.Complex(5, 5), 4)));
-                assert.ok(new src_1.Complex(19, 5).isEqual(src_1.add(4, new src_1.Complex(5, 5), 10)));
-                assert.ok(new src_1.Complex(9, 15).isEqual(src_1.add(4, new src_1.Complex(5, 5), new src_1.Complex(0, 10))));
-            });
-            QUnit.test('Real numbers and NDArray', function (assert) {
-                assert.ok(new src_1.NDArray([4, 4, 4]).isEqual(src_1.add(new src_1.NDArray([1, 1, 1]), 3)));
-                assert.ok(new src_1.NDArray([4, 4, 4]).isEqual(src_1.add(3, new src_1.NDArray([1, 1, 1]))));
-                assert.ok(new src_1.NDArray([4, 4, 4]).isEqual(src_1.add(1, 2, new src_1.NDArray([1, 1, 1]))));
-                assert.ok(new src_1.NDArray([4, 4, 4]).isEqual(src_1.add(1, new src_1.NDArray([1, 1, 1]), 2)));
-                assert.ok(new src_1.NDArray([[4, 4], [4, 4]]).isEqual(src_1.add(new src_1.NDArray([[1, 1], [1, 1]]), 3)));
-            });
-            QUnit.test('Complex numbers and NDArray', function (assert) {
-                var sarr = new src_1.NDArray({ shape: [3] });
-                sarr.set(0, new src_1.Complex(1, 1));
-                sarr.set(1, new src_1.Complex(1, 2));
-                sarr.set(2, new src_1.Complex(2, 1));
-                var tarr = sarr.clone();
-                tarr.set(0, new src_1.Complex(2, 2));
-                tarr.set(1, new src_1.Complex(2, 3));
-                tarr.set(2, new src_1.Complex(3, 2));
-                assert.ok(tarr.isEqual(src_1.add(sarr, new src_1.Complex(1, 1))));
-                assert.ok(tarr.isEqual(src_1.add(new src_1.Complex(1, 1), sarr)));
-                assert.ok(tarr.isEqual(src_1.add(new src_1.Complex(0, 1), sarr, new src_1.Complex(1, 0))));
-                sarr = new src_1.NDArray({ shape: [2, 2] });
-                sarr.set(0, 0, new src_1.Complex(3, 3));
-                sarr.set(0, 1, new src_1.Complex(3, 3));
-                sarr.set(1, 0, new src_1.Complex(5, 5));
-                sarr.set(1, 1, new src_1.Complex(5, 5));
-                tarr = sarr.clone();
-                tarr.set(0, 0, new src_1.Complex(4, 4));
-                tarr.set(0, 1, new src_1.Complex(4, 4));
-                tarr.set(1, 0, new src_1.Complex(6, 6));
-                tarr.set(1, 1, new src_1.Complex(6, 6));
-                assert.ok(tarr.isEqual(src_1.add(sarr, new src_1.Complex(1, 1))));
-                assert.ok(tarr.isEqual(src_1.add(1, sarr, new src_1.Complex(0, 1))));
-                sarr = new src_1.NDArray({ shape: [2, 2] });
-                sarr.set(0, 0, new src_1.Complex(3, 3));
-                sarr.set(0, 1, 3);
-                sarr.set(1, 0, new src_1.Complex(5, 5));
-                sarr.set(1, 1, 5);
-                tarr = sarr.clone();
-                tarr.set(0, 0, new src_1.Complex(4, 4));
-                tarr.set(0, 1, new src_1.Complex(3, 1));
-                tarr.set(1, 0, new src_1.Complex(6, 6));
-                tarr.set(1, 1, new src_1.Complex(6, 1));
-                assert.ok(tarr.isEqual(src_1.add(sarr, new src_1.Complex(1, 1))));
-            });
-            QUnit.test('NDArrays', function (assert) {
-                var arrA = new src_1.NDArray([1, 1, 1]);
-                var arrB = new src_1.NDArray([1, 1, 1]);
-                assert.ok(new src_1.NDArray([2, 2, 2]).isEqual(src_1.add(arrA, arrB)));
-                assert.ok(new src_1.NDArray([3, 3, 3]).isEqual(src_1.add(arrA, arrB, arrA)));
-                assert.ok(new src_1.NDArray([4, 4, 4]).isEqual(src_1.add(arrA, arrB, 1, arrA)));
-                assert.throws(function () {
-                    src_1.add(arrA, new src_1.NDArray([[1, 2], [4, 4]]));
-                });
-                assert.throws(function () {
-                    src_1.add(arrA, new src_1.NDArray([1, 1]));
-                });
-                var sarr1 = new src_1.NDArray({ shape: [2] });
-                sarr1.set(0, new src_1.Complex(1, 1));
-                sarr1.set(1, new src_1.Complex(2, 0));
-                var sarr2 = new src_1.NDArray({ shape: [2] });
-                sarr2.set(0, 1);
-                sarr2.set(1, new src_1.Complex(0, 1));
-                var tarr = new src_1.NDArray({ shape: [2] });
-                tarr.set(0, new src_1.Complex(2, 1));
-                tarr.set(1, new src_1.Complex(2, 1));
-                assert.ok(tarr.isEqual(src_1.add(sarr1, sarr2)));
-            });
-        });
-        QUnit.module('mul', function () {
-            QUnit.test("Real and Complex numbers", function (assert) {
-                assert.equal(src_1.mul(2, 5), 10);
-                assert.equal(src_1.mul(2, 5, 3), 30);
-                assert.ok(new src_1.Complex(4, 6).isEqual(src_1.mul(2, new src_1.Complex(2, 3))));
-                assert.ok(new src_1.Complex(4, 6).isEqual(src_1.mul(new src_1.Complex(2, 3), 2)));
-                assert.ok(new src_1.Complex(12, 18).isEqual(src_1.mul(new src_1.Complex(2, 3), 2, 3)));
-                assert.ok(new src_1.Complex(-6, 10).isEqual(src_1.mul(new src_1.Complex(1, 4), new src_1.Complex(2, 2))));
-                assert.ok(new src_1.Complex(-28, 24).isEqual(src_1.mul(new src_1.Complex(1, 4), new src_1.Complex(2, 2), new src_1.Complex(3, 1))));
-            });
-            QUnit.test('Numbers and NDArray', function (assert) {
-                assert.ok(new src_1.NDArray([4, 4]).isEqual(src_1.mul(2, new src_1.NDArray([2, 2]))));
-                assert.ok(new src_1.NDArray([4, 4]).isEqual(src_1.mul(new src_1.NDArray([2, 2]), 2)));
-                assert.ok(new src_1.NDArray([8, 8]).isEqual(src_1.mul(new src_1.NDArray([2, 2]), 2, 2)));
-                var sarr = new src_1.NDArray({ shape: [2] });
-                sarr.set(0, new src_1.Complex(2, 2));
-                sarr.set(1, 2);
-                var tarr = sarr.clone();
-                tarr.set(0, new src_1.Complex(6, 6));
-                tarr.set(1, 6);
-                assert.ok(tarr.isEqual(src_1.mul(sarr, 3)));
-            });
-            QUnit.test('NDArrays', function (assert) {
-                var A = new src_1.NDArray([[2, 2, 2], [2, 2, 2], [2, 2, 2]], { datatype: 'i16' });
-                var B = new src_1.NDArray([[5, 5, 5], [5, 5, 5], [5, 5, 5]], { datatype: 'i16' });
-                var M = src_1.mul(A, B);
-                assert.ok(M.isEqual(new src_1.NDArray([
-                    [30, 30, 30],
-                    [30, 30, 30],
-                    [30, 30, 30]
-                ])));
-            });
-        });
-        QUnit.module('sub', function () {
-            QUnit.test('Real and complex numbers', function (assert) {
-                assert.equal(src_1.sub(3, 4), -1);
-                assert.ok(new src_1.Complex(0, -3).isEqual(src_1.sub(3, new src_1.Complex(3, 3))));
-                assert.ok(new src_1.Complex(2, 3).isEqual(src_1.sub(new src_1.Complex(3, 3), 1)));
-                assert.ok(new src_1.Complex(2, 2).isEqual(src_1.sub(new src_1.Complex(3, 3), new src_1.Complex(1, 1))));
-            });
-            QUnit.test('Numbers and NDArrays', function (assert) {
-                var A = new src_1.NDArray([
-                    [4, 5],
-                    [2, 7]
-                ]);
-                assert.ok(new src_1.NDArray([
-                    [3, 4],
-                    [1, 6]
-                ]).isEqual(src_1.sub(A, 1)));
-                assert.ok(new src_1.NDArray([
-                    [-3, -4],
-                    [-1, -6]
-                ]).isEqual(src_1.sub(1, A)));
-                var sarr = new src_1.NDArray({ shape: [2] });
-                sarr.set(0, 3);
-                sarr.set(1, new src_1.Complex(4, 5));
-                var tarr = sarr.clone();
-                tarr.set(0, 2);
-                tarr.set(1, new src_1.Complex(3, 5));
-                assert.ok(tarr.isEqual(src_1.sub(sarr, 1)));
-                tarr = sarr.clone();
-                tarr.set(0, -2);
-                tarr.set(1, new src_1.Complex(-3, -5));
-                assert.ok(tarr.isEqual(src_1.sub(1, sarr)));
-                tarr = sarr.clone();
-                tarr.set(0, new src_1.Complex(-2, 1));
-                tarr.set(1, new src_1.Complex(-3, -4));
-                assert.ok(tarr.isEqual(src_1.sub(new src_1.Complex(1, 1), sarr)));
-                tarr = sarr.clone();
-                tarr.set(0, new src_1.Complex(2, -1));
-                tarr.set(1, new src_1.Complex(3, 4));
-                assert.ok(tarr.isEqual(src_1.sub(sarr, new src_1.Complex(1, 1))));
-            });
-            QUnit.test('NDArrays', function (assert) {
-                var A = new src_1.NDArray([
-                    [4, 5],
-                    [2, 7]
-                ]);
-                var B = new src_1.NDArray([
-                    [1, 4],
-                    [5, 2]
-                ]);
-                assert.ok(new src_1.NDArray([
-                    [3, 1],
-                    [-3, 5]
-                ]).isEqual(src_1.sub(A, B)));
-                var sarr1 = new src_1.NDArray({ shape: [2] });
-                sarr1.set(0, 3);
-                sarr1.set(1, new src_1.Complex(4, 5));
-                var sarr2 = new src_1.NDArray([3, 3]);
-                var tarr = sarr1.clone();
-                tarr.set(0, 0);
-                tarr.set(1, new src_1.Complex(1, 5));
-                assert.ok(tarr.isEqual(src_1.sub(sarr1, sarr2)));
-            });
-        });
-        QUnit.module('div', function () {
-            QUnit.test('Real and complex numbers', function (assert) {
-                assert.equal(src_1.div(10, 5), 2);
-                assert.ok(new src_1.Complex(6, 8).isEqual(src_1.div(new src_1.Complex(12, 16), 2)));
-                assert.ok(new src_1.Complex(0.8, -1.6).isEqual(src_1.div(4, new src_1.Complex(1, 2))));
-            });
-            QUnit.test('Numbers and NDArray', function (assert) {
-                var A = new src_1.NDArray([4, 6, 8]);
-                assert.ok(new src_1.NDArray([2, 3, 4]).isEqual(src_1.div(A, 2)));
-                var sarr = new src_1.NDArray({ shape: [2] });
-                sarr.set(0, 4);
-                sarr.set(1, new src_1.Complex(4, 4));
-                var tarr = new src_1.NDArray({ shape: [2] });
-                tarr.set(0, 2);
-                tarr.set(1, new src_1.Complex(2, 2));
-                assert.ok(tarr.isEqual(src_1.div(sarr, 2)));
-            });
-        });
+var src_1 = __webpack_require__(0);
+function testOps() {
+    QUnit.module('Ops', function () {
         QUnit.module('matmul', function () {
             QUnit.test("Square 3x3", function (assert) {
                 var A = new src_1.NDArray([[2, 2, 2], [2, 2, 2], [2, 2, 2]], { datatype: 'i16' });
@@ -6311,197 +6084,663 @@ function testOperations() {
         });
     });
 }
-exports.default = testOperations;
+exports.default = testOps;
+
+
+/***/ }),
+/* 34 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+/*
+
+Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
+
+This file is part of bluemath.
+
+bluemath is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+bluemath is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with bluemath. If not, see <http://www.gnu.org/licenses/>.
+
+*/
+var src_1 = __webpack_require__(0);
+function testLAPACK() {
+    QUnit.module('LAPACK', function () {
+        QUnit.module('BLAS Level 1', function () {
+            QUnit.module('dot', function () {
+                QUnit.test('sdot', function (assert) {
+                    var sx = new src_1.NDArray([1, 2, 3, 4]);
+                    var sy = new src_1.NDArray([2, 3, 4, 5]);
+                    assert.equal(src_1.linalg.lapack.dot(sx.data, sy.data), 40);
+                });
+                QUnit.test('ddot', function (assert) {
+                    var dx = new src_1.NDArray([1, 2, 3, 4], { datatype: 'f64' });
+                    var dy = new src_1.NDArray([2, 3, 4, 5], { datatype: 'f64' });
+                    assert.equal(src_1.linalg.lapack.dot(dx.data, dy.data), 40);
+                });
+            });
+        });
+        QUnit.module('BLAS Level 2', function () {
+            QUnit.module('gemv', function () {
+                QUnit.test('sgemv', function (assert) {
+                    var A = new src_1.NDArray([
+                        [2, 3, 4, 5],
+                        [1, 0, 7, 5]
+                    ]);
+                    var x = new src_1.NDArray([2, 2, 2, 2]);
+                    var y = new src_1.NDArray([3, 3]);
+                    src_1.linalg.lapack.gemv(2, A.data, A.shape[0], A.shape[1], x.data, y.data, 5);
+                    assert.deepEqual(y.toArray(), [71, 67]);
+                });
+                QUnit.test('dgemv', function (assert) {
+                    var A = new src_1.NDArray([
+                        [2, 3, 4, 5],
+                        [1, 0, 7, 5]
+                    ], { datatype: 'f64' });
+                    var x = new src_1.NDArray([2, 2, 2, 2], { datatype: 'f64' });
+                    var y = new src_1.NDArray([1, 1], { datatype: 'f64' });
+                    src_1.linalg.lapack.gemv(2, A.data, A.shape[0], A.shape[1], x.data, y.data, 5);
+                    assert.deepEqual(y.toArray(), [61, 57]);
+                });
+            });
+        });
+        QUnit.module('BLAS Level 3', function () {
+            QUnit.module('gemm', function () {
+                QUnit.test('sgemm', function (assert) {
+                    var A = new src_1.NDArray([
+                        [1, 1, 1, 1],
+                        [1, 1, 1, 1],
+                        [1, 1, 1, 1],
+                        [1, 1, 1, 1]
+                    ]);
+                    var B = new src_1.NDArray([
+                        [1, 1, 1, 1],
+                        [1, 1, 1, 1],
+                        [1, 1, 1, 1],
+                        [1, 1, 1, 1]
+                    ]);
+                    var C = new src_1.NDArray([
+                        [1, 1, 1, 1],
+                        [1, 1, 1, 1],
+                        [1, 1, 1, 1],
+                        [1, 1, 1, 1]
+                    ]);
+                    src_1.linalg.lapack.gemm(A.data, B.data, C.data, 4, 4, 4, 1.5, 2.5);
+                    assert.deepEqual(C.toArray(), [
+                        [8.5, 8.5, 8.5, 8.5],
+                        [8.5, 8.5, 8.5, 8.5],
+                        [8.5, 8.5, 8.5, 8.5],
+                        [8.5, 8.5, 8.5, 8.5]
+                    ]);
+                });
+                QUnit.test('dgemm', function (assert) {
+                    var A = new src_1.NDArray([
+                        [1, 1, 1, 1],
+                        [1, 1, 1, 1],
+                        [1, 1, 1, 1],
+                        [1, 1, 1, 1]
+                    ], { datatype: 'f64' });
+                    var B = new src_1.NDArray([
+                        [1, 1, 1, 1],
+                        [1, 1, 1, 1],
+                        [1, 1, 1, 1],
+                        [1, 1, 1, 1]
+                    ], { datatype: 'f64' });
+                    var C = new src_1.NDArray([
+                        [1, 1, 1, 1],
+                        [1, 1, 1, 1],
+                        [1, 1, 1, 1],
+                        [1, 1, 1, 1]
+                    ], { datatype: 'f64' });
+                    src_1.linalg.lapack.gemm(A.data, B.data, C.data, 4, 4, 4, 1.5, 3.5);
+                    assert.deepEqual(C.toArray(), [
+                        [9.5, 9.5, 9.5, 9.5],
+                        [9.5, 9.5, 9.5, 9.5],
+                        [9.5, 9.5, 9.5, 9.5],
+                        [9.5, 9.5, 9.5, 9.5]
+                    ]);
+                });
+            });
+        });
+        QUnit.module('gesv', function () {
+            QUnit.test('sgesv - no permutation', function (assert) {
+                var A = new src_1.NDArray([
+                    [11, -3, 0],
+                    [-3, 6, -1],
+                    [0, -1, 3]
+                ]);
+                var x = new src_1.NDArray([30, 5, -25]);
+                var ipiv = src_1.linalg.lapack.gesv(A.data, x.data, A.shape[0], 1);
+                assert.deepEqual(x.toArray(), [3, 1, -8]);
+                assert.deepEqual(Array.prototype.slice.call(ipiv), [1, 2, 3]);
+            });
+            QUnit.test('sgesv - permutation', function (assert) {
+                var A = new src_1.NDArray([
+                    [-3, 6, -1],
+                    [11, -3, 0],
+                    [0, -1, 3]
+                ]);
+                var x = new src_1.NDArray([30, 5, -25]); // TODO: why this doesn't have to change?
+                var ipiv = src_1.linalg.lapack.gesv(A.data, x.data, A.shape[0], 1);
+                assert.deepEqual(x.toArray(), [1, 3, -8]);
+                assert.deepEqual(Array.prototype.slice.call(ipiv), [2, 2, 3]);
+            });
+            QUnit.test('dgesv - no permutation', function (assert) {
+                var A = new src_1.NDArray([
+                    [11, -3, 0],
+                    [-3, 6, -1],
+                    [0, -1, 3]
+                ], { datatype: 'f64' });
+                var x = new src_1.NDArray([30, 5, -25], { datatype: 'f64' });
+                var ipiv = src_1.linalg.lapack.gesv(A.data, x.data, A.shape[0], 1);
+                assert.deepEqual(x.toArray(), [3, 1, -8]);
+                assert.deepEqual(Array.prototype.slice.call(ipiv), [1, 2, 3]);
+            });
+            QUnit.test('dgesv - permutation', function (assert) {
+                var A = new src_1.NDArray([
+                    [-3, 6, -1],
+                    [11, -3, 0],
+                    [0, -1, 3]
+                ], { datatype: 'f64' });
+                var x = new src_1.NDArray([30, 5, -25], { datatype: 'f64' }); // TODO: why this doesn't have to change?
+                var ipiv = src_1.linalg.lapack.gesv(A.data, x.data, A.shape[0], 1);
+                assert.deepEqual(x.toArray(), [1, 3, -8]);
+                assert.deepEqual(Array.prototype.slice.call(ipiv), [2, 2, 3]);
+            });
+        });
+        // TODO
+        QUnit.module('gesdd', function () {
+            QUnit.test('dgesdd', function (assert) {
+                var A = new src_1.NDArray([
+                    [-3, 6, -1],
+                    [11, -3, 0],
+                    [0, -1, 3]
+                ], { datatype: 'f64' });
+                A.swapOrder();
+                var U = new src_1.NDArray({ shape: [3, 3] });
+                var VT = new src_1.NDArray({ shape: [3, 3] });
+                var S = new src_1.NDArray({ shape: [3] });
+                src_1.linalg.lapack.gesdd(A.data, 3, 3, U.data, S.data, VT.data, 'A');
+                U.swapOrder();
+                VT.swapOrder();
+                // Results generated from numpy
+                assert.ok(U.isEqual(new src_1.NDArray([
+                    [-0.42847299, -0.81649658, 0.386968],
+                    [0.90241006, -0.40824829, 0.1378021],
+                    [0.04546408, 0.40824829, 0.91173809]
+                ])));
+                assert.ok(S.isEqual(new src_1.NDArray([
+                    12.4244289, 5.0, 2.5755711
+                ])));
+                assert.ok(VT.isEqual(new src_1.NDArray([
+                    [0.90241006, -0.42847299, 0.04546408],
+                    [-0.40824829, -0.81649658, 0.40824829],
+                    [0.1378021, 0.386968, 0.91173809]
+                ])));
+            });
+            QUnit.test('sgesdd', function (assert) {
+                var A = new src_1.NDArray([
+                    [-3, 6, -1],
+                    [11, -3, 0],
+                    [0, -1, 3]
+                ], { datatype: 'f32' });
+                A.swapOrder();
+                var U = new src_1.NDArray({ shape: [3, 3] });
+                var VT = new src_1.NDArray({ shape: [3, 3] });
+                var S = new src_1.NDArray({ shape: [3] });
+                src_1.linalg.lapack.gesdd(A.data, 3, 3, U.data, S.data, VT.data, 'A');
+                U.swapOrder();
+                VT.swapOrder();
+                // Results generated from numpy
+                assert.ok(U.isEqual(new src_1.NDArray([
+                    [-0.42847299, -0.81649658, 0.386968],
+                    [0.90241006, -0.40824829, 0.1378021],
+                    [0.04546408, 0.40824829, 0.91173809]
+                ])));
+                assert.ok(S.isEqual(new src_1.NDArray([
+                    12.4244289, 5.0, 2.5755711
+                ])));
+                assert.ok(VT.isEqual(new src_1.NDArray([
+                    [0.90241006, -0.42847299, 0.04546408],
+                    [-0.40824829, -0.81649658, 0.40824829],
+                    [0.1378021, 0.386968, 0.91173809]
+                ])));
+            });
+        });
+        QUnit.module('gelsd', function () {
+            QUnit.test('dgelsd', function (assert) {
+                var Y = new src_1.NDArray([-1, 0.2, 0.9, 2.1]);
+                var A = new src_1.NDArray([
+                    [0, 1], [1, 1], [2, 1], [3, 1]
+                ]);
+                var S = new src_1.NDArray({ shape: [2] });
+                src_1.linalg.lapack.gelsd(A.data, 4, 2, 1, -1, Y.data, S.data);
+                /*
+                Test output computed from numpy.linalg.lapack_lite.dgelsd execution
+                with same input data
+                In [20]: A = np.array([[0,1],[1,1],[2,1],[3,1]],np.double)
+                In [21]: B = np.array([-1,0.2,0.9,2.1],np.double)
+                In [22]: np.linalg.lapack_lite.dgelsd(4,2,1,A,4,B,4,np.zeros(2),-1,0,work,802,np.zeros(20,np.int32),0)
+                */
+                assert.ok(A.isEqual(new src_1.NDArray([
+                    [-1.73205081, 0.],
+                    [0.57735027, 0.57735027],
+                    [-2.88675135, 2.5819889],
+                    [-0.04056742, 0.41363159]
+                ])));
+                assert.ok(Y.isEqual(new src_1.NDArray([
+                    1.65, -0.35, 0.4356074, 1.35655674
+                ])));
+            });
+        });
+        QUnit.module('getrf', function () {
+            QUnit.test('dgetrf', function (assert) {
+                var A = new src_1.NDArray([
+                    [3, 6, 2],
+                    [1, 7, 6],
+                    [9, 3, 2]
+                ], { datatype: 'f64' });
+                var ipiv = new src_1.NDArray({ shape: [3], datatype: 'i32' });
+                A.swapOrder();
+                src_1.linalg.lapack.getrf(A.data, 3, 3, ipiv.data);
+                A.swapOrder();
+                var customLU = new src_1.NDArray([
+                    [3, 6, 2],
+                    [1, 7, 6],
+                    [9, 3, 2]
+                ], { datatype: 'f64' });
+                src_1.linalg.lu_custom(customLU);
+                assert.ok(A.isEqual(customLU, 1e-4));
+            });
+        });
+        QUnit.module('geev', function () {
+            QUnit.test('dgeev 3x3', function (assert) {
+                /*
+                let A = new NDArray([
+                  [3,6,2],
+                  [1,7,6],
+                  [9,3,2]
+                ],{datatype:'f64'});
+                */
+                var A = new src_1.NDArray([
+                    [1, 0, 0],
+                    [0, 2, 0],
+                    [0, 0, 3]
+                ], { datatype: 'f64' });
+                A.swapOrder();
+                var _a = src_1.linalg.lapack.geev(A.data, 3, true, true), WR = _a[0], WI = _a[1], VL = _a[2], VR = _a[3];
+                assert.ok(WR[0] === 1 && WR[1] === 2 && WR[2] === 3);
+                assert.ok(WI[0] === 0 && WI[1] === 0 && WI[2] === 0);
+                var vl = new src_1.NDArray(VL, { shape: [3, 3] });
+                var vr = new src_1.NDArray(VR, { shape: [3, 3] });
+                vl.swapOrder();
+                vr.swapOrder();
+                assert.ok(vl.isEqual(new src_1.NDArray([
+                    [1, 0, 0],
+                    [0, 1, 0],
+                    [0, 0, 1]
+                ])));
+                assert.ok(vr.isEqual(new src_1.NDArray([
+                    [1, 0, 0],
+                    [0, 1, 0],
+                    [0, 0, 1]
+                ])));
+            });
+            QUnit.test('dgeev 2x2', function (assert) {
+                var A = new src_1.NDArray([
+                    [3, 1],
+                    [0, 2],
+                ], { datatype: 'f64' });
+                A.swapOrder();
+                var _a = src_1.linalg.lapack.geev(A.data, 2, true, true), WR = _a[0], WI = _a[1], VL = _a[2], VR = _a[3];
+                var vl = new src_1.NDArray(VL, { shape: [2, 2] });
+                var vr = new src_1.NDArray(VR, { shape: [2, 2] });
+                vl.swapOrder();
+                vr.swapOrder();
+                assert.equal(WR[0], 3);
+                assert.equal(WR[1], 2);
+                assert.equal(WI[0], 0);
+                assert.equal(WI[1], 0);
+                //assert.ok(vl.isEqual(new NDArray([[0.7071,0.0000],[0.7071,1.0000]]),1e-4))
+                // As returned by numpy (it only returns right eigen vectors)
+                assert.ok(vr.isEqual(new src_1.NDArray([[1.0000, -0.7071,], [0.0000, 0.7071]]), 1e-4));
+            });
+        });
+        QUnit.module('geqrf-orgqr', function () {
+            QUnit.test('dgeqrf-dorgqr', function (assert) {
+                var A = new src_1.NDArray([
+                    [3, 6, 2],
+                    [1, 7, 6],
+                    [9, 3, 2]
+                ]);
+                var tau = new src_1.NDArray({ shape: [3], datatype: 'f64' });
+                src_1.linalg.lapack.geqrf(A.data, 3, 3, tau.data);
+                assert.ok(A.isEqual(new src_1.NDArray([
+                    [-7., 0.6, 0.2],
+                    [-8.14285714, -4.43777845, 0.7008373],
+                    [-7., 3.38006959, 5.79440502]
+                ])));
+                assert.ok(tau.isEqual(new src_1.NDArray([
+                    1.42857143, 1.34122607, 0.
+                ])));
+                src_1.linalg.lapack.orgqr(A.data, 3, 3, 3, tau.data);
+                assert.ok(A.isEqual(new src_1.NDArray([
+                    [-0.42857143, -0.85714286, -0.28571429],
+                    [0.56104557, -0.00459873, -0.82777215],
+                    [0.70820506, -0.51505822, 0.48286708]
+                ])));
+            });
+        });
+        QUnit.module('potrf', function () {
+            QUnit.test('dpotrf', function (assert) {
+                // From wikipedia
+                var A = new src_1.NDArray([
+                    [4, 12, -16],
+                    [12, 37, -43],
+                    [-16, -43, 98]
+                ]);
+                src_1.linalg.lapack.potrf(A.data, 3);
+                //TODO: this only passes if internally 'L' is specified for UPLO
+                assert.equal(A.get(0, 0), 2);
+                assert.equal(A.get(0, 1), 6);
+                assert.equal(A.get(0, 2), -8);
+                assert.equal(A.get(1, 1), 1);
+                assert.equal(A.get(1, 2), 5);
+                assert.equal(A.get(2, 2), 3);
+            });
+        });
+    });
+}
+exports.default = testLAPACK;
 
 
 /***/ }),
 /* 35 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-// shim for using process in browser
-var process = module.exports = {};
+"use strict";
 
-// cached from whatever global is present so that test runners that stub it
-// don't break things.  But we need to wrap it in a try catch in case it is
-// wrapped in strict mode code which doesn't define any globals.  It's inside a
-// function because try/catches deoptimize in certain engines.
+/*
 
-var cachedSetTimeout;
-var cachedClearTimeout;
+Copyright (C) 2017 Jayesh Salvi, Blue Math Software Inc.
 
-function defaultSetTimout() {
-    throw new Error('setTimeout has not been defined');
+This file is part of bluemath.
+
+bluemath is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+bluemath is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with bluemath. If not, see <http://www.gnu.org/licenses/>.
+
+*/
+Object.defineProperty(exports, "__esModule", { value: true });
+var src_1 = __webpack_require__(0);
+function testOps() {
+    QUnit.module('Ops', function () {
+        QUnit.module('eye', function () {
+            QUnit.test('Square 2x2', function (assert) {
+                var I = src_1.eye(2);
+                assert.equal(I.get(0, 0), 1);
+                assert.equal(I.get(0, 1), 0);
+                assert.equal(I.get(1, 0), 0);
+                assert.equal(I.get(1, 1), 1);
+            });
+            QUnit.test('Rectangular 2x3', function (assert) {
+                var I = src_1.eye([2, 3]);
+                assert.equal(I.get(0, 0), 1);
+                assert.equal(I.get(0, 1), 0);
+                assert.equal(I.get(1, 0), 0);
+                assert.equal(I.get(1, 1), 1);
+                assert.equal(I.get(0, 2), 0);
+                assert.equal(I.get(1, 2), 0);
+            });
+            QUnit.test('Rectangular 3x2', function (assert) {
+                var I = src_1.eye([3, 2]);
+                assert.equal(I.get(0, 0), 1);
+                assert.equal(I.get(0, 1), 0);
+                assert.equal(I.get(1, 0), 0);
+                assert.equal(I.get(1, 1), 1);
+                assert.equal(I.get(2, 0), 0);
+                assert.equal(I.get(2, 1), 0);
+            });
+        });
+        QUnit.module('zeros', function () {
+            QUnit.test('Rectangular 2x2', function (assert) {
+                var Z = src_1.zeros(2);
+                assert.equal(Z.get(0, 0), 0);
+                assert.equal(Z.get(0, 1), 0);
+                assert.equal(Z.get(1, 0), 0);
+                assert.equal(Z.get(1, 1), 0);
+            });
+            QUnit.test('Rectangular 2x2 ui32', function (assert) {
+                var Z = src_1.zeros([2, 2], 'ui32');
+                assert.equal(Z.datatype, 'ui32');
+            });
+        });
+        QUnit.module('range', function () {
+            QUnit.test('range(4)', function (assert) {
+                assert.ok(new src_1.NDArray([0, 1, 2, 3]).isEqual(src_1.range(4)));
+            });
+            QUnit.test('range(0,4)', function (assert) {
+                assert.ok(new src_1.NDArray([0, 1, 2, 3]).isEqual(src_1.range(0, 4)));
+            });
+            QUnit.test('range(2,4)', function (assert) {
+                assert.ok(new src_1.NDArray([2, 3]).isEqual(src_1.range(2, 4)));
+            });
+        });
+        QUnit.module('add', function () {
+            QUnit.test('Real numbers', function (assert) {
+                assert.equal(src_1.add(4, 5), 9);
+                assert.equal(src_1.add(4, 5, 10), 19);
+            });
+            QUnit.test('Real and Complex numbers', function (assert) {
+                assert.ok(new src_1.Complex(9, 5).isEqual(src_1.add(4, new src_1.Complex(5, 5))));
+                assert.ok(new src_1.Complex(9, 5).isEqual(src_1.add(new src_1.Complex(5, 5), 4)));
+                assert.ok(new src_1.Complex(19, 5).isEqual(src_1.add(4, new src_1.Complex(5, 5), 10)));
+                assert.ok(new src_1.Complex(9, 15).isEqual(src_1.add(4, new src_1.Complex(5, 5), new src_1.Complex(0, 10))));
+            });
+            QUnit.test('Real numbers and NDArray', function (assert) {
+                assert.ok(new src_1.NDArray([4, 4, 4]).isEqual(src_1.add(new src_1.NDArray([1, 1, 1]), 3)));
+                assert.ok(new src_1.NDArray([4, 4, 4]).isEqual(src_1.add(3, new src_1.NDArray([1, 1, 1]))));
+                assert.ok(new src_1.NDArray([4, 4, 4]).isEqual(src_1.add(1, 2, new src_1.NDArray([1, 1, 1]))));
+                assert.ok(new src_1.NDArray([4, 4, 4]).isEqual(src_1.add(1, new src_1.NDArray([1, 1, 1]), 2)));
+                assert.ok(new src_1.NDArray([[4, 4], [4, 4]]).isEqual(src_1.add(new src_1.NDArray([[1, 1], [1, 1]]), 3)));
+            });
+            QUnit.test('Complex numbers and NDArray', function (assert) {
+                var sarr = new src_1.NDArray({ shape: [3] });
+                sarr.set(0, new src_1.Complex(1, 1));
+                sarr.set(1, new src_1.Complex(1, 2));
+                sarr.set(2, new src_1.Complex(2, 1));
+                var tarr = sarr.clone();
+                tarr.set(0, new src_1.Complex(2, 2));
+                tarr.set(1, new src_1.Complex(2, 3));
+                tarr.set(2, new src_1.Complex(3, 2));
+                assert.ok(tarr.isEqual(src_1.add(sarr, new src_1.Complex(1, 1))));
+                assert.ok(tarr.isEqual(src_1.add(new src_1.Complex(1, 1), sarr)));
+                assert.ok(tarr.isEqual(src_1.add(new src_1.Complex(0, 1), sarr, new src_1.Complex(1, 0))));
+                sarr = new src_1.NDArray({ shape: [2, 2] });
+                sarr.set(0, 0, new src_1.Complex(3, 3));
+                sarr.set(0, 1, new src_1.Complex(3, 3));
+                sarr.set(1, 0, new src_1.Complex(5, 5));
+                sarr.set(1, 1, new src_1.Complex(5, 5));
+                tarr = sarr.clone();
+                tarr.set(0, 0, new src_1.Complex(4, 4));
+                tarr.set(0, 1, new src_1.Complex(4, 4));
+                tarr.set(1, 0, new src_1.Complex(6, 6));
+                tarr.set(1, 1, new src_1.Complex(6, 6));
+                assert.ok(tarr.isEqual(src_1.add(sarr, new src_1.Complex(1, 1))));
+                assert.ok(tarr.isEqual(src_1.add(1, sarr, new src_1.Complex(0, 1))));
+                sarr = new src_1.NDArray({ shape: [2, 2] });
+                sarr.set(0, 0, new src_1.Complex(3, 3));
+                sarr.set(0, 1, 3);
+                sarr.set(1, 0, new src_1.Complex(5, 5));
+                sarr.set(1, 1, 5);
+                tarr = sarr.clone();
+                tarr.set(0, 0, new src_1.Complex(4, 4));
+                tarr.set(0, 1, new src_1.Complex(3, 1));
+                tarr.set(1, 0, new src_1.Complex(6, 6));
+                tarr.set(1, 1, new src_1.Complex(6, 1));
+                assert.ok(tarr.isEqual(src_1.add(sarr, new src_1.Complex(1, 1))));
+            });
+            QUnit.test('NDArrays', function (assert) {
+                var arrA = new src_1.NDArray([1, 1, 1]);
+                var arrB = new src_1.NDArray([1, 1, 1]);
+                assert.ok(new src_1.NDArray([2, 2, 2]).isEqual(src_1.add(arrA, arrB)));
+                assert.ok(new src_1.NDArray([3, 3, 3]).isEqual(src_1.add(arrA, arrB, arrA)));
+                assert.ok(new src_1.NDArray([4, 4, 4]).isEqual(src_1.add(arrA, arrB, 1, arrA)));
+                assert.throws(function () {
+                    src_1.add(arrA, new src_1.NDArray([[1, 2], [4, 4]]));
+                });
+                assert.throws(function () {
+                    src_1.add(arrA, new src_1.NDArray([1, 1]));
+                });
+                var sarr1 = new src_1.NDArray({ shape: [2] });
+                sarr1.set(0, new src_1.Complex(1, 1));
+                sarr1.set(1, new src_1.Complex(2, 0));
+                var sarr2 = new src_1.NDArray({ shape: [2] });
+                sarr2.set(0, 1);
+                sarr2.set(1, new src_1.Complex(0, 1));
+                var tarr = new src_1.NDArray({ shape: [2] });
+                tarr.set(0, new src_1.Complex(2, 1));
+                tarr.set(1, new src_1.Complex(2, 1));
+                assert.ok(tarr.isEqual(src_1.add(sarr1, sarr2)));
+            });
+        });
+        QUnit.module('mul', function () {
+            QUnit.test("Real and Complex numbers", function (assert) {
+                assert.equal(src_1.mul(2, 5), 10);
+                assert.equal(src_1.mul(2, 5, 3), 30);
+                assert.ok(new src_1.Complex(4, 6).isEqual(src_1.mul(2, new src_1.Complex(2, 3))));
+                assert.ok(new src_1.Complex(4, 6).isEqual(src_1.mul(new src_1.Complex(2, 3), 2)));
+                assert.ok(new src_1.Complex(12, 18).isEqual(src_1.mul(new src_1.Complex(2, 3), 2, 3)));
+                assert.ok(new src_1.Complex(-6, 10).isEqual(src_1.mul(new src_1.Complex(1, 4), new src_1.Complex(2, 2))));
+                assert.ok(new src_1.Complex(-28, 24).isEqual(src_1.mul(new src_1.Complex(1, 4), new src_1.Complex(2, 2), new src_1.Complex(3, 1))));
+            });
+            QUnit.test('Numbers and NDArray', function (assert) {
+                assert.ok(new src_1.NDArray([4, 4]).isEqual(src_1.mul(2, new src_1.NDArray([2, 2]))));
+                assert.ok(new src_1.NDArray([4, 4]).isEqual(src_1.mul(new src_1.NDArray([2, 2]), 2)));
+                assert.ok(new src_1.NDArray([8, 8]).isEqual(src_1.mul(new src_1.NDArray([2, 2]), 2, 2)));
+                var sarr = new src_1.NDArray({ shape: [2] });
+                sarr.set(0, new src_1.Complex(2, 2));
+                sarr.set(1, 2);
+                var tarr = sarr.clone();
+                tarr.set(0, new src_1.Complex(6, 6));
+                tarr.set(1, 6);
+                assert.ok(tarr.isEqual(src_1.mul(sarr, 3)));
+            });
+            QUnit.test('NDArrays', function (assert) {
+                var A = new src_1.NDArray([[2, 2, 2], [2, 2, 2], [2, 2, 2]], { datatype: 'i16' });
+                var B = new src_1.NDArray([[5, 5, 5], [5, 5, 5], [5, 5, 5]], { datatype: 'i16' });
+                var M = src_1.mul(A, B);
+                assert.ok(M.isEqual(new src_1.NDArray([
+                    [30, 30, 30],
+                    [30, 30, 30],
+                    [30, 30, 30]
+                ])));
+            });
+        });
+        QUnit.module('sub', function () {
+            QUnit.test('Real and complex numbers', function (assert) {
+                assert.equal(src_1.sub(3, 4), -1);
+                assert.ok(new src_1.Complex(0, -3).isEqual(src_1.sub(3, new src_1.Complex(3, 3))));
+                assert.ok(new src_1.Complex(2, 3).isEqual(src_1.sub(new src_1.Complex(3, 3), 1)));
+                assert.ok(new src_1.Complex(2, 2).isEqual(src_1.sub(new src_1.Complex(3, 3), new src_1.Complex(1, 1))));
+            });
+            QUnit.test('Numbers and NDArrays', function (assert) {
+                var A = new src_1.NDArray([
+                    [4, 5],
+                    [2, 7]
+                ]);
+                assert.ok(new src_1.NDArray([
+                    [3, 4],
+                    [1, 6]
+                ]).isEqual(src_1.sub(A, 1)));
+                assert.ok(new src_1.NDArray([
+                    [-3, -4],
+                    [-1, -6]
+                ]).isEqual(src_1.sub(1, A)));
+                var sarr = new src_1.NDArray({ shape: [2] });
+                sarr.set(0, 3);
+                sarr.set(1, new src_1.Complex(4, 5));
+                var tarr = sarr.clone();
+                tarr.set(0, 2);
+                tarr.set(1, new src_1.Complex(3, 5));
+                assert.ok(tarr.isEqual(src_1.sub(sarr, 1)));
+                tarr = sarr.clone();
+                tarr.set(0, -2);
+                tarr.set(1, new src_1.Complex(-3, -5));
+                assert.ok(tarr.isEqual(src_1.sub(1, sarr)));
+                tarr = sarr.clone();
+                tarr.set(0, new src_1.Complex(-2, 1));
+                tarr.set(1, new src_1.Complex(-3, -4));
+                assert.ok(tarr.isEqual(src_1.sub(new src_1.Complex(1, 1), sarr)));
+                tarr = sarr.clone();
+                tarr.set(0, new src_1.Complex(2, -1));
+                tarr.set(1, new src_1.Complex(3, 4));
+                assert.ok(tarr.isEqual(src_1.sub(sarr, new src_1.Complex(1, 1))));
+            });
+            QUnit.test('NDArrays', function (assert) {
+                var A = new src_1.NDArray([
+                    [4, 5],
+                    [2, 7]
+                ]);
+                var B = new src_1.NDArray([
+                    [1, 4],
+                    [5, 2]
+                ]);
+                assert.ok(new src_1.NDArray([
+                    [3, 1],
+                    [-3, 5]
+                ]).isEqual(src_1.sub(A, B)));
+                var sarr1 = new src_1.NDArray({ shape: [2] });
+                sarr1.set(0, 3);
+                sarr1.set(1, new src_1.Complex(4, 5));
+                var sarr2 = new src_1.NDArray([3, 3]);
+                var tarr = sarr1.clone();
+                tarr.set(0, 0);
+                tarr.set(1, new src_1.Complex(1, 5));
+                assert.ok(tarr.isEqual(src_1.sub(sarr1, sarr2)));
+            });
+        });
+        QUnit.module('div', function () {
+            QUnit.test('Real and complex numbers', function (assert) {
+                assert.equal(src_1.div(10, 5), 2);
+                assert.ok(new src_1.Complex(6, 8).isEqual(src_1.div(new src_1.Complex(12, 16), 2)));
+                assert.ok(new src_1.Complex(0.8, -1.6).isEqual(src_1.div(4, new src_1.Complex(1, 2))));
+            });
+            QUnit.test('Numbers and NDArray', function (assert) {
+                var A = new src_1.NDArray([4, 6, 8]);
+                assert.ok(new src_1.NDArray([2, 3, 4]).isEqual(src_1.div(A, 2)));
+                var sarr = new src_1.NDArray({ shape: [2] });
+                sarr.set(0, 4);
+                sarr.set(1, new src_1.Complex(4, 4));
+                var tarr = new src_1.NDArray({ shape: [2] });
+                tarr.set(0, 2);
+                tarr.set(1, new src_1.Complex(2, 2));
+                assert.ok(tarr.isEqual(src_1.div(sarr, 2)));
+            });
+        });
+    });
 }
-function defaultClearTimeout () {
-    throw new Error('clearTimeout has not been defined');
-}
-(function () {
-    try {
-        if (typeof setTimeout === 'function') {
-            cachedSetTimeout = setTimeout;
-        } else {
-            cachedSetTimeout = defaultSetTimout;
-        }
-    } catch (e) {
-        cachedSetTimeout = defaultSetTimout;
-    }
-    try {
-        if (typeof clearTimeout === 'function') {
-            cachedClearTimeout = clearTimeout;
-        } else {
-            cachedClearTimeout = defaultClearTimeout;
-        }
-    } catch (e) {
-        cachedClearTimeout = defaultClearTimeout;
-    }
-} ())
-function runTimeout(fun) {
-    if (cachedSetTimeout === setTimeout) {
-        //normal enviroments in sane situations
-        return setTimeout(fun, 0);
-    }
-    // if setTimeout wasn't available but was latter defined
-    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
-        cachedSetTimeout = setTimeout;
-        return setTimeout(fun, 0);
-    }
-    try {
-        // when when somebody has screwed with setTimeout but no I.E. maddness
-        return cachedSetTimeout(fun, 0);
-    } catch(e){
-        try {
-            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
-            return cachedSetTimeout.call(null, fun, 0);
-        } catch(e){
-            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
-            return cachedSetTimeout.call(this, fun, 0);
-        }
-    }
-
-
-}
-function runClearTimeout(marker) {
-    if (cachedClearTimeout === clearTimeout) {
-        //normal enviroments in sane situations
-        return clearTimeout(marker);
-    }
-    // if clearTimeout wasn't available but was latter defined
-    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
-        cachedClearTimeout = clearTimeout;
-        return clearTimeout(marker);
-    }
-    try {
-        // when when somebody has screwed with setTimeout but no I.E. maddness
-        return cachedClearTimeout(marker);
-    } catch (e){
-        try {
-            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
-            return cachedClearTimeout.call(null, marker);
-        } catch (e){
-            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
-            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
-            return cachedClearTimeout.call(this, marker);
-        }
-    }
-
-
-
-}
-var queue = [];
-var draining = false;
-var currentQueue;
-var queueIndex = -1;
-
-function cleanUpNextTick() {
-    if (!draining || !currentQueue) {
-        return;
-    }
-    draining = false;
-    if (currentQueue.length) {
-        queue = currentQueue.concat(queue);
-    } else {
-        queueIndex = -1;
-    }
-    if (queue.length) {
-        drainQueue();
-    }
-}
-
-function drainQueue() {
-    if (draining) {
-        return;
-    }
-    var timeout = runTimeout(cleanUpNextTick);
-    draining = true;
-
-    var len = queue.length;
-    while(len) {
-        currentQueue = queue;
-        queue = [];
-        while (++queueIndex < len) {
-            if (currentQueue) {
-                currentQueue[queueIndex].run();
-            }
-        }
-        queueIndex = -1;
-        len = queue.length;
-    }
-    currentQueue = null;
-    draining = false;
-    runClearTimeout(timeout);
-}
-
-process.nextTick = function (fun) {
-    var args = new Array(arguments.length - 1);
-    if (arguments.length > 1) {
-        for (var i = 1; i < arguments.length; i++) {
-            args[i - 1] = arguments[i];
-        }
-    }
-    queue.push(new Item(fun, args));
-    if (queue.length === 1 && !draining) {
-        runTimeout(drainQueue);
-    }
-};
-
-// v8 likes predictible objects
-function Item(fun, array) {
-    this.fun = fun;
-    this.array = array;
-}
-Item.prototype.run = function () {
-    this.fun.apply(null, this.array);
-};
-process.title = 'browser';
-process.browser = true;
-process.env = {};
-process.argv = [];
-process.version = ''; // empty string to avoid regexp issues
-process.versions = {};
-
-function noop() {}
-
-process.on = noop;
-process.addListener = noop;
-process.once = noop;
-process.off = noop;
-process.removeListener = noop;
-process.removeAllListeners = noop;
-process.emit = noop;
-process.prependListener = noop;
-process.prependOnceListener = noop;
-
-process.listeners = function (name) { return [] }
-
-process.binding = function (name) {
-    throw new Error('process.binding is not supported');
-};
-
-process.cwd = function () { return '/' };
-process.chdir = function (dir) {
-    throw new Error('process.chdir is not supported');
-};
-process.umask = function() { return 0; };
+exports.default = testOps;
 
 
 /***/ })

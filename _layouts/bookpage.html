@@ -1,0 +1,48 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="keywords" content="{{page.keywords}}"/>
+    <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+    <link rel='stylesheet', href='/ext/bootstrap.min.css'/>
+    <link rel='stylesheet', href='/ext/font-awesome.min.css'/>
+    <link rel='stylesheet', href='/style/custom.css'/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="/ext/bootstrap-3.3.7.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    {% include ga.html %}
+<style>
+</style>
+  {% seo %}
+  </head>
+
+  <body>
+    {% include topbar.html %}
+
+    <div class="container">
+      <div class="page-header">
+      </div>
+      <div class="row">
+        <div class="col-lg-2">
+        </div>
+        <div class="col-lg-8">
+          <h1>
+            {{page.title}}
+          </h1>
+          <br/>
+          {{content}}
+
+          <br/>
+
+        </div>
+        <div class="col-lg-2">
+        </div>
+      </div>
+    </div>
+
+    {% include twitter-widget.html %}
+  </body>
+</html>

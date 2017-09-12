@@ -25,13 +25,17 @@
         <div class="col-lg-3">
         </div>
         <div class="col-lg-6">
-          {% for post in site.posts %}
-            {% assign currentdate = post.date | date: "%B %Y" %}
-              {% if currentdate != date %}
-                <p class="yearentry">{{ currentdate }}</p>
-                {% assign date = currentdate %}
-              {% endif %}
-            <p><a href="{{ post.url }}">{{ post.title }}</a></p>
+          {% assign sortedcats = site.categories | sort %}
+          {% for category in sortedcats %}
+            {% assign cattitle = category[0] | split: '_' %}
+            <h2>{{cattitle[1]}}</h2>
+            <ul>
+            {% for post in category[1] %}
+              <li>
+                <a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+              </li>
+            {% endfor %}
+            </ul>
           {% endfor %}
         </div>
         <div class="col-lg-3">

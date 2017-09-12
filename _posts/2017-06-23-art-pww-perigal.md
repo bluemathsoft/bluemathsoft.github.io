@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Perigal's proof of Pythagoras' theorem
+category: 5_Art
 ---
 
 <div style="text-align:center"><img src="/img/art/perigal.png"/></div>

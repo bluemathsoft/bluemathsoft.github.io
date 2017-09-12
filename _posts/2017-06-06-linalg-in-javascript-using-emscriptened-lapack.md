@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Linear Algebra in Javascript using Emscriptened LAPACK
+category: 2_BlueMath Library
 ---
 
 After my [first post](http://www.bluemathsoftware.com/2017/05/17/basic-linear-algebra.html) about the solutions I was exploring to get basic linear algebra working in Javascript, I’ve made several more experiments and have made reasonable progress. I mainly explored two approaches

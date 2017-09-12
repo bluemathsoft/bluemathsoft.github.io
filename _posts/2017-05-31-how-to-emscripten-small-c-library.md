@@ -2,6 +2,7 @@
 layout: post
 title: How to port a small C library to Javascript with Emscripten
 keywords: emscripten,webassembly,howto
+category: 3_Emscripten
 ---
 
 Now that you already know how to compile individual C functions to Javascript, let's take a look at more practical example. Let's emscripten a small off-the-shelf C library.

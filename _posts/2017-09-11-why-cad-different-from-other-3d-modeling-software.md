@@ -46,12 +46,21 @@ A cylinder created in 3DS Max is a shape made up of 32 rectangular side polygons
 
 A cylinder created in SolidWorks however is defined as a cylinder of given radius and height and it's automatically converted to necessary number of polygons required to make the curved surface smooth for given purpose. If the purpose is viewing, then it could be represented with 32 strips, but if the purpose is 3D printing then it might be represented by more number of polygons depending upon the physical units of the cylinder.
 
-Thus the polygonization (or tessellation) in CAD is called Adaptive.
+Thus the polygonization (or tessellation) in CAD is *Adaptive*.
 
 
 Why are CAD libraries so expensive?
 ---
-The difference in internal geometry representation leads to very different algorithms to manipulate the models. Two main areas where this makes difference is *Adaptive tessellation* and *Surface-Surface intersections*.
+The difference in internal geometry representation leads to very different algorithms to manipulate the models. Following are the main areas where CAD algorithms pose greater complexity than their polygonal versions.
+
+* Adaptive Tessellation
+
+* Surface-Surface intersection
+
+* Topology
+
+* Edge smoothing (Fillets)
+
 
 
 

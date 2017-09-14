@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Bluemath Shell
-category: 2_BlueMath Library
+category: 2_BlueMath Updates
 ---
 
 Last week I put together a quick [**Shell**](http://www.bluemathsoftware.com/shell/index.html) interface on top of BlueMath. This way new users can try BlueMath in their browser without installing anything. The shell interface is in the form of a Code editor right now. In future it might also include a REPL. You can write standard Typescript code in the code editor and run it. The output is shown in the side window. The output is only textual so far. In future support for plots will be added.

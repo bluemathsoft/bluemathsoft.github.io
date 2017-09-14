@@ -26,7 +26,7 @@ Let me first divide all these 3D modeling software tools into two major categori
 
 * Entertainment 3D
   - 3D Modeling software for games, animation movies, etc. like 3DS Max, SoftImage, Maya, Cinema 4D, Blender, Modo and others
-  - Game Engines like Unreal, Unity, Crysis, and so one
+  - Game Engines like Unreal, Unity, Crysis, and so on
   - Scene Graph libraries like Three.js, Panda3D
   - File formats FBX, OBJ, STL, Collada
 
@@ -42,7 +42,7 @@ When you create a cylinder in SolidWorks and in 3DS Max, it may look equally smo
 
 <img src="/img/cylinder-comparision.png"/>
 
-A cylinder created in 3DS Max is a shape made up of 32 rectangular side polygons, 32 top and 32 bottom triangular polygons. Its curved surface looks smooth because of Gouraud Shading.
+A cylinder created in 3DS Max is a shape made up of 32 rectangular side polygons, 32 top and 32 bottom triangular polygons. Its curved surface looks smooth mainly because of [Gouraud Shading](https://en.wikipedia.org/wiki/Gouraud_shading).
 
 A cylinder created in SolidWorks however is defined as a cylinder of given radius and height and it's automatically converted to necessary number of polygons required to make the curved surface smooth for given purpose. If the purpose is viewing, then it could be represented with 32 strips, but if the purpose is 3D printing then it might be represented by more number of polygons depending upon the physical units of the cylinder.
 

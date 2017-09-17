@@ -1,6 +1,6 @@
 ---
 layout: bookpage
-title: 
+title: NURBS Fundamental Algorithms
 permalink: /pages/nurbs/funalgo
 ---
 
@@ -8,7 +8,7 @@ Fundamental algorithms of BSpline Curves and Surfaces
 
 Knot Insertion
 ---
-A BSpline curve defined by
+A Rational BSpline curve defined by
 
 $$
 C^w(u) = \sum_{i=0}^n B_{i,n}(u)P^w_i 

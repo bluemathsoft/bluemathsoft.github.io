@@ -1,0 +1,992 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>LineSegment | @bluemath/geom</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">@bluemath/geom</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="linesegment.html">LineSegment</a>
+				</li>
+			</ul>
+			<h1>Class LineSegment</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<a href="bsplinecurve.html" class="tsd-signature-type">BSplineCurve</a>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">LineSegment</span>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="linesegment.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-inherited">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="linesegment.html#cpoints" class="tsd-kind-icon">cpoints</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="linesegment.html#degree" class="tsd-kind-icon">degree</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="linesegment.html#knots" class="tsd-kind-icon">knots</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="linesegment.html#weights" class="tsd-kind-icon">weights</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-inherited">
+							<h3>Accessors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="linesegment.html#dimension" class="tsd-kind-icon">dimension</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-inherited">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="linesegment.html#aabb" class="tsd-kind-icon">aabb</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="linesegment.html#clone" class="tsd-kind-icon">clone</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="linesegment.html#decompose" class="tsd-kind-icon">decompose</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="linesegment.html#evaluate" class="tsd-kind-icon">evaluate</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="linesegment.html#evaluatederivative" class="tsd-kind-icon">evaluate<wbr>Derivative</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="linesegment.html#insertknot" class="tsd-kind-icon">insert<wbr>Knot</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="linesegment.html#isline" class="tsd-kind-icon">is<wbr>Line</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="linesegment.html#isrational" class="tsd-kind-icon">is<wbr>Rational</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="linesegment.html#refineknots" class="tsd-kind-icon">refine<wbr>Knots</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="linesegment.html#setknot" class="tsd-kind-icon">set<wbr>Knot</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="linesegment.html#setknots" class="tsd-kind-icon">set<wbr>Knots</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="linesegment.html#setweight" class="tsd-kind-icon">set<wbr>Weight</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="linesegment.html#split" class="tsd-kind-icon">split</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="linesegment.html#tessellate" class="tsd-kind-icon">tessellate</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="linesegment.html#tessellateadaptive" class="tsd-kind-icon">tessellate<wbr>Adaptive</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="linesegment.html#tessellatebasis" class="tsd-kind-icon">tessellate<wbr>Basis</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="linesegment.html#tessellatederivatives" class="tsd-kind-icon">tessellate<wbr>Derivatives</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="linesegment.html#to3d" class="tsd-kind-icon">to3D</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="linesegment.html#tostring" class="tsd-kind-icon">to<wbr>String</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Line<wbr>Segment<span class="tsd-signature-symbol">(</span>from<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span>, to<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="linesegment.html" class="tsd-signature-type">LineSegment</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="bsplinecurve.html">BSplineCurve</a>.<a href="bsplinecurve.html#constructor">constructor</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-geom/blob/99669df/src/nurbs/curve.ts#L31">nurbs/curve.ts:31</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>from: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5>to: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="linesegment.html" class="tsd-signature-type">LineSegment</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="cpoints" class="tsd-anchor"></a>
+					<h3>cpoints</h3>
+					<div class="tsd-signature tsd-kind-icon">cpoints<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">NDArray</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="bsplinecurve.html">BSplineCurve</a>.<a href="bsplinecurve.html#cpoints">cpoints</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/bluemathsoft/bm-geom/blob/99669df/src/nurbs/bcurve.ts#L250">nurbs/bcurve.ts:250</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="degree" class="tsd-anchor"></a>
+					<h3>degree</h3>
+					<div class="tsd-signature tsd-kind-icon">degree<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="bsplinecurve.html">BSplineCurve</a>.<a href="bsplinecurve.html#degree">degree</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/bluemathsoft/bm-geom/blob/99669df/src/nurbs/bcurve.ts#L249">nurbs/bcurve.ts:249</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="knots" class="tsd-anchor"></a>
+					<h3>knots</h3>
+					<div class="tsd-signature tsd-kind-icon">knots<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">NDArray</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="bsplinecurve.html">BSplineCurve</a>.<a href="bsplinecurve.html#knots">knots</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/bluemathsoft/bm-geom/blob/99669df/src/nurbs/bcurve.ts#L251">nurbs/bcurve.ts:251</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="weights" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> weights</h3>
+					<div class="tsd-signature tsd-kind-icon">weights<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">NDArray</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="bsplinecurve.html">BSplineCurve</a>.<a href="bsplinecurve.html#weights">weights</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/bluemathsoft/bm-geom/blob/99669df/src/nurbs/bcurve.ts#L252">nurbs/bcurve.ts:252</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
+				<h2>Accessors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+					<a name="dimension" class="tsd-anchor"></a>
+					<h3>dimension</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> dimension<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="bsplinecurve.html">BSplineCurve</a>.<a href="bsplinecurve.html#dimension">dimension</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-geom/blob/99669df/src/nurbs/bcurve.ts#L286">nurbs/bcurve.ts:286</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Determines how many dimension the curve occupies based on shape of
+									Control points array</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="aabb" class="tsd-anchor"></a>
+					<h3>aabb</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">aabb<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AABB</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="bsplinecurve.html">BSplineCurve</a>.<a href="bsplinecurve.html#aabb">aabb</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-geom/blob/99669df/src/nurbs/bcurve.ts#L948">nurbs/bcurve.ts:948</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">AABB</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="clone" class="tsd-anchor"></a>
+					<h3>clone</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">clone<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="bsplinecurve.html" class="tsd-signature-type">BSplineCurve</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="bsplinecurve.html">BSplineCurve</a>.<a href="bsplinecurve.html#clone">clone</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-geom/blob/99669df/src/nurbs/bcurve.ts#L940">nurbs/bcurve.ts:940</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="bsplinecurve.html" class="tsd-signature-type">BSplineCurve</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="decompose" class="tsd-anchor"></a>
+					<h3>decompose</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">decompose<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="beziercurve.html" class="tsd-signature-type">BezierCurve</a><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="bsplinecurve.html">BSplineCurve</a>.<a href="bsplinecurve.html#decompose">decompose</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-geom/blob/99669df/src/nurbs/bcurve.ts#L759">nurbs/bcurve.ts:759</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Algorithm A5.6 from &quot;The NURBS Book&quot;
+										The total number of bezier segments required to decompose a
+										given bspline curve
+										= Number of internal knots + 1
+										= Length of knot vector - 2<em>(p+1) + 1
+										= (m+1) - 2</em>(p+1) + 1
+										= m - 2*p
+									See <a href="http://www.bluemathsoftware.com/pages/nurbs/funalgo">http://www.bluemathsoftware.com/pages/nurbs/funalgo</a></p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="beziercurve.html" class="tsd-signature-type">BezierCurve</a><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="evaluate" class="tsd-anchor"></a>
+					<h3>evaluate</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">evaluate<span class="tsd-signature-symbol">(</span>t<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, tess<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">NDArray</span>, tessidx<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">NDArray</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="bsplinecurve.html">BSplineCurve</a>.<a href="bsplinecurve.html#evaluate">evaluate</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-geom/blob/99669df/src/nurbs/bcurve.ts#L839">nurbs/bcurve.ts:839</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Evaluate the BSplineCurve at given parameter value
+										If <code>tess</code> parameter is provided then the evaluated value is
+										placed in the <code>tess</code> array at index <code>tessidx</code>. Otherwise the single
+									euclidean point is returned.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>t: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> tess: <span class="tsd-signature-type">NDArray</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> tessidx: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">NDArray</span>
+								<span class="tsd-signature-symbol"> | </span>
+								<span class="tsd-signature-type">null</span>
+							</h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="evaluatederivative" class="tsd-anchor"></a>
+					<h3>evaluate<wbr>Derivative</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">evaluate<wbr>Derivative<span class="tsd-signature-symbol">(</span>t<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, d<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, tess<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">NDArray</span>, tessidx<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">NDArray</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="bsplinecurve.html">BSplineCurve</a>.<a href="bsplinecurve.html#evaluatederivative">evaluateDerivative</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-geom/blob/99669df/src/nurbs/bcurve.ts#L884">nurbs/bcurve.ts:884</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Evaluate the derivative of BSplineCurve at given parameter value
+										If <code>tess</code> parameter is provided then the evaluated value is
+										placed in the <code>tess</code> array at index <code>tessidx</code>. Otherwise the single
+									euclidean point is returned.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>t: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>d: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> tess: <span class="tsd-signature-type">NDArray</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> tessidx: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">NDArray</span>
+								<span class="tsd-signature-symbol"> | </span>
+								<span class="tsd-signature-type">null</span>
+							</h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="insertknot" class="tsd-anchor"></a>
+					<h3>insert<wbr>Knot</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">insert<wbr>Knot<span class="tsd-signature-symbol">(</span>un<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="bsplinecurve.html">BSplineCurve</a>.<a href="bsplinecurve.html#insertknot">insertKnot</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-geom/blob/99669df/src/nurbs/bcurve.ts#L527">nurbs/bcurve.ts:527</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Inserts knot un in the knot vector r-times
+									Algorithm A5.1 from &quot;The NURBS Book&quot;</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>un: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>r: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="isline" class="tsd-anchor"></a>
+					<h3>is<wbr>Line</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Line<span class="tsd-signature-symbol">(</span>tolerance<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="bsplinecurve.html">BSplineCurve</a>.<a href="bsplinecurve.html#isline">isLine</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-geom/blob/99669df/src/nurbs/bcurve.ts#L513">nurbs/bcurve.ts:513</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Checks if this Bezier curve is approximately a straight line within
+									given tolerance.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> tolerance: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;0.000001</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="isrational" class="tsd-anchor"></a>
+					<h3>is<wbr>Rational</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Rational<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="bsplinecurve.html">BSplineCurve</a>.<a href="bsplinecurve.html#isrational">isRational</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-geom/blob/99669df/src/nurbs/bcurve.ts#L434">nurbs/bcurve.ts:434</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Is this Rational BSpline Curve. Determined based on whether weights
+									were specified while constructing this BSplineCurve</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="refineknots" class="tsd-anchor"></a>
+					<h3>refine<wbr>Knots</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">refine<wbr>Knots<span class="tsd-signature-symbol">(</span>ukList<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="bsplinecurve.html">BSplineCurve</a>.<a href="bsplinecurve.html#refineknots">refineKnots</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-geom/blob/99669df/src/nurbs/bcurve.ts#L644">nurbs/bcurve.ts:644</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Inserts multiple knots into the knot vector at once
+										Algorithm A5.4 from &quot;The NURBS Book&quot;
+									See <a href="http://www.bluemathsoftware.com/pages/nurbs/funalgo">http://www.bluemathsoftware.com/pages/nurbs/funalgo</a></p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>ukList: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="setknot" class="tsd-anchor"></a>
+					<h3>set<wbr>Knot</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Knot<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, knot<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="bsplinecurve.html">BSplineCurve</a>.<a href="bsplinecurve.html#setknot">setKnot</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-geom/blob/99669df/src/nurbs/bcurve.ts#L397">nurbs/bcurve.ts:397</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Set the knot at given index in the knot vector</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>index: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>knot: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="setknots" class="tsd-anchor"></a>
+					<h3>set<wbr>Knots</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Knots<span class="tsd-signature-symbol">(</span>knots<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">NDArray</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="bsplinecurve.html">BSplineCurve</a>.<a href="bsplinecurve.html#setknots">setKnots</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-geom/blob/99669df/src/nurbs/bcurve.ts#L387">nurbs/bcurve.ts:387</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Replace the knots of this BSplineCurve with new knots</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>knots: <span class="tsd-signature-type">NDArray</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="setweight" class="tsd-anchor"></a>
+					<h3>set<wbr>Weight</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Weight<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, weight<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="bsplinecurve.html">BSplineCurve</a>.<a href="bsplinecurve.html#setweight">setWeight</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-geom/blob/99669df/src/nurbs/bcurve.ts#L420">nurbs/bcurve.ts:420</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Set the weight at given index</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>index: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>weight: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="split" class="tsd-anchor"></a>
+					<h3>split</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">split<span class="tsd-signature-symbol">(</span>uk<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="bsplinecurve.html" class="tsd-signature-type">BSplineCurve</a><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="bsplinecurve.html">BSplineCurve</a>.<a href="bsplinecurve.html#split">split</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-geom/blob/99669df/src/nurbs/bcurve.ts#L308">nurbs/bcurve.ts:308</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Split the curve at given parameter value and return two bspline
+										curves. The two curves put together will exactly represent the
+									original curve.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>uk: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="bsplinecurve.html" class="tsd-signature-type">BSplineCurve</a><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="tessellate" class="tsd-anchor"></a>
+					<h3>tessellate</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">tessellate<span class="tsd-signature-symbol">(</span>resolution<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">NDArray</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="bsplinecurve.html">BSplineCurve</a>.<a href="bsplinecurve.html#tessellate">tessellate</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-geom/blob/99669df/src/nurbs/bcurve.ts#L915">nurbs/bcurve.ts:915</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Tessellate the BSplineCurve uniformly at given resolution</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> resolution: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;10</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">NDArray</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="tessellateadaptive" class="tsd-anchor"></a>
+					<h3>tessellate<wbr>Adaptive</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">tessellate<wbr>Adaptive<span class="tsd-signature-symbol">(</span>tolerance<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">NDArray</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="bsplinecurve.html">BSplineCurve</a>.<a href="bsplinecurve.html#tessellateadaptive">tessellateAdaptive</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-geom/blob/99669df/src/nurbs/bcurve.ts#L505">nurbs/bcurve.ts:505</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Tessellate this BSplineCurve adaptively within given tolerance of error</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> tolerance: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;EPSILON</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">NDArray</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="tessellatebasis" class="tsd-anchor"></a>
+					<h3>tessellate<wbr>Basis</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">tessellate<wbr>Basis<span class="tsd-signature-symbol">(</span>resolution<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">NDArray</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="bsplinecurve.html">BSplineCurve</a>.<a href="bsplinecurve.html#tessellatebasis">tessellateBasis</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-geom/blob/99669df/src/nurbs/bcurve.ts#L471">nurbs/bcurve.ts:471</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Tesselate basis functions uniformly at given resolution</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> resolution: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;10</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">NDArray</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="tessellatederivatives" class="tsd-anchor"></a>
+					<h3>tessellate<wbr>Derivatives</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">tessellate<wbr>Derivatives<span class="tsd-signature-symbol">(</span>resolution<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, d<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">NDArray</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="bsplinecurve.html">BSplineCurve</a>.<a href="bsplinecurve.html#tessellatederivatives">tessellateDerivatives</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-geom/blob/99669df/src/nurbs/bcurve.ts#L929">nurbs/bcurve.ts:929</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Tessellate derivatives of BSplineCurve uniformly at given resolution</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> resolution: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;10</span></h5>
+								</li>
+								<li>
+									<h5>d: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">NDArray</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="to3d" class="tsd-anchor"></a>
+					<h3>to3D</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">to3D<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="bsplinecurve.html">BSplineCurve</a>.<a href="bsplinecurve.html#to3d">to3D</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-geom/blob/99669df/src/nurbs/bcurve.ts#L293">nurbs/bcurve.ts:293</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Convert 2D control points to 3D</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="tostring" class="tsd-anchor"></a>
+					<h3>to<wbr>String</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>String<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="bsplinecurve.html">BSplineCurve</a>.<a href="bsplinecurve.html#tostring">toString</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-geom/blob/99669df/src/nurbs/bcurve.ts#L957">nurbs/bcurve.ts:957</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-class">
+						<a href="bsplinecurve.html" class="tsd-kind-icon">BSpline<wbr>Curve</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="beziercurve.html" class="tsd-kind-icon">Bezier<wbr>Curve</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="bilinearsurface.html" class="tsd-kind-icon">Bilinear<wbr>Surface</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="circle.html" class="tsd-kind-icon">Circle</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="circlearc.html" class="tsd-kind-icon">Circle<wbr>Arc</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="cone.html" class="tsd-kind-icon">Cone</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="cylinder.html" class="tsd-kind-icon">Cylinder</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="generalcylinder.html" class="tsd-kind-icon">General<wbr>Cylinder</a>
+					</li>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class">
+						<a href="linesegment.html" class="tsd-kind-icon">Line<wbr>Segment</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+								<a href="linesegment.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="linesegment.html#cpoints" class="tsd-kind-icon">cpoints</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="linesegment.html#degree" class="tsd-kind-icon">degree</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="linesegment.html#knots" class="tsd-kind-icon">knots</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="linesegment.html#weights" class="tsd-kind-icon">weights</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+								<a href="linesegment.html#dimension" class="tsd-kind-icon">dimension</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="linesegment.html#aabb" class="tsd-kind-icon">aabb</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="linesegment.html#clone" class="tsd-kind-icon">clone</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="linesegment.html#decompose" class="tsd-kind-icon">decompose</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="linesegment.html#evaluate" class="tsd-kind-icon">evaluate</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="linesegment.html#evaluatederivative" class="tsd-kind-icon">evaluate<wbr>Derivative</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="linesegment.html#insertknot" class="tsd-kind-icon">insert<wbr>Knot</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="linesegment.html#isline" class="tsd-kind-icon">is<wbr>Line</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="linesegment.html#isrational" class="tsd-kind-icon">is<wbr>Rational</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="linesegment.html#refineknots" class="tsd-kind-icon">refine<wbr>Knots</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="linesegment.html#setknot" class="tsd-kind-icon">set<wbr>Knot</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="linesegment.html#setknots" class="tsd-kind-icon">set<wbr>Knots</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="linesegment.html#setweight" class="tsd-kind-icon">set<wbr>Weight</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="linesegment.html#split" class="tsd-kind-icon">split</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="linesegment.html#tessellate" class="tsd-kind-icon">tessellate</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="linesegment.html#tessellateadaptive" class="tsd-kind-icon">tessellate<wbr>Adaptive</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="linesegment.html#tessellatebasis" class="tsd-kind-icon">tessellate<wbr>Basis</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="linesegment.html#tessellatederivatives" class="tsd-kind-icon">tessellate<wbr>Derivatives</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="linesegment.html#to3d" class="tsd-kind-icon">to3D</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="linesegment.html#tostring" class="tsd-kind-icon">to<wbr>String</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-class">
+						<a href="revolutionsurface.html" class="tsd-kind-icon">Revolution<wbr>Surface</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="ruledsurface.html" class="tsd-kind-icon">Ruled<wbr>Surface</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="sphere.html" class="tsd-kind-icon">Sphere</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="torus.html" class="tsd-kind-icon">Torus</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>

@@ -4645,12 +4645,19 @@ window.console = {
         }
         var msg = args.map(function (a) { return new String(a); }).join('');
         var el = document.createElement('p');
+        el.style.color = '#ff0000';
         el.textContent = msg;
         document.body.appendChild(el);
     },
     assert: function (condition) {
         if (!condition) {
             throw new Error("Assertion failed");
+        }
+    },
+    clear: function () {
+        var children = document.body.children;
+        for (var i = children.length - 1; i >= 0; i--) {
+            children[i].remove();
         }
     }
 };
@@ -4667,6 +4674,15 @@ window.bmlog = function () {
     var el = document.createElement('p');
     el.innerHTML = s;
     document.body.appendChild(el);
+};
+window.scopedEval = function (codestr) {
+    try {
+        console.clear();
+        eval(codestr);
+    }
+    catch (e) {
+        console.error(e.toString());
+    }
 };
 // interface PlotSpec {
 //   x : number[];
@@ -4719,6 +4735,7 @@ var common_1 = __webpack_require__(1);
 exports.eye = common_1.eye;
 exports.zeros = common_1.zeros;
 exports.empty = common_1.empty;
+exports.arr = common_1.arr;
 exports.range = common_1.range;
 exports.iszero = common_1.iszero;
 exports.isequal = common_1.isequal;
@@ -4728,6 +4745,10 @@ exports.add = common_1.add;
 exports.mul = common_1.mul;
 exports.sub = common_1.sub;
 exports.div = common_1.div;
+exports.dot = common_1.dot;
+exports.cross = common_1.cross;
+exports.length = common_1.length;
+exports.dir = common_1.dir;
 exports.count = common_1.count;
 exports.NDArray = common_1.NDArray;
 exports.Complex = common_1.Complex;
@@ -4738,7 +4759,7 @@ var geom = __webpack_require__(34);
 exports.geom = geom;
 var topo = __webpack_require__(37);
 exports.topo = topo;
-exports.version = '0.4.1'; // TODO: populate from package.json
+exports.version = '0.4.2'; // TODO: populate from package.json
 
 
 /***/ }),

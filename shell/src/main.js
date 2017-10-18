@@ -73,13 +73,14 @@
     let codestring = editor.getModel().getValue();
     let ifrm = runtimeElem.querySelector('iframe');
     if(ifrm) {
-      ifrm.remove();
-    }
-    ifrm = document.createElement('iframe');
-    ifrm.setAttribute('src', './runtime.html');
-    runtimeElem.appendChild(ifrm);
-    ifrm.contentWindow.onload = () => {
-      ifrm.contentWindow.eval(codestring);
+      ifrm.contentWindow.scopedEval(codestring);
+    } else {
+      ifrm = document.createElement('iframe');
+      ifrm.setAttribute('src', './runtime.html');
+      runtimeElem.appendChild(ifrm);
+      ifrm.contentWindow.onload = () => {
+        ifrm.contentWindow.scopedEval(codestring);
+      }
     }
   };
 

@@ -19,8 +19,6 @@ let B = bm.mul(A,5);
 let C = bm.mul(A,2);
 bmlog('B',B);
 bmlog('C',C);
-let D = bm.mul(B,C);
-bmlog('B*C',D);
 `;
 
 const determinant = 
@@ -69,7 +67,6 @@ bmlog('B',B);
 bmlog('A+B',bm.add(A,B));
 bmlog('A-B',bm.sub(A,B));
 bmlog('3*A',bm.mul(3,A));
-bmlog('A*B',bm.mul(A,B));
 bmlog('A/2',bm.div(A,2));
 `
 
@@ -84,10 +81,10 @@ let A = new bm.NDArray([
     [13,14,15,16]
 ],{datatype:'i32'});
 bmlog('A',A);
-bmlog('A[:,1] = ',A.slice(':',1));
-bmlog('A[1,:] = ',A.slice(1,':'));
-bmlog('A[null,2] = ',A.slice(null,2));
-bmlog('A[:2,1:3] = ',A.slice(':2','1:3'));
+bmlog('A[:,1] = ',A.get(':',1));
+bmlog('A[1,:] = ',A.get(1,':'));
+bmlog('A[null,2] = ',A.get(null,2));
+bmlog('A[:2,1:3] = ',A.get(':2','1:3'));
 `
 
 let BMSHELL_EXAMPLES = {

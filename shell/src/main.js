@@ -40,10 +40,12 @@
     });
 
     // extra libraries
+    /*
     for(let extralib of EXTRA_LIBS) {
       monaco.languages.typescript.typescriptDefaults.addExtraLib(
         extralib.source, extralib.fpath);
     }
+    */
     monaco.languages.typescript.typescriptDefaults.addExtraLib(
       preambleTypeDeclaration);
 
@@ -83,15 +85,7 @@
 
   let docsButton = document.querySelector('#btn-docs');
   docsButton.onclick = () => {
-    let ifrm = document.createElement('iframe');
-    ifrm.setAttribute('src', 'http://www.bluemathsoftware.com/docs/index.html');
-    ifrm.style.height = '100%';
-    ifrm.style.width = '100%';
-    docholderElem.insertBefore(ifrm,docsCloseElem);
-
-    docholderElem.style.left = Math.round(0.2*W)+'px';
-    docholderElem.style.width = Math.round(0.8*W)+'px';
-    docholderElem.style.height = H+'px';
+    window.open('http://www.bluemathsoftware.com/docs.html','_blank');
   };
 
   docsCloseElem.onclick = () => {

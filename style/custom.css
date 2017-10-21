@@ -14,9 +14,9 @@ a.btn-launch-shell:hover {
 }
 
 a.btn-submod-links {
-  background : #003459;
-  color : #fff;
+  background : #0d1f2d;
+  color : #ddd;
 }
 a.btn-submod-links:hover {
-  color : #000000;
+  color : #fff;
 }

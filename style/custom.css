@@ -8,6 +8,15 @@ a.btn-launch-shell {
   color : #fff;
   font-weight : bold;
 }
+
 a.btn-launch-shell:hover {
   color : #0d1d2d;
+}
+
+a.btn-submod-links {
+  background : 003459;
+  color : #fff;
+}
+a.btn-submod-links:hover {
+  color : #000000;
 }

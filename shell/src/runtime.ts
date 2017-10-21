@@ -1,5 +1,6 @@
 
 import * as bluemath from 'bluemath'
+import {plot} from './plot'
 
 (<any>window).bluemath = bluemath;
 
@@ -17,7 +18,14 @@ import * as bluemath from 'bluemath'
     el.textContent = msg;
     document.body.appendChild(el);
   },
-  assert : function(condition) {
+  warn : function(...args:any[]) {
+    let msg:string = args.map(a => new String(a)).join('');
+    let el = document.createElement('p');
+    el.style.color = '#ff7700';
+    el.textContent = msg;
+    document.body.appendChild(el);
+  },
+  assert : function(condition:boolean) {
     if(!condition) {
       throw new Error("Assertion failed");
     }
@@ -25,6 +33,15 @@ import * as bluemath from 'bluemath'
   clear : function () {
     let children = document.body.children;
     for(let i=children.length-1; i>=0; i--) { children[i].remove(); }
+  }
+};
+
+(<any>window).scopedEval = function (codestr:string) {
+  try {
+    console.clear();
+    eval(codestr);
+  } catch(e) {
+    console.error(e.toString());
   }
 };
 
@@ -38,31 +55,5 @@ import * as bluemath from 'bluemath'
   document.body.appendChild(el);
 };
 
-(<any>window).scopedEval = function (codestr) {
-  try {
-    console.clear();
-    eval(codestr);
-  } catch(e) {
-    console.error(e.toString());
-  }
-}
 
-// interface PlotSpec {
-//   x : number[];
-//   y : number[];
-// };
-
-// (<any>window).bmplot = function (name:string, spec:PlotSpec) {
-//   console.assert(spec.x && Array.isArray(spec.x));
-//   console.assert(spec.y && Array.isArray(spec.y));
-//   let pelem = document.createElement('div');
-//   pelem.setAttribute('id','plot-'+name);
-//   pelem.setAttribute('class','plot');
-//   Plotly.plot(pelem, [{
-//     x: spec.x,
-//     y: spec.y
-//   }], {
-//     margin: { t: 0 }
-//   });
-//   document.body.appendChild(pelem);
-// };
+(<any>window).plot = plot;

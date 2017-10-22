@@ -12,6 +12,11 @@
   let clearElem = document.getElementById('btn-clear');
   let saveElem = document.getElementById('btn-save');
 
+
+function nameToKey(name) {
+  return name.replace(/[\(\)\s]+/g,'-').toLowerCase();
+}
+
   let preambleTypeDeclaration =
   `
   declare function bmlog(...args:any[]) {}
@@ -48,19 +53,35 @@
       preambleTypeDeclaration);
 
     // Setup example choices
-    let exmKeys = Object.keys(BMSHELL_EXAMPLES);
-    for(let key of exmKeys) {
+    let exmNames = Object.keys(BMSHELL_EXAMPLES);
+    let exmMap = {};
+    for(let name of exmNames) {
+      let key = nameToKey(name);
       let opt = document.createElement('option');
-      opt.textContent = key;
+      opt.textContent = name;
+      opt.setAttribute('value',key);
       exmChoices.appendChild(opt);
+      exmMap[key] = name;
     }
     exmChoices.onchange = () => {
-      let exmCode = BMSHELL_EXAMPLES[exmChoices.value];
+      let exmCode = BMSHELL_EXAMPLES[exmMap[exmChoices.value]];
       editor.getModel().setValue(exmCode);
+
+      window.location.href = window.location.protocol + '//' +
+        window.location.host + window.location.pathname + '#' +
+        exmChoices.value;
     }
+
     // Populate with first example
-    exmChoices.value = exmKeys[0];
-    editor.getModel().setValue(BMSHELL_EXAMPLES[exmKeys[0]]);
+    let urlmatch = /#([\d\w-]+)$/.exec(window.location.href);
+    let selkey;
+    if(urlmatch) {
+      selkey = urlmatch[1];
+    } else {
+      selkey = nameToKey(exmNames[0]);
+    }
+    exmChoices.value = selkey;
+    editor.getModel().setValue(BMSHELL_EXAMPLES[exmMap[selkey]]);
 
     // Create IFrame
     ifrm = document.createElement('iframe');

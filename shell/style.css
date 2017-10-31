@@ -1,0 +1,39 @@
+
+body {
+  overflow:hidden;
+}
+#container {
+  min-width: 100px;
+}
+
+#container > #editor {
+  height : 100%;
+  border: 0px;
+  float : left;
+}
+#container > #runtime {
+  height : 100%;
+}
+#container > #runtime > iframe {
+  border: 0px;
+  height : 100%;
+}
+
+#btn-panel {
+  display : flex;
+  justify-content: initial;
+}
+
+.btn {
+  margin-left : 10px;
+  margin-right : 10px;
+  cursor : pointer;
+}
+
+.btn:hover {
+  color : #013c57;
+}
+
+.btn-disabled {
+  color : #bbbbbb;
+}

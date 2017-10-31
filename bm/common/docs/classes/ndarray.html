@@ -69,9 +69,12 @@
 					</div>
 					<p>It can store real as well as complex numbers in n-dimensions
 						It can be used to store Vectors (1D) or Matrices (2D).
-					This class stores the data internally in flat typed arrays</p>
+					This class stores the data internally in typed arrays</p>
+					<p>NDArray offers slicing to extract subarrays. The interface is inspired
+						from numpy&#39;s API. It makes dealing with n-dimensional data extremely
+					flexible.</p>
 					<p>NDArray is the central class of Bluemath library.
-					It&#39;s used to input and output data to/from most of the APIs of this library.</p>
+					It&#39;s used by most of the APIs of the bluemath library.</p>
 					<h2 id="construction">Construction</h2>
 					<p>You can create an NDArray</p>
 					<ul>
@@ -80,12 +83,14 @@
 <span class="hljs-keyword">new</span> NDArray({<span class="hljs-attr">shape</span>:[<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">3</span>],<span class="hljs-attr">datatype</span>:<span class="hljs-string">'i32'</span>});
 </code></pre>
 						</li>
-						<li><p>Initializing it with array data</p>
-							<pre><code class="lang-javascript"><span class="hljs-comment">// 2x3 Matrix with 64-bit floating point (double) storage</span>
+						<li><p>Initializing it with array data [[arr]]</p>
+							<pre><code class="lang-javascript"><span class="hljs-comment">// Using Constructor</span>
+<span class="hljs-comment">// 2x3 Matrix with 64-bit floating point (double) storage</span>
 <span class="hljs-keyword">new</span> NDArray([[<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>],[<span class="hljs-number">4</span>,<span class="hljs-number">4</span>,<span class="hljs-number">4</span>]],{<span class="hljs-attr">datatype</span>:<span class="hljs-string">'f64'</span>});
+arr([[<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>],[<span class="hljs-number">4</span>,<span class="hljs-number">4</span>,<span class="hljs-number">4</span>]])
 </code></pre>
 						</li>
-						<li><p>Using standard functions</p>
+						<li><p>Using standard functions <a href="../globals.html#zeros">zeros</a>,<a href="../globals.html#eye">eye</a>,<a href="../globals.html#empty">empty</a></p>
 							<pre><code class="lang-javascript">zeros([<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>]); <span class="hljs-comment">// Returns 2x2x2 NDArray of zeros</span>
 eye([<span class="hljs-number">4</span>,<span class="hljs-number">4</span>]); <span class="hljs-comment">// Creates 4x4 Identity matrix</span>
 </code></pre>
@@ -94,10 +99,46 @@ eye([<span class="hljs-number">4</span>,<span class="hljs-number">4</span>]); <s
 					<h2 id="basic-math-operations">Basic math operations</h2>
 					<p>Bluemath provides functions that allow basic math operations
 					on NDArrays</p>
-					<p><a href="../globals.html#add">add</a></p>
-					<p><a href="../globals.html#sub">sub</a></p>
-					<p><a href="../globals.html#mul">mul</a></p>
-					<p><a href="../globals.html#div">div</a></p>
+					<p><a href="../globals.html#add">add</a>, <a href="../globals.html#sub">sub</a>, <a href="../globals.html#mul">mul</a>, <a href="../globals.html#div">div</a></p>
+					<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> A = <span class="hljs-keyword">new</span> NDArray([
+    [<span class="hljs-number">2</span>,<span class="hljs-number">3</span>],
+    [<span class="hljs-number">1</span>,<span class="hljs-number">9</span>]
+],{<span class="hljs-attr">datatype</span>:<span class="hljs-string">'i32'</span>});
+<span class="hljs-keyword">let</span> B = eye(<span class="hljs-number">2</span>,<span class="hljs-string">'i32'</span>);
+
+<span class="hljs-keyword">let</span> P = add(A,B); <span class="hljs-comment">// A+B [[3,3],[1,10]]</span>
+<span class="hljs-keyword">let</span> Q = sub(A,B); <span class="hljs-comment">// A-B [[1,3],[1,8]]</span>
+<span class="hljs-keyword">let</span> R = mul(<span class="hljs-number">3</span>,A); <span class="hljs-comment">// 3*A [[6,9],[3,27]]</span>
+<span class="hljs-keyword">let</span> S = div(A,<span class="hljs-number">2</span>); <span class="hljs-comment">// A/2 [[1,1],[0,4]]</span>
+</code></pre>
+					<h2 id="slicing">Slicing</h2>
+					<p>The <a href="ndarray.html#get">NDArray.get</a> method returns a specific element or a new NDArray
+						that&#39;s a subset of this array as defined by the slicing recipe.
+					Each element of the slicing recipe (i.e. any argument) can be</p>
+					<ul>
+						<li>A number specifying a specific element or slice of the array
+						in given dimension.</li>
+						<li>A string of the form <code>&lt;start&gt;:&lt;stop&gt;</code>, specifying the range of
+							slices in the given dimension. Both <code>&lt;start&gt;</code> and <code>&lt;stop&gt;</code> are
+						optional</li>
+					</ul>
+					<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> A = <span class="hljs-keyword">new</span> NDArray([
+    [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>],
+    [<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>],
+    [<span class="hljs-number">9</span>,<span class="hljs-number">10</span>,<span class="hljs-number">11</span>,<span class="hljs-number">12</span>],
+    [<span class="hljs-number">13</span>,<span class="hljs-number">14</span>,<span class="hljs-number">15</span>,<span class="hljs-number">16</span>]
+],{<span class="hljs-attr">datatype</span>:<span class="hljs-string">'i32'</span>});
+
+<span class="hljs-keyword">let</span> P = A.get(<span class="hljs-string">':'</span>,<span class="hljs-number">1</span>); <span class="hljs-comment">// [2,6,10,14]</span>
+<span class="hljs-keyword">let</span> Q = A.get(<span class="hljs-number">1</span>,<span class="hljs-string">':'</span>); <span class="hljs-comment">// [5,6,7,8]</span>
+<span class="hljs-keyword">let</span> R = A.get(<span class="hljs-literal">null</span>,<span class="hljs-number">2</span>); <span class="hljs-comment">// [3,7,11,15]</span>
+<span class="hljs-keyword">let</span> S = A.get(<span class="hljs-string">':2'</span>,<span class="hljs-string">'1:3'</span>); <span class="hljs-comment">// [[2,3],[6,7]]</span>
+</code></pre>
+					<h2 id="caveats">Caveats</h2>
+					<ul>
+						<li>Negative indices not supported yet</li>
+						<li>No support for <code>&lt;start&gt;:&lt;stop&gt;:&lt;step&gt;</code> format yet</li>
+					</ul>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
@@ -139,7 +180,6 @@ eye([<span class="hljs-number">4</span>,<span class="hljs-number">4</span>]); <s
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="ndarray.html#_indextoaddress" class="tsd-kind-icon">_index<wbr>ToAddress</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="ndarray.html#clone" class="tsd-kind-icon">clone</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="ndarray.html#copyfrom" class="tsd-kind-icon">copyfrom</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="ndarray.html#copyto" class="tsd-kind-icon">copyto</a></li>
@@ -150,6 +190,7 @@ eye([<span class="hljs-number">4</span>,<span class="hljs-number">4</span>]); <s
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="ndarray.html#geta" class="tsd-kind-icon">getA</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="ndarray.html#getc" class="tsd-kind-icon">getC</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="ndarray.html#getn" class="tsd-kind-icon">getN</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="ndarray.html#indextoaddress" class="tsd-kind-icon">index<wbr>ToAddress</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="ndarray.html#is1d" class="tsd-kind-icon">is1D</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="ndarray.html#is2d" class="tsd-kind-icon">is2D</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="ndarray.html#isequal" class="tsd-kind-icon">is<wbr>Equal</a></li>
@@ -178,7 +219,7 @@ eye([<span class="hljs-number">4</span>,<span class="hljs-number">4</span>]); <s
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/d73e931/src/ndarray.ts#L193">ndarray.ts:193</a></li>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/3da2f1f/src/ndarray.ts#L239">ndarray.ts:239</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -207,7 +248,7 @@ eye([<span class="hljs-number">4</span>,<span class="hljs-number">4</span>]); <s
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/d73e931/src/ndarray.ts#L267">ndarray.ts:267</a></li>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/3da2f1f/src/ndarray.ts#L313">ndarray.ts:313</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Int8Array</span>
@@ -239,7 +280,7 @@ eye([<span class="hljs-number">4</span>,<span class="hljs-number">4</span>]); <s
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/d73e931/src/ndarray.ts#L271">ndarray.ts:271</a></li>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/3da2f1f/src/ndarray.ts#L317">ndarray.ts:317</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">"i8"</span>
@@ -271,7 +312,7 @@ eye([<span class="hljs-number">4</span>,<span class="hljs-number">4</span>]); <s
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/d73e931/src/ndarray.ts#L263">ndarray.ts:263</a></li>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/3da2f1f/src/ndarray.ts#L309">ndarray.ts:309</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -293,7 +334,7 @@ eye([<span class="hljs-number">4</span>,<span class="hljs-number">4</span>]); <s
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/d73e931/src/ndarray.ts#L244">ndarray.ts:244</a></li>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/3da2f1f/src/ndarray.ts#L290">ndarray.ts:290</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h4>
@@ -310,7 +351,7 @@ eye([<span class="hljs-number">4</span>,<span class="hljs-number">4</span>]); <s
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/d73e931/src/ndarray.ts#L248">ndarray.ts:248</a></li>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/3da2f1f/src/ndarray.ts#L294">ndarray.ts:294</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -321,29 +362,6 @@ eye([<span class="hljs-number">4</span>,<span class="hljs-number">4</span>]); <s
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="_indextoaddress" class="tsd-anchor"></a>
-					<h3>_index<wbr>ToAddress</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">_index<wbr>ToAddress<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>indices<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/d73e931/src/ndarray.ts#L318">ndarray.ts:318</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>indices: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="clone" class="tsd-anchor"></a>
 					<h3>clone</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -353,7 +371,7 @@ eye([<span class="hljs-number">4</span>,<span class="hljs-number">4</span>]); <s
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/d73e931/src/ndarray.ts#L298">ndarray.ts:298</a></li>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/3da2f1f/src/ndarray.ts#L344">ndarray.ts:344</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -375,7 +393,7 @@ eye([<span class="hljs-number">4</span>,<span class="hljs-number">4</span>]); <s
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/d73e931/src/ndarray.ts#L867">ndarray.ts:867</a></li>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/3da2f1f/src/ndarray.ts#L913">ndarray.ts:913</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -398,7 +416,7 @@ eye([<span class="hljs-number">4</span>,<span class="hljs-number">4</span>]); <s
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/d73e931/src/ndarray.ts#L874">ndarray.ts:874</a></li>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/3da2f1f/src/ndarray.ts#L920">ndarray.ts:920</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -421,7 +439,7 @@ eye([<span class="hljs-number">4</span>,<span class="hljs-number">4</span>]); <s
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/d73e931/src/ndarray.ts#L414">ndarray.ts:414</a></li>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/3da2f1f/src/ndarray.ts#L460">ndarray.ts:460</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -449,7 +467,7 @@ eye([<span class="hljs-number">4</span>,<span class="hljs-number">4</span>]); <s
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/d73e931/src/ndarray.ts#L594">ndarray.ts:594</a></li>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/3da2f1f/src/ndarray.ts#L640">ndarray.ts:640</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -471,7 +489,7 @@ eye([<span class="hljs-number">4</span>,<span class="hljs-number">4</span>]); <s
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/d73e931/src/ndarray.ts#L547">ndarray.ts:547</a></li>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/3da2f1f/src/ndarray.ts#L593">ndarray.ts:593</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -520,7 +538,7 @@ eye([<span class="hljs-number">4</span>,<span class="hljs-number">4</span>]); <s
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/d73e931/src/ndarray.ts#L722">ndarray.ts:722</a></li>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/3da2f1f/src/ndarray.ts#L768">ndarray.ts:768</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -531,8 +549,8 @@ eye([<span class="hljs-number">4</span>,<span class="hljs-number">4</span>]); <s
 									<ul>
 										<li>A number specifying a specific element or slice of the array
 										in given dimension.</li>
-										<li>A string of the form &#39;<start>:<stop>&#39;, specifying the range of
-													slices in the given dimension. Both &#39;<start>&#39; and &#39;<stop>&#39; are
+										<li>A string of the form <code>&lt;start&gt;:&lt;stop&gt;</code>, specifying the range of
+											slices in the given dimension. Both <code>&lt;start&gt;</code> and <code>&lt;stop&gt;</code> are
 										optional</li>
 									</ul>
 								</div>
@@ -567,12 +585,12 @@ eye([<span class="hljs-number">4</span>,<span class="hljs-number">4</span>]); <s
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/d73e931/src/ndarray.ts#L696">ndarray.ts:696</a></li>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/3da2f1f/src/ndarray.ts#L742">ndarray.ts:742</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Shorthand for get(...) method to avoid casting to <NDArray></p>
+									<p>Shorthand for get(...) method to avoid casting to <a href="ndarray.html">NDArray</a></p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -595,12 +613,12 @@ eye([<span class="hljs-number">4</span>,<span class="hljs-number">4</span>]); <s
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/d73e931/src/ndarray.ts#L703">ndarray.ts:703</a></li>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/3da2f1f/src/ndarray.ts#L749">ndarray.ts:749</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Shorthand for get(...) method to avoid casting to <Complex></p>
+									<p>Shorthand for get(...) method to avoid casting to <a href="complex.html">Complex</a></p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -623,18 +641,41 @@ eye([<span class="hljs-number">4</span>,<span class="hljs-number">4</span>]); <s
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/d73e931/src/ndarray.ts#L689">ndarray.ts:689</a></li>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/3da2f1f/src/ndarray.ts#L735">ndarray.ts:735</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Shorthand for get(...) method to avoid casting to <number></p>
+									<p>Shorthand for get(...) method to avoid casting to number</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>slices: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="indextoaddress" class="tsd-anchor"></a>
+					<h3>index<wbr>ToAddress</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">index<wbr>ToAddress<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>indices<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/3da2f1f/src/ndarray.ts#L364">ndarray.ts:364</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>indices: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -651,7 +692,7 @@ eye([<span class="hljs-number">4</span>,<span class="hljs-number">4</span>]); <s
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/d73e931/src/ndarray.ts#L252">ndarray.ts:252</a></li>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/3da2f1f/src/ndarray.ts#L298">ndarray.ts:298</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -668,7 +709,7 @@ eye([<span class="hljs-number">4</span>,<span class="hljs-number">4</span>]); <s
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/d73e931/src/ndarray.ts#L256">ndarray.ts:256</a></li>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/3da2f1f/src/ndarray.ts#L302">ndarray.ts:302</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -685,7 +726,7 @@ eye([<span class="hljs-number">4</span>,<span class="hljs-number">4</span>]); <s
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/d73e931/src/ndarray.ts#L586">ndarray.ts:586</a></li>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/3da2f1f/src/ndarray.ts#L632">ndarray.ts:632</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -722,7 +763,7 @@ eye([<span class="hljs-number">4</span>,<span class="hljs-number">4</span>]); <s
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/d73e931/src/ndarray.ts#L576">ndarray.ts:576</a></li>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/3da2f1f/src/ndarray.ts#L622">ndarray.ts:622</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -750,7 +791,7 @@ eye([<span class="hljs-number">4</span>,<span class="hljs-number">4</span>]); <s
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/d73e931/src/ndarray.ts#L282">ndarray.ts:282</a></li>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/3da2f1f/src/ndarray.ts#L328">ndarray.ts:328</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -784,7 +825,7 @@ eye([<span class="hljs-number">4</span>,<span class="hljs-number">4</span>]); <s
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/d73e931/src/ndarray.ts#L439">ndarray.ts:439</a></li>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/3da2f1f/src/ndarray.ts#L485">ndarray.ts:485</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -814,7 +855,7 @@ eye([<span class="hljs-number">4</span>,<span class="hljs-number">4</span>]); <s
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/d73e931/src/ndarray.ts#L603">ndarray.ts:603</a></li>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/3da2f1f/src/ndarray.ts#L649">ndarray.ts:649</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -836,7 +877,7 @@ eye([<span class="hljs-number">4</span>,<span class="hljs-number">4</span>]); <s
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/d73e931/src/ndarray.ts#L503">ndarray.ts:503</a></li>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/3da2f1f/src/ndarray.ts#L549">ndarray.ts:549</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -867,7 +908,7 @@ eye([<span class="hljs-number">4</span>,<span class="hljs-number">4</span>]); <s
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/d73e931/src/ndarray.ts#L368">ndarray.ts:368</a></li>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/3da2f1f/src/ndarray.ts#L414">ndarray.ts:414</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -889,7 +930,7 @@ eye([<span class="hljs-number">4</span>,<span class="hljs-number">4</span>]); <s
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/d73e931/src/ndarray.ts#L965">ndarray.ts:965</a></li>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/3da2f1f/src/ndarray.ts#L1011">ndarray.ts:1011</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -912,7 +953,7 @@ eye([<span class="hljs-number">4</span>,<span class="hljs-number">4</span>]); <s
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/d73e931/src/ndarray.ts#L901">ndarray.ts:901</a></li>
+									<li>Defined in <a href="https://github.com/bluemathsoft/bm-common/blob/3da2f1f/src/ndarray.ts#L947">ndarray.ts:947</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -967,9 +1008,6 @@ eye([<span class="hljs-number">4</span>,<span class="hljs-number">4</span>]); <s
 								<a href="ndarray.html#size" class="tsd-kind-icon">size</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="ndarray.html#_indextoaddress" class="tsd-kind-icon">_index<wbr>ToAddress</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="ndarray.html#clone" class="tsd-kind-icon">clone</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
@@ -998,6 +1036,9 @@ eye([<span class="hljs-number">4</span>,<span class="hljs-number">4</span>]); <s
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="ndarray.html#getn" class="tsd-kind-icon">getN</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="ndarray.html#indextoaddress" class="tsd-kind-icon">index<wbr>ToAddress</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="ndarray.html#is1d" class="tsd-kind-icon">is1D</a>
